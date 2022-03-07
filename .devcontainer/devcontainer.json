@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+		"args": { "VARIANT": "focal" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"42header.email": "aborboll@student.42.fr",
+		"42header.username": "aborboll",
+		"editor.tabSize": 4,
+		"editor.insertSpaces": false,
+		"editor.renderWhitespace": "all",
+		"workbench.editor.showTabs": true,
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+		"terminal.integrated.defaultProfile.linux": "zsh",
+		"cryptoticker.cryptoCurrency": "EUR",
+		"cryptoticker.cryptoExchange": "Binance",
+		"pdf-preview.default.scale": "page-width",
+		"cryptoticker.cryptoSymbols": [
+			"BTC",
+			"ETH",
+			"ADA"
+		]
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"dalexhd.42-norminette",
+		"kube.42header",
+		"ms-vscode.cpptools",
+		"coenraads.bracket-pair-colorizer",
+		"tomoki1207.pdf",
+		"eamodio.gitlens",
+		"tabnine.tabnine-vscode",
+		"softwaredotcom.swdc-vscode",
+		"udayankumar.cryptoticker"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
