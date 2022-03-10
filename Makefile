@@ -12,6 +12,7 @@ LEAKS_FLAGS			=	--tool=memcheck --leak-check=full --leak-resolution=high --show-
 
 HEADER_DIR			=	includes
 OBJ_DIR				=	obj/
+SRC_DIR				=	srcs/
 RESULT				=	$(shell cat output.txt)
 AUTHOR				=	$(shell cat ../author)
 LAST_COMMIT_DATE	=	$(shell git log -1 --date=format:"%m/%d/%Y" --format="%ad   [%cr]")
@@ -25,8 +26,12 @@ COUNTER				= 	0
 COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
-SRCS				=	main.cpp
-SOURCES				=	$(SRCS)
+
+UTILS				=	utils/validation.cpp
+
+SRCS				=	server.cpp
+
+SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS)) $(addprefix $(SRC_DIR),$(UTILS))
 
 # Mandatory Objects
 OFILE				=	$(SOURCES:%.cpp=%.o)
@@ -78,7 +83,7 @@ all:	$(OUTPUT)
 # Objects directory
 $(OBJ_DIR):
 			@echo ${CUT}[${Y}$(OUTPUT)]${X} ${B}Creating: ${R}$(OBJ_DIR)${X}
-			@mkdir -p $(OBJ_DIR)
+			@mkdir -p $(OBJ_DIR) $(OBJ_DIR)/srcs $(OBJ_DIR)/srcs/utils
 
 # Normal objects
 $(OUTPUT): $(OBJ_DIR) $(OBJS)
