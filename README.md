@@ -4,8 +4,8 @@
 
 make
 
-./ircserv <port> <password>
+./ircserv `<port>` `<password>`
 
 ## CLIENT
 
-nc <serverip> <port>
+nc `<serverip>` `<port>`
