@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:36:41 by aborboll          #+#    #+#             */
-/*   Updated: 2022/03/09 17:51:50 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:09:34 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 int main(int argc, char **argv)
 {
+	Server *server;
+
 	if (!validate_args(argc, argv))
 		return (1);
-	Server server(argv[1], argv[2]);
-	server.run();
+	try
+	{
+		server = new Server(argv[1], argv[2]);
+		server->run();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
