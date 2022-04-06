@@ -8,4 +8,4 @@ make
 
 ## CLIENT
 
-nc `<serverip>` `<port>`
+telnet `<serverip>` `<port>`
