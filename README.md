@@ -18,7 +18,9 @@ https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands
 - pass -> Sets a connection password.This command must be sent before the NICK/USER registration combination
 
 ex /nick Carlos
-- msg ->  Sends a private message to the specified nickname. Only the specified Nickname will see this message...
+- privmsg ->  Sends message to msgtarget, which is usually a user or channel.
+
+ex: "PRIVMSG msgtarget :message"
 
 ex "/msg Ilene"
 - ping -> Lets you determine the network distance between your computer and other users 
