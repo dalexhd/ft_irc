@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/06 18:50:27 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/06 18:57:35 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void Server::createServerListener()
 {
 	int      yes = 1;
-	addrinfo hints = {.ai_flags = AI_PASSIVE, .ai_family = AF_INET, .ai_socktype = SOCK_STREAM}, *servinfo;
+	addrinfo hints, *servinfo;
 
 	hints.ai_family = AF_INET;
 	hints.ai_socktype = SOCK_STREAM;
