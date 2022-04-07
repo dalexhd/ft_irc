@@ -1,14 +1,14 @@
-## USAGE ##
+## USAGE
 
-## SERVER ##
+## SERVER
 
 make
 
-./ircserv 'port' 'password'
+./ircserv `<port>` `<password>`
 
-## CLIENT ##
+## CLIENT
 
-nc 'serverip' 'port'
+telnet `<serverip>` `<port>`
 
 
 ## COMMANDS DOCS ##
