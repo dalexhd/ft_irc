@@ -6,11 +6,15 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/09 16:38:17 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/09 20:07:24 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/server.hpp"
+
+#include "../includes/commands/Exit.hpp"
+#include "../includes/commands/Info.hpp"
+#include "../includes/commands/Ping.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -64,6 +68,7 @@ void Server::removeClientFromServer(size_t clientId)
 void Server::createServerPoll(void)
 {
 	pollfd pfd = {.fd = _socket, .events = POLLIN, .revents = 0};
+
 	_pfds.push_back(pfd);
 	while (is_running())
 	{
@@ -78,13 +83,30 @@ void Server::createServerPoll(void)
 					int new_fd;
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
-					_clients.push_back(new Client(_pfds[i], new_fd, std::string("user")));
+					_clients.push_back(new Client(new_fd, std::string("user")));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
 					std::cout << "Client connected" << std::endl;
 				}
-				else if (i > 0 && _clients[i - 1]->read() == -1)
-					removeClientFromServer(i - 1);
+				else if (i > 0)
+				{
+					std::string message = _clients[i - 1]->read();
+					std::map<std::string, Command *>::iterator it;
+					bool                                       status = false;
+					for (it = _commands.begin(); it != _commands.end(); it++)
+					{
+						if (it->first == message)
+						{
+							it->second->setSender(_clients[i - 1], i - 1);
+							it->second->setServer(this);
+							it->second->execute();
+							status = true;
+							break;
+						}
+					}
+					if (!status)
+						std::cout << "Received non existant command: " << message << std::endl;
+				}
 			}
 		}
 	}
@@ -100,33 +122,22 @@ Server::Server(std::string host, std::string port, std::string password)
     : host(host), port(port), password(password), _status(ONLINE)
 {
 	createServerListener();
+	setupCommands();
 	createServerPoll();
 }
 
-void Server::run()
+void Server::setupCommands(void)
 {
-	int i = 0;
-	while (this->is_running())
-	{
-		std::cout << "Server running" << std::endl;
-		if (i == 5)
-		{
-			this->close_server();
-			break;
-		}
-		sleep(1);
-		i++;
-	}
-}
-
-void Server::close_server()
-{
-	_status = CLOSED;
-	std::cout << "Closing server..." << std::endl;
-	delete this;
+	_commands["ping"] = new Ping();
+	_commands["info"] = new Info();
+	_commands["exit"] = new Exit();
 }
 
 Server::~Server(void)
 {
-	std::cout << "Server closed" << std::endl;
+	std::map<std::string, Command *>::iterator it = _commands.begin();
+	// We delete all commands
+	for (; it != _commands.end(); it++)
+		delete it->second;
+	std::cout << "Server closed!" << std::endl;
 }
