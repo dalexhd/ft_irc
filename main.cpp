@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:36:41 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/06 15:49:12 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/09 18:11:34 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	try
 	{
 		server = new Server("127.0.0.1", args[1], args[2]);
-		server->run();
+		delete server;
 	}
 	catch (const std::exception &e)
 	{
