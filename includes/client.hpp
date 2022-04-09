@@ -1,11 +1,13 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+// Main libraries
+#include <cstring>
 #include <iostream>
+#include <map>
 #include <poll.h>
-#include <string.h>
-#include <string>
 #include <unistd.h>
+#include <vector>
 
 // Socket includes
 #include <netdb.h>
@@ -25,7 +27,6 @@ class Client
   public:
 	int         _fd;
 	std::string name;
-	size_t      id;
 
   public:
 	Client(pollfd const &pfd, int &fd, std::string name)
@@ -33,11 +34,14 @@ class Client
 	~Client()
 	{
 		(void) _pfd;
-		std::cout << "Client " << name << " destroyed!" << std::endl;
+		close(_fd);
+		_fd = -1;
+		std::cout << "Client " << name << " disconnected" << std::endl;
 	};
 
 	// Helpers
-	void message(std::string &message);
+	void message(char const *message);
+	int  read(void);
 	void disconnect(void);
 };
 
