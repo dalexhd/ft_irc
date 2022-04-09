@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/06 17:45:57 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:30:28 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,9 @@
 #define SERVER_H
 
 #include <arpa/inet.h>
-#include <errno.h>
+#include <cstdlib>
 #include <fcntl.h>
 #include <functional>
-#include <iostream>
-#include <map>
-#include <poll.h>
-#include <string.h>
-#include <unistd.h>
-#include <vector>
-
-// Socket includes
-#include <netdb.h>
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <sys/types.h>
 
 // Our includes
 #include "./client.hpp"
@@ -46,7 +34,7 @@ class Server
 	std::string const password;
 
 	// Clients
-	std::vector<Client *> clients;
+	std::vector<Client *> _clients;
 
 	// Socket status
 	enum Status
@@ -72,14 +60,10 @@ class Server
 		return (_status == ONLINE);
 	}
 
-	Client *get_client(size_t &id)
-	{
-		return clients[id - 1];
-	}
-
   private:
 	void createServerListener(void);
 	void createServerPoll(void);
+	void removeClientFromServer(size_t clientId);
 	int  readClient(size_t &i);
 };
 
