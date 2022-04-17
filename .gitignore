@@ -2,4 +2,3 @@ obj
 .DS Store
 ircserv
 *.gcov
-.vscode

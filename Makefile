@@ -1,9 +1,9 @@
 OUTPUT				=	ircserv
 
 ifeq ($(shell whoami), runner)
-	CC				=	@g++ -std=c++11 -fprofile-arcs -ftest-coverage -O0 -fPIC
+	CC				=	@g++ -std=c++98 -fprofile-arcs -ftest-coverage -O0 -fPIC
 else
-	CC				=	@clang++ -std=c++11
+	CC				=	@clang++ -std=c++98
 endif
 SH					=	@bash
 RM					=	@/bin/rm -rf
@@ -29,7 +29,7 @@ COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 UTILS				=	utils/validation.cpp
 
-SRCS				=	server.cpp
+SRCS				=	server.cpp client.cpp Message.cpp
 
 SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS)) $(addprefix $(SRC_DIR),$(UTILS))
 
