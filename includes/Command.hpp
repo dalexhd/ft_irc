@@ -8,14 +8,15 @@ class Command
 {
 	// We make it protected in order to be able to implemet it
   protected:
-	std::string _name;
-	std::string _description;
-	std::string _usage;
-	std::string _example;
+	std::string                   _name;
+	std::string                   _description;
+	std::string                   _usage;
+	std::map<size_t, std::string> _example;
 	// Command non related vars
-	Client *_sender;
-	Server *_server;
-	size_t  _sender_index;
+	Client * _sender;
+	Server * _server;
+	Message *_message;
+	size_t   _sender_index;
 
   public:
 	std::string getName() const
@@ -30,7 +31,7 @@ class Command
 	{
 		return _usage;
 	};
-	std::string getExample() const
+	std::map<size_t, std::string> getExample() const
 	{
 		return _example;
 	};
@@ -42,6 +43,10 @@ class Command
 	void setServer(Server *server)
 	{
 		_server = server;
+	};
+	void setMessage(Message *message)
+	{
+		_message = message;
 	};
 
   public:

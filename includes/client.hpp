@@ -16,6 +16,7 @@
 #include <sys/types.h>
 
 // Our includes
+#include "./Message.hpp"
 #include "./config.hpp"
 
 class Client
@@ -34,9 +35,9 @@ class Client
 	};
 
 	// Helpers
-	void        message(char const *message);
-	std::string read(void) const;
-	void        disconnect(void);
+	void     message(char const *message);
+	Message *read(void) const;
+	void     disconnect(void);
 };
 
 #endif
