@@ -10,9 +10,9 @@ class Exit : public Command
 	Exit()
 	{
 		_name = "exit";
-		_description = "adssa";
+		_description = "Disconnect from the IRC server";
 		_usage = "exit";
-		_example = "exit";
+		_example[0] = "exit";
 	}
 
 	void execute()

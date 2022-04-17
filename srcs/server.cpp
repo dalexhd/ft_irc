@@ -6,13 +6,15 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/12 16:42:46 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/17 19:29:41 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/server.hpp"
 
+#include "../includes/commands/Echo.hpp"
 #include "../includes/commands/Exit.hpp"
+#include "../includes/commands/Help.hpp"
 #include "../includes/commands/Info.hpp"
 #include "../includes/commands/Ping.hpp"
 
@@ -79,22 +81,22 @@ void Server::createServerPoll(void)
 				}
 				else if (i > 0)
 				{
-					std::string message = _clients[i - 1]->read();
+					Message *message = _clients[i - 1]->read();
 					std::map<std::string, Command *>::iterator it;
-					bool                                       status = false;
 					for (it = _commands.begin(); it != _commands.end(); it++)
 					{
-						if (it->first == message)
+						if (it->first == message->getCmd())
 						{
 							it->second->setSender(_clients[i - 1], i - 1);
 							it->second->setServer(this);
+							it->second->setMessage(message);
 							it->second->execute();
-							status = true;
 							break;
 						}
 					}
-					if (!status)
-						std::cout << "Received non existant command: " << message << std::endl;
+					if (message->getCmd() == "close")
+						_status = Status(CLOSED);
+					delete message;
 				}
 			}
 		}
@@ -120,7 +122,8 @@ void Server::setupCommands(void)
 	_commands["ping"] = new Ping();
 	_commands["info"] = new Info();
 	_commands["exit"] = new Exit();
-	_commands["msg"] = new Exit();
+	_commands["echo"] = new Echo();
+	_commands["help"] = new Help();
 }
 
 Server::~Server(void)
@@ -129,5 +132,9 @@ Server::~Server(void)
 	// We delete all commands
 	for (; it != _commands.end(); it++)
 		delete it->second;
+	// We delete all clients
+	for (size_t i = 0; i < _clients.size(); i++)
+		delete (_clients[i]);
+	_clients.clear();
 	std::cout << "Server closed!" << std::endl;
 }

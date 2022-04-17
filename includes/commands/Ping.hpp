@@ -10,9 +10,9 @@ class Ping : public Command
 	Ping()
 	{
 		_name = "ping";
-		_description = "adssa";
+		_description = "Just ping-pong the server";
 		_usage = "ping";
-		_example = "ping";
+		_example[0] = "ping";
 	}
 
 	void execute()

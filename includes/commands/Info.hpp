@@ -24,9 +24,9 @@ class Info : public Command
 	Info()
 	{
 		_name = "info";
-		_description = "sadasd";
+		_description = "Get info about the current IRC server";
 		_usage = "info";
-		_example = "info";
+		_example[0] = "info";
 	}
 
 	void execute()
