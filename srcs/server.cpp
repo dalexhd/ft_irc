@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/09 20:07:24 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:42:46 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,6 @@ void Server::createServerListener()
 	if (listen(_socket, MAX_CONNECTIONS) == -1) // Make listen socket
 		throw std::runtime_error("error: listen");
 	std::cout << "Server is listening on port " << port << std::endl;
-}
-
-void Server::removeClientFromServer(size_t clientId)
-{
-	// First we delete the client pointer, this will execute the client
-	// destructor which will close the socket. delete _clients[];
-	delete _clients[clientId];
-	// Then we remove the client from the clients map containers.
-	_clients.erase(_clients.begin() + clientId);
-	// Then we remove the client from the clients _pfds.
-	_pfds.erase(_pfds.begin() + clientId + 1);
 }
 
 void Server::createServerPoll(void)
@@ -131,6 +120,7 @@ void Server::setupCommands(void)
 	_commands["ping"] = new Ping();
 	_commands["info"] = new Info();
 	_commands["exit"] = new Exit();
+	_commands["msg"] = new Exit();
 }
 
 Server::~Server(void)
