@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/17 19:29:41 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/22 15:46:48 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ void Server::createServerListener()
 {
 	int      yes = 1;
 	addrinfo hints, *servinfo;
+	std::memset(&hints, 0, sizeof(addrinfo));
 
-	hints.ai_family = AF_INET;
+	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
-	hints.ai_flags = AI_PASSIVE;
+	hints.ai_flags = AI_CANONNAME;
 
 	// We get the server address.
 	if (getaddrinfo(host.c_str(), port.c_str(), &hints, &servinfo) != 0)
