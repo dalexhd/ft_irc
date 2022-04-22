@@ -86,23 +86,24 @@ Most IRC servers limit messages to 512 bytes in length, including the trailing `
 
 ---
 
-## Numeric Replies
+## NUMERIC REPLIES
+https://modern.ircdocs.horse/#numerics
 
 RPL_WELCOME (001)
 
-- Message: "<client> :Welcome to the <networkname> Network, <nick>[!<user>@<host>]"
+- Message: "-client- :Welcome to the <networkname> Network, <nick>[!<user>@<host>]"
 
 - Usecase: After client registration
 
 RPL_YOURHOST (002)
 
-- Message: "<client> :Your host is <servername>, running version <version>"
+- Message: "-client- :Your host is <servername>, running version <version>"
 - Usecase: Part of the post-registration greeting
 
 RPL_CREATED (003)
 
-- Message:
-- Usecase:
+- Message: "-client- :This server was created <datetime>"
+- Usecase: Part of the post-registration greeting,
 
 RPL_MYINFO (004)
 
@@ -149,6 +150,8 @@ RPL_UMODEIS (221)
 - Message:
 - Usecase:
 
+## ADMIN
+
   RPL_ADMINME (256)
 
 - Message:
@@ -169,10 +172,14 @@ RPL_UMODEIS (221)
 - Message:
 - Usecase:
 
+#
+
   RPL_TRYAGAIN (263)
 
-- Message:
-- Usecase:
+- Message: "<client> <command> :Please wait a while and try again."
+- Usecase: When a server drops a command without processing it, this numeric MUST be sent to inform the client.
+
+## LUSERS
 
   RPL_LOCALUSERS (265)
 
@@ -184,16 +191,18 @@ RPL_UMODEIS (221)
 - Message:
 - Usecase:
 
+#
+
   RPL_WHOISCERTFP (276)
 
 - Message:
 - Usecase:
 
   RPL_NONE (300)
-
 - Message:
 - Usecase:
 
+## AWAY
   RPL_AWAY (301)
 
 - Message:
@@ -209,7 +218,9 @@ RPL_UMODEIS (221)
 - Message:
 - Usecase:
 
-  RPL_NOWAWAY (306)
+## WHO
+
+ RPL_NOWAWAY (306)
 
 - Message:
 - Usecase:
@@ -269,21 +280,23 @@ RPL_WHOISSPECIAL (320)
 - Message:
 - Usecase:
 
+## LIST
 RPL_LISTSTART (321)
 
-- Message:
-- Usecase:
+- Message:  "<client> Channel :Users  Name"
+- Usecase: this numeric marks the start of a channel list
 
 RPL_LIST (322)
 
-- Message:
-- Usecase:
+- Message:  "<client> <channel> <client count> :<topic>"
+- Usecase: Sent as a reply to the LIST command,information about a channel to the client. <channel> is the name of the channel. <client count> is an integer indicating how many clients are joined to that channel. <topic> is the channel’s topic
 
 RPL_LISTEND (323)
 
-- Message:
-- Usecase:
+- Message: "<client> :End of /LIST"
+- Usecase: Sent as a reply to the LIST command, this numeric indicates the end of a LIST response.
 
+#
   RPL_CHANNELMODEIS (324)
 
 - Message:
@@ -354,10 +367,12 @@ RPL_NAMREPLY (353)
 - Message:
 - Usecase:
 
+## NAMES
+
 RPL_ENDOFNAMES (366)
 
-- Message:
-- Usecase:
+- Message: "<client> <channel> :End of /NAMES list"
+- Usecase: Sent as a reply to the NAMES command, this numeric specifies the end of a list of channel member names.
 
 RPL_BANLIST (367)
 
@@ -374,15 +389,17 @@ RPL_ENDOFWHOWAS (369)
 - Message:
 - Usecase:
 
+## INFO
+
 RPL_INFO (371)
 
-- Message:
-- Usecase:
+- Message: "<client> :<string>"
+- Usecase: Sent as a reply to the INFO command, this numeric returns human-readable information describing the server: e.g. its version, list of authors and contributors, and any other miscellaneous information which may be considered to be relevant.
 
 RPL_ENDOFINFO (374)
 
-- Message:
-- Usecase:
+- Message: "<client> :End of INFO list"
+- Usecase: Indicates the end of an INFO response.
 
 RPL_MOTDSTART (375)
 
@@ -423,6 +440,8 @@ RPL_TIME (391)
 
 - Message:
 - Usecase:
+
+## ERRORS
   ERR_UNKNOWNERROR (400)
 - Message:
 - Usecase:
