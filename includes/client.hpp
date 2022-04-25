@@ -24,9 +24,12 @@ class Client
   public:
 	int         _fd;
 	std::string name;
+	std::vector<Message> _messagesSent;
+	std::vector<Message> _messagesReceived;
+	bool        _is_ope;
 
   public:
-	Client(int &fd, std::string name) : _fd(fd), name(name){};
+	Client(int &fd, std::string name) : _fd(fd), name(name), _is_ope(false){};
 	~Client()
 	{
 		close(_fd);
@@ -36,8 +39,19 @@ class Client
 
 	// Helpers
 	void     message(char const *message);
-	Message *read(void) const;
+	Message *read(void);
 	void     disconnect(void);
+
+	// Getters
+	std::vector<Message> messagesSent() const
+	{
+		return _messagesSent;
+	};
+
+	std::vector<Message> messagesReceived() const
+	{
+		return _messagesReceived;
+	};
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/22 15:46:48 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:31:26 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "../includes/commands/Help.hpp"
 #include "../includes/commands/Info.hpp"
 #include "../includes/commands/Ping.hpp"
+#include "../includes/commands/Ban.hpp"
+#include "../includes/commands/Ope.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -91,13 +93,16 @@ void Server::createServerPoll(void)
 							it->second->setSender(_clients[i - 1], i - 1);
 							it->second->setServer(this);
 							it->second->setMessage(message);
-							it->second->execute();
+							if (!it->second->hasOpe() ||
+							    (it->second->hasOpe() && _clients[i - 1]->_is_ope))
+								it->second->execute();
+							else
+								it->second->missingOpe();
 							break;
 						}
 					}
 					if (message->getCmd() == "close")
 						_status = Status(CLOSED);
-					delete message;
 				}
 			}
 		}
@@ -125,6 +130,8 @@ void Server::setupCommands(void)
 	_commands["exit"] = new Exit();
 	_commands["echo"] = new Echo();
 	_commands["help"] = new Help();
+	_commands["ban"] = new Ban();
+	_commands["ope"] = new Ope();
 }
 
 Server::~Server(void)

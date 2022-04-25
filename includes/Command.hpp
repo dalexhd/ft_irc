@@ -11,7 +11,9 @@ class Command
 	std::string                   _name;
 	std::string                   _description;
 	std::string                   _usage;
+	bool                          _is_ope;
 	std::map<size_t, std::string> _example;
+
 	// Command non related vars
 	Client * _sender;
 	Server * _server;
@@ -48,9 +50,20 @@ class Command
 	{
 		_message = message;
 	};
+	bool hasOpe(void)
+	{
+		return (_is_ope);
+	};
 
   public:
 	virtual void execute() = 0;
+	Command() : _is_ope(false){};
+	void         missingOpe(void)
+	{
+		_sender->message(
+		    std::string("You need operator role in order to exec " + _name + "\n")
+		        .c_str());
+	};
 	virtual ~Command()
 	{
 		std::cout << "Command " << _name << " destructor called" << std::endl;
