@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/17 18:10:50 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/22 18:52:13 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void Client::message(char const *message)
 		throw std::runtime_error("Error sending message");
 }
 
-Message *Client::read(void) const
+Message *Client::read(void)
 {
 	char buffer[MAX_BUFFER_SIZE];
 
@@ -30,5 +30,6 @@ Message *Client::read(void) const
 	}
 	buffer[strlen(buffer) - 2] = '\0';
 	std::string tmp = std::string(buffer);
-	return (new Message(tmp));
+	_messagesSent.push_back(Message(tmp));
+	return (&(_messagesSent.back()));
 }
