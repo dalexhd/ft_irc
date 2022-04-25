@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/17 18:48:56 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:30:21 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include "./Color.hpp"
 #include "./client.hpp"
 #include "./config.hpp"
+#include "./functions.hpp"
+
 
 // Commands
 class Command;

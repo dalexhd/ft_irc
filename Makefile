@@ -27,7 +27,7 @@ COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
 
-UTILS				=	utils/validation.cpp
+UTILS				=	utils/validation.cpp utils/functions.cpp
 
 SRCS				=	server.cpp client.cpp Message.cpp
 

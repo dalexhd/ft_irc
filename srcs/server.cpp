@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/25 18:31:26 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:33:43 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include "../includes/commands/Ping.hpp"
 #include "../includes/commands/Ban.hpp"
 #include "../includes/commands/Ope.hpp"
+#include "../includes/commands/Name.hpp"
+#include "../includes/commands/PrivMsg.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -77,7 +79,7 @@ void Server::createServerPoll(void)
 					int new_fd;
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
-					_clients.push_back(new Client(new_fd, std::string("user")));
+					_clients.push_back(new Client(new_fd, std::string(std::string("user" + itoa(_clients.size() + 1)))));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
 					std::cout << "Client connected" << std::endl;
@@ -132,6 +134,8 @@ void Server::setupCommands(void)
 	_commands["help"] = new Help();
 	_commands["ban"] = new Ban();
 	_commands["ope"] = new Ope();
+	_commands["name"] = new Name();
+	_commands["privmsg"] = new PrivMsg();
 }
 
 Server::~Server(void)
