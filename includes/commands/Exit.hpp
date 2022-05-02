@@ -9,6 +9,8 @@ class Exit : public Command
   public:
 	Exit()
 	{
+		_min_params = 0;
+		_max_params = 0;
 		_name = "exit";
 		_description = "Disconnect from the IRC server";
 		_usage = "exit";

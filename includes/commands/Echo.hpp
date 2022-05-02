@@ -9,6 +9,8 @@ class Echo : public Command
   public:
 	Echo()
 	{
+		_min_params = 0;
+		_max_params = -1;
 		_name = "echo";
 		_description = "Print a set of strings";
 		_usage = "echo <string?>";

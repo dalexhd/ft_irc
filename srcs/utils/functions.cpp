@@ -6,11 +6,12 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:21:52 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/25 20:32:35 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/02 15:07:10 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/functions.hpp"
+#include <vector>
 
 std::string itoa(int a)
 {
@@ -25,3 +26,4 @@ std::string itoa(int a)
 	}
 	return ss;
 }
+

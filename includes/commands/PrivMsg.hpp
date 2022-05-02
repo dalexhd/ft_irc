@@ -9,6 +9,8 @@ class PrivMsg : public Command
   public:
 	PrivMsg()
 	{
+		_min_params = 0;
+		_max_params = -1;
 		_name = "privmsg";
 		_description = "Send message to the user";
 		_usage = "privmsg <nickname> <message>";

@@ -9,6 +9,8 @@ class Ping : public Command
   public:
 	Ping()
 	{
+		_min_params = 0;
+		_max_params = 1;
 		_name = "ping";
 		_description = "Just ping-pong the server";
 		_usage = "ping";
