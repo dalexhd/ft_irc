@@ -83,6 +83,7 @@ class Command
 	{
 		std::cout << "Command " << _name << " destructor called" << std::endl;
 	};
+
 };
 
 #endif

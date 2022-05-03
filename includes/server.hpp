@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/25 20:30:21 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/03 11:15:35 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ class Server
 	void removeClientFromServer(size_t clientId);
 	int  readClient(size_t &i);
 	void setupCommands(void);
+	Command *findcmd(std::string str);
 };
 
 #endif

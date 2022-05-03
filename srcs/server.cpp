@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/03 00:17:23 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/03 11:16:38 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,32 +88,28 @@ void Server::createServerPoll(void)
 				{
 					Message *message = _clients[i - 1]->read();
 					std::map<std::string, Command *>::iterator it;
-					for (it = _commands.begin(); it != _commands.end(); it++)
+					if(findcmd((std::string)message->getCmd()))
 					{
-						if (it->first == message->getCmd())
+						Command *cmd = findcmd((std::string)message->getCmd());
+						// command parse
+						std::map<size_t, std::string> p = message->getParams();
+						//for(std::map<size_t, std::string>::iterator itt = p.begin(); itt != p.end(); ++itt)
+							//std::cout << itt->second << p.size() << " ";
+						if((int)p.size() < cmd->getMinParams() || ((int)p.size() > cmd->getMaxParams() && cmd->getMaxParams() != -1))
 						{
-							// command parse
-							std::map<size_t, std::string> p = message->getParams();
-							for(std::map<size_t, std::string>::iterator itt = p.begin(); itt != p.end(); ++itt)
-								std::cout << itt->second << p.size() << " ";
-							if((int)p.size() < it->second->getMinParams() || ((int)p.size() > it->second->getMaxParams() && it->second->getMaxParams() != -1))
-							{
-								it->second->getSender()->message("error: bad num of params");
-								break;
-
-							}
-
-							std::cout << std::endl;
-							it->second->setSender(_clients[i - 1], i - 1);
-							it->second->setServer(this);
-							it->second->setMessage(message);
-							if (!it->second->hasOpe() ||
-							    (it->second->hasOpe() && _clients[i - 1]->_is_ope))
-								it->second->execute();
-							else
-								it->second->missingOpe();
+							cmd->getSender()->message("error: bad num of params");
 							break;
 						}
+						std::cout << std::endl;
+						cmd->setSender(_clients[i - 1], i - 1);
+						cmd->setServer(this);
+						cmd->setMessage(message);
+						if (!cmd->hasOpe() ||
+							(cmd->hasOpe() && _clients[i - 1]->_is_ope))
+							cmd->execute();
+						else
+							cmd->missingOpe();
+						break;
 					}
 					if (message->getCmd() == "close")
 						_status = Status(CLOSED);
@@ -162,3 +158,18 @@ Server::~Server(void)
 	_clients.clear();
 	std::cout << "Server closed!" << std::endl;
 }
+
+
+Command *Server::findcmd(std::string str)
+{
+	std::map<std::string, Command *>::iterator it;
+	for (it = _commands.begin(); it != _commands.end(); it++)
+	{
+		if (str.compare((std::string)it->first) == 0)
+		{
+			return (it->second);
+		}
+	}
+	return(NULL);
+}
+
