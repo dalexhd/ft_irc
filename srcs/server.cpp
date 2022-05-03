@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/03 11:22:18 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/03 11:39:37 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,21 @@ void Server::createServerPoll(void)
 					if(findCmd((std::string)message->getCmd()))
 					{
 						Command *cmd = findCmd((std::string)message->getCmd());
-						// command parse
+
 						std::map<size_t, std::string> p = message->getParams();
 						//for(std::map<size_t, std::string>::iterator itt = p.begin(); itt != p.end(); ++itt)
 							//std::cout << itt->second << p.size() << " ";
+						// Command Parse
 						if((int)p.size() < cmd->getMinParams() || ((int)p.size() > cmd->getMaxParams() && cmd->getMaxParams() != -1))
 						{
 							cmd->getSender()->message("error: bad num of params");
 							break;
 						}
-						std::cout << std::endl;
+
 						cmd->setSender(_clients[i - 1], i - 1);
 						cmd->setServer(this);
 						cmd->setMessage(message);
+
 						if (!cmd->hasOpe() ||
 							(cmd->hasOpe() && _clients[i - 1]->_is_ope))
 							cmd->execute();
@@ -174,8 +176,7 @@ Command *Server::findCmd(std::string str)
 }
 Client *Server::findClient(std::string str)
 {
-	std::vector<Client *>::iterator it;
-	for (int i = 0; i <_clients.size(); i++)
+	for (size_t i = 0; i <_clients.size(); i++)
 	{
 		if (str.compare((std::string)_clients[i]->_name) == 0)
 		{
