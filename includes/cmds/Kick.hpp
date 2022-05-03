@@ -13,6 +13,7 @@ class Kick : public Command
 		_description = "expulsar del servidor";
 		_usage = "kick";
 		_example[0] = "kick <canal> <usuario> :[<comentario>]";
+		_is_ope = true;
 	}
 
 	void execute()
