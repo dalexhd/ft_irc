@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/03 11:16:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/03 11:22:18 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ void Server::createServerPoll(void)
 				{
 					Message *message = _clients[i - 1]->read();
 					std::map<std::string, Command *>::iterator it;
-					if(findcmd((std::string)message->getCmd()))
+					if(findCmd((std::string)message->getCmd()))
 					{
-						Command *cmd = findcmd((std::string)message->getCmd());
+						Command *cmd = findCmd((std::string)message->getCmd());
 						// command parse
 						std::map<size_t, std::string> p = message->getParams();
 						//for(std::map<size_t, std::string>::iterator itt = p.begin(); itt != p.end(); ++itt)
@@ -160,7 +160,7 @@ Server::~Server(void)
 }
 
 
-Command *Server::findcmd(std::string str)
+Command *Server::findCmd(std::string str)
 {
 	std::map<std::string, Command *>::iterator it;
 	for (it = _commands.begin(); it != _commands.end(); it++)
@@ -171,5 +171,18 @@ Command *Server::findcmd(std::string str)
 		}
 	}
 	return(NULL);
+}
+Client *Server::findClient(std::string str)
+{
+	std::vector<Client *>::iterator it;
+	for (int i = 0; i <_clients.size(); i++)
+	{
+		if (str.compare((std::string)_clients[i]->_name) == 0)
+		{
+			return (_clients[i]);
+		}
+	}
+	return(NULL);
+
 }
 
