@@ -9,7 +9,6 @@ class Ope : public Command
   public:
 	Ope()
 	{
-		_min_params = 0;
 		_max_params = 1;
 		_name = "ope";
 		_description = "Assign operator role yourself or a client";

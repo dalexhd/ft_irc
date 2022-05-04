@@ -9,7 +9,6 @@ class Ban : public Command
   public:
 	Ban()
 	{
-		_min_params = 0;
 		_max_params = 1;
 		_name = "ban";
 		_description = "Just ban a client";

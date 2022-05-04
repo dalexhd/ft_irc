@@ -9,7 +9,6 @@ class Name : public Command
   public:
 	Name()
 	{
-		_min_params = 0;
 		_max_params = 1;
 		_name = "name";
 		_description = "Set your nickname";

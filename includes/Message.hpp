@@ -6,7 +6,6 @@
 #include <map>
 #include <string>
 
-
 class Message
 {
   public:
@@ -21,6 +20,5 @@ class Message
 	std::string                   getCmd(void) const;
 	std::map<size_t, std::string> getParams(void) const;
 };
-
 
 #endif
