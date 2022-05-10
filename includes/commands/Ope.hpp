@@ -31,19 +31,18 @@ class Ope : public Command
 		}
 		else
 		{
-			for (size_t i = 0; i < _server->_clients.size(); i++)
+			Client *client;
+			if((client = _server->findClient(_message->getParams()[0])))
 			{
-				if (_server->_clients[i]->_name == _message->getParams()[0])
-				{
-					_server->_clients[i]->_is_ope = !_server->_clients[i]->_is_ope;
-					_sender->message(std::string(_server->_clients[i]->_is_ope ? "Now the client " + _server->_clients[i]->_name + " is an operator!\n" :
-						"Now the client " + _server->_clients[i]->_name + " isn't an operator!\n").c_str());
-					_server->_clients[i]->message(std::string(_server->_clients[i]->_is_ope ? "Now you're an operator!\n" :
-						"Now you aren't an operator!\n").c_str());
-					return ;
-				}
+				client->_is_ope = !client->_is_ope;
+				_sender->message(std::string(client->_is_ope ? "Now the client " + client->_name + " is an operator!\n" :
+					"Now the client " + client->_name + " isn't an operator!\n").c_str());
+				client->message(std::string(client->_is_ope ? "Now you're an operator!\n" :
+					"Now you aren't an operator!\n").c_str());
+				return ;
 			}
-			_sender->message("Client not found!\n");
+			else
+				_sender->message("Client not found!\n");
 		}
 	}
 };

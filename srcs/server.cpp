@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 12:53:35 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:43:35 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,14 +162,6 @@ Command *Server::findCmd(std::string str)
 
 	if(_commands.find(str) != _commands.end())
 		return (_commands.find(str)->second);
-	/*std::map<std::string, Command *>::iterator it;
-	for (it = _commands.begin(); it != _commands.end(); it++)
-	{
-		if (str.compare((std::string)it->first) == 0)
-		{
-			return (it->second);
-		}
-	}*/
 	return(NULL);
 }
 Client *Server::findClient(std::string str)
@@ -177,9 +169,7 @@ Client *Server::findClient(std::string str)
 	for (size_t i = 0; i <_clients.size(); i++)
 	{
 		if (str.compare((std::string)_clients[i]->_name) == 0)
-		{
 			return (_clients[i]);
-		}
 	}
 	return(NULL);
 
