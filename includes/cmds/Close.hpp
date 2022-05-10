@@ -17,7 +17,6 @@ class Close : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

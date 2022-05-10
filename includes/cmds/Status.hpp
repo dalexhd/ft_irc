@@ -17,7 +17,6 @@ class Status : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

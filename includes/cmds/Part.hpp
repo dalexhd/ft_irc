@@ -18,7 +18,6 @@ class Part : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

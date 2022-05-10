@@ -18,7 +18,6 @@ class Quit : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

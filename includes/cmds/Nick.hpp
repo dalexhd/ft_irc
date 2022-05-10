@@ -13,11 +13,11 @@ class Nick : public Command
 		_description = "";
 		_usage = "nick";
 		_example[0] = "nick <nick>";
-		_example[1] = "nick <nuevo_nick>"
+		_example[1] = "nick <nuevo_nick>";
 	}
 
 	void execute()
-
+	{
 	}
 };
 #endif

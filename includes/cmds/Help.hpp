@@ -17,7 +17,6 @@ class Help : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

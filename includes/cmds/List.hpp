@@ -10,14 +10,56 @@ class List : public Command
 	List()
 	{
 		_name = "list";
-		_description = "salir del servidor con mensaje de salida";
-		_usage = "list";
-		_example[0] = "list [<canal>{,<canal>}";
+		_description = "listar informacion del canal";
+		_usage = "list [<canales>]";
+		_example[0] = "list";
+		_example[0] = "list #hola";
+		_example[0] = "list #hola,#chau";
+	}
+
+	bool validate(void)
+	{
+		std::map<size_t, std::string> p = _message->getParams();
+		if (p.size() > 1)
+		{
+			_sender->message("Wrong command format. Ex: list "
+			                 "[<canal>{,<canal>}]\n");
+			return (false);
+		}
+		return (true);
 	}
 
 	void execute()
 	{
-
+		if (!validate())
+			return;
+		std::map<size_t, std::string> p = _message->getParams();
+		if (p.size() == 1)
+		{
+			std::vector<std::string> _ch_params = split(p[0], ",");
+			for (size_t i = 0; i < _ch_params.size(); i++)
+			{
+				Channel *channel = _server->getChannel(_ch_params[i]);
+				if (channel)
+				{
+					_sender->message(std::string("Channel: " + channel->getName() + " " + (channel->joined(_sender) ? "(Joined)" : "") + "\n")
+					                     .c_str());
+				}
+				else
+					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
+					                     .c_str());
+			}
+		}
+		else
+		{
+			std::vector<Channel *> channels = _server->getChannels();
+			for (size_t i = 0; i < channels.size(); i++)
+			{
+				_sender->message(std::string("Channel: " + channels[i]->getName() +
+				                             " " + (channels[i]->joined(_sender) ? "(Joined)" : "") + "\n")
+				                     .c_str());
+			}
+		}
 	}
 };
 #endif

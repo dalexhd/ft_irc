@@ -18,7 +18,6 @@ class Kick : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif

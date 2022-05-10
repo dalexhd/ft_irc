@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/25 20:30:21 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:06:17 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include <arpa/inet.h>
 #include <cstdlib>
 #include <fcntl.h>
-#include <functional>
+#include <string>
 
 // Our includes
+#include "./Channel.hpp"
 #include "./Color.hpp"
 #include "./client.hpp"
 #include "./config.hpp"
 #include "./functions.hpp"
-
 
 // Commands
 class Command;
@@ -45,6 +45,9 @@ class Server
 
 	// Commands
 	std::map<std::string, Command *> _commands;
+
+	// Channels
+	std::map<std::string, Channel *> _channels;
 
 	// Socket status
 	enum Status
@@ -76,6 +79,57 @@ class Server
 	void removeClientFromServer(size_t clientId);
 	int  readClient(size_t &i);
 	void setupCommands(void);
+
+  public:
+	// --------------
+	// Clients stuff
+	// --------------
+	Client *getClient(std::string &name)
+	{
+		for (size_t i = 0; i < _clients.size(); i++)
+		{
+			if (_clients[i]->_name == name)
+				return (_clients[i]);
+		}
+		return (NULL);
+	}
+
+	size_t getClientIndex(std::string &name)
+	{
+		for (size_t i = 0; i < _clients.size(); i++)
+		{
+			if (_clients[i]->_name == name)
+				return (i);
+		}
+		return (-1);
+	}
+
+	// --------------
+	// Channel stuff
+	// --------------
+	Channel *getChannel(std::string &name)
+	{
+		if (name.at(0) == '#')
+			name = name.substr(1);
+		return _channels[name];
+	}
+
+	std::vector<Channel *> getChannels(void)
+	{
+		std::vector<Channel *>                     channels;
+		std::map<std::string, Channel *>::iterator it;
+		for (it = _channels.begin(); it != _channels.end(); it++)
+			channels.push_back(it->second);
+		return channels;
+	}
+
+	Channel *createChannel(std::string &name, std::string &password)
+	{
+		if (name.at(0) == '#')
+			name = name.substr(1);
+		_channels[name] = new Channel(name, password);
+		return _channels[name];
+	}
 };
 
 #endif

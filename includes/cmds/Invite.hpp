@@ -13,12 +13,11 @@ class Invite : public Command
 		_description = "invita usuario a canal";
 		_usage = "invite";
 		_example[0] = "invite <nick> <canal>";
-//		_is_opec = true;
+		//		_is_opec = true;
 	}
 
 	void execute()
 	{
-
 	}
 };
 #endif

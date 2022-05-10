@@ -13,12 +13,11 @@ class Who : public Command
 		_description = "info sobre el usuario";
 		_usage = "who";
 		_example[0] = "who [<nombre> [<o>]]";
-		_example[1] = "who #uruguay"
+		_example[1] = "who #uruguay";
 	}
 
 	void execute()
 	{
-
 	}
 };
 #endif

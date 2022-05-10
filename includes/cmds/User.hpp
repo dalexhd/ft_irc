@@ -12,13 +12,13 @@ class User : public Command
 		_name = "user";
 		_description = "termina una sesión";
 		_usage = "user";
-		_example[0] = "user <nombre de usuario> <nombre de host> <nombre de servidor>: <nombre real>";
-		_example[1] = "user telnet"
+		_example[0] = "user <nombre de usuario> <nombre de host> <nombre de "
+		              "servidor>: <nombre real>";
+		_example[1] = "user telnet";
 	}
 
 	void execute()
 	{
-
 	}
 };
 #endif

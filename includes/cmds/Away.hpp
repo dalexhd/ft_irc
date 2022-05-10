@@ -17,7 +17,6 @@ class Away : public Command
 
 	void execute()
 	{
-
 	}
 };
 #endif
