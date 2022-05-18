@@ -6,11 +6,11 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 18:06:27 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/server.hpp"
+#include "../includes/Server.hpp"
 
 #include "../includes/commands/Ban.hpp"
 #include "../includes/commands/Echo.hpp"

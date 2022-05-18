@@ -66,19 +66,13 @@ class PrivMsg : public Command
 				}
 			}
 		}
-		if (p[1].at(0) != ':')
-		{
-			_sender->message("Wrong command format. Ex: privmsg "
-			                 "#uruguay,#peru :hola, buenas tardes\n");
-			return (false);
-		}
 		return (true);
 	}
 
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		std::string msg = std::string(p[1].substr(1) + "\n").c_str();
+		std::string                   msg = std::string(p[1] + "\n").c_str();
 		if (p[0].at(0) == '#')
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
