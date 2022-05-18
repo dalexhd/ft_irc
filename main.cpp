@@ -6,11 +6,11 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:36:41 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/25 19:43:09 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/server.hpp"
+#include "includes/Server.hpp"
 
 int main(int argc, char **argv)
 {

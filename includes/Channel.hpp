@@ -2,7 +2,7 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
-#include "./client.hpp"
+#include "./Client.hpp"
 #include <ctime>
 #include <vector>
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.hpp                                         :+:      :+:    :+:   */
+/*   Server.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/18 18:32:48 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:38:16 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 // Our includes
 #include "./Channel.hpp"
+#include "./Client.hpp"
 #include "./Color.hpp"
-#include "./client.hpp"
 #include "./config.hpp"
 #include "./functions.hpp"
 

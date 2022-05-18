@@ -2,7 +2,7 @@
 #define COMMAND_H
 
 // Our includes
-#include "./server.hpp"
+#include "./Server.hpp"
 
 class Command
 {
