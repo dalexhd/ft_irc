@@ -71,8 +71,12 @@ class Command
 
   public:
 	virtual void execute() = 0;
-	Command() : _is_ope(false) , _min_params(0) ,_max_params(0) {};
-	void         missingOpe(void)
+	virtual bool validate(void)
+	{
+		return (true);
+	}
+	Command() : _is_ope(false){};
+	void missingOpe(void)
 	{
 		_sender->message(
 		    std::string("You need operator role in order to exec " + _name + "\n")

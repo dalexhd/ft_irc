@@ -22,11 +22,11 @@
 class Client
 {
   public:
-	int         _fd;
-	std::string _name;
+	int                  _fd;
+	std::string          _name;
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
-	bool        _is_ope;
+	bool                 _is_ope;
 
   public:
 	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false){};
@@ -58,7 +58,8 @@ class Client
 	void setName(std::string const &name)
 	{
 		_name = name;
-		this->message(std::string("Your name has been changed to " + _name + "\n").c_str());
+		this->message(
+		    std::string("Your name has been changed to " + _name + "\n").c_str());
 	};
 };
 

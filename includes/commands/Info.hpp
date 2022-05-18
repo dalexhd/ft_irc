@@ -18,13 +18,16 @@ class Info : public Command
 
 	void execute()
 	{
-		size_t connectedClients = _server->_clients.size();
-		_sender->message(std::string("Connected clients: " + itoa(connectedClients) + "\n" + "Name: " + _sender->_name + "\n").c_str());
+		_sender->message(
+		    std::string("Connected clients: " + itoa(_server->_clients.size()) + "\n" +
+		                "Name: " + _sender->_name + "\n")
+		        .c_str());
 		for (size_t i = 0; i < _server->_clients.size(); i++)
 		{
 			if (_server->_clients[i] != _sender)
 			{
-				_sender->message(std::string("Client " + _server->_clients[i]->_name + "\n").c_str());
+				_sender->message(
+				    std::string("Client " + _server->_clients[i]->_name + "\n").c_str());
 			}
 		}
 	}
