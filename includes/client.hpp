@@ -19,6 +19,8 @@
 #include "./Message.hpp"
 #include "./config.hpp"
 
+#include <fstream>
+
 class Client
 {
   public:
@@ -29,9 +31,20 @@ class Client
 	bool                 _is_ope;
 
   public:
-	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false){
-
-		message("\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n-​ |Welcome to FT_IRC Network!\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n\nIf you are looking for assistance, please try:\nhelp\n\n");
+	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false)
+	{
+		std::string line;
+		std::ifstream myfile ("Welcome.txt", std::ifstream::in);
+		if (myfile.is_open())
+		{
+			while ( getline (myfile,line) )
+			{
+				std::cout << line << '\n';
+			}
+			 myfile.close();
+		}
+		else std::cout << "Unable to open file";
+	//	message("\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n-​ |Welcome to FT_IRC Network!\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n\nIf you are looking for assistance, please try:\nhelp\n\n");
 	};
 	~Client()
 	{
