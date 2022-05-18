@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 18:06:27 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:33:22 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,17 @@
 #include "../includes/commands/Ope.hpp"
 #include "../includes/commands/Ping.hpp"
 
+#include "../includes/cmds/PrivMsg.hpp"
+
+//CHANNEL FUNCTIONS
+
 #include "../includes/cmds/Join.hpp"
 #include "../includes/cmds/List.hpp"
-#include "../includes/cmds/PrivMsg.hpp"
+#include "../includes/cmds/Part.hpp"
+//#include "../includes/cmds/Names.hpp"
+#include "../includes/cmds/Mode.hpp"
+#include "../includes/cmds/Invite.hpp"
+#include "../includes/cmds/Kick.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.

@@ -29,7 +29,10 @@ class Client
 	bool                 _is_ope;
 
   public:
-	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false){};
+	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false){
+
+		message("\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n-​ |Welcome to FT_IRC Network!\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n\nIf you are looking for assistance, please try:\nhelp\n\n");
+	};
 	~Client()
 	{
 		close(_fd);

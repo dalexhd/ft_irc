@@ -31,24 +31,29 @@ class List : public Command
 
 	void execute()
 	{
+		/*std::cout << "NUM OF CHANNELS " << _server->getChannels().size() << std::endl;
+		if(_server->getChannels().size() == 0)
+			std::cout << "NO HAY CANALES " << std::endl;*/
 		if (!validate())
 			return;
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() == 1)
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
+
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
 				if (channel)
 				{
 					_sender->message(std::string("Channel: " + channel->getName() + " " + (channel->joined(_sender) ? "(Joined)" : "") + "\n")
-					                     .c_str());
+										.c_str());
 				}
 				else
 					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
-					                     .c_str());
+										.c_str());
 			}
+
 		}
 		else
 		{
