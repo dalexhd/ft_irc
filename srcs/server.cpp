@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/19 15:47:35 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:56:51 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,7 @@ Command *Server::findCmd(std::string str)
 		return (cmd->second);
 	return (NULL);
 }
+
 Client *Server::findClient(std::string str)
 {
 	for (size_t i = 0; i < _clients.size(); i++)
