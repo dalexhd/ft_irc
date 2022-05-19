@@ -9,7 +9,6 @@ class Info : public Command
   public:
 	Info()
 	{
-		_max_params = 1;
 		_name = "info";
 		_description = "Get info about the current IRC server";
 		_usage = "info";

@@ -9,7 +9,6 @@ class Help : public Command
   public:
 	Help()
 	{
-		_max_params = 1;
 		_name = "help";
 		_description = "See a guide about each implemented command";
 		_usage = "help <command?>";

@@ -9,7 +9,6 @@ class Ope : public Command
   public:
 	Ope()
 	{
-		_max_params = 1;
 		_name = "ope";
 		_description = "Assign operator role yourself or a client";
 		_usage = "ope <nikname?>";
@@ -32,14 +31,17 @@ class Ope : public Command
 		else
 		{
 			Client *client;
-			if((client = _server->findClient(_message->getParams()[0])))
+			if ((client = _server->findClient(_message->getParams()[0])))
 			{
 				client->_is_ope = !client->_is_ope;
-				_sender->message(std::string(client->_is_ope ? "Now the client " + client->_name + " is an operator!\n" :
-					"Now the client " + client->_name + " isn't an operator!\n").c_str());
-				client->message(std::string(client->_is_ope ? "Now you're an operator!\n" :
-					"Now you aren't an operator!\n").c_str());
-				return ;
+				_sender->message(std::string(client->_is_ope ?
+				                                 "Now the client " + client->_name + " is an operator!\n" :
+				                                 "Now the client " + client->_name + " isn't an operator!\n")
+				                     .c_str());
+				client->message(
+				    std::string(client->_is_ope ? "Now you're an operator!\n" : "Now you aren't an operator!\n")
+				        .c_str());
+				return;
 			}
 			else
 				_sender->message("Client not found!\n");

@@ -13,8 +13,6 @@ class Command
 	std::string                   _usage;
 	bool                          _is_ope;
 	std::map<size_t, std::string> _example;
-	int                           _min_params;
-	int                           _max_params;
 
 	// Command non related vars
 	Client * _sender;
@@ -39,7 +37,7 @@ class Command
 	{
 		return _example;
 	};
-	Client * getSender() const
+	Client *getSender() const
 	{
 		return _sender;
 	};
@@ -60,14 +58,6 @@ class Command
 	{
 		return (_is_ope);
 	};
-	int getMinParams()
-	{
-		return (_min_params);
-	}
-	int getMaxParams()
-	{
-		return (_max_params);
-	}
 
   public:
 	virtual void execute() = 0;
@@ -86,7 +76,6 @@ class Command
 	{
 		std::cout << "Command " << _name << " destructor called" << std::endl;
 	};
-
 };
 
 #endif
