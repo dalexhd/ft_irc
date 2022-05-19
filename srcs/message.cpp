@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 18:09:31 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:40:29 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ static std::map<size_t, std::string> tokenize(std::string const &str, const char
 	{
 		end = str.find(delim, start);
 		if (str[start] == ':')
+		{
 			end = str.length();
+			start += 1;
+		}
 		ret.insert(make_pair(occurrences, str.substr(start, end - start)));
 		occurrences++;
 	}

@@ -6,11 +6,11 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 16:00:58 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:42:31 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/client.hpp"
+#include "../includes/Client.hpp"
 
 void Client::message(char const *message)
 {
