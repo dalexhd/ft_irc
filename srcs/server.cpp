@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:56:51 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ void Server::createServerPoll(void)
 					int new_fd;
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
-					_clients.push_back(new Client(
-					    new_fd, std::string(std::string("user" + itoa(_clients.size() + 1)))));
+					_clients.push_back(
+					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1))));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
 					std::cout << "Client connected" << std::endl;
@@ -94,18 +94,15 @@ void Server::createServerPoll(void)
 					std::map<std::string, Command *>::iterator it;
 					if ((it = _commands.find(message->getCmd())) != _commands.end())
 					{
-						it->second->setSender(_clients[i - 1], i - 1);
-						it->second->setServer(this);
-						it->second->setMessage(message);
-						if (it->second->validate())
-						{
-							if (!it->second->hasOpe() ||
-							    (it->second->hasOpe() && _clients[i - 1]->_is_ope))
-								it->second->execute();
-							else
-								it->second->missingOpe();
-							break;
-						}
+						Command *cmd = it->second;
+						cmd->setSender(_clients[i - 1], i - 1);
+						cmd->setServer(this);
+						cmd->setMessage(message);
+						if (!cmd->hasOpe() || (cmd->hasOpe() && _clients[i - 1]->_is_ope))
+							cmd->execute();
+						else
+							cmd->missingOpe();
+						break;
 					}
 					else if (message->getCmd() == "close")
 					{
@@ -165,4 +162,22 @@ Server::~Server(void)
 		delete (it_ch->second);
 	_channels.clear();
 	std::cout << "Server closed!" << std::endl;
+}
+
+Command *Server::findCmd(std::string str)
+{
+	std::map<std::string, Command *>::iterator cmd = _commands.find(str);
+	if (cmd != _commands.end())
+		return (cmd->second);
+	return (NULL);
+}
+
+Client *Server::findClient(std::string str)
+{
+	for (size_t i = 0; i < _clients.size(); i++)
+	{
+		if (str.compare(_clients[i]->_name) == 0)
+			return (_clients[i]);
+	}
+	return (NULL);
 }

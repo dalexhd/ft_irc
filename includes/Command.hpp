@@ -37,6 +37,10 @@ class Command
 	{
 		return _example;
 	};
+	Client *getSender() const
+	{
+		return _sender;
+	};
 	void setSender(Client *sender, size_t index)
 	{
 		_sender = sender;

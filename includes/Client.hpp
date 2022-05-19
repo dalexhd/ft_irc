@@ -39,6 +39,7 @@ class Client
 
 	// Helpers
 	void     message(char const *message);
+	void     message(std::string const message);
 	Message *read(void);
 	void     disconnect(void);
 
