@@ -24,7 +24,12 @@ class Echo : public Command
 
 		for (std::map<size_t, std::string>::iterator it = p.begin(); it != p.end(); ++it)
 			res += std::string(it->second + " ");
-		_sender->message(std::string(res + "\n").c_str());
+
+		for (size_t i = 0; i < _server->_clients.size(); i++)
+		{
+			if (_server->_clients[i] != _sender)
+				_server->_clients[i]->message(std::string(res + "\n").c_str());
+		}
 	}
 };
 #endif

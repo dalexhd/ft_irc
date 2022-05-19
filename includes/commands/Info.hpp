@@ -4,20 +4,6 @@
 // Our includes
 #include "../Command.hpp"
 
-std::string itoa(int a)
-{
-	std::string ss = ""; // create empty string
-	while (a)
-	{
-		int x = a % 10;
-		a /= 10;
-		char i = '0';
-		i = i + x;
-		ss = i + ss; // append new character at the front of the string!
-	}
-	return ss;
-}
-
 class Info : public Command
 {
   public:
@@ -31,9 +17,18 @@ class Info : public Command
 
 	void execute()
 	{
-		size_t connectedClients = _server->_clients.size();
 		_sender->message(
-		    std::string("Connected clients: " + itoa(connectedClients) + "\n").c_str());
+		    std::string("Connected clients: " + itoa(_server->_clients.size()) + "\n" +
+		                "Name: " + _sender->_name + "\n")
+		        .c_str());
+		for (size_t i = 0; i < _server->_clients.size(); i++)
+		{
+			if (_server->_clients[i] != _sender)
+			{
+				_sender->message(
+				    std::string("Client " + _server->_clients[i]->_name + "\n").c_str());
+			}
+		}
 	}
 };
 #endif

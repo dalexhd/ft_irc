@@ -27,9 +27,9 @@ COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
 
-UTILS				=	utils/validation.cpp
+UTILS				=	utils/validation.cpp utils/functions.cpp
 
-SRCS				=	server.cpp client.cpp Message.cpp
+SRCS				=	server.cpp client.cpp message.cpp
 
 SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS)) $(addprefix $(SRC_DIR),$(UTILS))
 

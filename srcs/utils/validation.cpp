@@ -6,11 +6,11 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:06:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/03/15 19:47:41 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/server.hpp"
+#include "../../includes/Server.hpp"
 
 bool validate_args(int argc, char **argv)
 {

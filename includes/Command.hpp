@@ -2,7 +2,7 @@
 #define COMMAND_H
 
 // Our includes
-#include "./server.hpp"
+#include "./Server.hpp"
 
 class Command
 {
@@ -11,7 +11,9 @@ class Command
 	std::string                   _name;
 	std::string                   _description;
 	std::string                   _usage;
+	bool                          _is_ope;
 	std::map<size_t, std::string> _example;
+
 	// Command non related vars
 	Client * _sender;
 	Server * _server;
@@ -35,6 +37,10 @@ class Command
 	{
 		return _example;
 	};
+	Client *getSender() const
+	{
+		return _sender;
+	};
 	void setSender(Client *sender, size_t index)
 	{
 		_sender = sender;
@@ -48,9 +54,24 @@ class Command
 	{
 		_message = message;
 	};
+	bool hasOpe(void)
+	{
+		return (_is_ope);
+	};
 
   public:
 	virtual void execute() = 0;
+	virtual bool validate(void)
+	{
+		return (true);
+	}
+	Command() : _is_ope(false){};
+	void missingOpe(void)
+	{
+		_sender->message(
+		    std::string("You need operator role in order to exec " + _name + "\n")
+		        .c_str());
+	};
 	virtual ~Command()
 	{
 		std::cout << "Command " << _name << " destructor called" << std::endl;
