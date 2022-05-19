@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/18 18:38:16 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:51:16 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,12 @@ class Server
 	void run();
 
 	// Helpers
-	bool is_running(void){return (_status == ONLINE);}
+	bool is_running(void)
+	{
+		return (_status == ONLINE);
+	}
 	Command *findCmd(std::string str);
-	Client *findClient(std::string str);
+	Client * findClient(std::string str);
 
   private:
 	void createServerListener(void);
