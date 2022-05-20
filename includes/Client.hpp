@@ -31,10 +31,24 @@ class Client
 	bool                 _is_ope;
 
   public:
+	std::string itoa(int a)
+	{
+		std::string ss = ""; // create empty string
+		while (a)
+		{
+			int x = a % 10;
+			a /= 10;
+			char i = '0';
+			i = i + x;
+			ss = i + ss; // append new character at the front of the string!
+		}
+		return ss;
+	}
+
 	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false)
 	{
 		std::string line;
-		std::ifstream myfile ("Welcome.txt", std::ifstream::in);
+		std::ifstream     myfile ("Welcome.txt", std::ifstream::in);
 		if (myfile.is_open())
 		{
 			while ( getline (myfile,line) )
@@ -44,6 +58,7 @@ class Client
 			 myfile.close();
 		}
 		else std::cout << "Unable to open file";
+
 	//	message("\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n-​ |Welcome to FT_IRC Network!\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n\nIf you are looking for assistance, please try:\nhelp\n\n");
 	};
 	~Client()

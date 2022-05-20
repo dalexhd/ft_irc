@@ -6,11 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/18 14:33:22 by aborboll         ###   ########.fr       */
-=======
-/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
->>>>>>> main
+/*   Updated: 2022/05/20 12:59:40 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,8 +150,10 @@ void Server::setupCommands(void)
 	_commands["ope"] = new Ope();
 	_commands["name"] = new Name();
 
+	// Channel commands
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
+	_commands["part"] = new Part();
 	_commands["list"] = new List();
 }
 
