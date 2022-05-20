@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['closed_307',['CLOSED',['../classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61',1,'Server']]]
+  ['closed_306',['CLOSED',['../classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61',1,'Server']]]
 ];

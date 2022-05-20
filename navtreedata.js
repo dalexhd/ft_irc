@@ -23,13 +23,12 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "IRC SERVER", "index.html", [
-    [ "USAGE", "index.html", [
+    [ "Classes", "annotated.html", [
+      [ "OUR OWN IRC SERVER", "index.html#autotoc_md0", null ],
       [ "SERVER", "index.html#autotoc_md1", null ],
       [ "CLIENT", "index.html#autotoc_md2", null ],
       [ "COMMANDS DOCS", "index.html#autotoc_md3", null ],
-      [ "[](#message-format)Message Format", "index.html#autotoc_md4", null ]
-    ] ],
-    [ "Classes", "annotated.html", [
+      [ "[](#message-format)Message Format", "index.html#autotoc_md4", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
