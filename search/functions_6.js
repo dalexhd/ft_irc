@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['getchannel_228',['getChannel',['../classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc',1,'Server']]],
-  ['getchannels_229',['getChannels',['../classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2',1,'Server']]],
-  ['getclient_230',['getClient',['../classServer.html#ae4313a2ec9463bf58b75860457c737fb',1,'Server']]],
-  ['getclientindex_231',['getClientIndex',['../classServer.html#a399e5a12513223a087897a4a08d62df2',1,'Server']]],
-  ['getcmd_232',['getCmd',['../classMessage.html#ad89a43eb39898c822b754288fef467b8',1,'Message']]],
-  ['getdescription_233',['getDescription',['../classCommand.html#a569e38b925b728ea506174d77c66e612',1,'Command']]],
-  ['getexample_234',['getExample',['../classCommand.html#a0da0ce77e86748a42aebb66f56040ca7',1,'Command']]],
-  ['getname_235',['getName',['../classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c',1,'Channel::getName()'],['../classCommand.html#a2686b48bc3d0fa0d5934396c72f0bdfc',1,'Command::getName()']]],
-  ['getparams_236',['getParams',['../classMessage.html#ae175384074674e34978f40261238d701',1,'Message']]],
-  ['getpassword_237',['getPassword',['../classChannel.html#a5220250205f35b248205e2a4ba41519d',1,'Channel']]],
-  ['getsender_238',['getSender',['../classCommand.html#a99274a8775f437acb302eefdb13057e5',1,'Command']]],
-  ['getusage_239',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]]
+  ['getchannel_231',['getChannel',['../classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc',1,'Server']]],
+  ['getchannels_232',['getChannels',['../classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2',1,'Server']]],
+  ['getclient_233',['getClient',['../classServer.html#ae4313a2ec9463bf58b75860457c737fb',1,'Server']]],
+  ['getclientindex_234',['getClientIndex',['../classServer.html#a399e5a12513223a087897a4a08d62df2',1,'Server']]],
+  ['getcmd_235',['getCmd',['../classMessage.html#ad89a43eb39898c822b754288fef467b8',1,'Message']]],
+  ['getdescription_236',['getDescription',['../classCommand.html#a569e38b925b728ea506174d77c66e612',1,'Command']]],
+  ['getexample_237',['getExample',['../classCommand.html#a0da0ce77e86748a42aebb66f56040ca7',1,'Command']]],
+  ['getname_238',['getName',['../classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c',1,'Channel::getName()'],['../classCommand.html#a2686b48bc3d0fa0d5934396c72f0bdfc',1,'Command::getName()']]],
+  ['getparams_239',['getParams',['../classMessage.html#ae175384074674e34978f40261238d701',1,'Message']]],
+  ['getpassword_240',['getPassword',['../classChannel.html#a5220250205f35b248205e2a4ba41519d',1,'Channel']]],
+  ['getsender_241',['getSender',['../classCommand.html#a99274a8775f437acb302eefdb13057e5',1,'Command']]],
+  ['getusage_242',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]]
 ];

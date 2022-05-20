@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IRC SERVER: Main Page</title>
+<title>IRC SERVER: USAGE</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,11 +81,68 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">IRC SERVER Documentation</div>  </div>
+<div class="title">USAGE </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+SERVER</h1>
+<p>make</p>
+<p>./ircserv <code>&lt;port&gt;</code> <code>&lt;password&gt;</code></p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+CLIENT</h1>
+<p>telnet <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+COMMANDS DOCS</h1>
+<p><a href="https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands">https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands</a></p>
+<ul>
+<li><b>pass</b> -&gt; Sets a connection password.This command must be sent before the NICK/USER registration combination <pre class="fragment">ex "pass &lt;password&gt;"
+</pre></li>
+<li><b>nick</b> -&gt; Allows a client to change their IRC nickname <pre class="fragment">ex "/nick &lt;nickname&gt;"
+</pre></li>
+<li><b>privmsg</b> -&gt; Sends message to msgtarget, which is usually a user or channel. <pre class="fragment">ex: "/privmsg msgtarget :message"
+</pre></li>
+<li><b>ping</b> -&gt; Lets you determine the network distance between your computer and other users <pre class="fragment">ex: "/ping &lt;nickname&gt;"
+</pre></li>
+<li><b>names</b> -&gt; Returns a list of who is on the comma-separated list of &lt;channels&gt;, by channel name. <pre class="fragment">ex: "/names &lt;channel&gt;"
+</pre></li>
+<li><b>join</b> -&gt; Makes the client join the channels in the comma-separated list, specifying the passwords, if needed <pre class="fragment">ex: "/join &lt;channels&gt; &lt;keys&gt;"
+</pre></li>
+<li><b>part</b> -&gt; Causes a user to leave the channels in the comma-separated list . <pre class="fragment">ex: "/part &lt;channel&gt;"
+</pre></li>
+<li><b>topic</b> -&gt; Allows the client to query or set the channel topic on channel <pre class="fragment">ex: "/topic &lt;channel&gt;"
+</pre></li>
+<li><b>list</b> -&gt; Lists all channels on the server <pre class="fragment">ex: "/list"
+</pre></li>
+<li><b>invites</b> -&gt; Invites nickname to the channel channel <pre class="fragment">ex: "/invites &lt;nickname&gt; &lt;channel&gt;"
+</pre></li>
+<li><b>kick</b> -&gt; Forcibly removes client from channel <pre class="fragment">ex: "/kick &lt;client&gt; &lt;channel&gt;"
+</pre></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+[](#message-format)Message Format</h1>
+<p>An IRC message is a single line, delimited by a pair of <code>CR</code> &lsquo;(&rsquo;\r', 0x0D)<code>and</code>LF('<br  />
+', 0x0A)` characters.</p>
+<ul>
+<li>When reading messages from a stream, read the incoming data into a buffer. Only parse and process a message once you encounter the <code>\r\n</code> at the end of it. If you encounter an empty message, silently ignore it.</li>
+<li>When sending messages, ensure that a pair of <code>\r\n</code> characters follows every single message your software sends out.</li>
+</ul>
+<hr  />
+<p>Messages have this format, as rough ABNF: </p><pre class="fragment">  message         ::= ['@' &lt;tags&gt; SPACE] [':' &lt;source&gt; SPACE] &lt;command&gt; &lt;parameters&gt; &lt;crlf&gt;
+  SPACE           ::=  %x20 *( %x20 )   ; space character(s)
+  crlf            ::=  %x0D %x0A        ; "carriage return" "linefeed"
+</pre><p>The specific parts of an IRC message are:</p>
+<ul>
+<li><b>tags</b>: Optional metadata on a message, starting with &lsquo;(&rsquo;@', 0x40)<code>.</code></li>
+<li><code>**source**: Optional note of where the message came from, starting with</code>(':', 0x3A)`.</li>
+<li><b>command</b>: The specific command this message represents.</li>
+<li><b>parameters</b>: If it exists, data relevant to this specific command.</li>
+</ul>
+<p>These message parts, and parameters themselves, are separated by one or more ASCII SPACE characters &lsquo;(&rsquo; ', 0x20)`.</p>
+<p>Most IRC servers limit messages to 512 bytes in length, including the trailing <code>CR-LF</code> characters. Implementations which include <a href="https://ircv3.net/specs/extensions/message-tags.html">message tags</a> need to allow additional bytes for the <b>tags</b> section of a message; clients must allow 8191 additional bytes and servers must allow 4096 additional bytes.</p>
+<hr  />
+ </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
