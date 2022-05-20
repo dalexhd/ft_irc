@@ -23,24 +23,24 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "IRC SERVER", "index.html", [
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+    [ "Clases", "annotated.html", [
+      [ "Lista de clases", "annotated.html", "annotated_dup" ],
+      [ "Índice de clases", "classes.html", null ],
+      [ "Jerarquía de la clase", "hierarchy.html", "hierarchy" ],
+      [ "Miembros de las clases", "functions.html", [
+        [ "Todo", "functions.html", null ],
+        [ "Funciones", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
+        [ "Enumeraciones", "functions_enum.html", null ],
+        [ "Valores de enumeraciones", "functions_eval.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+    [ "Archivos", "files.html", [
+      [ "Lista de archivos", "files.html", "files_dup" ],
+      [ "Miembros de los ficheros", "globals.html", [
+        [ "Todo", "globals.html", null ],
+        [ "Funciones", "globals_func.html", null ],
+        [ "defines", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -52,5 +52,5 @@ var NAVTREEINDEX =
 "config_8hpp.html#ad4d796b98c583d49e83adabd74a63bf6"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click en deshabilitar sincronización';
+var SYNCOFFMSG = 'click en habilitar sincronización';
