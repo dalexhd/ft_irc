@@ -19,7 +19,7 @@ class Part : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 1 || p.size() > 2)
+		if (p.size() < 1 || p.size() > 1)
 		{
 			_sender->message("Wrong command format. Ex: part #canal1,#canal2 "
 			                 "clave1,clave2\n");
@@ -40,13 +40,6 @@ class Part : public Command
 					return (false);
 				}
 			}
-			if (_pw_params.size() > 0 && _pw_params.size() != _ch_params.size())
-			{
-				_sender->message("Wrong command format. Ex: part "
-				                 "#canal1,#canal2 "
-				                 "clave1,clave2\n");
-				return (false);
-			}
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
@@ -54,7 +47,7 @@ class Part : public Command
 				{
 					if (!channel->joined(_sender))
 					{
-						_sender->message("You cant part a inexistant channel!\n");
+						_sender->message("You cant part a inexisting channel!\n");
 						return (false);
 					}
 				}
@@ -68,13 +61,6 @@ class Part : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 
 		std::vector<std::string> _ch_params = split(p[0], ",");
-		std::vector<std::string> _pw_params = split(p[1], ",");
-
-		for (size_t i = 0; i < _ch_params.size(); i++)
-        	std::cout << _ch_params[i] << std::endl;
-		std::cout << std::endl;
-		for (size_t i = 0; i < _pw_params.size(); i++)
-        	std::cout << _pw_params[i] << std::endl;
 
 		for (size_t i = 0; i < _ch_params.size(); i++)
 		{

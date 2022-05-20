@@ -22,6 +22,7 @@ class Join : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() < 1 || p.size() > 2)
 		{
+			//ERR_NEEDMOREPARAMS (461)
 			_sender->message("Wrong command format. Ex: join #canal1,#canal2 "
 			                 "clave1,clave2\n");
 			return (false);
@@ -86,14 +87,18 @@ class Join : public Command
 						                     .c_str());
 					}
 					else
-						_sender->message("Wrong password\n");
+						_sender->message("Wrong password\n"); <// ERR_BADCHANNELKEY (475)
 				}
 				else
 				{
 					if (channel->getPassword() != "")
-						_sender->message("Wrong password\n");
+						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
 					else
 					{
+						// RPL_TOPIC (332)
+						// RPL_TOPICWHOTIME (333)
+						// RPL_NAMREPLY (353)
+						// RPL_ENDOFNAMES (366)
 						channel->_normal_clients.push_back(_sender);
 						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
@@ -102,6 +107,11 @@ class Join : public Command
 			}
 			else
 			{
+				// :marc459!m@127.0.0.1 JOIN :#channel
+				// RPL_TOPIC (332) marc459 #channel :No topic is set
+				// RPL_TOPICWHOTIME (333)
+				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
+				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
 				Channel *channel;
 				if (_pw_params.size() > 0)
 				{
@@ -116,6 +126,7 @@ class Join : public Command
 					_sender->message(std::string("Channel " + _ch_params[i] + " with empty password created\n")
 					                     .c_str());
 				}
+
 				channel->setCreator(_sender);
 				_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
 				                     .c_str());
