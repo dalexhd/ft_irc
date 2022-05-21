@@ -87,7 +87,7 @@ class Join : public Command
 						                     .c_str());
 					}
 					else
-						_sender->message("Wrong password\n"); <// ERR_BADCHANNELKEY (475)
+						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
 				}
 				else
 				{

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/20 12:59:40 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:52:26 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #include "../includes/cmds/Join.hpp"
 #include "../includes/cmds/List.hpp"
 #include "../includes/cmds/Part.hpp"
-//#include "../includes/cmds/Names.hpp"
+#include "../includes/cmds/Names.hpp"
 #include "../includes/cmds/Mode.hpp"
 #include "../includes/cmds/Invite.hpp"
 #include "../includes/cmds/Kick.hpp"
@@ -155,6 +155,7 @@ void Server::setupCommands(void)
 	_commands["join"] = new Join();
 	_commands["part"] = new Part();
 	_commands["list"] = new List();
+	_commands["names"] = new Names();
 }
 
 Server::~Server(void)
