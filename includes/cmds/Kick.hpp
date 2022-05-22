@@ -32,12 +32,12 @@ class Kick : public Command
 	{
 		std::map<size_t, std::string> p = _message->getParams();
 		bool getUserChannel;
+		bool isSenderOnChannel;
 
 
 		if (p.size() > 3 || p.size() < 2)
 		{
-			_sender->message("Wrong command format. Ex: list "
-			                 "[<canal>{,<canal>}]\n");
+			_sender->message("<client> <command> :Not enough parameters\n");
 			return (false);
 		}
 		else
@@ -58,22 +58,35 @@ class Kick : public Command
 				for (size_t i = 0; i < _user_params.size(); i++)
 				{
 					getUserChannel = false;
+					isSenderOnChannel = false;
 					for(size_t j = 0; j < channel->_normal_clients.size(); j++)
 					{
+						std::cout << channel->_normal_clients[j]->_name <<_sender->_name << std::endl;
 						if(channel->_normal_clients[j]->_name == _user_params[i])
 							getUserChannel = true;
+						if(channel->_normal_clients[j]->_name == _sender->_name)
+							isSenderOnChannel = true;
 					}
 					for(size_t j = 0; j < channel->_ope_clients.size(); j++)
 					{
+						std::cout << channel->_ope_clients[j]->_name <<_sender->_name << std::endl;
 						if(channel->_ope_clients[j]->_name == _user_params[i])
 							getUserChannel = true;
+						if(channel->_ope_clients[j]->_name == _sender->_name)
+							isSenderOnChannel = true;
 					}
 
 					if (getUserChannel == false)
 					{
-						_sender->message("You cant kick a inexisting user!\n");
+						_sender->message("<client> <nick> <channel> :They aren't on that channel\n");
 						return (false);
 					}
+					if(isSenderOnChannel == false)
+					{
+						_sender->message("<client> <channel> :You're not on that channel\n");
+						return (false);
+					}
+
 				}
 			}
 			else
