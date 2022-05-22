@@ -61,7 +61,6 @@ class Kick : public Command
 					isSenderOnChannel = false;
 					for(size_t j = 0; j < channel->_normal_clients.size(); j++)
 					{
-						std::cout << channel->_normal_clients[j]->_name <<_sender->_name << std::endl;
 						if(channel->_normal_clients[j]->_name == _user_params[i])
 							getUserChannel = true;
 						if(channel->_normal_clients[j]->_name == _sender->_name)
@@ -69,7 +68,6 @@ class Kick : public Command
 					}
 					for(size_t j = 0; j < channel->_ope_clients.size(); j++)
 					{
-						std::cout << channel->_ope_clients[j]->_name <<_sender->_name << std::endl;
 						if(channel->_ope_clients[j]->_name == _user_params[i])
 							getUserChannel = true;
 						if(channel->_ope_clients[j]->_name == _sender->_name)
