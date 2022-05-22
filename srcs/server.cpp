@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/21 18:51:08 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/22 21:30:40 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ void Server::setupCommands(void)
 	_commands["part"] = new Part();
 	_commands["list"] = new List();
 	_commands["names"] = new Names();
-	_commands["kick"] = new Names();
+	_commands["kick"] = new Kick();
 }
 
 Server::~Server(void)

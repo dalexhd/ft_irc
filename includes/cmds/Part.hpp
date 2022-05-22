@@ -28,7 +28,6 @@ class Part : public Command
 		else
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
-			std::vector<std::string> _pw_params = split(p[1], ",");
 
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{

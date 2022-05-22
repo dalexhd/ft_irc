@@ -13,6 +13,9 @@ class Kick : public Command
 		_description = "expulsar del servidor";
 		_usage = "kick";
 		_example[0] = "kick <canal> <usuario> :[<comentario>]";
+		_example[1] = "kick #hola user1";
+		_example[2] = "kick #hola user1,user2";
+		_example[3] = "kick #hola user1,user2 :coment";
 		_is_ope = true;
 
 		/*
@@ -28,11 +31,57 @@ class Kick : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() > 1)
+		bool getUserChannel;
+
+
+		if (p.size() > 3 || p.size() < 2)
 		{
 			_sender->message("Wrong command format. Ex: list "
 			                 "[<canal>{,<canal>}]\n");
 			return (false);
+		}
+		else
+		{
+			std::vector<std::string> _user_params = split(p[1], ",");
+
+			if (p[0][0] != '#')
+			{
+				_sender->message("Wrong command format. Ex: list "
+									"#canal1 "
+									"user\n");
+				return (false);
+			}
+
+			Channel *channel = _server->getChannel(p[0]);
+			if (channel)
+			{
+				for (size_t i = 0; i < _user_params.size(); i++)
+				{
+					getUserChannel = false;
+					for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+					{
+						if(channel->_normal_clients[j]->_name == _user_params[i])
+							getUserChannel = true;
+					}
+					for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+					{
+						if(channel->_ope_clients[j]->_name == _user_params[i])
+							getUserChannel = true;
+					}
+
+					if (getUserChannel == false)
+					{
+						_sender->message("You cant kick a inexisting user!\n");
+						return (false);
+					}
+				}
+			}
+			else
+			{
+				_sender->message("<client> <channel> :No such channel\n");
+				return (false);
+			}
+
 		}
 		return (true);
 
@@ -40,6 +89,34 @@ class Kick : public Command
 
 	void execute()
 	{
+		std::map<size_t, std::string> p = _message->getParams();
+		std::vector<std::string> _user_params = split(p[1], ",");
+
+		Channel *channel = _server->getChannel(p[0]);
+		if (channel)
+		{
+			for (size_t i = 0; i < _user_params.size(); i++)
+			{
+				for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+				{
+					if(channel->_normal_clients[j]->_name == _user_params[i])
+					{
+						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
+						//channel->_normal_clients[j]->message(std::string(_sender->_name + " kicked you from  " + channel->getName() + "\n").c_str());
+					}
+
+				}
+				for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+				{
+					if(channel->_ope_clients[j]->_name == _user_params[i])
+						channel->_ope_clients.erase(channel->_ope_clients.begin() + j);
+				}
+
+			}
+		}
+
+
+
 
 	}
 };
