@@ -15,6 +15,9 @@ class Names : public Command
 		_example[0] = "names";
 		_example[0] = "names #hola";
 		_example[0] = "names #hola,#chau";
+
+		// RPL_NAMREPLY (353)
+		// RPL_ENDOFNAMES (366)
 	}
 
 	bool validate(void)
