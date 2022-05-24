@@ -70,7 +70,6 @@ class Names : public Command
 					for (size_t j = 0; j < channels[i]->_ope_clients.size(); j++)
 						_sender->message(std::string(channels[i]->_ope_clients[j]->_name + " ").c_str());
 					_sender->message(std::string("\n").c_str());
-				// "<client> <channel> :End of /NAMES list"
 			}
 			_sender->message(std::string(_sender->_name + " " + "*" + " : End of /NAMES list\n").c_str());
 		}

@@ -16,6 +16,18 @@ class Join : public Command
 		_example[0] = "join #canal1 clave1";
 		_example[1] = "join #canal1,#canal2 clave1,clave2";
 
+		// ERR_NEEDMOREPARAMS (461) k
+		// ERR_NOSUCHCHANNEL (403)
+		// ERR_TOOMANYCHANNELS (405)
+		// ERR_BADCHANNELKEY (475)
+		// ERR_BANNEDFROMCHAN (474)
+		// ERR_CHANNELISFULL (471) k
+		// ERR_INVITEONLYCHAN (473)
+		// RPL_TOPIC (332)
+		// RPL_TOPICWHOTIME (333)
+		// RPL_NAMREPLY (353)
+		// RPL_ENDOFNAMES (366)
+
 	}
 
 	bool validate(void)
@@ -101,11 +113,6 @@ class Join : public Command
 						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
 					else
 					{
-						// RPL_TOPIC (332)   "<client> <channel> :<topic>"
-						// RPL_TOPICWHOTIME (333)
-						// RPL_NAMREPLY (353)
-						// RPL_ENDOFNAMES (366)
-
 						channel->_normal_clients.push_back(_sender);
 						for(size_t j = 0; j < channel->_normal_clients.size(); j++)
 						{
@@ -124,11 +131,7 @@ class Join : public Command
 			}
 			else
 			{
-				// :marc459!m@127.0.0.1 JOIN :#channel
-				// RPL_TOPIC (332) marc459 #channel :No topic is set
-				// RPL_TOPICWHOTIME (333)
-				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
-				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
+
 				Channel *channel;
 				/*std::vector<Channel *> channels = _server->getChannels();
 				int j = 0;
@@ -165,9 +168,28 @@ class Join : public Command
 				}
 
 				channel->setCreator(_sender);
-				_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
+				// :marc459!m@127.0.0.1 JOIN :#channel
+				// RPL_TOPIC (332) marc459 #channel :No topic is set
+				// RPL_TOPICWHOTIME (333)
+				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
+				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
+				_sender->message(std::string( _sender->_name + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
 				                     .c_str());
+				_sender->message(std::string( _sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
+				                     .c_str());
+				std::map<std::string, Command *>::iterator it;
 				channel->_ope_clients.push_back(_sender);
+				if ((it = _server->_commands.find("names")) != _server->_commands.end())
+				{
+					Command *cmd = it->second;
+					std::string names = "names";
+					Message *message = new Message(names);
+					cmd->setSender(_sender, i - 1);
+					cmd->setServer(_server);
+					cmd->setMessage(message);
+					cmd->execute();
+				}
+
 			}
 		}
 	}
