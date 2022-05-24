@@ -14,6 +14,10 @@ class Part : public Command
 		_usage = "part";
 		_example[0] = "part <canal>{,<canal>}";
 		_example[1] = "part :#uruguay";
+
+		// ERR_NEEDMOREPARAMS (461) k
+		// ERR_NOSUCHCHANNEL (403) k
+		// ERR_NOTONCHANNEL (442)
 	}
 
 	bool validate(void)
@@ -21,8 +25,7 @@ class Part : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() < 1 || p.size() > 1)
 		{
-			_sender->message("Wrong command format. Ex: part #canal1,#canal2 "
-			                 "clave1,clave2\n");
+			_sender->message(_sender->_name + " " + _message->getCmd() + " :Wrong num of parameters\n"); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
 		else
@@ -46,9 +49,14 @@ class Part : public Command
 				{
 					if (!channel->joined(_sender))
 					{
-						_sender->message("You cant part a inexisting channel!\n");
+						_sender->message(_sender->_name + " " + _ch_params[i] + " :You're not on that channel\n"); // ERR_NOTONCHANNEL (442)
 						return (false);
 					}
+				}
+				else
+				{
+					_sender->message(_sender->_name + " " + _ch_params[i] + " :No such channel\n"); // ERR_NOSUCHCHANNEL (403)
+						return (false);
 				}
 			}
 		}
