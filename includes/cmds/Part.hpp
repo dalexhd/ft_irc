@@ -65,6 +65,8 @@ class Part : public Command
 
 	void execute()
 	{
+		if (!validate())
+			return;
 		std::map<size_t, std::string> p = _message->getParams();
 
 		std::vector<std::string> _ch_params = split(p[0], ",");
