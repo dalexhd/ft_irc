@@ -15,6 +15,7 @@ class Join : public Command
 		_usage = "join <canal>{,<canal>} [<clave>{,<clave>}]";
 		_example[0] = "join #canal1 clave1";
 		_example[1] = "join #canal1,#canal2 clave1,clave2";
+
 	}
 
 	bool validate(void)
@@ -23,8 +24,7 @@ class Join : public Command
 		if (p.size() < 1 || p.size() > 2)
 		{
 			//ERR_NEEDMOREPARAMS (461)
-			_sender->message("Wrong command format. Ex: join #canal1,#canal2 "
-			                 "clave1,clave2\n");
+			_sender->message(_sender->_name + " " + _message->getCmd() + " :Wrong num of parameters\n");
 			return (false);
 		}
 		else
@@ -36,9 +36,8 @@ class Join : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					_sender->message("Wrong command format. Ex: join "
-					                 "#canal1,#canal2 "
-					                 "clave1,clave2\n");
+					//ERR_BADCHANMASK (476)
+					_sender->message(_ch_params[i] + " :Bad Channel Mask\n");
 					return (false);
 				}
 			}
@@ -68,6 +67,8 @@ class Join : public Command
 
 	void execute()
 	{
+		if (!validate())
+			return;
 		std::map<size_t, std::string> p = _message->getParams();
 
 		std::vector<std::string> _ch_params = split(p[0], ",");
@@ -76,13 +77,18 @@ class Join : public Command
 		for (size_t i = 0; i < _ch_params.size(); i++)
 		{
 			Channel *channel = _server->getChannel(_ch_params[i]);
+
 			if (channel)
 			{
-				if (_pw_params.size() > 0)
+
+				if(((int)channel->_normal_clients.size() + (int)channel->_ope_clients.size()) > (int)channel->_maxClients)
+						_sender->message(_sender->_name + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); //ERR_CHANNELISFULL (471)
+				else if (_pw_params.size() > 0)
 				{
 					if (channel->getPassword() == _pw_params[i])
 					{
 						channel->_normal_clients.push_back(_sender);
+						//std::cout << itoa((int)channel->_normal_clients.size()) << std::endl;
 						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
 					}
@@ -95,13 +101,24 @@ class Join : public Command
 						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
 					else
 					{
-						// RPL_TOPIC (332)
+						// RPL_TOPIC (332)   "<client> <channel> :<topic>"
 						// RPL_TOPICWHOTIME (333)
 						// RPL_NAMREPLY (353)
 						// RPL_ENDOFNAMES (366)
+
 						channel->_normal_clients.push_back(_sender);
-						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
+						for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+						{
+							if(_sender->_name != channel->_normal_clients[j]->_name)
+								channel->_normal_clients[j]->message(std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
+						}
+						for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+						{
+							if(_sender->_name != channel->_ope_clients[j]->_name)
+								channel->_ope_clients[j]->message(std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+						                     .c_str());
+						}
 					}
 				}
 			}
@@ -113,7 +130,27 @@ class Join : public Command
 				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
 				Channel *channel;
-				if (_pw_params.size() > 0)
+				/*std::vector<Channel *> channels = _server->getChannels();
+				int j = 0;
+
+				if(channels.size() > 1) // err: why channels size is 1
+				{
+					std::cout << "sender channels" << itoa(channels.size() - 1) << std::endl;
+					for (size_t i = 0; i < channels.size() - 1; i++)
+					{
+						//std::cout << channels[i]->getName() << std::endl;
+						if(channels[i]->joined(_sender))
+							j++;
+
+
+					}
+				}
+				if(j > _sender->_maxChannels)
+				{
+						_sender->message(_sender->_name + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
+						return;
+				}
+				else */if (_pw_params.size() > 0)
 				{
 					channel = _server->createChannel(_ch_params[i], _pw_params[i]);
 					_sender->message(std::string("Channel " + _ch_params[i] + " with password \"" + _pw_params[i] + "\" created\n")

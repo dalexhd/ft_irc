@@ -29,6 +29,7 @@ class Client
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
 	bool                 _is_ope;
+	int			const    _maxChannels;
 
   public:
 	std::string itoa(int a)
@@ -45,7 +46,7 @@ class Client
 		return ss;
 	}
 
-	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false)
+	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false), _maxChannels(2)
 	{
 		std::string line;
 		std::ifstream     myfile ("Welcome.txt", std::ifstream::in);
