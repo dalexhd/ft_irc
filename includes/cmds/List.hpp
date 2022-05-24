@@ -13,8 +13,8 @@ class List : public Command
 		_description = "listar informacion del canal";
 		_usage = "list [<canales>]";
 		_example[0] = "list";
-		_example[0] = "list #hola";
-		_example[0] = "list #hola,#chau";
+		_example[1] = "list #hola";
+		_example[2] = "list #hola,#chau";
 	}
 
 	bool validate(void)
