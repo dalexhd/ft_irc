@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('classClient.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ace2bdec65920dd65bddf549c4da20842"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ace2bdec65920dd65bddf549c4da20842">itoa</a> (int a)</td></tr>
+<tr class="separator:ace2bdec65920dd65bddf549c4da20842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6cf1ddfdf4046be6def94fb3cce27b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ac6cf1ddfdf4046be6def94fb3cce27b8">Client</a> (int &amp;fd, std::string name)</td></tr>
 <tr class="separator:ac6cf1ddfdf4046be6def94fb3cce27b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840e519ca781888cbd54181572ebe3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a> ()</td></tr>
@@ -129,6 +131,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a85a410db24cab3a8b0b8a316b418dbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b527a1aefdd7863c5caba1b40fd838"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a></td></tr>
 <tr class="separator:a26b527a1aefdd7863c5caba1b40fd838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873739014541c974a8c80317e151d4bd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a873739014541c974a8c80317e151d4bd">_maxChannels</a></td></tr>
+<tr class="separator:a873739014541c974a8c80317e151d4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac6cf1ddfdf4046be6def94fb3cce27b8"></a>
@@ -211,6 +215,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ace2bdec65920dd65bddf549c4da20842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2bdec65920dd65bddf549c4da20842">&#9670;&nbsp;</a></span>itoa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Client::itoa </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9ee33da0a8d00f8416b934b6027d35cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ee33da0a8d00f8416b934b6027d35cd">&#9670;&nbsp;</a></span>message() <span class="overload">[1/2]</span></h2>
 
@@ -231,23 +261,28 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph.png" border="0" usemap="#classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph" alt=""/></div>
 <map name="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph" id="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph">
-<area shape="rect" title=" " alt="" coords="396,385,523,412"/>
-<area shape="rect" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8" title=" " alt="" coords="206,5,315,32"/>
-<area shape="rect" href="classInfo.html#a83ffd57e16a927917842a8e3b8e88726" title=" " alt="" coords="207,56,314,83"/>
-<area shape="rect" href="className.html#a8087bee4e452ab6efa7d7b5a24babc14" title=" " alt="" coords="5,183,125,209"/>
-<area shape="rect" href="classHelp.html#ac8da533c9e52b7c4b6db6bb204ac1ea2" title=" " alt="" coords="205,157,316,184"/>
-<area shape="rect" href="classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="207,208,314,235"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="13,639,117,665"/>
-<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="207,309,314,336"/>
-<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="208,360,313,387"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="194,411,327,437"/>
-<area shape="rect" href="classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="197,461,324,488"/>
-<area shape="rect" href="classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="173,512,348,539"/>
-<area shape="rect" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f" title=" " alt="" coords="197,259,324,285"/>
-<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="207,613,315,640"/>
-<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="207,664,314,691"/>
-<area shape="rect" href="classList.html#abe68a85c129511265f9e03260f788ba4" title=" " alt="" coords="207,563,314,589"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="193,765,328,792"/>
+<area shape="rect" title=" " alt="" coords="403,512,529,539"/>
+<area shape="rect" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8" title=" " alt="" coords="213,5,322,32"/>
+<area shape="rect" href="classInfo.html#a83ffd57e16a927917842a8e3b8e88726" title=" " alt="" coords="214,56,321,83"/>
+<area shape="rect" href="className.html#a8087bee4e452ab6efa7d7b5a24babc14" title=" " alt="" coords="9,233,129,260"/>
+<area shape="rect" href="classHelp.html#ac8da533c9e52b7c4b6db6bb204ac1ea2" title=" " alt="" coords="212,157,323,184"/>
+<area shape="rect" href="classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="214,208,321,235"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,335,132,361"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="17,588,121,615"/>
+<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="214,360,321,387"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="15,841,122,868"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="201,461,334,488"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="16,943,121,969"/>
+<area shape="rect" href="classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="204,563,331,589"/>
+<area shape="rect" href="classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="180,613,355,640"/>
+<area shape="rect" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f" title=" " alt="" coords="204,107,331,133"/>
+<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="213,715,321,741"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="200,765,335,792"/>
+<area shape="rect" href="classNames.html#a6a5ea247ab0996c1aa5bf75757a5be48" title=" " alt="" coords="203,411,332,437"/>
+<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="213,867,321,893"/>
+<area shape="rect" href="classList.html#abe68a85c129511265f9e03260f788ba4" title=" " alt="" coords="214,512,321,539"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="214,917,321,944"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="212,1019,323,1045"/>
 </map>
 </div>
 
@@ -421,6 +456,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a873739014541c974a8c80317e151d4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873739014541c974a8c80317e151d4bd">&#9670;&nbsp;</a></span>_maxChannels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Client::_maxChannels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a85a410db24cab3a8b0b8a316b418dbfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85a410db24cab3a8b0b8a316b418dbfc">&#9670;&nbsp;</a></span>_messagesReceived</h2>
 
@@ -473,7 +522,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classClient.html">Client</a></li>
-    <li class="footer">Generated on Fri May 20 2022 17:42:42 for IRC SERVER by
+    <li class="footer">Generated on Wed May 25 2022 15:27:18 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

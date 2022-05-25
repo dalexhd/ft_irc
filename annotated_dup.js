@@ -17,6 +17,7 @@ var annotated_dup =
     [ "Message", "classMessage.html", "classMessage" ],
     [ "Mode", "classMode.html", "classMode" ],
     [ "Name", "className.html", "className" ],
+    [ "Names", "classNames.html", "classNames" ],
     [ "Nick", "classNick.html", "classNick" ],
     [ "Notice", "classNotice.html", "classNotice" ],
     [ "Ope", "classOpe.html", "classOpe" ],

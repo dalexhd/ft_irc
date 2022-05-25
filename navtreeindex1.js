@@ -1,5 +1,16 @@
 var NAVTREEINDEX1 =
 {
+"cmds_2PrivMsg_8hpp_source.html":[1,0,0,0,16],
+"commands_2Exit_8hpp.html":[1,0,0,1,2],
+"commands_2Exit_8hpp_source.html":[1,0,0,1,2],
+"commands_2Help_8hpp.html":[1,0,0,1,3],
+"commands_2Help_8hpp_source.html":[1,0,0,1,3],
+"commands_2Ping_8hpp.html":[1,0,0,1,7],
+"commands_2Ping_8hpp_source.html":[1,0,0,1,7],
+"commands_2PrivMsg_8hpp.html":[1,0,0,1,8],
+"commands_2PrivMsg_8hpp_source.html":[1,0,0,1,8],
+"config_8hpp.html":[1,0,0,6],
+"config_8hpp.html#a053b7859476cc9867ec62c49e68d3fa1":[1,0,0,6,1],
 "config_8hpp.html#ad4d796b98c583d49e83adabd74a63bf6":[1,0,0,6,0],
 "config_8hpp_source.html":[1,0,0,6],
 "dir_09e761304027c904456130627fd4dcf5.html":[1,0,0],
