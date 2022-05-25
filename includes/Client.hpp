@@ -17,6 +17,7 @@
 
 // Our includes
 #include "./Message.hpp"
+#include "./Replies.hpp"
 #include "./config.hpp"
 
 class Client
@@ -24,12 +25,18 @@ class Client
   public:
 	int                  _fd;
 	std::string          _name;
+	std::string          _user;
+	std::string          _host;
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
 	bool                 _is_ope;
 
   public:
-	Client(int &fd, std::string name) : _fd(fd), _name(name), _is_ope(false){};
+	Client(int &fd, std::string name, std::string host)
+	    : _fd(fd), _name(name), _host(host), _is_ope(false)
+	{
+		message(RPL_WELCOME(_host, _name));
+	};
 	~Client()
 	{
 		close(_fd);

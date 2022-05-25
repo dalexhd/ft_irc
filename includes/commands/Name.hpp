@@ -34,7 +34,7 @@ class Name : public Command
 				{
 					if (_server->_clients[i]->_name == name)
 					{
-						_sender->message("That name is already taken!\n");
+						_sender->message(ERR_NICKNAMEINUSE(_sender->_host, name));
 						return;
 					}
 				}

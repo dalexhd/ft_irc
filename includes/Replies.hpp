@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numreplies.hpp                                     :+:      :+:    :+:   */
+/*   Replies.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/04/24 12:31:44 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:41:44 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMREPLIES_HPP
-#define NUMREPLIES_HPP
-#define RPL_WELCOME 001
+#ifndef REPLIES_HPP
+#define REPLIES_HPP
+
+#define RPL_WELCOME(hostname, nick) \
+	":" + hostname + " 001 " + nick + " :Welcome to the Internet Relay Network " + nick + "\n"
 #define RPL_YOURHOST 002
 #define RPL_CREATED 003
 #define RPL_MYINFO 004
@@ -91,7 +93,8 @@
 #define ERR_UNKNOWNCOMMAND 421
 #define ERR_NOMOTD 422
 #define ERR_ERRONEUSNICKNAME 432
-#define ERR_NICKNAMEINUSE 433
+#define ERR_NICKNAMEINUSE(hostname, nick) \
+	":" + hostname + " 433 * " + nick + " :Nickname is already in use\n"
 #define ERR_USERNOTINCHANNEL 441
 #define ERR_NOTONCHANNEL 442
 #define ERR_USERONCHANNEL 443
