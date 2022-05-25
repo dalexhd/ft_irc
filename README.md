@@ -1,4 +1,20 @@
-## USAGE
+<div align="center">
+
+![image](https://i.giphy.com/media/dbtDDSvWErdf2/giphy.webp)
+
+## OUR OWN IRC SERVER
+
+[![aborboll's 42 ft_irc Score](https://badge42.vercel.app/api/v2/cl2uk1olu003009mgf4ilrst7/project/2564130)](https://github.com/JaeSeoKim/badge42)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/dalexhd/ft_irc?color=blue&label=Last%20commit&logo=git&maxAge=3600)](https://github.com/dalexhd/ft_irc/commits)
+[![GitHub issues](https://img.shields.io/github/issues/dalexhd/ft_irc?label=Issues&color=blue&maxAge=3600)](https://github.com/dalexhd/ft_irc/issues)
+[![GitHub forks](https://img.shields.io/github/forks/dalexhd/ft_irc?label=Forks&color=blue&maxAge=3600)](https://github.com/dalexhd/ft_irc/network)
+
+[![Test](https://github.com/dalexhd/ft_irc/workflows/Test/badge.svg)](https://github.com/dalexhd/ft_irc/actions?query=workflow:Test)
+[![codecov](https://codecov.io/gh/dalexhd/ft_irc/branch/main/graph/badge.svg?token=D8A1FV32VL)](https://codecov.io/gh/dalexhd/ft_irc)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dalexhd/ft_irc?label=Code%20size&maxAge=3600)](https://github.com/dalexhd/ft_irc)
+
+</div>
 
 ## SERVER
 

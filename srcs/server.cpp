@@ -21,9 +21,17 @@
 #include "../includes/commands/Ope.hpp"
 #include "../includes/commands/Ping.hpp"
 
+#include "../includes/cmds/PrivMsg.hpp"
+
+//CHANNEL FUNCTIONS
+
 #include "../includes/cmds/Join.hpp"
 #include "../includes/cmds/List.hpp"
-#include "../includes/cmds/PrivMsg.hpp"
+#include "../includes/cmds/Part.hpp"
+#include "../includes/cmds/Names.hpp"
+#include "../includes/cmds/Mode.hpp"
+#include "../includes/cmds/Invite.hpp"
+#include "../includes/cmds/Kick.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -139,9 +147,13 @@ void Server::setupCommands(void)
 	_commands["ope"] = new Ope();
 	_commands["name"] = new Name();
 
+	// Channel commands
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
+	_commands["part"] = new Part();
 	_commands["list"] = new List();
+	_commands["names"] = new Names();
+	_commands["kick"] = new Kick();
 }
 
 Server::~Server(void)

@@ -20,6 +20,8 @@
 #include "./Replies.hpp"
 #include "./config.hpp"
 
+#include <fstream>
+
 class Client
 {
   public:
@@ -30,11 +32,12 @@ class Client
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
 	bool                 _is_ope;
+	int const            _maxChannels;
 
   public:
 	Client(int &fd, std::string name, std::string host)
-	    : _fd(fd), _name(name), _host(host), _is_ope(false)
-	{
+	    : _fd(fd), _name(name), _host(host), _is_ope(false), _maxChannels(MAX_CHANNELS)
+  {
 		message(RPL_WELCOME(_host, _name));
 	};
 	~Client()

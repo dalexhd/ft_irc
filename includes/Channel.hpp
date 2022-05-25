@@ -16,13 +16,15 @@ class Channel
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
 
+
   public:
 	std::vector<Client *> _normal_clients;
 	std::vector<Client *> _ope_clients;
+	int				const _maxClients;
 
   public:
 	Channel(std::string &name, std::string &password)
-	    : _name(name), _password(password), _creator(NULL)
+	    : _name(name), _password(password), _creator(NULL), _maxClients(2)
 	{
 		_created_at = time(0);
 	};
@@ -59,6 +61,7 @@ class Channel
 				return (true);
 		return (false);
 	}
+
 };
 
 #endif
