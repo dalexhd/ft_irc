@@ -27,7 +27,6 @@ class Join : public Command
 		// RPL_TOPICWHOTIME (333)
 		// RPL_NAMREPLY (353)
 		// RPL_ENDOFNAMES (366)
-
 	}
 
 	bool validate(void)
@@ -35,7 +34,7 @@ class Join : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() < 1 || p.size() > 2)
 		{
-			//ERR_NEEDMOREPARAMS (461)
+			// ERR_NEEDMOREPARAMS (461)
 			_sender->message(_sender->_name + " " + _message->getCmd() + " :Wrong num of parameters\n");
 			return (false);
 		}
@@ -48,7 +47,7 @@ class Join : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					//ERR_BADCHANMASK (476)
+					// ERR_BADCHANMASK (476)
 					_sender->message(_ch_params[i] + " :Bad Channel Mask\n");
 					return (false);
 				}
@@ -92,15 +91,14 @@ class Join : public Command
 
 			if (channel)
 			{
-
-				if(((int)channel->_normal_clients.size() + (int)channel->_ope_clients.size()) > (int)channel->_maxClients)
-						_sender->message(_sender->_name + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); //ERR_CHANNELISFULL (471)
+				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
+				    channel->_maxClients)
+					_sender->message(_sender->_name + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); // ERR_CHANNELISFULL (471)
 				else if (_pw_params.size() > 0)
 				{
 					if (channel->getPassword() == _pw_params[i])
 					{
 						channel->_normal_clients.push_back(_sender);
-						//std::cout << itoa((int)channel->_normal_clients.size()) << std::endl;
 						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
 					}
@@ -114,46 +112,46 @@ class Join : public Command
 					else
 					{
 						channel->_normal_clients.push_back(_sender);
-						for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+						for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 						{
-							if(_sender->_name != channel->_normal_clients[j]->_name)
-								channel->_normal_clients[j]->message(std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
-						                     .c_str());
+							if (_sender->_name != channel->_normal_clients[j]->_name)
+								channel->_normal_clients[j]->message(
+								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								        .c_str());
 						}
-						for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+						for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 						{
-							if(_sender->_name != channel->_ope_clients[j]->_name)
-								channel->_ope_clients[j]->message(std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
-						                     .c_str());
+							if (_sender->_name != channel->_ope_clients[j]->_name)
+								channel->_ope_clients[j]->message(
+								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								        .c_str());
 						}
 					}
 				}
 			}
 			else
 			{
-
 				Channel *channel;
 				/*std::vector<Channel *> channels = _server->getChannels();
 				int j = 0;
 
 				if(channels.size() > 1) // err: why channels size is 1
 				{
-					std::cout << "sender channels" << itoa(channels.size() - 1) << std::endl;
-					for (size_t i = 0; i < channels.size() - 1; i++)
-					{
-						//std::cout << channels[i]->getName() << std::endl;
-						if(channels[i]->joined(_sender))
-							j++;
-
-
-					}
+				    std::cout << "sender channels" << itoa(channels.size() - 1) << std::endl;
+				    for (size_t i = 0; i < channels.size() - 1; i++)
+				    {
+				        //std::cout << channels[i]->getName() << std::endl;
+				        if(channels[i]->joined(_sender))
+				            j++;
+				    }
 				}
 				if(j > _sender->_maxChannels)
 				{
-						_sender->message(_sender->_name + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
-						return;
+				        _sender->message(_sender->_name + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
+				        return;
 				}
-				else */if (_pw_params.size() > 0)
+				else */
+				if (_pw_params.size() > 0)
 				{
 					channel = _server->createChannel(_ch_params[i], _pw_params[i]);
 					_sender->message(std::string("Channel " + _ch_params[i] + " with password \"" + _pw_params[i] + "\" created\n")
@@ -173,23 +171,23 @@ class Join : public Command
 				// RPL_TOPICWHOTIME (333)
 				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
-				_sender->message(std::string( _sender->_name + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
+				_sender->message(std::string(_sender->_name + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
 				                     .c_str());
-				_sender->message(std::string( _sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
+				_sender->message(std::string(_sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
 				                     .c_str());
 				std::map<std::string, Command *>::iterator it;
 				channel->_ope_clients.push_back(_sender);
-				if ((it = _server->_commands.find("names")) != _server->_commands.end())
+				if ((it = _server->_commands.find("names")) !=
+				    _server->_commands.end())
 				{
-					Command *cmd = it->second;
+					Command *   cmd = it->second;
 					std::string names = "names";
-					Message *message = new Message(names);
+					Message *   message = new Message(names);
 					cmd->setSender(_sender, i - 1);
 					cmd->setServer(_server);
 					cmd->setMessage(message);
 					cmd->execute();
 				}
-
 			}
 		}
 	}
