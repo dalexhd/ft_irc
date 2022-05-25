@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['away_2ehpp_298',['Away.hpp',['../Away_8hpp.html',1,'']]]
+  ['away_2ehpp_306',['Away.hpp',['../Away_8hpp.html',1,'']]]
 ];

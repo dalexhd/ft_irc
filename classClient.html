@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('classClient.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adec7324d67d7c1ea565cd558f271abcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#adec7324d67d7c1ea565cd558f271abcb">Client</a> (int &amp;fd, std::string name, std::string host)</td></tr>
-<tr class="separator:adec7324d67d7c1ea565cd558f271abcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6814e20c07a7d1ad36a3732fe2887a69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a6814e20c07a7d1ad36a3732fe2887a69">Client</a> (int &amp;fd, std::string name, std::string host, std::string servername)</td></tr>
+<tr class="separator:a6814e20c07a7d1ad36a3732fe2887a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840e519ca781888cbd54181572ebe3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a> ()</td></tr>
 <tr class="separator:a840e519ca781888cbd54181572ebe3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee33da0a8d00f8416b934b6027d35cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a> (char const *message)</td></tr>
@@ -127,16 +127,20 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6ea22760d5ff09453c868faca33572a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b53e47e860f4656b348654643ddb76e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a></td></tr>
 <tr class="separator:a9b53e47e860f4656b348654643ddb76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c542a9070d73b6613e2f43ebf07d1bf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a></td></tr>
+<tr class="separator:a4c542a9070d73b6613e2f43ebf07d1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae059c95034c09b1ed2ae993c61eb5c57"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">_messagesSent</a></td></tr>
 <tr class="separator:ae059c95034c09b1ed2ae993c61eb5c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85a410db24cab3a8b0b8a316b418dbfc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">_messagesReceived</a></td></tr>
 <tr class="separator:a85a410db24cab3a8b0b8a316b418dbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b527a1aefdd7863c5caba1b40fd838"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a></td></tr>
 <tr class="separator:a26b527a1aefdd7863c5caba1b40fd838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873739014541c974a8c80317e151d4bd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a873739014541c974a8c80317e151d4bd">_maxChannels</a></td></tr>
+<tr class="separator:a873739014541c974a8c80317e151d4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adec7324d67d7c1ea565cd558f271abcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adec7324d67d7c1ea565cd558f271abcb">&#9670;&nbsp;</a></span>Client()</h2>
+<a id="a6814e20c07a7d1ad36a3732fe2887a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6814e20c07a7d1ad36a3732fe2887a69">&#9670;&nbsp;</a></span>Client()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +164,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>host</em>&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>servername</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -177,8 +187,8 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classClient_adec7324d67d7c1ea565cd558f271abcb_cgraph.png" border="0" usemap="#classClient_adec7324d67d7c1ea565cd558f271abcb_cgraph" alt=""/></div>
-<map name="classClient_adec7324d67d7c1ea565cd558f271abcb_cgraph" id="classClient_adec7324d67d7c1ea565cd558f271abcb_cgraph">
+<div class="center"><img src="classClient_a6814e20c07a7d1ad36a3732fe2887a69_cgraph.png" border="0" usemap="#classClient_a6814e20c07a7d1ad36a3732fe2887a69_cgraph" alt=""/></div>
+<map name="classClient_a6814e20c07a7d1ad36a3732fe2887a69_cgraph" id="classClient_a6814e20c07a7d1ad36a3732fe2887a69_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,112,32"/>
 <area shape="rect" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="160,5,287,32"/>
 </map>
@@ -250,24 +260,29 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph.png" border="0" usemap="#classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph" alt=""/></div>
 <map name="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph" id="classClient_a9ee33da0a8d00f8416b934b6027d35cd_icgraph">
-<area shape="rect" title=" " alt="" coords="396,411,523,437"/>
-<area shape="rect" href="classClient.html#adec7324d67d7c1ea565cd558f271abcb" title=" " alt="" coords="207,5,314,32"/>
-<area shape="rect" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8" title=" " alt="" coords="206,56,315,83"/>
-<area shape="rect" href="classInfo.html#a83ffd57e16a927917842a8e3b8e88726" title=" " alt="" coords="207,107,314,133"/>
-<area shape="rect" href="className.html#a8087bee4e452ab6efa7d7b5a24babc14" title=" " alt="" coords="5,233,125,260"/>
-<area shape="rect" href="classHelp.html#ac8da533c9e52b7c4b6db6bb204ac1ea2" title=" " alt="" coords="205,208,316,235"/>
-<area shape="rect" href="classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="207,259,314,285"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="13,664,117,691"/>
-<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="207,360,314,387"/>
-<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="208,411,313,437"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="194,461,327,488"/>
-<area shape="rect" href="classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="197,512,324,539"/>
-<area shape="rect" href="classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="173,563,348,589"/>
-<area shape="rect" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f" title=" " alt="" coords="197,157,324,184"/>
-<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="207,664,315,691"/>
-<area shape="rect" href="classList.html#abe68a85c129511265f9e03260f788ba4" title=" " alt="" coords="207,715,314,741"/>
-<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="207,765,314,792"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="193,816,328,843"/>
+<area shape="rect" title=" " alt="" coords="403,537,529,564"/>
+<area shape="rect" href="classClient.html#a6814e20c07a7d1ad36a3732fe2887a69" title=" " alt="" coords="214,5,321,32"/>
+<area shape="rect" href="classInfo.html#a83ffd57e16a927917842a8e3b8e88726" title=" " alt="" coords="214,56,321,83"/>
+<area shape="rect" href="className.html#a8087bee4e452ab6efa7d7b5a24babc14" title=" " alt="" coords="9,284,129,311"/>
+<area shape="rect" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8" title=" " alt="" coords="213,157,322,184"/>
+<area shape="rect" href="classHelp.html#ac8da533c9e52b7c4b6db6bb204ac1ea2" title=" " alt="" coords="212,208,323,235"/>
+<area shape="rect" href="classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="214,259,321,285"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,385,132,412"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="17,639,121,665"/>
+<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="214,411,321,437"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="15,892,122,919"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="201,512,334,539"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="16,993,121,1020"/>
+<area shape="rect" href="classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="204,613,331,640"/>
+<area shape="rect" href="classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="180,664,355,691"/>
+<area shape="rect" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f" title=" " alt="" coords="204,309,331,336"/>
+<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="213,765,321,792"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="200,816,335,843"/>
+<area shape="rect" href="classNames.html#a6a5ea247ab0996c1aa5bf75757a5be48" title=" " alt="" coords="203,360,332,387"/>
+<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="213,867,321,893"/>
+<area shape="rect" href="classList.html#abe68a85c129511265f9e03260f788ba4" title=" " alt="" coords="214,715,321,741"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="214,1019,321,1045"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="212,1069,323,1096"/>
 </map>
 </div>
 
@@ -455,6 +470,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a873739014541c974a8c80317e151d4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873739014541c974a8c80317e151d4bd">&#9670;&nbsp;</a></span>_maxChannels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Client::_maxChannels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a85a410db24cab3a8b0b8a316b418dbfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85a410db24cab3a8b0b8a316b418dbfc">&#9670;&nbsp;</a></span>_messagesReceived</h2>
 
@@ -497,6 +526,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a4c542a9070d73b6613e2f43ebf07d1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c542a9070d73b6613e2f43ebf07d1bf">&#9670;&nbsp;</a></span>_servername</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Client::_servername</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6ea22760d5ff09453c868faca33572a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ea22760d5ff09453c868faca33572a4">&#9670;&nbsp;</a></span>_user</h2>
 
@@ -521,7 +564,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classClient.html">Client</a></li>
-    <li class="footer">Generated on Wed May 25 2022 15:44:20 for IRC SERVER by
+    <li class="footer">Generated on Wed May 25 2022 16:59:43 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

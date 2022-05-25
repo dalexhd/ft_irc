@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['away_268',['Away',['../classAway.html',1,'']]]
+  ['away_275',['Away',['../classAway.html',1,'']]]
 ];
