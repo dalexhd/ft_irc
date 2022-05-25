@@ -14,7 +14,7 @@ var searchData=
   ['c_5fyellow_38',['C_YELLOW',['../Color_8hpp.html#a7749aa942f59b07d1e951066e0aeca73',1,'Color.hpp']]],
   ['channel_39',['Channel',['../classChannel.html',1,'Channel'],['../classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb',1,'Channel::Channel()']]],
   ['channel_2ehpp_40',['Channel.hpp',['../Channel_8hpp.html',1,'']]],
-  ['client_41',['Client',['../classClient.html',1,'Client'],['../classClient.html#ac6cf1ddfdf4046be6def94fb3cce27b8',1,'Client::Client()']]],
+  ['client_41',['Client',['../classClient.html',1,'Client'],['../classClient.html#adec7324d67d7c1ea565cd558f271abcb',1,'Client::Client()']]],
   ['client_2ecpp_42',['client.cpp',['../client_8cpp.html',1,'']]],
   ['client_2ehpp_43',['Client.hpp',['../Client_8hpp.html',1,'']]],
   ['close_44',['Close',['../classClose.html',1,'Close'],['../classClose.html#ad8a0a2858285bd127f5f666bed8dc543',1,'Close::Close()']]],

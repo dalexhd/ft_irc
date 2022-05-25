@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['name_2ehpp_203',['Name.hpp',['../Name_8hpp.html',1,'']]],
-  ['names_2ehpp_204',['Names.hpp',['../Names_8hpp.html',1,'']]],
-  ['nick_2ehpp_205',['Nick.hpp',['../Nick_8hpp.html',1,'']]],
-  ['notice_2ehpp_206',['Notice.hpp',['../Notice_8hpp.html',1,'']]]
+  ['name_2ehpp_320',['Name.hpp',['../Name_8hpp.html',1,'']]],
+  ['nick_2ehpp_321',['Nick.hpp',['../cmds_2Nick_8hpp.html',1,'(Global Namespace)'],['../commands_2Nick_8hpp.html',1,'(Global Namespace)']]],
+  ['notice_2ehpp_322',['Notice.hpp',['../Notice_8hpp.html',1,'']]]
 ];

@@ -108,111 +108,88 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Our includes</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Message_8hpp.html">./Message.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">./config.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classClient.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClient.html">Client</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">   27</a></span>&#160;    <span class="keywordtype">int</span>                  <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">   28</a></span>&#160;    std::string          <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">   29</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">_messagesSent</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">   30</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">_messagesReceived</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">   31</a></span>&#160;    <span class="keywordtype">bool</span>                 <a class="code" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classClient.html#a873739014541c974a8c80317e151d4bd">   32</a></span>&#160;    <span class="keywordtype">int</span>         <span class="keyword">const</span>    <a class="code" href="classClient.html#a873739014541c974a8c80317e151d4bd">_maxChannels</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Replies_8hpp.html">./Replies.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">./config.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classClient.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClient.html">Client</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">   26</a></span>&#160;    <span class="keywordtype">int</span>                  <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">   27</a></span>&#160;    std::string          <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classClient.html#a6ea22760d5ff09453c868faca33572a4">   28</a></span>&#160;    std::string          <a class="code" href="classClient.html#a6ea22760d5ff09453c868faca33572a4">_user</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">   29</a></span>&#160;    std::string          <a class="code" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">   30</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">_messagesSent</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">   31</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">_messagesReceived</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">   32</a></span>&#160;    <span class="keywordtype">bool</span>                 <a class="code" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classClient.html#ace2bdec65920dd65bddf549c4da20842">   35</a></span>&#160;    std::string <a class="code" href="classClient.html#ace2bdec65920dd65bddf549c4da20842">itoa</a>(<span class="keywordtype">int</span> a)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::string ss = <span class="stringliteral">&quot;&quot;</span>; <span class="comment">// create empty string</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">while</span> (a)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">int</span> x = a % 10;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            a /= 10;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">char</span> i = <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            i = i + x;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            ss = i + ss; <span class="comment">// append new character at the front of the string!</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> ss;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classClient.html#ac6cf1ddfdf4046be6def94fb3cce27b8">   49</a></span>&#160;    <a class="code" href="classClient.html#ac6cf1ddfdf4046be6def94fb3cce27b8">Client</a>(<span class="keywordtype">int</span> &amp;fd, std::string name) : <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>(fd), <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>(name), <a class="code" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a>(false), <a class="code" href="classClient.html#a873739014541c974a8c80317e151d4bd">_maxChannels</a>(2)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::string line;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::ifstream     myfile (<span class="stringliteral">&quot;Welcome.txt&quot;</span>, std::ifstream::in);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (myfile.is_open())</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">while</span> ( getline (myfile,line) )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                std::cout &lt;&lt; line &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;             myfile.close();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">else</span> std::cout &lt;&lt; <span class="stringliteral">&quot;Unable to open file&quot;</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//  message(&quot;\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n-​ |Welcome to FT_IRC Network!\n-​ +-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​-​+\n\nIf you are looking for assistance, please try:\nhelp\n\n&quot;);</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">   65</a></span>&#160;    <a class="code" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a>()</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classClient.html#adec7324d67d7c1ea565cd558f271abcb">   35</a></span>&#160;    <a class="code" href="classClient.html#adec7324d67d7c1ea565cd558f271abcb">Client</a>(<span class="keywordtype">int</span> &amp;fd, std::string name, std::string host)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        : <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>(fd), <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>(name), <a class="code" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a>(host), <a class="code" href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">_is_ope</a>(false)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a469b3e4211037780f055a919d0b18015">RPL_WELCOME</a>(<a class="code" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a>, <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">   40</a></span>&#160;    <a class="code" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        close(<a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a> = -1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Client &quot;</span> &lt;&lt; <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> &lt;&lt; <span class="stringliteral">&quot; disconnected&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Helpers</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(std::string <span class="keyword">const</span> <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classMessage.html">Message</a> *<a class="code" href="classClient.html#a1e017e3ed91082a1caf757c6c52c2d99">read</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a594e53d26f431c927b7e30343ac622d7">disconnect</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Getters</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classClient.html#a1a1d138438f5d59711ed240f00de1985">   54</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a1a1d138438f5d59711ed240f00de1985">messagesSent</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">_messagesSent</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">   59</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">messagesReceived</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">_messagesReceived</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Setters</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">   65</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">setName</a>(std::string <span class="keyword">const</span> &amp;name)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        close(<a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a> = -1;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Client &quot;</span> &lt;&lt; <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> &lt;&lt; <span class="stringliteral">&quot; disconnected&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> = name;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        this-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::string(<span class="stringliteral">&quot;Your name has been changed to &quot;</span> + <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> + <span class="stringliteral">&quot;\n&quot;</span>).c_str());</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Helpers</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(std::string <span class="keyword">const</span> <a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classMessage.html">Message</a> *<a class="code" href="classClient.html#a1e017e3ed91082a1caf757c6c52c2d99">read</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span>     <a class="code" href="classClient.html#a594e53d26f431c927b7e30343ac622d7">disconnect</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Getters</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classClient.html#a1a1d138438f5d59711ed240f00de1985">   79</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a1a1d138438f5d59711ed240f00de1985">messagesSent</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">_messagesSent</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    };</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">   84</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">messagesReceived</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">_messagesReceived</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Setters</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">setName</a>(std::string <span class="keyword">const</span> &amp;name)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> = name;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        this-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            std::string(<span class="stringliteral">&quot;Your name has been changed to &quot;</span> + <a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a> + <span class="stringliteral">&quot;\n&quot;</span>).c_str());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassClient_html_adec7324d67d7c1ea565cd558f271abcb"><div class="ttname"><a href="classClient.html#adec7324d67d7c1ea565cd558f271abcb">Client::Client</a></div><div class="ttdeci">Client(int &amp;fd, std::string name, std::string host)</div><div class="ttdef"><b>Definition:</b> Client.hpp:35</div></div>
 <div class="ttc" id="aMessage_8hpp_html"><div class="ttname"><a href="Message_8hpp.html">Message.hpp</a></div></div>
-<div class="ttc" id="aclassClient_html_a80fea5c83b9122fb8e50a646d5f66c6f"><div class="ttname"><a href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">Client::setName</a></div><div class="ttdeci">void setName(std::string const &amp;name)</div><div class="ttdef"><b>Definition:</b> Client.hpp:90</div></div>
+<div class="ttc" id="aclassClient_html_a80fea5c83b9122fb8e50a646d5f66c6f"><div class="ttname"><a href="classClient.html#a80fea5c83b9122fb8e50a646d5f66c6f">Client::setName</a></div><div class="ttdeci">void setName(std::string const &amp;name)</div><div class="ttdef"><b>Definition:</b> Client.hpp:65</div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
 <div class="ttc" id="aclassClient_html_a594e53d26f431c927b7e30343ac622d7"><div class="ttname"><a href="classClient.html#a594e53d26f431c927b7e30343ac622d7">Client::disconnect</a></div><div class="ttdeci">void disconnect(void)</div></div>
-<div class="ttc" id="aclassClient_html_a85a410db24cab3a8b0b8a316b418dbfc"><div class="ttname"><a href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">Client::_messagesReceived</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesReceived</div><div class="ttdef"><b>Definition:</b> Client.hpp:30</div></div>
-<div class="ttc" id="aclassClient_html_ae059c95034c09b1ed2ae993c61eb5c57"><div class="ttname"><a href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">Client::_messagesSent</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesSent</div><div class="ttdef"><b>Definition:</b> Client.hpp:29</div></div>
-<div class="ttc" id="aclassClient_html_a840e519ca781888cbd54181572ebe3a7"><div class="ttname"><a href="classClient.html#a840e519ca781888cbd54181572ebe3a7">Client::~Client</a></div><div class="ttdeci">~Client()</div><div class="ttdef"><b>Definition:</b> Client.hpp:65</div></div>
+<div class="ttc" id="aclassClient_html_a85a410db24cab3a8b0b8a316b418dbfc"><div class="ttname"><a href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">Client::_messagesReceived</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesReceived</div><div class="ttdef"><b>Definition:</b> Client.hpp:31</div></div>
+<div class="ttc" id="aclassClient_html_ae059c95034c09b1ed2ae993c61eb5c57"><div class="ttname"><a href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">Client::_messagesSent</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesSent</div><div class="ttdef"><b>Definition:</b> Client.hpp:30</div></div>
+<div class="ttc" id="aclassClient_html_a6ea22760d5ff09453c868faca33572a4"><div class="ttname"><a href="classClient.html#a6ea22760d5ff09453c868faca33572a4">Client::_user</a></div><div class="ttdeci">std::string _user</div><div class="ttdef"><b>Definition:</b> Client.hpp:28</div></div>
+<div class="ttc" id="aclassClient_html_a840e519ca781888cbd54181572ebe3a7"><div class="ttname"><a href="classClient.html#a840e519ca781888cbd54181572ebe3a7">Client::~Client</a></div><div class="ttdeci">~Client()</div><div class="ttdef"><b>Definition:</b> Client.hpp:40</div></div>
 <div class="ttc" id="aclassClient_html_a9ee33da0a8d00f8416b934b6027d35cd"><div class="ttname"><a href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">Client::message</a></div><div class="ttdeci">void message(char const *message)</div><div class="ttdef"><b>Definition:</b> client.cpp:15</div></div>
-<div class="ttc" id="aclassClient_html_a689d377b2b884f0cbb9219d66f5d31f3"><div class="ttname"><a href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">Client::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Client.hpp:28</div></div>
-<div class="ttc" id="aclassClient_html_ace2bdec65920dd65bddf549c4da20842"><div class="ttname"><a href="classClient.html#ace2bdec65920dd65bddf549c4da20842">Client::itoa</a></div><div class="ttdeci">std::string itoa(int a)</div><div class="ttdef"><b>Definition:</b> Client.hpp:35</div></div>
-<div class="ttc" id="aclassClient_html_ac6cf1ddfdf4046be6def94fb3cce27b8"><div class="ttname"><a href="classClient.html#ac6cf1ddfdf4046be6def94fb3cce27b8">Client::Client</a></div><div class="ttdeci">Client(int &amp;fd, std::string name)</div><div class="ttdef"><b>Definition:</b> Client.hpp:49</div></div>
-<div class="ttc" id="aclassClient_html_a1a1d138438f5d59711ed240f00de1985"><div class="ttname"><a href="classClient.html#a1a1d138438f5d59711ed240f00de1985">Client::messagesSent</a></div><div class="ttdeci">std::vector&lt; Message &gt; messagesSent() const</div><div class="ttdef"><b>Definition:</b> Client.hpp:79</div></div>
-<div class="ttc" id="aclassClient_html_a42a1d767e2a3e08a5276b78e20193252"><div class="ttname"><a href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">Client::messagesReceived</a></div><div class="ttdeci">std::vector&lt; Message &gt; messagesReceived() const</div><div class="ttdef"><b>Definition:</b> Client.hpp:84</div></div>
-<div class="ttc" id="aclassClient_html_a26b527a1aefdd7863c5caba1b40fd838"><div class="ttname"><a href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">Client::_is_ope</a></div><div class="ttdeci">bool _is_ope</div><div class="ttdef"><b>Definition:</b> Client.hpp:31</div></div>
-<div class="ttc" id="aclassClient_html_a873739014541c974a8c80317e151d4bd"><div class="ttname"><a href="classClient.html#a873739014541c974a8c80317e151d4bd">Client::_maxChannels</a></div><div class="ttdeci">const int _maxChannels</div><div class="ttdef"><b>Definition:</b> Client.hpp:32</div></div>
+<div class="ttc" id="aclassClient_html_a689d377b2b884f0cbb9219d66f5d31f3"><div class="ttname"><a href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">Client::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Client.hpp:27</div></div>
+<div class="ttc" id="aclassClient_html_a9b53e47e860f4656b348654643ddb76e"><div class="ttname"><a href="classClient.html#a9b53e47e860f4656b348654643ddb76e">Client::_host</a></div><div class="ttdeci">std::string _host</div><div class="ttdef"><b>Definition:</b> Client.hpp:29</div></div>
+<div class="ttc" id="aclassClient_html_a1a1d138438f5d59711ed240f00de1985"><div class="ttname"><a href="classClient.html#a1a1d138438f5d59711ed240f00de1985">Client::messagesSent</a></div><div class="ttdeci">std::vector&lt; Message &gt; messagesSent() const</div><div class="ttdef"><b>Definition:</b> Client.hpp:54</div></div>
+<div class="ttc" id="aclassClient_html_a42a1d767e2a3e08a5276b78e20193252"><div class="ttname"><a href="classClient.html#a42a1d767e2a3e08a5276b78e20193252">Client::messagesReceived</a></div><div class="ttdeci">std::vector&lt; Message &gt; messagesReceived() const</div><div class="ttdef"><b>Definition:</b> Client.hpp:59</div></div>
+<div class="ttc" id="aclassClient_html_a26b527a1aefdd7863c5caba1b40fd838"><div class="ttname"><a href="classClient.html#a26b527a1aefdd7863c5caba1b40fd838">Client::_is_ope</a></div><div class="ttdeci">bool _is_ope</div><div class="ttdef"><b>Definition:</b> Client.hpp:32</div></div>
 <div class="ttc" id="aclassMessage_html"><div class="ttname"><a href="classMessage.html">Message</a></div><div class="ttdef"><b>Definition:</b> Message.hpp:9</div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:24</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:23</div></div>
+<div class="ttc" id="aReplies_8hpp_html_a469b3e4211037780f055a919d0b18015"><div class="ttname"><a href="Replies_8hpp.html#a469b3e4211037780f055a919d0b18015">RPL_WELCOME</a></div><div class="ttdeci">#define RPL_WELCOME(hostname, nick)</div><div class="ttdef"><b>Definition:</b> Replies.hpp:16</div></div>
 <div class="ttc" id="aclassClient_html_a1e017e3ed91082a1caf757c6c52c2d99"><div class="ttname"><a href="classClient.html#a1e017e3ed91082a1caf757c6c52c2d99">Client::read</a></div><div class="ttdeci">Message * read(void)</div><div class="ttdef"><b>Definition:</b> client.cpp:27</div></div>
-<div class="ttc" id="aclassClient_html_a76a7d1bb0a940f1b180ac251b47e6cf4"><div class="ttname"><a href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">Client::_fd</a></div><div class="ttdeci">int _fd</div><div class="ttdef"><b>Definition:</b> Client.hpp:27</div></div>
+<div class="ttc" id="aclassClient_html_a76a7d1bb0a940f1b180ac251b47e6cf4"><div class="ttname"><a href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">Client::_fd</a></div><div class="ttdeci">int _fd</div><div class="ttdef"><b>Definition:</b> Client.hpp:26</div></div>
+<div class="ttc" id="aReplies_8hpp_html"><div class="ttname"><a href="Replies_8hpp.html">Replies.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Client_8hpp.html">Client.hpp</a></li>
-    <li class="footer">Generated on Wed May 25 2022 15:27:18 for IRC SERVER by
+    <li class="footer">Generated on Wed May 25 2022 15:44:20 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
