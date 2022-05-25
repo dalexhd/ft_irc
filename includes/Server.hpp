@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/23 16:44:25 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:49:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Server
   private:
 	// Connection params
 	std::string const host;
+	std::string const servername;
 	std::string const port;
 	std::string const password;
 

@@ -16,11 +16,10 @@ class Channel
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
 
-
   public:
 	std::vector<Client *> _normal_clients;
 	std::vector<Client *> _ope_clients;
-	int				const _maxClients;
+	size_t const          _maxClients;
 
   public:
 	Channel(std::string &name, std::string &password)
@@ -61,7 +60,6 @@ class Channel
 				return (true);
 		return (false);
 	}
-
 };
 
 #endif

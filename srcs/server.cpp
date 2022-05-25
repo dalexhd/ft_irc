@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/25 15:39:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:57:26 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@
 
 #include "../includes/cmds/PrivMsg.hpp"
 
-//CHANNEL FUNCTIONS
+// CHANNEL FUNCTIONS
 
-#include "../includes/cmds/Join.hpp"
-#include "../includes/cmds/List.hpp"
-#include "../includes/cmds/Part.hpp"
-#include "../includes/cmds/Names.hpp"
-#include "../includes/cmds/Mode.hpp"
 #include "../includes/cmds/Invite.hpp"
+#include "../includes/cmds/Join.hpp"
 #include "../includes/cmds/Kick.hpp"
+#include "../includes/cmds/List.hpp"
+#include "../includes/cmds/Mode.hpp"
+#include "../includes/cmds/Names.hpp"
+#include "../includes/cmds/Part.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -91,7 +91,7 @@ void Server::createServerPoll(void)
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
 					_clients.push_back(
-					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1)), this->host));
+					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1)), this->host, this->servername));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
 					std::cout << "Client connected" << std::endl;
@@ -129,7 +129,7 @@ void Server::createServerPoll(void)
  * @param password The password to use
  */
 Server::Server(std::string host, std::string port, std::string password)
-    : host(host), port(port), password(password), _status(ONLINE)
+    : host(host), servername(SERVER_NAME), port(port), password(password), _status(ONLINE)
 {
 	createServerListener();
 	setupCommands();

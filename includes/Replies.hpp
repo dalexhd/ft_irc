@@ -6,15 +6,15 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/25 15:41:44 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:46:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef REPLIES_HPP
 #define REPLIES_HPP
 
-#define RPL_WELCOME(hostname, nick) \
-	":" + hostname + " 001 " + nick + " :Welcome to the Internet Relay Network " + nick + "\n"
+#define RPL_WELCOME(servername, nick) \
+	":" + servername + " 001 " + nick + " :Welcome to the Internet Relay Network " + nick + "\n"
 #define RPL_YOURHOST 002
 #define RPL_CREATED 003
 #define RPL_MYINFO 004
@@ -84,7 +84,8 @@
 #define ERR_UNKNOWNERROR 400
 #define ERR_NOSUCHNICK 401
 #define ERR_NOSUCHSERVER 402
-#define ERR_NOSUCHCHANNEL 403
+#define ERR_NOSUCHCHANNEL(servername, nick, channel) \
+	":" + servername + " 403 " + nick + " " + channel + " :No such channel\n"
 #define ERR_CANNOTSENDTOCHAN 404
 #define ERR_TOOMANYCHANNELS 405
 #define ERR_WASNOSUCHNICK 406
@@ -93,13 +94,15 @@
 #define ERR_UNKNOWNCOMMAND 421
 #define ERR_NOMOTD 422
 #define ERR_ERRONEUSNICKNAME 432
-#define ERR_NICKNAMEINUSE(hostname, nick) \
-	":" + hostname + " 433 * " + nick + " :Nickname is already in use\n"
+#define ERR_NICKNAMEINUSE(servername, nick) \
+	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
 #define ERR_USERNOTINCHANNEL 441
-#define ERR_NOTONCHANNEL 442
+#define ERR_NOTONCHANNEL(servername, nick, channel) \
+	":" + servername + " 403 * " + nick + " :You're not on that channel\n"
 #define ERR_USERONCHANNEL 443
 #define ERR_NOTREGISTERED 451
-#define ERR_NEEDMOREPARAMS 461
+#define ERR_NEEDMOREPARAMS(servername, nick, command) \
+	":" + servername + " 461 " + nick + " " + command + " :Not enough parameters\n"
 #define ERR_ALREADYREGISTERED 462
 #define ERR_PASSWDMISMATCH 464
 #define ERR_YOUREBANNEDCREEP 465
