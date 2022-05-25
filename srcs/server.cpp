@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/24 12:13:35 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:39:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void Server::createServerPoll(void)
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
 					_clients.push_back(
-					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1))));
+					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1)), this->host));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
 					std::cout << "Client connected" << std::endl;
