@@ -23,10 +23,10 @@ class Join : public Command
 		// ERR_BANNEDFROMCHAN (474)
 		// ERR_CHANNELISFULL (471) k
 		// ERR_INVITEONLYCHAN (473)
-		// RPL_TOPIC (332)
+		// RPL_TOPIC (332) k
 		// RPL_TOPICWHOTIME (333)
-		// RPL_NAMREPLY (353)
-		// RPL_ENDOFNAMES (366)
+		// RPL_NAMREPLY (353) k
+		// RPL_ENDOFNAMES (366)k k
 	}
 
 	bool validate(void)
@@ -34,8 +34,8 @@ class Join : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() < 1 || p.size() > 2)
 		{
-			// ERR_NEEDMOREPARAMS (461)
-			_sender->message(_sender->_name + " " + _message->getCmd() + " :Wrong num of parameters\n");
+
+			ERR_NEEDMOREPARAMS(_sender->_servername,_sender->_name,_message->getCmd()); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
 		else
@@ -47,8 +47,7 @@ class Join : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					// ERR_BADCHANMASK (476)
-					_sender->message(_ch_params[i] + " :Bad Channel Mask\n");
+					ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
 					return (false);
 				}
 			}
@@ -66,8 +65,7 @@ class Join : public Command
 				{
 					if (channel->joined(_sender))
 					{
-						_sender->message("You're already member of that "
-						                 "channel!\n");
+						ERR_USERONCHANNEL(_sender->_servername,_sender->_name); // ERR_USERONCHANNEL 443
 						return (false);
 					}
 				}
@@ -93,7 +91,7 @@ class Join : public Command
 			{
 				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
 				    channel->_maxClients)
-					_sender->message(_sender->_name + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); // ERR_CHANNELISFULL (471)
+					ERR_CHANNELISFULL(_sender->_servername, _sender->_name,_ch_params[i]);
 				else if (_pw_params.size() > 0)
 				{
 					if (channel->getPassword() == _pw_params[i])
@@ -103,12 +101,12 @@ class Join : public Command
 						                     .c_str());
 					}
 					else
-						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
+						ERR_BADCHANNELKEY(_sender->_servername,_sender->_name); // ERR_BADCHANNELKEY (475)
 				}
 				else
 				{
 					if (channel->getPassword() != "")
-						_sender->message("Wrong password\n"); // ERR_BADCHANNELKEY (475)
+						ERR_BADCHANNELKEY(_sender->_servername,_sender->_name); // ERR_BADCHANNELKEY (475)
 					else
 					{
 						channel->_normal_clients.push_back(_sender);
@@ -171,7 +169,7 @@ class Join : public Command
 				// RPL_TOPICWHOTIME (333)
 				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
-				_sender->message(std::string(_sender->_name + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
+				_sender->message(std::string(_sender->_name + "!<user_name>@"+ _sender->_servername +" JOIN :" + _ch_params[i] + "\n")
 				                     .c_str());
 				_sender->message(std::string(_sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
 				                     .c_str());

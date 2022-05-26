@@ -18,7 +18,7 @@ class List : public Command
 
 		// RPL_LISTSTART (321)
 		// RPL_LIST (322)
-		// RPL_LISTEND (323)
+		// RPL_LISTEND (323) k
 	}
 
 	bool validate(void)
@@ -29,6 +29,16 @@ class List : public Command
 			_sender->message("Wrong command format. Ex: list "
 			                 "[<canal>{,<canal>}]\n");
 			return (false);
+		}
+		std::vector<std::string> _ch_params = split(p[0], ",");
+
+		for (size_t i = 0; i < _ch_params.size(); i++)
+		{
+			if (_ch_params[i][0] != '#')
+			{
+				ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
+				return (false);
+			}
 		}
 		return (true);
 	}
@@ -51,8 +61,7 @@ class List : public Command
 										.c_str());
 				}
 				else
-					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
-										.c_str());
+					ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_name, _ch_params[i]);
 			}
 
 		}

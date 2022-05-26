@@ -17,7 +17,7 @@ class Part : public Command
 
 		// ERR_NEEDMOREPARAMS (461) k
 		// ERR_NOSUCHCHANNEL (403) k
-		// ERR_NOTONCHANNEL (442)
+		// ERR_NOTONCHANNEL (442) k
 	}
 
 	bool validate(void)
@@ -37,9 +37,7 @@ class Part : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					_sender->message("Wrong command format. Ex: part "
-					                 "#canal1,#canal2 "
-					                 "clave1,clave2\n");
+					ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
 					return (false);
 				}
 			}
@@ -83,6 +81,7 @@ class Part : public Command
 				{
 					if (channel->_normal_clients[j]->_name == _sender->_name)
 						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
+
 				}
 				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 				{

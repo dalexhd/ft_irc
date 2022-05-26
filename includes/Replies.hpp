@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/25 16:46:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:37:40 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,19 +99,23 @@
 #define ERR_USERNOTINCHANNEL 441
 #define ERR_NOTONCHANNEL(servername, nick, channel) \
 	":" + servername + " 403 * " + nick + " :You're not on that channel\n"
-#define ERR_USERONCHANNEL 443
+#define ERR_USERONCHANNEL(servername, nick) \
+	":" + servername + " 443 * " + nick + " :You're already member of that channel\n"
 #define ERR_NOTREGISTERED 451
 #define ERR_NEEDMOREPARAMS(servername, nick, command) \
-	":" + servername + " 461 " + nick + " " + command + " :Not enough parameters\n"
+	":" + servername + " 461 " + nick + " " + command + " :Wrong num parameters\n"
 #define ERR_ALREADYREGISTERED 462
 #define ERR_PASSWDMISMATCH 464
 #define ERR_YOUREBANNEDCREEP 465
-#define ERR_CHANNELISFULL 471
+#define ERR_CHANNELISFULL(servername, nick, channel) \
+	":" + servername + " 471 " + nick + " " + channel + " :Cannot join channel , channel is full(+l)\n"
 #define ERR_UNKNOWNMODE 472
 #define ERR_INVITEONLYCHAN 473
 #define ERR_BANNEDFROMCHAN 474
-#define ERR_BADCHANNELKEY 475
-#define ERR_BADCHANMASK 476
+#define ERR_BADCHANNELKEY(servername, nick) \
+	":" + servername + " 403 * " + nick + " :Wrong password\n"
+#define ERR_BADCHANMASK(servername, nick) \
+	":" + servername + " 476 * " + nick + " :Bad Channel Mask\n"
 #define ERR_NOPRIVILEGES 481
 #define ERR_CHANOPRIVSNEEDED 482
 #define ERR_CANTKILLSERVER 483

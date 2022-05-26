@@ -15,11 +15,13 @@ class Channel
 	Client *               _creator;
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
+	std::string            _topic;
 
   public:
 	std::vector<Client *> _normal_clients;
 	std::vector<Client *> _ope_clients;
 	size_t const          _maxClients;
+
 
   public:
 	Channel(std::string &name, std::string &password)

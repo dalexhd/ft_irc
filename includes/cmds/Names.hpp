@@ -16,8 +16,8 @@ class Names : public Command
 		_example[0] = "names #hola";
 		_example[0] = "names #hola,#chau";
 
-		// RPL_NAMREPLY (353)
-		// RPL_ENDOFNAMES (366)
+		// RPL_NAMREPLY (353) k
+		// RPL_ENDOFNAMES (366) k
 	}
 
 	bool validate(void)
@@ -28,6 +28,16 @@ class Names : public Command
 			_sender->message("Wrong command format. Ex: list "
 			                 "[<canal>{,<canal>}]\n");
 			return (false);
+		}
+		std::vector<std::string> _ch_params = split(p[0], ",");
+
+		for (size_t i = 0; i < _ch_params.size(); i++)
+		{
+			if (_ch_params[i][0] != '#')
+			{
+				ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
+				return (false);
+			}
 		}
 		return (true);
 	}
