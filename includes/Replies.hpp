@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/25 16:46:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:54:19 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 #define RPL_WELCOME(servername, nick) \
 	":" + servername + " 001 " + nick + " :Welcome to the Internet Relay Network " + nick + "\n"
-#define RPL_YOURHOST 002
-#define RPL_CREATED 003
-#define RPL_MYINFO 004
+#define RPL_YOURHOST(servername, nick, version) \
+	":" + servername + " 002 " + nick + " :Your host is " + servername + ", running version " + version + "\n"
+#define RPL_CREATED(servername, nick) \
+	":" + servername + " 003 " + nick + " :This server was created January 1st, 1970\n"
+#define RPL_MYINFO(servername, nick, version, usermodes, chanmodes) \
+	":" + servername + " 004 " + nick + " " + servername + " " + version + " " + usermodes + " " + chanmodes + " :" + servername + " server\n"
 #define RPL_ISUPPORT 005
 #define RPL_BOUNCE 010
 #define RPL_UMODEIS 221
@@ -104,8 +107,10 @@
 #define ERR_NEEDMOREPARAMS(servername, nick, command) \
 	":" + servername + " 461 " + nick + " " + command + " :Not enough parameters\n"
 #define ERR_ALREADYREGISTERED 462
-#define ERR_PASSWDMISMATCH 464
-#define ERR_YOUREBANNEDCREEP 465
+#define ERR_PASSWDMISMATCH(servername, nick) \
+	":" + servername + " 464 " + nick + " :Password incorrect\n"
+#define ERR_YOUREBANNEDCREEP(servername, nick) \
+	":" + servername + " 465 " + nick + " :You are banned from this server\n"
 #define ERR_CHANNELISFULL 471
 #define ERR_UNKNOWNMODE 472
 #define ERR_INVITEONLYCHAN 473

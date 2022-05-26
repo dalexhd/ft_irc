@@ -47,18 +47,23 @@ class Names : public Command
 				if (channel)
 				{
 					// "<client> <symbol> <channel> :[prefix]<nick>{ [prefix]<nick>}"
-					_sender->message(std::string(_sender->_name + " " + "=" + " " + channel->getName() + ": ").c_str());
+					_sender->message(
+					    std::string(_sender->_nick + " " + "=" + " " + channel->getName() + ": ")
+					        .c_str());
 					for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-						_sender->message(std::string(channel->_normal_clients[j]->_name + " ").c_str());
+						_sender->message(std::string(channel->_normal_clients[j]->_nick + " ")
+						                     .c_str());
 					for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-						_sender->message(std::string(channel->_ope_clients[j]->_name + " ").c_str());
+						_sender->message(
+						    std::string(channel->_ope_clients[j]->_nick + " ").c_str());
 					_sender->message(std::string("\n").c_str());
 				}
 				else
 					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
-										.c_str());
+					                     .c_str());
 				// "<client> <channel> :End of /NAMES list"
-				_sender->message(std::string(_sender->_name + " " + channel->getName() + " : End of /NAMES list\n").c_str());
+				_sender->message(std::string(_sender->_nick + " " + channel->getName() + " : End of /NAMES list\n")
+				                     .c_str());
 			}
 		}
 		else
@@ -67,14 +72,19 @@ class Names : public Command
 			for (size_t i = 0; i < channels.size(); i++)
 			{
 				// "<client> <symbol> <channel> :[prefix]<nick>{ [prefix]<nick>}"
-				_sender->message(std::string(_sender->_name + " " + "=" + " " + channels[i]->getName() + ": ").c_str());
-					for (size_t j = 0; j < channels[i]->_normal_clients.size(); j++)
-						_sender->message(std::string(channels[i]->_normal_clients[j]->_name + " ").c_str());
-					for (size_t j = 0; j < channels[i]->_ope_clients.size(); j++)
-						_sender->message(std::string(channels[i]->_ope_clients[j]->_name + " ").c_str());
-					_sender->message(std::string("\n").c_str());
+				_sender->message(
+				    std::string(_sender->_nick + " " + "=" + " " + channels[i]->getName() + ": ")
+				        .c_str());
+				for (size_t j = 0; j < channels[i]->_normal_clients.size(); j++)
+					_sender->message(std::string(channels[i]->_normal_clients[j]->_nick + " ")
+					                     .c_str());
+				for (size_t j = 0; j < channels[i]->_ope_clients.size(); j++)
+					_sender->message(
+					    std::string(channels[i]->_ope_clients[j]->_nick + " ").c_str());
+				_sender->message(std::string("\n").c_str());
 			}
-			_sender->message(std::string(_sender->_name + " " + "*" + " : End of /NAMES list\n").c_str());
+			_sender->message(std::string(_sender->_nick + " " + "*" + " : End of /NAMES list\n")
+			                     .c_str());
 		}
 	}
 };

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/25 16:49:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:48:41 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 #include "./Client.hpp"
 #include "./Color.hpp"
 #include "./config.hpp"
-#include "./functions.hpp"
 
 // Commands
 class Command;
@@ -37,6 +36,7 @@ class Server
 	// Connection params
 	std::string const host;
 	std::string const servername;
+	std::string const version;
 	std::string const port;
 	std::string const password;
 
@@ -73,6 +73,14 @@ class Server
 	{
 		return (_status == ONLINE);
 	}
+	bool hasPassword(void)
+	{
+		return (password != "");
+	}
+	std::string const getPassword(void)
+	{
+		return (password);
+	}
 	Command *findCmd(std::string str);
 	Client * findClient(std::string str);
 
@@ -91,7 +99,7 @@ class Server
 	{
 		for (size_t i = 0; i < _clients.size(); i++)
 		{
-			if (_clients[i]->_name == name)
+			if (_clients[i]->_nick == name)
 				return (_clients[i]);
 		}
 		return (NULL);
@@ -101,7 +109,7 @@ class Server
 	{
 		for (size_t i = 0; i < _clients.size(); i++)
 		{
-			if (_clients[i]->_name == name)
+			if (_clients[i]->_nick == name)
 				return (i);
 		}
 		return (-1);
