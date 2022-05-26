@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:21:52 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/10 16:12:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:43:07 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ std::string itoa(int a)
 		ss = i + ss; // append new character at the front of the string!
 	}
 	return ss;
+}
+
+std::string to_lower(std::string str)
+{
+	std::string tmp = "";
+	for (size_t i = 0; i < str.length(); i++)
+		tmp += tolower(str[i]);
+	return tmp;
 }
 
 std::vector<std::string> split(const std::string &str, const std::string &delimiters)

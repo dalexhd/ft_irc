@@ -55,10 +55,10 @@ class Channel
 	bool joined(Client *client)
 	{
 		for (size_t i = 0; i < this->_normal_clients.size(); i++)
-			if (this->_normal_clients[i]->_name == client->_name)
+			if (this->_normal_clients[i]->_nick == client->_nick)
 				return (true);
 		for (size_t i = 0; i < this->_ope_clients.size(); i++)
-			if (this->_ope_clients[i]->_name == client->_name)
+			if (this->_ope_clients[i]->_nick == client->_nick)
 				return (true);
 		return (false);
 	}

@@ -25,7 +25,7 @@ class Part : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() < 1 || p.size() > 1)
 		{
-			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_name,
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
 			                                    _message->getCmd()));
 			return (false);
 		}
@@ -37,7 +37,7 @@ class Part : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
+					_sender->message(ERR_BADCHANMASK(_sender->_servername,_sender->_nick)); // ERR_BADCHANMASK (476)
 					return (false);
 				}
 			}
@@ -48,15 +48,13 @@ class Part : public Command
 				{
 					if (!channel->joined(_sender))
 					{
-						_sender->message(
-						    ERR_NOTONCHANNEL(_sender->_servername, _sender->_name, _ch_params[i]));
+						_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
 						return (false);
 					}
 				}
 				else
 				{
-					_sender->message(
-					    ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_name, _ch_params[i]));
+					_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
 					return (false);
 				}
 			}
@@ -79,16 +77,16 @@ class Part : public Command
 			{
 				for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 				{
-					if (channel->_normal_clients[j]->_name == _sender->_name)
+					if (channel->_normal_clients[j]->_nick == _sender->_nick)
 						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
 
 				}
 				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 				{
-					if (channel->_ope_clients[j]->_name == _sender->_name)
+					if (channel->_ope_clients[j]->_nick == _sender->_nick)
 						channel->_ope_clients.erase(channel->_ope_clients.begin() + j);
 				}
-				_sender->message(std::string("Client " + _sender->_name + " parted channel " + _ch_params[i] + "\n")
+				_sender->message(std::string("Client " + _sender->_nick + " parted channel " + _ch_params[i] + "\n")
 				                     .c_str());
 			}
 		}

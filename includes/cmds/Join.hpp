@@ -35,7 +35,7 @@ class Join : public Command
 		if (p.size() < 1 || p.size() > 2)
 		{
 
-			ERR_NEEDMOREPARAMS(_sender->_servername,_sender->_name,_message->getCmd()); // ERR_NEEDMOREPARAMS (461)
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,_sender->_nick,_message->getCmd())); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
 		else
@@ -47,7 +47,7 @@ class Join : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					ERR_BADCHANMASK(_sender->_servername,_sender->_name); // ERR_BADCHANMASK (476)
+					_sender->message(ERR_BADCHANMASK(_sender->_servername,_sender->_nick)); // ERR_BADCHANMASK (476)
 					return (false);
 				}
 			}
@@ -65,7 +65,7 @@ class Join : public Command
 				{
 					if (channel->joined(_sender))
 					{
-						ERR_USERONCHANNEL(_sender->_servername,_sender->_name); // ERR_USERONCHANNEL 443
+						_sender->message(ERR_USERONCHANNEL(_sender->_servername,_sender->_nick)); // ERR_USERONCHANNEL 443
 						return (false);
 					}
 				}
@@ -91,37 +91,37 @@ class Join : public Command
 			{
 				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
 				    channel->_maxClients)
-					ERR_CHANNELISFULL(_sender->_servername, _sender->_name,_ch_params[i]);
+					_sender->message(ERR_CHANNELISFULL(_sender->_servername, _sender->_nick,_ch_params[i]));
 				else if (_pw_params.size() > 0)
 				{
 					if (channel->getPassword() == _pw_params[i])
 					{
 						channel->_normal_clients.push_back(_sender);
-						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
+						_sender->message(std::string("Client " + _sender->_nick + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
 					}
 					else
-						ERR_BADCHANNELKEY(_sender->_servername,_sender->_name); // ERR_BADCHANNELKEY (475)
+						_sender->message(ERR_BADCHANNELKEY(_sender->_servername,_sender->_nick)); // ERR_BADCHANNELKEY (475)
 				}
 				else
 				{
 					if (channel->getPassword() != "")
-						ERR_BADCHANNELKEY(_sender->_servername,_sender->_name); // ERR_BADCHANNELKEY (475)
+						_sender->message(ERR_BADCHANNELKEY(_sender->_servername,_sender->_nick)); // ERR_BADCHANNELKEY (475)
 					else
 					{
 						channel->_normal_clients.push_back(_sender);
 						for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 						{
-							if (_sender->_name != channel->_normal_clients[j]->_name)
+							if (_sender->_nick != channel->_normal_clients[j]->_nick)
 								channel->_normal_clients[j]->message(
-								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								    std::string(_sender->_nick + " joined channel " + _ch_params[i] + "\n")
 								        .c_str());
 						}
 						for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 						{
-							if (_sender->_name != channel->_ope_clients[j]->_name)
+							if (_sender->_nick != channel->_ope_clients[j]->_nick)
 								channel->_ope_clients[j]->message(
-								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								    std::string(_sender->_nick + " joined channel " + _ch_params[i] + "\n")
 								        .c_str());
 						}
 					}
@@ -145,7 +145,7 @@ class Join : public Command
 				}
 				if(j > _sender->_maxChannels)
 				{
-				        _sender->message(_sender->_name + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
+				        _sender->message(_sender->_nick + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
 				        return;
 				}
 				else */
@@ -169,9 +169,9 @@ class Join : public Command
 				// RPL_TOPICWHOTIME (333)
 				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
-				_sender->message(std::string(_sender->_name + "!<user_name>@"+ _sender->_servername +" JOIN :" + _ch_params[i] + "\n")
+				_sender->message(std::string(_sender->_nick + "!<user_name>@"+ _sender->_servername +" JOIN :" + _ch_params[i] + "\n")
 				                     .c_str());
-				_sender->message(std::string(_sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
+				_sender->message(std::string(_sender->_nick + " #" + _ch_params[i] + ":No topic set" + "\n")
 				                     .c_str());
 				std::map<std::string, Command *>::iterator it;
 				channel->_ope_clients.push_back(_sender);

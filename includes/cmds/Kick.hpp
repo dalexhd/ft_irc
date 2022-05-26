@@ -33,9 +33,8 @@ class Kick : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		bool getUserChannel;
-		bool isSenderOnChannel;
-
+		bool                          getUserChannel;
+		bool                          isSenderOnChannel;
 
 		if (p.size() > 3 || p.size() < 2)
 		{
@@ -49,8 +48,8 @@ class Kick : public Command
 			if (p[0][0] != '#')
 			{
 				_sender->message("Wrong command format. Ex: list "
-									"#canal1 "
-									"user\n");
+				                 "#canal1 "
+				                 "user\n");
 				return (false);
 			}
 
@@ -61,32 +60,33 @@ class Kick : public Command
 				{
 					getUserChannel = false;
 					isSenderOnChannel = false;
-					for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+					for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 					{
-						if(channel->_normal_clients[j]->_name == _user_params[i])
+						if (channel->_normal_clients[j]->_nick == _user_params[i])
 							getUserChannel = true;
-						if(channel->_normal_clients[j]->_name == _sender->_name)
+						if (channel->_normal_clients[j]->_nick == _sender->_nick)
 							isSenderOnChannel = true;
 					}
-					for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+					for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 					{
-						if(channel->_ope_clients[j]->_name == _user_params[i])
+						if (channel->_ope_clients[j]->_nick == _user_params[i])
 							getUserChannel = true;
-						if(channel->_ope_clients[j]->_name == _sender->_name)
+						if (channel->_ope_clients[j]->_nick == _sender->_nick)
 							isSenderOnChannel = true;
 					}
 
 					if (getUserChannel == false)
 					{
-						_sender->message("<client> <nick> <channel> :They aren't on that channel\n");
+						_sender->message("<client> <nick> <channel> :They "
+						                 "aren't on that channel\n");
 						return (false);
 					}
-					if(isSenderOnChannel == false)
+					if (isSenderOnChannel == false)
 					{
-						_sender->message("<client> <channel> :You're not on that channel\n");
+						_sender->message("<client> <channel> :You're not on "
+						                 "that channel\n");
 						return (false);
 					}
-
 				}
 			}
 			else
@@ -94,43 +94,35 @@ class Kick : public Command
 				_sender->message("<client> <channel> :No such channel\n");
 				return (false);
 			}
-
 		}
 		return (true);
-
 	}
 
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		std::vector<std::string> _user_params = split(p[1], ",");
+		std::vector<std::string>      _user_params = split(p[1], ",");
 
 		Channel *channel = _server->getChannel(p[0]);
 		if (channel)
 		{
 			for (size_t i = 0; i < _user_params.size(); i++)
 			{
-				for(size_t j = 0; j < channel->_normal_clients.size(); j++)
+				for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 				{
-					if(channel->_normal_clients[j]->_name == _user_params[i])
+					if (channel->_normal_clients[j]->_nick == _user_params[i])
 					{
 						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
-						//channel->_normal_clients[j]->message(std::string(_sender->_name + " kicked you from  " + channel->getName() + "\n").c_str());
+						// channel->_normal_clients[j]->message(std::string(_sender->_name + " kicked you from  " + channel->getName() + "\n").c_str());
 					}
-
 				}
-				for(size_t j = 0; j < channel->_ope_clients.size(); j++)
+				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 				{
-					if(channel->_ope_clients[j]->_name == _user_params[i])
+					if (channel->_ope_clients[j]->_nick == _user_params[i])
 						channel->_ope_clients.erase(channel->_ope_clients.begin() + j);
 				}
-
 			}
 		}
-
-
-
-
 	}
 };
 #endif

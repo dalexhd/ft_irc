@@ -12,6 +12,7 @@ class Command
 	std::string                   _description;
 	std::string                   _usage;
 	bool                          _is_ope;
+	bool                          _needs_auth;
 	std::map<size_t, std::string> _example;
 
 	// Command non related vars
@@ -58,6 +59,10 @@ class Command
 	{
 		return (_is_ope);
 	};
+	bool needsAuth(void)
+	{
+		return (_needs_auth);
+	};
 
   public:
 	virtual void execute() = 0;
@@ -65,7 +70,7 @@ class Command
 	{
 		return (true);
 	}
-	Command() : _is_ope(false){};
+	Command() : _is_ope(false), _needs_auth(true){};
 	void missingOpe(void)
 	{
 		_sender->message(
