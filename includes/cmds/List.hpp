@@ -38,7 +38,7 @@ class List : public Command
 		if (!validate())
 			return;
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() == 1 )
+		if (p.size() == 1)
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
 
@@ -48,26 +48,29 @@ class List : public Command
 				if (channel)
 				{
 					_sender->message(std::string("Channel: " + channel->getName() + " " + (channel->joined(_sender) ? "(Joined)" : "") + "\n")
-										.c_str());
+					                     .c_str());
 				}
 				else
 					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
-										.c_str());
+					                     .c_str());
 			}
-
 		}
 		else
 		{
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-
-				_sender->message(std::string(_sender->_name + " Channel :Users  Name\n")
-				                     .c_str());
+				_sender->message(
+				    std::string(_sender->_nick + " Channel :Users  Name\n").c_str());
 				//"<client> <channel> <client count> :<topic>"
-				_sender->message(std::string(_sender->_name + " " + channels[i]->getName() + " " + itoa((int)channels[i]->_normal_clients.size() + (int)channels[i]->_ope_clients.size()) + " : " + "<Topic>" +"\n")
-				                     .c_str());
-				_sender->message(std::string(_sender->_name + " : End of /LIST\n").c_str());
+				_sender->message(
+				    std::string(_sender->_nick + " " + channels[i]->getName() + " " +
+				                itoa((int) channels[i]->_normal_clients.size() +
+				                     (int) channels[i]->_ope_clients.size()) +
+				                " : " + "<Topic>" + "\n")
+				        .c_str());
+				_sender->message(
+				    std::string(_sender->_nick + " : End of /LIST\n").c_str());
 			}
 		}
 	}

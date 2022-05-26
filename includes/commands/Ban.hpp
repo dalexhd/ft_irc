@@ -26,7 +26,7 @@ class Ban : public Command
 			                 "<client_nickname>\n");
 			return (false);
 		}
-		else if (p[0] == _sender->_name)
+		else if (p[0] == _sender->_nick)
 		{
 			_sender->message(std::string("You cant ban yourself\n").c_str());
 			return (false);
@@ -46,9 +46,9 @@ class Ban : public Command
 		size_t      client_index = _server->getClientIndex(name);
 
 		client->message(
-		    std::string("You've been banned by " + _sender->_name + "\n").c_str());
+		    std::string("You've been banned by " + _sender->_nick + "\n").c_str());
 		_sender->message(
-		    std::string("Client " + client->_name + " has been banned!\n").c_str());
+		    std::string("Client " + client->_nick + " has been banned!\n").c_str());
 
 		// First we delete the client pointer, this will execute the client
 		// destructor which will close the socket. delete _clients[];

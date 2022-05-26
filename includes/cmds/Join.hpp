@@ -35,7 +35,7 @@ class Join : public Command
 		if (p.size() < 1 || p.size() > 2)
 		{
 			// ERR_NEEDMOREPARAMS (461)
-			_sender->message(_sender->_name + " " + _message->getCmd() + " :Wrong num of parameters\n");
+			_sender->message(_sender->_nick + " " + _message->getCmd() + " :Wrong num of parameters\n");
 			return (false);
 		}
 		else
@@ -93,13 +93,13 @@ class Join : public Command
 			{
 				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
 				    channel->_maxClients)
-					_sender->message(_sender->_name + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); // ERR_CHANNELISFULL (471)
+					_sender->message(_sender->_nick + " " + _ch_params[i] + " :Cannot join channel , channel is full(+l)\n"); // ERR_CHANNELISFULL (471)
 				else if (_pw_params.size() > 0)
 				{
 					if (channel->getPassword() == _pw_params[i])
 					{
 						channel->_normal_clients.push_back(_sender);
-						_sender->message(std::string("Client " + _sender->_name + " joined channel " + _ch_params[i] + "\n")
+						_sender->message(std::string("Client " + _sender->_nick + " joined channel " + _ch_params[i] + "\n")
 						                     .c_str());
 					}
 					else
@@ -114,16 +114,16 @@ class Join : public Command
 						channel->_normal_clients.push_back(_sender);
 						for (size_t j = 0; j < channel->_normal_clients.size(); j++)
 						{
-							if (_sender->_name != channel->_normal_clients[j]->_name)
+							if (_sender->_nick != channel->_normal_clients[j]->_nick)
 								channel->_normal_clients[j]->message(
-								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								    std::string(_sender->_nick + " joined channel " + _ch_params[i] + "\n")
 								        .c_str());
 						}
 						for (size_t j = 0; j < channel->_ope_clients.size(); j++)
 						{
-							if (_sender->_name != channel->_ope_clients[j]->_name)
+							if (_sender->_nick != channel->_ope_clients[j]->_nick)
 								channel->_ope_clients[j]->message(
-								    std::string(_sender->_name + " joined channel " + _ch_params[i] + "\n")
+								    std::string(_sender->_nick + " joined channel " + _ch_params[i] + "\n")
 								        .c_str());
 						}
 					}
@@ -171,9 +171,9 @@ class Join : public Command
 				// RPL_TOPICWHOTIME (333)
 				// RPL_NAMREPLY (353) 353 marc459 = #channel :@marc459
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
-				_sender->message(std::string(_sender->_name + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
+				_sender->message(std::string(_sender->_nick + "!<user_name>@<server_host> JOIN :" + _ch_params[i] + "\n")
 				                     .c_str());
-				_sender->message(std::string(_sender->_name + " #" + _ch_params[i] + ":No topic set" + "\n")
+				_sender->message(std::string(_sender->_nick + " #" + _ch_params[i] + ":No topic set" + "\n")
 				                     .c_str());
 				std::map<std::string, Command *>::iterator it;
 				channel->_ope_clients.push_back(_sender);

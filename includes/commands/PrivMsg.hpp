@@ -31,7 +31,7 @@ class PrivMsg : public Command
 			for (std::map<size_t, std::string>::iterator it = p.begin(); it != p.end(); ++it)
 				if (it->first != 0)
 					res += std::string(it->second + " ");
-			if (_name == _sender->_name)
+			if (_name == _sender->_nick)
 			{
 				_sender->message("You can't send a message  yourself!\n");
 			}
@@ -39,9 +39,9 @@ class PrivMsg : public Command
 			{
 				for (size_t i = 0; i < _server->_clients.size(); i++)
 				{
-					if (_server->_clients[i]->_name == p[0])
+					if (_server->_clients[i]->_nick == p[0])
 					{
-						_server->_clients[i]->message(std::string(_sender->_name + " sent you a message: " + res + "\n")
+						_server->_clients[i]->message(std::string(_sender->_nick + " sent you a message: " + res + "\n")
 						                                  .c_str());
 						return;
 					}

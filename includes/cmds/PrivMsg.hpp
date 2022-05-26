@@ -51,14 +51,14 @@ class PrivMsg : public Command
 			std::vector<std::string> _cl_params = split(p[0], ",");
 			for (size_t i = 0; i < _cl_params.size(); i++)
 			{
-				std::cout << _sender->_name << _cl_params[i] << std::endl;
+				std::cout << _sender->_nick << _cl_params[i] << std::endl;
 				if (!_server->getClient(_cl_params[i]))
 				{
 					_sender->message(std::string("Client" + _cl_params[i] + "doesn't exist\n")
 					                     .c_str());
 					return (false);
 				}
-				else if (_sender->_name == _cl_params[i])
+				else if (_sender->_nick == _cl_params[i])
 				{
 					_sender->message(
 					    std::string("You cannot send a message yourself!\n").c_str());
@@ -100,7 +100,7 @@ class PrivMsg : public Command
 			for (size_t i = 0; i < _cl_params.size(); i++)
 			{
 				Client *client = _server->getClient(_cl_params[i]);
-				client->message(std::string(_sender->_name + " sent you a message: " + msg + "\n")
+				client->message(std::string(_sender->_nick + " sent you a message: " + msg + "\n")
 				                    .c_str());
 			}
 		}
