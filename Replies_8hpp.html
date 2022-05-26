@@ -305,11 +305,11 @@ Macros</h2></td></tr>
 <tr class="separator:ac7008400c0edf154e7f9dad794bb7e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22aa2a137786380c918b1f41c8a8054b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b">ERR_NOTONCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 * &quot; + nick + &quot; :You're not on that channel\n&quot;</td></tr>
 <tr class="separator:a22aa2a137786380c918b1f41c8a8054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a547e9929af6b9b987a6f39c72d600680"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a547e9929af6b9b987a6f39c72d600680">ERR_USERONCHANNEL</a>&#160;&#160;&#160;443</td></tr>
-<tr class="separator:a547e9929af6b9b987a6f39c72d600680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c1f58c5da72ed665e55dc8a28d2406"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a00c1f58c5da72ed665e55dc8a28d2406">ERR_USERONCHANNEL</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 443 * &quot; + nick + &quot; :You're already member of that channel\n&quot;</td></tr>
+<tr class="separator:a00c1f58c5da72ed665e55dc8a28d2406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a212152bb05361e627adb77f415dab88a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a212152bb05361e627adb77f415dab88a">ERR_NOTREGISTERED</a>&#160;&#160;&#160;451</td></tr>
 <tr class="separator:a212152bb05361e627adb77f415dab88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a956f2621e462cf802fc73955a4b3b2a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(servername,  nick,  command)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Not enough parameters\n&quot;</td></tr>
+<tr class="memitem:a956f2621e462cf802fc73955a4b3b2a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(servername,  nick,  command)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Wrong num parameters\n&quot;</td></tr>
 <tr class="separator:a956f2621e462cf802fc73955a4b3b2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a295f999284c03ce5a0787dc76551a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a6a295f999284c03ce5a0787dc76551a7">ERR_ALREADYREGISTERED</a>&#160;&#160;&#160;462</td></tr>
 <tr class="separator:a6a295f999284c03ce5a0787dc76551a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,18 +317,18 @@ Macros</h2></td></tr>
 <tr class="separator:a87b4118a854475a24e909f7e4a04db68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a78821a40285c2146171737e46df182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a0a78821a40285c2146171737e46df182">ERR_YOUREBANNEDCREEP</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 465 &quot; + nick + &quot; :You are banned from this server\n&quot;</td></tr>
 <tr class="separator:a0a78821a40285c2146171737e46df182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a08262fe1004f07b4c155cf066fb739"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a8a08262fe1004f07b4c155cf066fb739">ERR_CHANNELISFULL</a>&#160;&#160;&#160;471</td></tr>
-<tr class="separator:a8a08262fe1004f07b4c155cf066fb739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ea3780f74d27a21a1ba4a2de905663"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ab2ea3780f74d27a21a1ba4a2de905663">ERR_CHANNELISFULL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 471 &quot; + nick + &quot; &quot; + channel + &quot; :Cannot join channel , channel is full(+l)\n&quot;</td></tr>
+<tr class="separator:ab2ea3780f74d27a21a1ba4a2de905663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae97fa65f035ea9f22575b2a9b77b6969"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ae97fa65f035ea9f22575b2a9b77b6969">ERR_UNKNOWNMODE</a>&#160;&#160;&#160;472</td></tr>
 <tr class="separator:ae97fa65f035ea9f22575b2a9b77b6969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a015ed442325af11daf16aef057884ffb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a015ed442325af11daf16aef057884ffb">ERR_INVITEONLYCHAN</a>&#160;&#160;&#160;473</td></tr>
 <tr class="separator:a015ed442325af11daf16aef057884ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1d0931825ba9a147bfd07170c0f1940"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ab1d0931825ba9a147bfd07170c0f1940">ERR_BANNEDFROMCHAN</a>&#160;&#160;&#160;474</td></tr>
 <tr class="separator:ab1d0931825ba9a147bfd07170c0f1940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24ac745f0ccbb28860dfb405cefee93a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a24ac745f0ccbb28860dfb405cefee93a">ERR_BADCHANNELKEY</a>&#160;&#160;&#160;475</td></tr>
-<tr class="separator:a24ac745f0ccbb28860dfb405cefee93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ebac87ce36f94ed33b36117bf26056a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a7ebac87ce36f94ed33b36117bf26056a">ERR_BADCHANMASK</a>&#160;&#160;&#160;476</td></tr>
-<tr class="separator:a7ebac87ce36f94ed33b36117bf26056a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa516439b3132cd930fd104668ca66c68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#aa516439b3132cd930fd104668ca66c68">ERR_BADCHANNELKEY</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 * &quot; + nick + &quot; :Wrong password\n&quot;</td></tr>
+<tr class="separator:aa516439b3132cd930fd104668ca66c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13d76112e6cfd2c9a554a1bd79e32653"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a13d76112e6cfd2c9a554a1bd79e32653">ERR_BADCHANMASK</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 476 * &quot; + nick + &quot; :Bad <a class="el" href="classChannel.html">Channel</a> Mask\n&quot;</td></tr>
+<tr class="separator:a13d76112e6cfd2c9a554a1bd79e32653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fdd7fe68f882f1594b812266fb587ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a5fdd7fe68f882f1594b812266fb587ec">ERR_NOPRIVILEGES</a>&#160;&#160;&#160;481</td></tr>
 <tr class="separator:a5fdd7fe68f882f1594b812266fb587ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb2da7fac1f65330581397e54a1ef7cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#abb2da7fac1f65330581397e54a1ef7cc">ERR_CHANOPRIVSNEEDED</a>&#160;&#160;&#160;482</td></tr>
@@ -395,28 +395,56 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ebac87ce36f94ed33b36117bf26056a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ebac87ce36f94ed33b36117bf26056a">&#9670;&nbsp;</a></span>ERR_BADCHANMASK</h2>
+<a id="a13d76112e6cfd2c9a554a1bd79e32653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d76112e6cfd2c9a554a1bd79e32653">&#9670;&nbsp;</a></span>ERR_BADCHANMASK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_BADCHANMASK&#160;&#160;&#160;476</td>
+          <td class="memname">#define ERR_BADCHANMASK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 476 * &quot; + nick + &quot; :Bad <a class="el" href="classChannel.html">Channel</a> Mask\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a24ac745f0ccbb28860dfb405cefee93a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24ac745f0ccbb28860dfb405cefee93a">&#9670;&nbsp;</a></span>ERR_BADCHANNELKEY</h2>
+<a id="aa516439b3132cd930fd104668ca66c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa516439b3132cd930fd104668ca66c68">&#9670;&nbsp;</a></span>ERR_BADCHANNELKEY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_BADCHANNELKEY&#160;&#160;&#160;475</td>
+          <td class="memname">#define ERR_BADCHANNELKEY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 * &quot; + nick + &quot; :Wrong password\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -465,14 +493,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a8a08262fe1004f07b4c155cf066fb739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a08262fe1004f07b4c155cf066fb739">&#9670;&nbsp;</a></span>ERR_CHANNELISFULL</h2>
+<a id="ab2ea3780f74d27a21a1ba4a2de905663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ea3780f74d27a21a1ba4a2de905663">&#9670;&nbsp;</a></span>ERR_CHANNELISFULL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_CHANNELISFULL&#160;&#160;&#160;471</td>
+          <td class="memname">#define ERR_CHANNELISFULL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 471 &quot; + nick + &quot; &quot; + channel + &quot; :Cannot join channel , channel is full(+l)\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -604,7 +652,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Not enough parameters\n&quot;</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Wrong num parameters\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1015,14 +1063,28 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a547e9929af6b9b987a6f39c72d600680"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a547e9929af6b9b987a6f39c72d600680">&#9670;&nbsp;</a></span>ERR_USERONCHANNEL</h2>
+<a id="a00c1f58c5da72ed665e55dc8a28d2406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c1f58c5da72ed665e55dc8a28d2406">&#9670;&nbsp;</a></span>ERR_USERONCHANNEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_USERONCHANNEL&#160;&#160;&#160;443</td>
+          <td class="memname">#define ERR_USERONCHANNEL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 443 * &quot; + nick + &quot; :You're already member of that channel\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2235,7 +2297,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Thu May 26 2022 17:57:25 for IRC SERVER by
+    <li class="footer">Generated on Thu May 26 2022 20:00:10 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
