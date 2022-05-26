@@ -301,9 +301,9 @@ Macros</h2></td></tr>
 <tr class="separator:a0ff70e89c74c5898ca05e2b997d7d038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc5ed141738fe9a5a14fe173a567557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a6bc5ed141738fe9a5a14fe173a567557">ERR_NICKNAMEINUSE</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 433 * &quot; + nick + &quot; :Nickname is already in use\n&quot;</td></tr>
 <tr class="separator:a6bc5ed141738fe9a5a14fe173a567557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7008400c0edf154e7f9dad794bb7e9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ac7008400c0edf154e7f9dad794bb7e9f">ERR_USERNOTINCHANNEL</a>&#160;&#160;&#160;441</td></tr>
-<tr class="separator:ac7008400c0edf154e7f9dad794bb7e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22aa2a137786380c918b1f41c8a8054b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b">ERR_NOTONCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 * &quot; + nick + &quot; :You're not on that channel\n&quot;</td></tr>
+<tr class="memitem:a045a8b4fb55a17dba2282fe798974c3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a045a8b4fb55a17dba2282fe798974c3b">ERR_USERNOTINCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 441 * &quot; + nick + &quot; :They aren't on that channel\n&quot;</td></tr>
+<tr class="separator:a045a8b4fb55a17dba2282fe798974c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22aa2a137786380c918b1f41c8a8054b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b">ERR_NOTONCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 442 * &quot; + nick + &quot; :You're not on that channel\n&quot;</td></tr>
 <tr class="separator:a22aa2a137786380c918b1f41c8a8054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00c1f58c5da72ed665e55dc8a28d2406"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a00c1f58c5da72ed665e55dc8a28d2406">ERR_USERONCHANNEL</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 443 * &quot; + nick + &quot; :You're already member of that channel\n&quot;</td></tr>
 <tr class="separator:a00c1f58c5da72ed665e55dc8a28d2406"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -860,7 +860,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 * &quot; + nick + &quot; :You're not on that channel\n&quot;</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 442 * &quot; + nick + &quot; :You're not on that channel\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1049,14 +1049,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ac7008400c0edf154e7f9dad794bb7e9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7008400c0edf154e7f9dad794bb7e9f">&#9670;&nbsp;</a></span>ERR_USERNOTINCHANNEL</h2>
+<a id="a045a8b4fb55a17dba2282fe798974c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045a8b4fb55a17dba2282fe798974c3b">&#9670;&nbsp;</a></span>ERR_USERNOTINCHANNEL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_USERNOTINCHANNEL&#160;&#160;&#160;441</td>
+          <td class="memname">#define ERR_USERNOTINCHANNEL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 441 * &quot; + nick + &quot; :They aren't on that channel\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2297,7 +2317,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Thu May 26 2022 20:00:10 for IRC SERVER by
+    <li class="footer">Generated on Thu May 26 2022 20:10:08 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

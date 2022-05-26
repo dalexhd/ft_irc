@@ -40,7 +40,7 @@ var searchData=
   ['err_5funknowncommand_102',['ERR_UNKNOWNCOMMAND',['../Replies_8hpp.html#abd1a2c5226a56673ade839017d70d197',1,'Replies.hpp']]],
   ['err_5funknownerror_103',['ERR_UNKNOWNERROR',['../Replies_8hpp.html#a1bb6c5f0a32af6c3e805b488930283ba',1,'Replies.hpp']]],
   ['err_5funknownmode_104',['ERR_UNKNOWNMODE',['../Replies_8hpp.html#ae97fa65f035ea9f22575b2a9b77b6969',1,'Replies.hpp']]],
-  ['err_5fusernotinchannel_105',['ERR_USERNOTINCHANNEL',['../Replies_8hpp.html#ac7008400c0edf154e7f9dad794bb7e9f',1,'Replies.hpp']]],
+  ['err_5fusernotinchannel_105',['ERR_USERNOTINCHANNEL',['../Replies_8hpp.html#a045a8b4fb55a17dba2282fe798974c3b',1,'Replies.hpp']]],
   ['err_5fuseronchannel_106',['ERR_USERONCHANNEL',['../Replies_8hpp.html#a00c1f58c5da72ed665e55dc8a28d2406',1,'Replies.hpp']]],
   ['err_5fusersdontmatch_107',['ERR_USERSDONTMATCH',['../Replies_8hpp.html#a91e89728a93a6ef0f474469b31f0ac2e',1,'Replies.hpp']]],
   ['err_5fwasnosuchnick_108',['ERR_WASNOSUCHNICK',['../Replies_8hpp.html#a8f504c5b1a45267113fcd238d9871ad5',1,'Replies.hpp']]],
