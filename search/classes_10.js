@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['who_304',['Who',['../classWho.html',1,'']]],
-  ['whois_305',['Whois',['../classWhois.html',1,'']]]
+  ['who_321',['Who',['../classWho.html',1,'']]],
+  ['whois_322',['Whois',['../classWhois.html',1,'']]]
 ];

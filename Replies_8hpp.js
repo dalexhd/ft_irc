@@ -27,7 +27,7 @@ var Replies_8hpp =
     [ "ERR_NOSUCHSERVER", "Replies_8hpp.html#a5db94542b637fff0222d3618b525fe17", null ],
     [ "ERR_NOTONCHANNEL", "Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b", null ],
     [ "ERR_NOTREGISTERED", "Replies_8hpp.html#a212152bb05361e627adb77f415dab88a", null ],
-    [ "ERR_PASSWDMISMATCH", "Replies_8hpp.html#a3e6165b8918ea8c717317f04f676c929", null ],
+    [ "ERR_PASSWDMISMATCH", "Replies_8hpp.html#a87b4118a854475a24e909f7e4a04db68", null ],
     [ "ERR_SASLABORTED", "Replies_8hpp.html#a05e472b72cd4c383478195e1c748a712", null ],
     [ "ERR_SASLALREADY", "Replies_8hpp.html#a131647073e18647a7ae927fcbc7255a6", null ],
     [ "ERR_SASLFAIL", "Replies_8hpp.html#a40cc5458389eb05aa27b7722dda3f6fb", null ],
@@ -42,7 +42,7 @@ var Replies_8hpp =
     [ "ERR_USERONCHANNEL", "Replies_8hpp.html#a547e9929af6b9b987a6f39c72d600680", null ],
     [ "ERR_USERSDONTMATCH", "Replies_8hpp.html#a91e89728a93a6ef0f474469b31f0ac2e", null ],
     [ "ERR_WASNOSUCHNICK", "Replies_8hpp.html#a8f504c5b1a45267113fcd238d9871ad5", null ],
-    [ "ERR_YOUREBANNEDCREEP", "Replies_8hpp.html#a581282b85c6bb8c600d8751794fbd104", null ],
+    [ "ERR_YOUREBANNEDCREEP", "Replies_8hpp.html#a0a78821a40285c2146171737e46df182", null ],
     [ "RPL_ADMINEMAIL", "Replies_8hpp.html#a4e4730cedba40f76a9542785cc453a23", null ],
     [ "RPL_ADMINLOC1", "Replies_8hpp.html#a5fbaf200cc9b5904c024ab200a41efcc", null ],
     [ "RPL_ADMINLOC2", "Replies_8hpp.html#ad1817435d064ccaa3b8a91f0a7cd88cd", null ],
@@ -51,7 +51,7 @@ var Replies_8hpp =
     [ "RPL_BANLIST", "Replies_8hpp.html#aab54064fcb75205f5ccda1ebaade4f50", null ],
     [ "RPL_BOUNCE", "Replies_8hpp.html#a2333aba4b916ad5a5aec695cae6649d3", null ],
     [ "RPL_CHANNELMODEIS", "Replies_8hpp.html#aaacf4eaf5d784dacf5bbb82781770e3a", null ],
-    [ "RPL_CREATED", "Replies_8hpp.html#afd2038268e27d096165b1fbc73e13e18", null ],
+    [ "RPL_CREATED", "Replies_8hpp.html#a288224f189197a3a80be377f0104db8b", null ],
     [ "RPL_CREATIONTIME", "Replies_8hpp.html#a820e14ea3c22e99e3bd5ab620d6d017f", null ],
     [ "RPL_ENDOFBANLIST", "Replies_8hpp.html#af0089a47da287fa616a435e1358aff7a", null ],
     [ "RPL_ENDOFEXCEPTLIST", "Replies_8hpp.html#a5227c18a75dea68f6c61a912d7e63af1", null ],
@@ -84,7 +84,7 @@ var Replies_8hpp =
     [ "RPL_LUSERUNKNOWN", "Replies_8hpp.html#a2c2ef7c0beead1d7a43274e63bc45200", null ],
     [ "RPL_MOTD", "Replies_8hpp.html#af5a7777acc056d2b99a04d3b68d4ea8b", null ],
     [ "RPL_MOTDSTART", "Replies_8hpp.html#ad5b7395439018a3a48dfd43c5ac7ee6f", null ],
-    [ "RPL_MYINFO", "Replies_8hpp.html#a8c98b7157ace5a490ef8ab00fb50f8f5", null ],
+    [ "RPL_MYINFO", "Replies_8hpp.html#a1f7e64e01aae6c30bbfa7973c88fcc87", null ],
     [ "RPL_NAMREPLY", "Replies_8hpp.html#a71772965177044d3b3f06bae6ff0ceee", null ],
     [ "RPL_NONE", "Replies_8hpp.html#ae06cc3bea4d38d158c481f78f01cb5d2", null ],
     [ "RPL_NOTOPIC", "Replies_8hpp.html#a068f08f42f84509e823271b5d66b73af", null ],
@@ -118,5 +118,5 @@ var Replies_8hpp =
     [ "RPL_WHOREPLY", "Replies_8hpp.html#a8c2708eb04cfc5acf3b73f8eeac08d1f", null ],
     [ "RPL_WHOWASUSER", "Replies_8hpp.html#af2dc7f1f2d7a5d2d161655d8f1693976", null ],
     [ "RPL_YOUREOPER", "Replies_8hpp.html#af815619191583e954da9323c8566360f", null ],
-    [ "RPL_YOURHOST", "Replies_8hpp.html#a4ff340e008c2409e84a98236476edf65", null ]
+    [ "RPL_YOURHOST", "Replies_8hpp.html#a548537d339b5966aa2ca0a6e3570d66a", null ]
 ];

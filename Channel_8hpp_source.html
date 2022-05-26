@@ -144,10 +144,10 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">   53</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">joined</a>(<a class="code" href="classClient.html">Client</a> *client)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_normal_clients.size(); i++)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_normal_clients[i]-&gt;_name == client-&gt;<a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_normal_clients[i]-&gt;_nick == client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_ope_clients.size(); i++)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_ope_clients[i]-&gt;_name == client-&gt;<a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_ope_clients[i]-&gt;_nick == client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
@@ -159,7 +159,6 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html"><div class="ttname"><a href="classChannel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> Channel.hpp:9</div></div>
 <div class="ttc" id="aclassChannel_html_a082fd9c1f37bbbb26bdb28b285659b2c"><div class="ttname"><a href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">Channel::getName</a></div><div class="ttdeci">std::string &amp; getName(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:45</div></div>
 <div class="ttc" id="aclassChannel_html_a26f5d4a249bab4b1bbc1863c943115fb"><div class="ttname"><a href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel::Channel</a></div><div class="ttdeci">Channel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:25</div></div>
-<div class="ttc" id="aclassClient_html_a689d377b2b884f0cbb9219d66f5d31f3"><div class="ttname"><a href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">Client::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Client.hpp:29</div></div>
 <div class="ttc" id="aclassChannel_html_a1cc547a4312634c68769f1c62d2b4df9"><div class="ttname"><a href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">Channel::setCreator</a></div><div class="ttdeci">void setCreator(Client *creator)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:32</div></div>
 <div class="ttc" id="aclassChannel_html_a2af7dc5770799fdea6f624c040bbd8c8"><div class="ttname"><a href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">Channel::_normal_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _normal_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:20</div></div>
 <div class="ttc" id="aclassChannel_html_a5220250205f35b248205e2a4ba41519d"><div class="ttname"><a href="classChannel.html#a5220250205f35b248205e2a4ba41519d">Channel::getPassword</a></div><div class="ttdeci">std::string &amp; getPassword(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:40</div></div>
@@ -167,12 +166,13 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_a6daf61a24bc288f5612698070c6d87d9"><div class="ttname"><a href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">Channel::_ope_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _ope_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:21</div></div>
 <div class="ttc" id="aclassChannel_html_acc7d04f494e076b78a8affae33d3bcf8"><div class="ttname"><a href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">Channel::joined</a></div><div class="ttdeci">bool joined(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:53</div></div>
 <div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:25</div></div>
+<div class="ttc" id="aclassClient_html_adc9a9e85762060c89ae4db308fae187c"><div class="ttname"><a href="classClient.html#adc9a9e85762060c89ae4db308fae187c">Client::_nick</a></div><div class="ttdeci">std::string _nick</div><div class="ttdef"><b>Definition:</b> Client.hpp:29</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Channel_8hpp.html">Channel.hpp</a></li>
-    <li class="footer">Generated on Wed May 25 2022 17:06:21 for IRC SERVER by
+    <li class="footer">Generated on Thu May 26 2022 17:57:25 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

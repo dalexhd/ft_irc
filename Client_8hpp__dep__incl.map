@@ -1,11 +1,11 @@
 <map id="includes/Client.hpp" name="includes/Client.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="6520,5,6667,32"/>
-<area shape="rect" id="node2" href="$Channel_8hpp.html" title=" " alt="" coords="6394,80,6555,107"/>
-<area shape="rect" id="node3" href="$Server_8hpp.html" title=" " alt="" coords="6459,155,6608,181"/>
-<area shape="rect" id="node37" href="$client_8cpp.html" title=" " alt="" coords="6631,80,6745,107"/>
-<area shape="rect" id="node4" href="$Command_8hpp.html" title=" " alt="" coords="3106,229,3281,256"/>
-<area shape="rect" id="node10" href="$server_8cpp.html" title=" " alt="" coords="4174,379,4293,405"/>
-<area shape="rect" id="node36" href="$validation_8cpp.html" title=" " alt="" coords="6571,229,6747,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="6475,5,6621,32"/>
+<area shape="rect" id="node2" href="$Channel_8hpp.html" title=" " alt="" coords="6349,80,6510,107"/>
+<area shape="rect" id="node3" href="$Server_8hpp.html" title=" " alt="" coords="6413,155,6563,181"/>
+<area shape="rect" id="node37" href="$client_8cpp.html" title=" " alt="" coords="6585,80,6700,107"/>
+<area shape="rect" id="node4" href="$Command_8hpp.html" title=" " alt="" coords="3097,229,3271,256"/>
+<area shape="rect" id="node10" href="$server_8cpp.html" title=" " alt="" coords="3125,379,3243,405"/>
+<area shape="rect" id="node36" href="$validation_8cpp.html" title=" " alt="" coords="6525,229,6701,256"/>
 <area shape="rect" id="node5" href="$Away_8hpp.html" title=" " alt="" coords="5,304,187,331"/>
 <area shape="rect" id="node6" href="$Close_8hpp.html" title=" " alt="" coords="211,304,394,331"/>
 <area shape="rect" id="node7" href="$cmds_2Exit_8hpp.html" title=" " alt="" coords="418,304,590,331"/>
@@ -20,20 +20,20 @@
 <area shape="rect" id="node17" href="$Notice_8hpp.html" title=" " alt="" coords="2239,304,2428,331"/>
 <area shape="rect" id="node18" href="$OpenHost_8hpp.html" title=" " alt="" coords="2452,304,2663,331"/>
 <area shape="rect" id="node19" href="$Part_8hpp.html" title=" " alt="" coords="2687,304,2859,331"/>
-<area shape="rect" id="node20" href="$cmds_2PrivMsg_8hpp.html" title=" " alt="" coords="2883,304,3082,331"/>
-<area shape="rect" id="node21" href="$Quit_8hpp.html" title=" " alt="" coords="3106,304,3281,331"/>
-<area shape="rect" id="node22" href="$Status_8hpp.html" title=" " alt="" coords="3305,304,3493,331"/>
-<area shape="rect" id="node23" href="$User_8hpp.html" title=" " alt="" coords="3517,304,3693,331"/>
-<area shape="rect" id="node24" href="$Who_8hpp.html" title=" " alt="" coords="3717,304,3893,331"/>
-<area shape="rect" id="node25" href="$Whois_8hpp.html" title=" " alt="" coords="3917,304,4104,331"/>
-<area shape="rect" id="node26" href="$Ban_8hpp.html" title=" " alt="" coords="4129,304,4338,331"/>
-<area shape="rect" id="node27" href="$Echo_8hpp.html" title=" " alt="" coords="4362,304,4577,331"/>
-<area shape="rect" id="node28" href="$commands_2Exit_8hpp.html" title=" " alt="" coords="4601,304,4810,331"/>
-<area shape="rect" id="node29" href="$commands_2Help_8hpp.html" title=" " alt="" coords="4834,304,5049,331"/>
-<area shape="rect" id="node30" href="$Info_8hpp.html" title=" " alt="" coords="5073,304,5282,331"/>
-<area shape="rect" id="node31" href="$Name_8hpp.html" title=" " alt="" coords="5306,304,5529,331"/>
-<area shape="rect" id="node32" href="$commands_2Nick_8hpp.html" title=" " alt="" coords="5553,304,5767,331"/>
-<area shape="rect" id="node33" href="$Ope_8hpp.html" title=" " alt="" coords="5791,304,6001,331"/>
-<area shape="rect" id="node34" href="$commands_2Ping_8hpp.html" title=" " alt="" coords="6025,304,6237,331"/>
-<area shape="rect" id="node35" href="$commands_2PrivMsg_8hpp.html" title=" " alt="" coords="6261,304,6497,331"/>
+<area shape="rect" id="node20" href="$Pass_8hpp.html" title=" " alt="" coords="2884,304,3060,331"/>
+<area shape="rect" id="node21" href="$cmds_2PrivMsg_8hpp.html" title=" " alt="" coords="3085,304,3283,331"/>
+<area shape="rect" id="node22" href="$Quit_8hpp.html" title=" " alt="" coords="3307,304,3482,331"/>
+<area shape="rect" id="node23" href="$Status_8hpp.html" title=" " alt="" coords="3506,304,3694,331"/>
+<area shape="rect" id="node24" href="$User_8hpp.html" title=" " alt="" coords="3719,304,3895,331"/>
+<area shape="rect" id="node25" href="$Who_8hpp.html" title=" " alt="" coords="3919,304,4095,331"/>
+<area shape="rect" id="node26" href="$Whois_8hpp.html" title=" " alt="" coords="4119,304,4305,331"/>
+<area shape="rect" id="node27" href="$Ban_8hpp.html" title=" " alt="" coords="4330,304,4539,331"/>
+<area shape="rect" id="node28" href="$Echo_8hpp.html" title=" " alt="" coords="4563,304,4778,331"/>
+<area shape="rect" id="node29" href="$commands_2Exit_8hpp.html" title=" " alt="" coords="4802,304,5011,331"/>
+<area shape="rect" id="node30" href="$commands_2Help_8hpp.html" title=" " alt="" coords="5035,304,5250,331"/>
+<area shape="rect" id="node31" href="$Info_8hpp.html" title=" " alt="" coords="5274,304,5483,331"/>
+<area shape="rect" id="node32" href="$commands_2Nick_8hpp.html" title=" " alt="" coords="5508,304,5721,331"/>
+<area shape="rect" id="node33" href="$Ope_8hpp.html" title=" " alt="" coords="5745,304,5956,331"/>
+<area shape="rect" id="node34" href="$commands_2Ping_8hpp.html" title=" " alt="" coords="5979,304,6191,331"/>
+<area shape="rect" id="node35" href="$commands_2PrivMsg_8hpp.html" title=" " alt="" coords="6215,304,6451,331"/>
 </map>

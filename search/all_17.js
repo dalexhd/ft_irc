@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['_7eclient_272',['~Client',['../classClient.html#a840e519ca781888cbd54181572ebe3a7',1,'Client']]],
-  ['_7ecommand_273',['~Command',['../classCommand.html#a641c23ef533dd6f77d0a4ef0311598b2',1,'Command']]],
-  ['_7eserver_274',['~Server',['../classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]]
+  ['who_285',['Who',['../classWho.html',1,'Who'],['../classWho.html#ab519eb62bf29bb56d29ac4fe6fbe3f7d',1,'Who::Who()']]],
+  ['who_2ehpp_286',['Who.hpp',['../Who_8hpp.html',1,'']]],
+  ['whois_287',['Whois',['../classWhois.html',1,'Whois'],['../classWhois.html#a3d37fa31b8b97c0fb6b8fed1ec6471e1',1,'Whois::Whois()']]],
+  ['whois_2ehpp_288',['Whois.hpp',['../Whois_8hpp.html',1,'']]]
 ];
