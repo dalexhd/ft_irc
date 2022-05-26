@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/26 21:40:25 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:07:20 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,10 @@
 #define ERR_ERRONEUSNICKNAME 432
 #define ERR_NICKNAMEINUSE(servername, nick) \
 	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
-#define ERR_USERNOTINCHANNEL 441
+#define ERR_USERNOTINCHANNEL(servername, nick, channel) \
+	":" + servername + " 441 * " + nick + " :They aren't on that channel\n"
 #define ERR_NOTONCHANNEL(servername, nick, channel) \
-	":" + servername + " 403 * " + nick + " :You're not on that channel\n"
+	":" + servername + " 442 * " + nick + " :You're not on that channel\n"
 #define ERR_USERONCHANNEL(servername, nick) \
 	":" + servername + " 443 * " + nick + " :You're already member of that channel\n"
 #define ERR_NOTREGISTERED 451

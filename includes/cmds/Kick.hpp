@@ -20,12 +20,12 @@ class Kick : public Command
 
 		/*
 		REPLIES
-		ERR_NEEDMOREPARAMS (461)
+		ERR_NEEDMOREPARAMS (461) k
 		ERR_NOSUCHCHANNEL (403)
 		ERR_CHANOPRIVSNEEDED (482)
-		ERR_USERNOTINCHANNEL (441)
-		ERR_NOTONCHANNEL (442)
-		ERR_BADCHANMASK (476)
+		ERR_USERNOTINCHANNEL (441) k
+		ERR_NOTONCHANNEL (442) k
+		ERR_BADCHANMASK (476) k
 
 		*/
 	}
@@ -38,7 +38,7 @@ class Kick : public Command
 
 		if (p.size() > 3 || p.size() < 2)
 		{
-			_sender->message("<client> <command> :Not enough parameters\n");
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,_sender->_nick,_message->getCmd())); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
 		else
@@ -77,21 +77,19 @@ class Kick : public Command
 
 					if (getUserChannel == false)
 					{
-						_sender->message("<client> <nick> <channel> :They "
-						                 "aren't on that channel\n");
+						_sender->message(ERR_USERNOTINCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
 						return (false);
 					}
 					if (isSenderOnChannel == false)
 					{
-						_sender->message("<client> <channel> :You're not on "
-						                 "that channel\n");
+						_sender->message(ERR_NOTONCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
 						return (false);
 					}
 				}
 			}
 			else
 			{
-				_sender->message("<client> <channel> :No such channel\n");
+				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
 				return (false);
 			}
 		}
