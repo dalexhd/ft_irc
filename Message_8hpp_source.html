@@ -90,39 +90,43 @@ $(document).ready(function(){initNavTree('Message_8hpp_source.html',''); initRes
 <a href="Message_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MESSAGE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MESSAGE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classMessage.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMessage.html">Message</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">   12</a></span>&#160;    std::string <a class="code" href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">_buffer</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::string                   _cmd;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::map&lt;size_t, std::string&gt; _params;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classMessage.html#ada2d865e502a27c16613631de9270acb">Message</a>(std::string &amp;buffer);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string                   <a class="code" href="classMessage.html#ad89a43eb39898c822b754288fef467b8">getCmd</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::map&lt;size_t, std::string&gt; <a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Our includes</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="functions_8hpp.html">./functions.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classMessage.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMessage.html">Message</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">   15</a></span>&#160;    std::string <a class="code" href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">_buffer</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::string                   _cmd;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::map&lt;size_t, std::string&gt; _params;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classMessage.html#ada2d865e502a27c16613631de9270acb">Message</a>(std::string &amp;buffer);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::string                   <a class="code" href="classMessage.html#ad89a43eb39898c822b754288fef467b8">getCmd</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::map&lt;size_t, std::string&gt; <a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassMessage_html_ada2d865e502a27c16613631de9270acb"><div class="ttname"><a href="classMessage.html#ada2d865e502a27c16613631de9270acb">Message::Message</a></div><div class="ttdeci">Message(std::string &amp;buffer)</div><div class="ttdoc">Construct a new Message:: Message object.</div><div class="ttdef"><b>Definition:</b> message.cpp:46</div></div>
-<div class="ttc" id="aclassMessage_html_ae316fd21c4a6a6f89fe96d4280f53d31"><div class="ttname"><a href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">Message::_buffer</a></div><div class="ttdeci">std::string _buffer</div><div class="ttdef"><b>Definition:</b> Message.hpp:12</div></div>
-<div class="ttc" id="aclassMessage_html_ad89a43eb39898c822b754288fef467b8"><div class="ttname"><a href="classMessage.html#ad89a43eb39898c822b754288fef467b8">Message::getCmd</a></div><div class="ttdeci">std::string getCmd(void) const</div><div class="ttdef"><b>Definition:</b> message.cpp:72</div></div>
-<div class="ttc" id="aclassMessage_html_ae175384074674e34978f40261238d701"><div class="ttname"><a href="classMessage.html#ae175384074674e34978f40261238d701">Message::getParams</a></div><div class="ttdeci">std::map&lt; size_t, std::string &gt; getParams(void) const</div><div class="ttdef"><b>Definition:</b> message.cpp:77</div></div>
-<div class="ttc" id="aclassMessage_html"><div class="ttname"><a href="classMessage.html">Message</a></div><div class="ttdef"><b>Definition:</b> Message.hpp:9</div></div>
+<div class="ttc" id="aclassMessage_html_ae316fd21c4a6a6f89fe96d4280f53d31"><div class="ttname"><a href="classMessage.html#ae316fd21c4a6a6f89fe96d4280f53d31">Message::_buffer</a></div><div class="ttdeci">std::string _buffer</div><div class="ttdef"><b>Definition:</b> Message.hpp:15</div></div>
+<div class="ttc" id="aclassMessage_html_ad89a43eb39898c822b754288fef467b8"><div class="ttname"><a href="classMessage.html#ad89a43eb39898c822b754288fef467b8">Message::getCmd</a></div><div class="ttdeci">std::string getCmd(void) const</div><div class="ttdef"><b>Definition:</b> message.cpp:74</div></div>
+<div class="ttc" id="afunctions_8hpp_html"><div class="ttname"><a href="functions_8hpp.html">functions.hpp</a></div></div>
+<div class="ttc" id="aclassMessage_html_ae175384074674e34978f40261238d701"><div class="ttname"><a href="classMessage.html#ae175384074674e34978f40261238d701">Message::getParams</a></div><div class="ttdeci">std::map&lt; size_t, std::string &gt; getParams(void) const</div><div class="ttdef"><b>Definition:</b> message.cpp:79</div></div>
+<div class="ttc" id="aclassMessage_html"><div class="ttname"><a href="classMessage.html">Message</a></div><div class="ttdef"><b>Definition:</b> Message.hpp:12</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Message_8hpp.html">Message.hpp</a></li>
-    <li class="footer">Generated on Mon May 30 2022 15:42:15 for IRC SERVER by
+    <li class="footer">Generated on Mon May 30 2022 16:01:03 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

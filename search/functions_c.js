@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['message_252',['message',['../classClient.html#a9ee33da0a8d00f8416b934b6027d35cd',1,'Client::message(char const *message)'],['../classClient.html#aa8b80aa00cdf8d687138511725c33a91',1,'Client::message(std::string const message)'],['../classMessage.html#ada2d865e502a27c16613631de9270acb',1,'Message::Message()']]],
-  ['messagesreceived_253',['messagesReceived',['../classClient.html#a42a1d767e2a3e08a5276b78e20193252',1,'Client']]],
-  ['messagessent_254',['messagesSent',['../classClient.html#a1a1d138438f5d59711ed240f00de1985',1,'Client']]],
-  ['missingope_255',['missingOpe',['../classCommand.html#abd59bde053da57d6b7aaa1ba647ae179',1,'Command']]],
-  ['mode_256',['Mode',['../classMode.html#a098246baedeee64fa0ed3b53547cf55f',1,'Mode']]]
+  ['names_409',['Names',['../classNames.html#ad8fd9b4e492dbf7347d64d6b2c1c5238',1,'Names']]],
+  ['needsauth_410',['needsAuth',['../classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88',1,'Command']]],
+  ['nick_411',['Nick',['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()'],['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()']]],
+  ['notice_412',['Notice',['../classNotice.html#a38ddbc4640546b325eb42aba16273f35',1,'Notice']]]
 ];

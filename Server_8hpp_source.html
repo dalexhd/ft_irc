@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: aborboll &lt;aborboll@student.42.fr&gt;          +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2022/05/19 15:51:16 by aborboll         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2022/05/30 15:55:59 by aborboll         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -112,157 +112,174 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Client_8hpp.html">./Client.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Color_8hpp.html">./Color.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">./config.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="functions_8hpp.html">./functions.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Commands</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span><a class="code" href="classCommand.html">Command</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Validation</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Server_8hpp.html#aee8960a54b0fdcad5e9652e5918d69b0">validate_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classServer.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classServer.html">Server</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Connection params</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string <span class="keyword">const</span> host;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string <span class="keyword">const</span> port;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string <span class="keyword">const</span> password;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Clients</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classServer.html#a8c2b241438fc32daefe6857270915433">   44</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Commands</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">   47</a></span>&#160;    std::map&lt;std::string, Command *&gt; <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Channels</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classServer.html#a681e496f50b233764572c310f5b822e0">   50</a></span>&#160;    std::map&lt;std::string, Channel *&gt; <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Socket status</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47">   53</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classStatus.html">Status</a></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">   55</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">OFFLINE</a>,</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">   56</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">ONLINE</a>,</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">   57</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">CLOSED</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <a class="code" href="classServer.html#acefdea0217887b8e49b7c00024ff1201">_status</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Socket specific vars</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">   61</a></span>&#160;    std::vector&lt;pollfd&gt; <a class="code" href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">_pfds</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classServer.html#a1800f84586a26a159c743c1c78be841e">   62</a></span>&#160;    <span class="keywordtype">int</span>                 <a class="code" href="classServer.html#a1800f84586a26a159c743c1c78be841e">_socket</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classServer.html#adc13d87fce5c9a474b818750f289132b">Server</a>(std::string host, std::string port, std::string password);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServer.html#ac96eaa52d546b17ad1ff9308e99ce620">close_server</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServer.html#abb27d30b40a94326e3fd629d3b30b7d5">run</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Helpers</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">   71</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">is_running</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classServer.html#acefdea0217887b8e49b7c00024ff1201">_status</a> == <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">ONLINE</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classCommand.html">Command</a> *<a class="code" href="classServer.html#a98b5157bf2a5022962f49f19a3e52e32">findCmd</a>(std::string str);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classClient.html">Client</a> * <a class="code" href="classServer.html#a38d90471cfd5232185e7e97e42242ffb">findClient</a>(std::string str);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> createServerListener(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> createServerPoll(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> removeClientFromServer(<span class="keywordtype">size_t</span> clientId);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span>  readClient(<span class="keywordtype">size_t</span> &amp;i);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> setupCommands(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Commands</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class </span><a class="code" href="classCommand.html">Command</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Validation</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="Server_8hpp.html#aee8960a54b0fdcad5e9652e5918d69b0">validate_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classServer.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classServer.html">Server</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Connection params</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string <span class="keyword">const</span> host;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string <span class="keyword">const</span> servername;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string <span class="keyword">const</span> version;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string <span class="keyword">const</span> port;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string <span class="keyword">const</span> password;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Clients</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classServer.html#a8c2b241438fc32daefe6857270915433">   45</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Commands</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">   48</a></span>&#160;    std::map&lt;std::string, Command *&gt; <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Channels</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classServer.html#a681e496f50b233764572c310f5b822e0">   51</a></span>&#160;    std::map&lt;std::string, Channel *&gt; <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Socket status</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47">   54</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classStatus.html">Status</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">   56</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">OFFLINE</a>,</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">   57</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">ONLINE</a>,</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">   58</a></span>&#160;        <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">CLOSED</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    } <a class="code" href="classServer.html#acefdea0217887b8e49b7c00024ff1201">_status</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Socket specific vars</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">   62</a></span>&#160;    std::vector&lt;pollfd&gt; <a class="code" href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">_pfds</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classServer.html#a1800f84586a26a159c743c1c78be841e">   63</a></span>&#160;    <span class="keywordtype">int</span>                 <a class="code" href="classServer.html#a1800f84586a26a159c743c1c78be841e">_socket</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classServer.html#adc13d87fce5c9a474b818750f289132b">Server</a>(std::string host, std::string port, std::string password);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServer.html#ac96eaa52d546b17ad1ff9308e99ce620">close_server</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServer.html#abb27d30b40a94326e3fd629d3b30b7d5">run</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Helpers</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">   72</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">is_running</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classServer.html#acefdea0217887b8e49b7c00024ff1201">_status</a> == <a class="code" href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">ONLINE</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classServer.html#acd7b5a64b3a88554250f7d6666f208ba">   76</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classServer.html#acd7b5a64b3a88554250f7d6666f208ba">hasPassword</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> (password != <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classServer.html#a1e71fd484bc23c67814876c243fa08ca">   80</a></span>&#160;    std::string <span class="keyword">const</span> <a class="code" href="classServer.html#a1e71fd484bc23c67814876c243fa08ca">getPassword</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> (password);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Clients stuff</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">   89</a></span>&#160;    <a class="code" href="classClient.html">Client</a> *<a class="code" href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">getClient</a>(std::string &amp;name)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>.size(); i++)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]-&gt;_name == name)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classServer.html#a399e5a12513223a087897a4a08d62df2">   99</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classServer.html#a399e5a12513223a087897a4a08d62df2">getClientIndex</a>(std::string &amp;name)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>.size(); i++)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]-&gt;_name == name)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">return</span> (i);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// Channel stuff</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">  112</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">getChannel</a>(std::string &amp;name)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            name = name.substr(1);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">  119</a></span>&#160;    std::vector&lt;Channel *&gt; <a class="code" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">getChannels</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> createServerListener(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> createServerPoll(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> removeClientFromServer(<span class="keywordtype">size_t</span> clientId);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span>  readClient(<span class="keywordtype">size_t</span> &amp;i);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> setupCommands(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Clients stuff</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">   96</a></span>&#160;    <a class="code" href="classClient.html">Client</a> *<a class="code" href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">getClient</a>(std::string &amp;name)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>.size(); i++)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]-&gt;_nick == name)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classServer.html#a399e5a12513223a087897a4a08d62df2">  106</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classServer.html#a399e5a12513223a087897a4a08d62df2">getClientIndex</a>(std::string &amp;name)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>.size(); i++)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a>[i]-&gt;_nick == name)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">return</span> (i);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Channel stuff</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">  119</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">getChannel</a>(std::string &amp;name)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::vector&lt;Channel *&gt;                     channels;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::map&lt;std::string, Channel *&gt;::iterator it;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">for</span> (it = <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.begin(); it != <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.end(); it++)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            channels.push_back(it-&gt;second);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> channels;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">  128</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">createChannel</a>(std::string &amp;name, std::string &amp;password)</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            name = name.substr(1);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name] = <span class="keyword">new</span> <a class="code" href="classChannel.html">Channel</a>(name, password);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            name = name.substr(1);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">  126</a></span>&#160;    std::vector&lt;Channel *&gt; <a class="code" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">getChannels</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        std::vector&lt;Channel *&gt;                     channels;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::map&lt;std::string, Channel *&gt;::iterator it;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span> (it = <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.begin(); it != <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.end(); it++)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            channels.push_back(it-&gt;second);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> channels;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">  135</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">createChannel</a>(std::string &amp;name, std::string &amp;password)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            name = name.substr(1);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name] = <span class="keyword">new</span> <a class="code" href="classChannel.html">Channel</a>(name, password);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// Commands stuff</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classServer.html#a9a198609328f8d6a866842ece540e236">  146</a></span>&#160;    <a class="code" href="classCommand.html">Command</a> *<a class="code" href="classServer.html#a9a198609328f8d6a866842ece540e236">getCommand</a>(std::string &amp;name)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.find(name) != <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.end())</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>[name];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassServer_html_ac96eaa52d546b17ad1ff9308e99ce620"><div class="ttname"><a href="classServer.html#ac96eaa52d546b17ad1ff9308e99ce620">Server::close_server</a></div><div class="ttdeci">void close_server()</div></div>
-<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">Server::CLOSED</a></div><div class="ttdeci">@ CLOSED</div><div class="ttdef"><b>Definition:</b> Server.hpp:57</div></div>
+<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47aa4655ab2ae740b41546d0a8341404b61">Server::CLOSED</a></div><div class="ttdeci">@ CLOSED</div><div class="ttdef"><b>Definition:</b> Server.hpp:58</div></div>
 <div class="ttc" id="aclassChannel_html"><div class="ttname"><a href="classChannel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> Channel.hpp:9</div></div>
-<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">Server::ONLINE</a></div><div class="ttdeci">@ ONLINE</div><div class="ttdef"><b>Definition:</b> Server.hpp:56</div></div>
-<div class="ttc" id="aclassServer_html_a399e5a12513223a087897a4a08d62df2"><div class="ttname"><a href="classServer.html#a399e5a12513223a087897a4a08d62df2">Server::getClientIndex</a></div><div class="ttdeci">size_t getClientIndex(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:99</div></div>
-<div class="ttc" id="aclassServer_html_ab8f7cc8f78c8641c39cbf86dcc0ad559"><div class="ttname"><a href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">Server::_commands</a></div><div class="ttdeci">std::map&lt; std::string, Command * &gt; _commands</div><div class="ttdef"><b>Definition:</b> Server.hpp:47</div></div>
-<div class="ttc" id="aclassServer_html_a2c9a45dc89d3b53b44050be89c384d39"><div class="ttname"><a href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">Server::_pfds</a></div><div class="ttdeci">std::vector&lt; pollfd &gt; _pfds</div><div class="ttdef"><b>Definition:</b> Server.hpp:61</div></div>
+<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8">Server::ONLINE</a></div><div class="ttdeci">@ ONLINE</div><div class="ttdef"><b>Definition:</b> Server.hpp:57</div></div>
+<div class="ttc" id="aclassServer_html_a399e5a12513223a087897a4a08d62df2"><div class="ttname"><a href="classServer.html#a399e5a12513223a087897a4a08d62df2">Server::getClientIndex</a></div><div class="ttdeci">size_t getClientIndex(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:106</div></div>
+<div class="ttc" id="aclassServer_html_ab8f7cc8f78c8641c39cbf86dcc0ad559"><div class="ttname"><a href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">Server::_commands</a></div><div class="ttdeci">std::map&lt; std::string, Command * &gt; _commands</div><div class="ttdef"><b>Definition:</b> Server.hpp:48</div></div>
+<div class="ttc" id="aclassServer_html_a2c9a45dc89d3b53b44050be89c384d39"><div class="ttname"><a href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">Server::_pfds</a></div><div class="ttdeci">std::vector&lt; pollfd &gt; _pfds</div><div class="ttdef"><b>Definition:</b> Server.hpp:62</div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
-<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdef"><b>Definition:</b> server.cpp:147</div></div>
+<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdef"><b>Definition:</b> server.cpp:168</div></div>
 <div class="ttc" id="aServer_8hpp_html_aee8960a54b0fdcad5e9652e5918d69b0"><div class="ttname"><a href="Server_8hpp.html#aee8960a54b0fdcad5e9652e5918d69b0">validate_args</a></div><div class="ttdeci">bool validate_args(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> validation.cpp:15</div></div>
-<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">Server::OFFLINE</a></div><div class="ttdeci">@ OFFLINE</div><div class="ttdef"><b>Definition:</b> Server.hpp:55</div></div>
-<div class="ttc" id="aclassServer_html_a1800f84586a26a159c743c1c78be841e"><div class="ttname"><a href="classServer.html#a1800f84586a26a159c743c1c78be841e">Server::_socket</a></div><div class="ttdeci">int _socket</div><div class="ttdef"><b>Definition:</b> Server.hpp:62</div></div>
+<div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">Server::OFFLINE</a></div><div class="ttdeci">@ OFFLINE</div><div class="ttdef"><b>Definition:</b> Server.hpp:56</div></div>
+<div class="ttc" id="aclassServer_html_a1800f84586a26a159c743c1c78be841e"><div class="ttname"><a href="classServer.html#a1800f84586a26a159c743c1c78be841e">Server::_socket</a></div><div class="ttdeci">int _socket</div><div class="ttdef"><b>Definition:</b> Server.hpp:63</div></div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> Command.hpp:7</div></div>
-<div class="ttc" id="aclassServer_html_a681e496f50b233764572c310f5b822e0"><div class="ttname"><a href="classServer.html#a681e496f50b233764572c310f5b822e0">Server::_channels</a></div><div class="ttdeci">std::map&lt; std::string, Channel * &gt; _channels</div><div class="ttdef"><b>Definition:</b> Server.hpp:50</div></div>
+<div class="ttc" id="aclassServer_html_a681e496f50b233764572c310f5b822e0"><div class="ttname"><a href="classServer.html#a681e496f50b233764572c310f5b822e0">Server::_channels</a></div><div class="ttdeci">std::map&lt; std::string, Channel * &gt; _channels</div><div class="ttdef"><b>Definition:</b> Server.hpp:51</div></div>
 <div class="ttc" id="aclassStatus_html"><div class="ttname"><a href="classStatus.html">Status</a></div><div class="ttdef"><b>Definition:</b> Status.hpp:7</div></div>
-<div class="ttc" id="aclassServer_html_aa6b758514ffdc34ac3c5a1bcf245a3ed"><div class="ttname"><a href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">Server::createChannel</a></div><div class="ttdeci">Channel * createChannel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Server.hpp:128</div></div>
-<div class="ttc" id="afunctions_8hpp_html"><div class="ttname"><a href="functions_8hpp.html">functions.hpp</a></div></div>
-<div class="ttc" id="aclassServer_html_a3e30a0afff7c3779e4c63c178c98ac4a"><div class="ttname"><a href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">Server::is_running</a></div><div class="ttdeci">bool is_running(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:71</div></div>
-<div class="ttc" id="aclassServer_html_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2"><div class="ttname"><a href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">Server::getChannels</a></div><div class="ttdeci">std::vector&lt; Channel * &gt; getChannels(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:119</div></div>
+<div class="ttc" id="aclassServer_html_aa6b758514ffdc34ac3c5a1bcf245a3ed"><div class="ttname"><a href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">Server::createChannel</a></div><div class="ttdeci">Channel * createChannel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Server.hpp:135</div></div>
+<div class="ttc" id="aclassServer_html_a3e30a0afff7c3779e4c63c178c98ac4a"><div class="ttname"><a href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">Server::is_running</a></div><div class="ttdeci">bool is_running(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:72</div></div>
+<div class="ttc" id="aclassServer_html_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2"><div class="ttname"><a href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">Server::getChannels</a></div><div class="ttdeci">std::vector&lt; Channel * &gt; getChannels(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:126</div></div>
+<div class="ttc" id="aclassServer_html_acd7b5a64b3a88554250f7d6666f208ba"><div class="ttname"><a href="classServer.html#acd7b5a64b3a88554250f7d6666f208ba">Server::hasPassword</a></div><div class="ttdeci">bool hasPassword(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:76</div></div>
+<div class="ttc" id="aclassServer_html_a9a198609328f8d6a866842ece540e236"><div class="ttname"><a href="classServer.html#a9a198609328f8d6a866842ece540e236">Server::getCommand</a></div><div class="ttdeci">Command * getCommand(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:146</div></div>
 <div class="ttc" id="aChannel_8hpp_html"><div class="ttname"><a href="Channel_8hpp.html">Channel.hpp</a></div></div>
-<div class="ttc" id="aclassServer_html_ae4313a2ec9463bf58b75860457c737fb"><div class="ttname"><a href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">Server::getClient</a></div><div class="ttdeci">Client * getClient(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:89</div></div>
-<div class="ttc" id="aclassServer_html_adc13d87fce5c9a474b818750f289132b"><div class="ttname"><a href="classServer.html#adc13d87fce5c9a474b818750f289132b">Server::Server</a></div><div class="ttdeci">Server(std::string host, std::string port, std::string password)</div><div class="ttdoc">Here we init the server instance.</div><div class="ttdef"><b>Definition:</b> server.cpp:123</div></div>
-<div class="ttc" id="aclassServer_html_a8c2b241438fc32daefe6857270915433"><div class="ttname"><a href="classServer.html#a8c2b241438fc32daefe6857270915433">Server::_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _clients</div><div class="ttdef"><b>Definition:</b> Server.hpp:44</div></div>
+<div class="ttc" id="aclassServer_html_a1e71fd484bc23c67814876c243fa08ca"><div class="ttname"><a href="classServer.html#a1e71fd484bc23c67814876c243fa08ca">Server::getPassword</a></div><div class="ttdeci">const std::string getPassword(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:80</div></div>
+<div class="ttc" id="aclassServer_html_ae4313a2ec9463bf58b75860457c737fb"><div class="ttname"><a href="classServer.html#ae4313a2ec9463bf58b75860457c737fb">Server::getClient</a></div><div class="ttdeci">Client * getClient(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:96</div></div>
+<div class="ttc" id="aclassServer_html_adc13d87fce5c9a474b818750f289132b"><div class="ttname"><a href="classServer.html#adc13d87fce5c9a474b818750f289132b">Server::Server</a></div><div class="ttdeci">Server(std::string host, std::string port, std::string password)</div><div class="ttdoc">Here we init the server instance.</div><div class="ttdef"><b>Definition:</b> server.cpp:138</div></div>
+<div class="ttc" id="aclassServer_html_a8c2b241438fc32daefe6857270915433"><div class="ttname"><a href="classServer.html#a8c2b241438fc32daefe6857270915433">Server::_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _clients</div><div class="ttdef"><b>Definition:</b> Server.hpp:45</div></div>
 <div class="ttc" id="aclassServer_html_acefdea0217887b8e49b7c00024ff1201"><div class="ttname"><a href="classServer.html#acefdea0217887b8e49b7c00024ff1201">Server::_status</a></div><div class="ttdeci">enum Server::Status _status</div></div>
 <div class="ttc" id="aclassServer_html_abb27d30b40a94326e3fd629d3b30b7d5"><div class="ttname"><a href="classServer.html#abb27d30b40a94326e3fd629d3b30b7d5">Server::run</a></div><div class="ttdeci">void run()</div></div>
-<div class="ttc" id="aclassServer_html_a98b5157bf2a5022962f49f19a3e52e32"><div class="ttname"><a href="classServer.html#a98b5157bf2a5022962f49f19a3e52e32">Server::findCmd</a></div><div class="ttdeci">Command * findCmd(std::string str)</div><div class="ttdef"><b>Definition:</b> server.cpp:167</div></div>
-<div class="ttc" id="aclassServer_html_a4fa910b5f5d034edcd67145c1df2d2cc"><div class="ttname"><a href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">Server::getChannel</a></div><div class="ttdeci">Channel * getChannel(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:112</div></div>
+<div class="ttc" id="aclassServer_html_a4fa910b5f5d034edcd67145c1df2d2cc"><div class="ttname"><a href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">Server::getChannel</a></div><div class="ttdeci">Channel * getChannel(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:119</div></div>
 <div class="ttc" id="aColor_8hpp_html"><div class="ttname"><a href="Color_8hpp.html">Color.hpp</a></div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
-<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdef"><b>Definition:</b> Server.hpp:34</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:25</div></div>
+<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdef"><b>Definition:</b> Server.hpp:33</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
-<div class="ttc" id="aclassServer_html_a38d90471cfd5232185e7e97e42242ffb"><div class="ttname"><a href="classServer.html#a38d90471cfd5232185e7e97e42242ffb">Server::findClient</a></div><div class="ttdeci">Client * findClient(std::string str)</div><div class="ttdef"><b>Definition:</b> server.cpp:175</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Server_8hpp.html">Server.hpp</a></li>
-    <li class="footer">Generated on Mon May 30 2022 15:42:15 for IRC SERVER by
+    <li class="footer">Generated on Mon May 30 2022 16:01:03 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

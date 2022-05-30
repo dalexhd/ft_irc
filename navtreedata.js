@@ -29,6 +29,14 @@ var NAVTREE =
       [ "CLIENT", "index.html#autotoc_md2", null ],
       [ "COMMANDS DOCS", "index.html#autotoc_md3", null ],
       [ "[](#message-format)Message Format", "index.html#autotoc_md4", null ],
+      [ "NUMERIC REPLIES", "index.html#autotoc_md7", null ],
+      [ "ADMIN", "index.html#autotoc_md8", null ],
+      [ "LUSERS", "index.html#autotoc_md9", null ],
+      [ "AWAY", "index.html#autotoc_md10", null ],
+      [ "WHO", "index.html#autotoc_md11", null ],
+      [ "LIST", "index.html#autotoc_md12", null ],
+      [ "NAMES", "index.html#autotoc_md13", null ],
+      [ "INFO", "index.html#autotoc_md14", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
@@ -54,7 +62,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Away_8hpp.html",
-"config_8hpp.html#ad4d796b98c583d49e83adabd74a63bf6"
+"classCommand.html#a69cc2e41b23641a2ff17d17343d3aeff"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

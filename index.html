@@ -145,13 +145,600 @@ COMMANDS DOCS</h2>
 <p>These message parts, and parameters themselves, are separated by one or more ASCII SPACE characters &lsquo;(&rsquo; ', 0x20)`.</p>
 <p>Most IRC servers limit messages to 512 bytes in length, including the trailing <code>CR-LF</code> characters. Implementations which include <a href="https://ircv3.net/specs/extensions/message-tags.html">message tags</a> need to allow additional bytes for the <b>tags</b> section of a message; clients must allow 8191 additional bytes and servers must allow 4096 additional bytes.</p>
 <hr  />
- </div></div><!-- PageDoc -->
+<h2><a class="anchor" id="autotoc_md7"></a>
+NUMERIC REPLIES</h2>
+<p><a href="https://modern.ircdocs.horse/#numerics">https://modern.ircdocs.horse/#numerics</a></p>
+<p>RPL_WELCOME (001)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Welcome to the -networkname- Network, -nick-[!&lt;user&gt;@&lt;host&gt;]"</li>
+<li>Usecase: After client registration</li>
+</ul>
+<p>RPL_YOURHOST (002)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Your host is -servername-, running version -version-"</li>
+<li>Usecase: <a class="el" href="classPart.html">Part</a> of the post-registration greeting</li>
+</ul>
+<p>RPL_CREATED (003)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :This server was created -datetime-"</li>
+<li>Usecase: <a class="el" href="classPart.html">Part</a> of the post-registration greeting,</li>
+</ul>
+<p>RPL_MYINFO (004)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_ISUPPORT (005)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_BOUNCE (010)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_UMODEIS (221)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_LUSERCLIENT (251)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_LUSEROP (252)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_LUSERUNKNOWN (253)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_LUSERCHANNELS (254)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_LUSERME (255)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+ADMIN</h2>
+<p>RPL_ADMINME (256)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ADMINLOC1 (257)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ADMINLOC2 (258)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ADMINEMAIL (259)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>#</p>
+<p>RPL_TRYAGAIN (263)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -command- :Please wait a while and try again."</li>
+<li>Usecase: When a server drops a command without processing it, this numeric MUST be sent to inform the client.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+LUSERS</h2>
+<p>RPL_LOCALUSERS (265)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_GLOBALUSERS (266)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>#</p>
+<p>RPL_WHOISCERTFP (276)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_NONE (300)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md10"></a>
+AWAY</h2>
+<p>RPL_AWAY (301)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_USERHOST (302)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_UNAWAY (305)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md11"></a>
+WHO</h2>
+<p>RPL_NOWAWAY (306)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOREPLY (352)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ENDOFWHO (315)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOISREGNICK (307)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOISUSER (311)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOISSERVER (312)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOISOPERATOR (313)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOWASUSER (314)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_WHOISIDLE (317)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_ENDOFWHOIS (318)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISCHANNELS (319)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISSPECIAL (320)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+LIST</h2>
+<p>RPL_LISTSTART (321)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- Channel :Users Name"</li>
+<li>Usecase: this numeric marks the start of a channel list</li>
+</ul>
+<p>RPL_LIST (322)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- -client count- :-topic-"</li>
+<li>Usecase: Sent as a reply to the LIST command,information about a channel to the client. -channel- is the name of the channel. -client count- is an integer indicating how many clients are joined to that channel. -topic- is the channel’s topic</li>
+</ul>
+<p>RPL_LISTEND (323)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :End of /LIST"</li>
+<li>Usecase: Sent as a reply to the LIST command, this numeric indicates the end of a LIST response.</li>
+</ul>
+<p>#</p>
+<p>RPL_CHANNELMODEIS (324)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_CREATIONTIME (329)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISACCOUNT (330)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_NOTOPIC (331)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_TOPIC (332)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_TOPICWHOTIME (333)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISACTUALLY (338)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_INVITING (341)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_INVITELIST (346)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ENDOFINVITELIST (347)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_EXCEPTLIST (348)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">RPL_ENDOFEXCEPTLIST (349)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_VERSION (351)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_NAMREPLY (353)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+NAMES</h2>
+<p>RPL_ENDOFNAMES (366)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :End of /NAMES list"</li>
+<li>Usecase: Sent as a reply to the NAMES command, this numeric specifies the end of a list of channel member names.</li>
+</ul>
+<p>RPL_BANLIST (367)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_ENDOFBANLIST (368)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_ENDOFWHOWAS (369)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
+INFO</h2>
+<p>RPL_INFO (371)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :-string-"</li>
+<li>Usecase: Sent as a reply to the INFO command, this numeric returns human-readable information describing the server: e.g. its version, list of authors and contributors, and any other miscellaneous information which may be considered to be relevant.</li>
+</ul>
+<p>RPL_ENDOFINFO (374)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :End of INFO list"</li>
+<li>Usecase: Indicates the end of an INFO response.</li>
+</ul>
+<p>RPL_MOTDSTART (375)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_MOTD (372)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_ENDOFMOTD (376)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISHOST (378)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_WHOISMODES (379)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_YOUREOPER (381)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_REHASHING (382)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_TIME (391)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li><p class="startli">Usecase:</p>
+<p class="startli">ERR_UNKNOWNERROR (400)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -command-{ -subcommand-} :-info-"</li>
+<li>Usecase: Indicates that the given command/subcommand could not be processed</li>
+</ul>
+<p>ERR_NOSUCHNICK (401)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nickname- :No such nick/channel"</li>
+<li>Usecase: Indicates that no client can be found for the supplied nickname.</li>
+</ul>
+<p>ERR_NOSUCHSERVER (402)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -server name- :No such server"</li>
+<li>Usecase: Indicates that the given server name does not exist.</li>
+</ul>
+<p>ERR_NOSUCHCHANNEL (403)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :No such channel"</li>
+<li>Usecase: Indicates that no channel can be found for the supplied channel name.</li>
+</ul>
+<p>ERR_CANNOTSENDTOCHAN (404)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :Cannot send to channel"</li>
+<li><p class="startli">Usecase: Indicates that the PRIVMSG / NOTICE could not be delivered to -channel-.</p>
+<p class="startli">ERR_TOOMANYCHANNELS (405)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :You have joined too many channels"</li>
+<li>Usecase: Indicates that the JOIN command failed because the client has joined their maximum number of channels.</li>
+</ul>
+<p>ERR_WASNOSUCHNICK (406)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :There was no such nickname"</li>
+<li>Usecase: Returned as a reply to WHOWAS to indicate there is no history information for that nickname.</li>
+</ul>
+<p>ERR_NOORIGIN (409)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :No origin specified"</li>
+<li>Usecase: Indicates a PING or PONG message missing the originator parameter which is required by old IRC servers.</li>
+</ul>
+<p>ERR_INPUTTOOLONG (417)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Input line was too long"</li>
+<li>Usecase: Indicates a given line does not follow the specified size limits (512 bytes for the main section, 4094 or 8191 bytes for the tag section).</li>
+</ul>
+<p>ERR_UNKNOWNCOMMAND (421)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -command- :Unknown command"</li>
+<li>Usecase: Sent to a registered client to indicate that the command they sent isn’t known by the server.</li>
+</ul>
+<p>ERR_NOMOTD (422)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :MOTD File is missing"</li>
+<li>Usecase: Indicates that the <a class="el" href="classMessage.html">Message</a> of the Day file does not exist or could not be found.</li>
+</ul>
+<p>ERR_ERRONEUSNICKNAME (432)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:"-client- -nick- :Erroneus nickname"</li>
+<li>Usecase: Returned when a NICK command cannot be successfully completed as the desired nickname contains characters that are disallowed by the server.</li>
+</ul>
+<p>ERR_NICKNAMEINUSE (433)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nick- :Nickname is already in use"</li>
+<li>Usecase: Returned when a NICK command cannot be successfully completed as the desired nickname is already in use</li>
+</ul>
+<p>ERR_USERNOTINCHANNEL (441)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nick- -channel- :They aren't on that channel"</li>
+<li>Usecase: Returned when a client tries to perform a channel+nick affecting command, when the nick isn’t joined to the channel</li>
+</ul>
+<p>ERR_NOTONCHANNEL (442)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :You're not on that channel"</li>
+<li>Usecase: Returned when a client tries to perform a channel-affecting command on a channel which the client isn’t a part of.</li>
+</ul>
+<p>ERR_USERONCHANNEL (443)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nick- -channel- :is already on channel"</li>
+<li>Usecase: Returned when a client tries to invite -nick- to a channel they’re already joined to.</li>
+</ul>
+<p>ERR_NOTREGISTERED (451)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :You have not registered"</li>
+<li><p class="startli">Usecase: Returned when a client command cannot be parsed as they are not yet registered.</p>
+<p class="startli">ERR_NEEDMOREPARAMS (461)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -command- :Not enough parameters"</li>
+<li>Usecase: Returned when a client command cannot be parsed because not enough parameters were supplied.</li>
+</ul>
+<p>ERR_ALREADYREGISTERED (462)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :You may not reregister"</li>
+<li>Usecase: Returned when a client tries to change a detail that can only be set during registration (such as resending the PASS or USER after registration).</li>
+</ul>
+<p>ERR_PASSWDMISMATCH (464)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Password incorrect"</li>
+<li>Usecase: Returned to indicate that the connection could not be registered as the password was either incorrect or not supplied.</li>
+</ul>
+<p>ERR_YOUREBANNEDCREEP (465)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :You are banned from this server."</li>
+<li>Usecase: Returned to indicate that the server has been configured to explicitly deny connections from this client.</li>
+</ul>
+<p>ERR_CHANNELISFULL (471)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :Cannot join channel (+l)"</li>
+<li>Usecase: Returned to indicate that a JOIN command failed because the client limit mode has been set and the maximum number of users are already joined to the channel.</li>
+</ul>
+<p>ERR_UNKNOWNMODE (472)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -modechar- :is unknown mode char to me"</li>
+<li>Usecase: Indicates that a mode character used by a client is not recognized by the server. The text used in the last param of this message may vary.</li>
+</ul>
+<p>ERR_INVITEONLYCHAN (473)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :Cannot join channel (+i)"</li>
+<li>Usecase: Returned to indicate that a JOIN command failed because the channel is set to [invite-only] mode and the client has not been invited to the channel or had an invite exemption set for them.</li>
+</ul>
+<p>ERR_BANNEDFROMCHAN (474)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :Cannot join channel (+b)"</li>
+<li><p class="startli">Usecase: Returned to indicate that a JOIN command failed because the client has been banned from the channel and has not had a ban exemption set for them. The text used in the last param of this message may vary.</p>
+<p class="startli">ERR_BADCHANNELKEY (475)</p>
+</li>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :Cannot join channel (+k)"</li>
+<li>Usecase: Returned to indicate that a JOIN command failed because the channel requires a key and the key was either incorrect or not supplied.</li>
+</ul>
+<p>ERR_BADCHANMASK (476)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-channel- :Bad Channel Mask"</li>
+<li>Usecase: Indicates the supplied channel name is not a valid.This is similar to, but stronger than, ERR_NOSUCHCHANNEL (403), which indicates that the channel does not exist, but that it may be a valid name.</li>
+</ul>
+<p>ERR_NOPRIVILEGES (481)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Permission Denied- You're not an IRC operator"</li>
+<li>Usecase: Indicates that the command failed because the user is not an IRC operator.</li>
+</ul>
+<p>ERR_CHANOPRIVSNEEDED (482)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -channel- :You're not channel operator"</li>
+<li>Usecase: Indicates that a command failed because the client does not have the appropriate channel privileges.</li>
+</ul>
+<p>ERR_CANTKILLSERVER (483)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :You cant kill a server!"</li>
+<li>Usecase: Indicates that a KILL command failed because the user tried to kill a server.</li>
+</ul>
+<p>ERR_NOOPERHOST (491)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :No O-lines for your host"</li>
+<li>Usecase: Indicates that an OPER command failed because the server has not been configured to allow connections from this client’s host to become an operator.</li>
+</ul>
+<p>ERR_UMODEUNKNOWNFLAG (501)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Unknown MODE flag"</li>
+<li>Usecase: Indicates that a MODE command affecting a user contained a MODE letter that was not recognized.</li>
+</ul>
+<p>ERR_USERSDONTMATCH (502)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :Cant change mode for other users"</li>
+<li>Usecase: Indicates that a MODE command affecting a user failed because they were trying to set or view modes for other users.</li>
+</ul>
+<p>ERR_HELPNOTFOUND (524)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -subject- :No help available on this topic"</li>
+<li>Usecase: Indicates that a HELP command requested help on a subject the server does not know about.</li>
+</ul>
+<p>ERR_INVALIDKEY (525)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -target chan- :Key is not well-formed"</li>
+<li>Usecase: Indicates the value of a key channel mode change (+k) was rejected.</li>
+</ul>
+<p>RPL_STARTTLS (670)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :STARTTLS successful, proceed with TLS handshake"</li>
+<li>Usecase: This numeric is used by the IRCv3 tls extension and indicates that the client may begin a TLS handshake.</li>
+</ul>
+<p>RPL_WHOISSECURE (671)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_STARTTLS (691)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_INVALIDMODEPARAM (696)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -target chan // user- -mode char- -parameter- :-description-"</li>
+<li>Usecase: Indicates that there was a problem with a mode parameter. Replaces various implementation-specific mode-specific numerics.</li>
+</ul>
+<p>RPL_HELPSTART (704)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -subject- :-first line of help section-"</li>
+<li>Usecase: Indicates the start of a reply to a HELP command.</li>
+</ul>
+<p>RPL_HELPTXT (705)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -subject- :-line of help text-"</li>
+<li>Usecase: Returns a line of HELP text to the client. Lines MAY be wrapped to a certain line length by the server.</li>
+</ul>
+<p>RPL_ENDOFHELP (706)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -subject- :-last line of help text-"</li>
+<li>Usecase: Returns the final HELP line to the client.</li>
+</ul>
+<p>ERR_NOPRIVS (723)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -priv- :Insufficient oper privileges."</li>
+<li>Usecase: Sent by a server to alert an IRC operator that they they do not have the specific operator privilege required by this server/network to perform the command or action they requested.</li>
+</ul>
+<p>RPL_LOGGEDIN (900)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nick-!-user-@-host- -account- :You are now logged in as -username-"</li>
+<li>Usecase: This numeric indicates that the client was logged into the specified account</li>
+</ul>
+<p>RPL_LOGGEDOUT (901)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- -nick-!-user-@-host- :You are now logged out"</li>
+<li>Usecase: This numeric indicates that the client was logged out of their account.</li>
+</ul>
+<p>ERR_NICKLOCKED (902)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>: "-client- :You must use a nick assigned to you"</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_SASLSUCCESS (903)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_SASLFAIL (904)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_SASLTOOLONG (905)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_SASLABORTED (906)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>ERR_SASLALREADY (907)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase:</li>
+</ul>
+<p>RPL_SASLMECHS (908)</p>
+<ul>
+<li><a class="el" href="classMessage.html">Message</a>:</li>
+<li>Usecase: </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 30 2022 15:42:15 for IRC SERVER by
+    <li class="footer">Generated on Mon May 30 2022 16:01:03 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

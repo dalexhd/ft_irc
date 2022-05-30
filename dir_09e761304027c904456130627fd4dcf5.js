@@ -17,5 +17,6 @@ var dir_09e761304027c904456130627fd4dcf5 =
     [ "Message.hpp", "Message_8hpp.html", [
       [ "Message", "classMessage.html", "classMessage" ]
     ] ],
+    [ "Replies.hpp", "Replies_8hpp.html", "Replies_8hpp" ],
     [ "Server.hpp", "Server_8hpp.html", "Server_8hpp" ]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['part_262',['Part',['../classPart.html#a09385851011125e4f9bbe1c4712f1e1f',1,'Part']]],
-  ['ping_263',['Ping',['../classPing.html#af5927f79e7c2503e999e7a5b936ebc0e',1,'Ping']]],
-  ['privmsg_264',['PrivMsg',['../classPrivMsg.html#a5d155b15f3a67e53ee9ffcd806f094d1',1,'PrivMsg::PrivMsg()'],['../classPrivMsg.html#a5d155b15f3a67e53ee9ffcd806f094d1',1,'PrivMsg::PrivMsg()']]]
+  ['quit_419',['Quit',['../classQuit.html#a645048717f155302b8fd1fe1785516d4',1,'Quit']]]
 ];

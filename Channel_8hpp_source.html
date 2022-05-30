@@ -104,71 +104,75 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classClient.html">Client</a> *               _creator;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    time_t                 _created_at;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::vector&lt;Message *&gt; _messages;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">   20</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">   21</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">   24</a></span>&#160;    <a class="code" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel</a>(std::string &amp;name, std::string &amp;password)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        : _name(name), _password(password), _creator(NULL)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        _created_at = time(0);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Setters</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">setCreator</a>(<a class="code" href="classClient.html">Client</a> *creator)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (_creator)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Creator is already assigned&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        _creator = creator;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Getter</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classChannel.html#a5220250205f35b248205e2a4ba41519d">   39</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a5220250205f35b248205e2a4ba41519d">getPassword</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> (_password);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">   44</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">getName</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> (_name);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Client stuff</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">   52</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">joined</a>(<a class="code" href="classClient.html">Client</a> *client)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_normal_clients.size(); i++)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_normal_clients[i]-&gt;_name == client-&gt;<a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_ope_clients.size(); i++)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_ope_clients[i]-&gt;_name == client-&gt;<a class="code" href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">_name</a>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::string            _topic;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">   21</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">   22</a></span>&#160;    std::vector&lt;Client *&gt; <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">   23</a></span>&#160;    <span class="keywordtype">size_t</span> <span class="keyword">const</span>          <a class="code" href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">_maxClients</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">   27</a></span>&#160;    <a class="code" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel</a>(std::string &amp;name, std::string &amp;password)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        : _name(name), _password(password), _creator(NULL), <a class="code" href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">_maxClients</a>(2)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        _created_at = time(0);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Setters</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">   34</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">setCreator</a>(<a class="code" href="classClient.html">Client</a> *creator)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (_creator)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Creator is already assigned&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        _creator = creator;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Getter</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classChannel.html#a5220250205f35b248205e2a4ba41519d">   42</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a5220250205f35b248205e2a4ba41519d">getPassword</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> (_password);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">   47</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">getName</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> (_name);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Client stuff</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">   55</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">joined</a>(<a class="code" href="classClient.html">Client</a> *client)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_normal_clients.size(); i++)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_normal_clients[i]-&gt;_nick == client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;_ope_clients.size(); i++)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_ope_clients[i]-&gt;_nick == client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassChannel_html"><div class="ttname"><a href="classChannel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> Channel.hpp:9</div></div>
-<div class="ttc" id="aclassChannel_html_a082fd9c1f37bbbb26bdb28b285659b2c"><div class="ttname"><a href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">Channel::getName</a></div><div class="ttdeci">std::string &amp; getName(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:44</div></div>
-<div class="ttc" id="aclassChannel_html_a26f5d4a249bab4b1bbc1863c943115fb"><div class="ttname"><a href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel::Channel</a></div><div class="ttdeci">Channel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:24</div></div>
-<div class="ttc" id="aclassClient_html_a689d377b2b884f0cbb9219d66f5d31f3"><div class="ttname"><a href="classClient.html#a689d377b2b884f0cbb9219d66f5d31f3">Client::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Client.hpp:26</div></div>
-<div class="ttc" id="aclassChannel_html_a1cc547a4312634c68769f1c62d2b4df9"><div class="ttname"><a href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">Channel::setCreator</a></div><div class="ttdeci">void setCreator(Client *creator)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:31</div></div>
-<div class="ttc" id="aclassChannel_html_a2af7dc5770799fdea6f624c040bbd8c8"><div class="ttname"><a href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">Channel::_normal_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _normal_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:20</div></div>
-<div class="ttc" id="aclassChannel_html_a5220250205f35b248205e2a4ba41519d"><div class="ttname"><a href="classChannel.html#a5220250205f35b248205e2a4ba41519d">Channel::getPassword</a></div><div class="ttdeci">std::string &amp; getPassword(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:39</div></div>
-<div class="ttc" id="aclassChannel_html_a6daf61a24bc288f5612698070c6d87d9"><div class="ttname"><a href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">Channel::_ope_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _ope_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:21</div></div>
-<div class="ttc" id="aclassChannel_html_acc7d04f494e076b78a8affae33d3bcf8"><div class="ttname"><a href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">Channel::joined</a></div><div class="ttdeci">bool joined(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:52</div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
+<div class="ttc" id="aclassChannel_html_a082fd9c1f37bbbb26bdb28b285659b2c"><div class="ttname"><a href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">Channel::getName</a></div><div class="ttdeci">std::string &amp; getName(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:47</div></div>
+<div class="ttc" id="aclassChannel_html_a26f5d4a249bab4b1bbc1863c943115fb"><div class="ttname"><a href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel::Channel</a></div><div class="ttdeci">Channel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:27</div></div>
+<div class="ttc" id="aclassChannel_html_a1cc547a4312634c68769f1c62d2b4df9"><div class="ttname"><a href="classChannel.html#a1cc547a4312634c68769f1c62d2b4df9">Channel::setCreator</a></div><div class="ttdeci">void setCreator(Client *creator)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:34</div></div>
+<div class="ttc" id="aclassChannel_html_a2af7dc5770799fdea6f624c040bbd8c8"><div class="ttname"><a href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">Channel::_normal_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _normal_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:21</div></div>
+<div class="ttc" id="aclassChannel_html_a5220250205f35b248205e2a4ba41519d"><div class="ttname"><a href="classChannel.html#a5220250205f35b248205e2a4ba41519d">Channel::getPassword</a></div><div class="ttdeci">std::string &amp; getPassword(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:42</div></div>
+<div class="ttc" id="aclassChannel_html_a213e143e931d19577faf0a74dcabcc27"><div class="ttname"><a href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">Channel::_maxClients</a></div><div class="ttdeci">const size_t _maxClients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:23</div></div>
+<div class="ttc" id="aclassChannel_html_a6daf61a24bc288f5612698070c6d87d9"><div class="ttname"><a href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">Channel::_ope_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _ope_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:22</div></div>
+<div class="ttc" id="aclassChannel_html_acc7d04f494e076b78a8affae33d3bcf8"><div class="ttname"><a href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">Channel::joined</a></div><div class="ttdeci">bool joined(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:55</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:25</div></div>
+<div class="ttc" id="aclassClient_html_adc9a9e85762060c89ae4db308fae187c"><div class="ttname"><a href="classClient.html#adc9a9e85762060c89ae4db308fae187c">Client::_nick</a></div><div class="ttdeci">std::string _nick</div><div class="ttdef"><b>Definition:</b> Client.hpp:29</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Channel_8hpp.html">Channel.hpp</a></li>
-    <li class="footer">Generated on Mon May 30 2022 15:42:15 for IRC SERVER by
+    <li class="footer">Generated on Mon May 30 2022 16:01:03 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

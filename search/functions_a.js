@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['kick_250',['Kick',['../classKick.html#a8f1ae08cc68668206994ab4beef372a3',1,'Kick']]]
+  ['list_402',['List',['../classList.html#a64d878a92d11f7c63c70cbe4e7dd4176',1,'List']]],
+  ['loginfail_403',['loginFail',['../classClient.html#ae11f29fd80429643e4879d32ec295f53',1,'Client']]]
 ];

@@ -113,6 +113,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a2af7dc5770799fdea6f624c040bbd8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6daf61a24bc288f5612698070c6d87d9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a></td></tr>
 <tr class="separator:a6daf61a24bc288f5612698070c6d87d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213e143e931d19577faf0a74dcabcc27"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">_maxClients</a></td></tr>
+<tr class="separator:a213e143e931d19577faf0a74dcabcc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26f5d4a249bab4b1bbc1863c943115fb"></a>
@@ -180,8 +182,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph.png" border="0" usemap="#classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph" alt=""/></div>
 <map name="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph" id="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph">
-<area shape="rect" title=" " alt="" coords="157,5,300,32"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="5,5,109,32"/>
+<area shape="rect" title=" " alt="" coords="180,56,323,83"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="17,56,121,83"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="13,107,124,133"/>
 </map>
 </div>
 
@@ -250,10 +254,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph.png" border="0" usemap="#classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph" alt=""/></div>
 <map name="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph" id="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph">
-<area shape="rect" title=" " alt="" coords="187,56,309,83"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="20,5,124,32"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="5,56,139,83"/>
-<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="19,107,125,133"/>
+<area shape="rect" title=" " alt="" coords="341,81,464,108"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="175,5,279,32"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="160,56,293,83"/>
+<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="173,107,281,133"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="173,157,280,184"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="5,107,112,133"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="6,157,111,184"/>
 </map>
 </div>
 
@@ -295,6 +302,20 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a213e143e931d19577faf0a74dcabcc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213e143e931d19577faf0a74dcabcc27">&#9670;&nbsp;</a></span>_maxClients</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t Channel::_maxClients</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2af7dc5770799fdea6f624c040bbd8c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2af7dc5770799fdea6f624c040bbd8c8">&#9670;&nbsp;</a></span>_normal_clients</h2>
 
@@ -332,7 +353,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classChannel.html">Channel</a></li>
-    <li class="footer">Generated on Mon May 30 2022 15:42:15 for IRC SERVER by
+    <li class="footer">Generated on Mon May 30 2022 16:01:03 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
