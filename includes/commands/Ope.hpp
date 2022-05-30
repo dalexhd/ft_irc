@@ -31,7 +31,7 @@ class Ope : public Command
 		else
 		{
 			Client *client;
-			if ((client = _server->findClient(_message->getParams()[0])))
+			if ((client = _server->getClient(_message->getParams()[0])))
 			{
 				client->_is_ope = !client->_is_ope;
 				_sender->message(std::string(client->_is_ope ?

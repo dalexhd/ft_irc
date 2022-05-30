@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/26 17:48:41 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:55:59 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ class Server
 	{
 		return (password);
 	}
-	Command *findCmd(std::string str);
-	Client * findClient(std::string str);
 
   private:
 	void createServerListener(void);
@@ -140,6 +138,16 @@ class Server
 			name = name.substr(1);
 		_channels[name] = new Channel(name, password);
 		return _channels[name];
+	}
+
+	// --------------
+	// Commands stuff
+	// --------------
+	Command *getCommand(std::string &name)
+	{
+		if (_commands.find(name) != _commands.end())
+			return _commands[name];
+		return (NULL);
 	}
 };
 

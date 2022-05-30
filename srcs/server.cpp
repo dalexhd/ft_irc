@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/26 17:49:06 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:55:57 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,22 +183,4 @@ Server::~Server(void)
 		delete (it_ch->second);
 	_channels.clear();
 	std::cout << "Server closed!" << std::endl;
-}
-
-Command *Server::findCmd(std::string str)
-{
-	std::map<std::string, Command *>::iterator cmd = _commands.find(str);
-	if (cmd != _commands.end())
-		return (cmd->second);
-	return (NULL);
-}
-
-Client *Server::findClient(std::string str)
-{
-	for (size_t i = 0; i < _clients.size(); i++)
-	{
-		if (str.compare(_clients[i]->_nick) == 0)
-			return (_clients[i]);
-	}
-	return (NULL);
 }
