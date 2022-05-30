@@ -15,8 +15,8 @@ var dir_5e90428ea02abe37c2ad725f205d5900 =
     [ "Info.hpp", "Info_8hpp.html", [
       [ "Info", "classInfo.html", "classInfo" ]
     ] ],
-    [ "Nick.hpp", "commands_2Nick_8hpp.html", [
-      [ "Nick", "classNick.html", "classNick" ]
+    [ "Name.hpp", "Name_8hpp.html", [
+      [ "Name", "className.html", "className" ]
     ] ],
     [ "Ope.hpp", "Ope_8hpp.html", [
       [ "Ope", "classOpe.html", "classOpe" ]

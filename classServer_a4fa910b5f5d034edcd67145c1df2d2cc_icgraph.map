@@ -1,13 +1,8 @@
 <map id="Server::getChannel" name="Server::getChannel">
-<area shape="rect" id="node1" title=" " alt="" coords="343,233,489,260"/>
-<area shape="rect" id="node2" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="164,5,291,32"/>
-<area shape="rect" id="node3" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="175,56,279,83"/>
-<area shape="rect" id="node4" href="$classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="5,157,112,184"/>
-<area shape="rect" id="node5" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="161,157,294,184"/>
-<area shape="rect" id="node6" href="$classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="6,385,111,412"/>
-<area shape="rect" id="node7" href="$classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="173,259,282,285"/>
-<area shape="rect" id="node8" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="160,309,295,336"/>
-<area shape="rect" id="node9" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="173,208,281,235"/>
-<area shape="rect" id="node10" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="174,360,281,387"/>
-<area shape="rect" id="node11" href="$classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="172,461,283,488"/>
+<area shape="rect" id="node1" title=" " alt="" coords="188,107,335,133"/>
+<area shape="rect" id="node2" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="21,5,125,32"/>
+<area shape="rect" id="node3" href="$classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="20,56,125,83"/>
+<area shape="rect" id="node4" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="6,107,139,133"/>
+<area shape="rect" id="node5" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="19,157,126,184"/>
+<area shape="rect" id="node6" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,208,140,235"/>
 </map>

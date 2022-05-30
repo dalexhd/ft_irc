@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['validate_282',['validate',['../classCommand.html#af178815ffd43a64b0bdf2e9f64e5dbb5',1,'Command::validate()'],['../classJoin.html#a207289889718fa33c1a6892241aa60d4',1,'Join::validate()'],['../classKick.html#adc1f9aff2ca78f45b4521d364218cbf6',1,'Kick::validate()'],['../classList.html#abe68a85c129511265f9e03260f788ba4',1,'List::validate()'],['../classNames.html#a6a5ea247ab0996c1aa5bf75757a5be48',1,'Names::validate()'],['../classPart.html#a01fb8c2665dc938b13ced55dbc938dc4',1,'Part::validate()'],['../classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5',1,'PrivMsg::validate()'],['../classBan.html#a7f38b7260f84fa4612f9ac28bc03170e',1,'Ban::validate()']]],
-  ['validate_5fargs_283',['validate_args',['../Server_8hpp.html#aee8960a54b0fdcad5e9652e5918d69b0',1,'validate_args(int argc, char **argv):&#160;validation.cpp'],['../validation_8cpp.html#aee8960a54b0fdcad5e9652e5918d69b0',1,'validate_args(int argc, char **argv):&#160;validation.cpp']]],
-  ['validation_2ecpp_284',['validation.cpp',['../validation_8cpp.html',1,'']]]
+  ['who_139',['Who',['../classWho.html',1,'Who'],['../classWho.html#ab519eb62bf29bb56d29ac4fe6fbe3f7d',1,'Who::Who()']]],
+  ['who_2ehpp_140',['Who.hpp',['../Who_8hpp.html',1,'']]],
+  ['whois_141',['Whois',['../classWhois.html',1,'Whois'],['../classWhois.html#a3d37fa31b8b97c0fb6b8fed1ec6471e1',1,'Whois::Whois()']]],
+  ['whois_2ehpp_142',['Whois.hpp',['../Whois_8hpp.html',1,'']]]
 ];

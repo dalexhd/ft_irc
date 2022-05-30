@@ -27,10 +27,7 @@ var dir_3fdca8a50868ec24d989a972e0c983fb =
     [ "Mode.hpp", "Mode_8hpp.html", [
       [ "Mode", "classMode.html", "classMode" ]
     ] ],
-    [ "Names.hpp", "Names_8hpp.html", [
-      [ "Names", "classNames.html", "classNames" ]
-    ] ],
-    [ "Nick.hpp", "cmds_2Nick_8hpp.html", [
+    [ "Nick.hpp", "Nick_8hpp.html", [
       [ "Nick", "classNick.html", "classNick" ]
     ] ],
     [ "Notice.hpp", "Notice_8hpp.html", [
@@ -41,9 +38,6 @@ var dir_3fdca8a50868ec24d989a972e0c983fb =
     ] ],
     [ "Part.hpp", "Part_8hpp.html", [
       [ "Part", "classPart.html", "classPart" ]
-    ] ],
-    [ "Pass.hpp", "Pass_8hpp.html", [
-      [ "Pass", "classPass.html", "classPass" ]
     ] ],
     [ "Ping.hpp", "cmds_2Ping_8hpp.html", null ],
     [ "Pong.hpp", "Pong_8hpp.html", null ],

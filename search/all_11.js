@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['quit_182',['Quit',['../classQuit.html',1,'Quit'],['../classQuit.html#a645048717f155302b8fd1fe1785516d4',1,'Quit::Quit()']]],
-  ['quit_2ehpp_183',['Quit.hpp',['../Quit_8hpp.html',1,'']]]
+  ['quit_118',['Quit',['../classQuit.html',1,'Quit'],['../classQuit.html#a645048717f155302b8fd1fe1785516d4',1,'Quit::Quit()']]],
+  ['quit_2ehpp_119',['Quit.hpp',['../Quit_8hpp.html',1,'']]]
 ];
