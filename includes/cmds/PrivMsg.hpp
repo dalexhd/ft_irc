@@ -21,6 +21,7 @@ class PrivMsg : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
+		std::cout << "p.size() = " << p.size() << std::endl;
 		if (p.size() == 0 || p.size() < 2)
 		{
 			_sender->message("Please send valid params! Ex: privmsg <nickname> "
@@ -51,11 +52,10 @@ class PrivMsg : public Command
 			std::vector<std::string> _cl_params = split(p[0], ",");
 			for (size_t i = 0; i < _cl_params.size(); i++)
 			{
-				std::cout << _sender->_nick << _cl_params[i] << std::endl;
-				if (!_server->getClient(_cl_params[i]))
+				if (_server->getClient(_cl_params[i]) == NULL)
 				{
-					_sender->message(std::string("Client" + _cl_params[i] + "doesn't exist\n")
-					                     .c_str());
+					std::cout << _sender->_nick << _cl_params[i] << std::endl;
+					_sender->message(ERR_NOSUCHNICK(_sender->_servername, _cl_params[i]));
 					return (false);
 				}
 				else if (_sender->_nick == _cl_params[i])

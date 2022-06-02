@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/26 22:07:20 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:31:26 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@
 #define RPL_CREATIONTIME 329
 #define RPL_WHOISACCOUNT 330
 #define RPL_NOTOPIC 331
-#define RPL_TOPIC 332
+#define RPL_TOPIC(servername, nick, channel, topic) \
+	":" + servername + " 332 " + nick + " " + channel + " :" + topic + "\n"
 #define RPL_TOPICWHOTIME 333
 #define RPL_WHOISACTUALLY 338
 #define RPL_INVITING 341
@@ -69,8 +70,10 @@
 #define RPL_EXCEPTLIST 348
 #define RPL_ENDOFEXCEPTLIST 349
 #define RPL_VERSION 351
-#define RPL_NAMREPLY 353
-#define RPL_ENDOFNAMES 366
+#define RPL_NAMREPLY(servername, nick, channel, names) \
+	":" + servername + " 353 " + nick + " = " + channel + " :" + names + "\n"
+#define RPL_ENDOFNAMES(servername, nick, channel) \
+	":" + servername + " 366 " + nick + " " + channel + " :End of /NAMES list\n"
 #define RPL_BANLIST 367
 #define RPL_ENDOFBANLIST 368
 #define RPL_ENDOFWHOWAS 369
@@ -85,7 +88,8 @@
 #define RPL_REHASHING 382
 #define RPL_TIME 391
 #define ERR_UNKNOWNERROR 400
-#define ERR_NOSUCHNICK 401
+#define ERR_NOSUCHNICK(servername, nick) \
+	":" + servername + " 401 " + nick + " :No such nick/channel\n"
 #define ERR_NOSUCHSERVER 402
 #define ERR_NOSUCHCHANNEL(servername, nick, channel) \
 	":" + servername + " 403 " + nick + " " + channel + " :No such channel\n"

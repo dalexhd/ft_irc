@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/30 15:55:59 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:13:42 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,15 @@ class Server
 	// --------------
 	// Clients stuff
 	// --------------
-	Client *getClient(std::string &name)
+	Client *getClient(std::string const &name)
 	{
 		for (size_t i = 0; i < _clients.size(); i++)
 		{
-			if (_clients[i]->_nick == name)
+			std::cout << "Client name: " << _clients[i]->getNick() << std::endl;
+			if (_clients[i]->getNick() == name)
 				return (_clients[i]);
 		}
+		std::cout << "Client not found" << std::endl;
 		return (NULL);
 	}
 

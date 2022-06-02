@@ -35,64 +35,49 @@ class Names : public Command
 		{
 			if (_ch_params[i][0] != '#')
 			{
-				_sender->message(ERR_BADCHANMASK(_sender->_servername,_sender->_nick)); // ERR_BADCHANMASK (476)
+				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
 				return (false);
 			}
 		}
 		return (true);
 	}
 
+	void send_channel(std::string &name)
+	{
+		Channel *                channel = _server->getChannel(name);
+		std::vector<std::string> users;
+		std::string              users_str = "";
+		for (size_t i = 0; i < channel->_normal_clients.size(); i++)
+			users.push_back(channel->_normal_clients[i]->_nick);
+		for (size_t i = 0; i < channel->_ope_clients.size(); i++)
+			users.push_back(channel->_ope_clients[i]->_nick);
+		for (size_t i = 0; i < users.size(); i++)
+		{
+			if (i == users.size() - 1)
+				users_str += users[i];
+			else
+				users_str += users[i] + " ";
+		}
+		_sender->message(RPL_NAMREPLY(_sender->_servername, _sender->_nick, name, users_str));
+	}
+
 	void execute()
 	{
-		if (!validate())
-			return;
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() == 1)
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
-
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
-				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel)
-				{
-					// "<client> <symbol> <channel> :[prefix]<nick>{ [prefix]<nick>}"
-					_sender->message(
-					    std::string(_sender->_nick + " " + "=" + " " + channel->getName() + ": ")
-					        .c_str());
-					for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-						_sender->message(std::string(channel->_normal_clients[j]->_nick + " ")
-						                     .c_str());
-					for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-						_sender->message(
-						    std::string(channel->_ope_clients[j]->_nick + " ").c_str());
-					_sender->message(std::string("\n").c_str());
-				}
-				else
-					_sender->message(std::string("Channel: " + _ch_params[i] + " not found\n")
-					                     .c_str());
-				// "<client> <channel> :End of /NAMES list"
-				_sender->message(std::string(_sender->_nick + " " + channel->getName() + " : End of /NAMES list\n")
-				                     .c_str());
+				send_channel(_ch_params[i]);
+				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick, _ch_params[i]));
 			}
 		}
 		else
 		{
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
-			{
-				// "<client> <symbol> <channel> :[prefix]<nick>{ [prefix]<nick>}"
-				_sender->message(
-				    std::string(_sender->_nick + " " + "=" + " " + channels[i]->getName() + ": ")
-				        .c_str());
-				for (size_t j = 0; j < channels[i]->_normal_clients.size(); j++)
-					_sender->message(std::string(channels[i]->_normal_clients[j]->_nick + " ")
-					                     .c_str());
-				for (size_t j = 0; j < channels[i]->_ope_clients.size(); j++)
-					_sender->message(
-					    std::string(channels[i]->_ope_clients[j]->_nick + " ").c_str());
-				_sender->message(std::string("\n").c_str());
-			}
+				send_channel(channels[i]->getName());
 			_sender->message(std::string(_sender->_nick + " " + "*" + " : End of /NAMES list\n")
 			                     .c_str());
 		}

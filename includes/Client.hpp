@@ -101,24 +101,23 @@ class Client
 		return (_nick != "" && _username != "" && _realname != "");
 	};
 
+	std::string const getNick(void) const
+	{
+		return _nick;
+	};
+
 	// Setters
 	void setNick(std::string const &nick)
 	{
 		_nick = nick;
-		this->message(
-		    std::string("Your nick has been changed to " + _nick + "\n").c_str());
 	};
 	void setUsername(std::string const &username)
 	{
 		_username = username;
-		this->message(
-		    std::string("Your username has been changed to " + _username + "\n").c_str());
 	};
 	void setRealName(std::string const &realname)
 	{
 		_realname = realname;
-		this->message(
-		    std::string("Your realname has been changed to " + _realname + "\n").c_str());
 	};
 };
 

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/30 15:55:57 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:04:29 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 #include "../includes/commands/Ope.hpp"
 #include "../includes/commands/Ping.hpp"
 
-#include "../includes/cmds/PrivMsg.hpp"
-
 // CHANNEL FUNCTIONS
 
 #include "../includes/cmds/Invite.hpp"
@@ -33,6 +31,7 @@
 #include "../includes/cmds/Nick.hpp"
 #include "../includes/cmds/Part.hpp"
 #include "../includes/cmds/Pass.hpp"
+#include "../includes/cmds/PrivMsg.hpp"
 #include "../includes/cmds/User.hpp"
 
 /**
@@ -100,6 +99,7 @@ void Server::createServerPoll(void)
 				else if (i > 0)
 				{
 					Message *message = _clients[i - 1]->read();
+					std::cout << "Message received " << message->_buffer << std::endl;
 					std::map<std::string, Command *>::iterator it;
 					if ((it = _commands.find(message->getCmd())) != _commands.end())
 					{
@@ -107,15 +107,18 @@ void Server::createServerPoll(void)
 						cmd->setSender(_clients[i - 1], i - 1);
 						cmd->setServer(this);
 						cmd->setMessage(message);
-						if (!cmd->needsAuth())
-							cmd->execute();
-						else if (_clients[i - 1]->isAuthenticated())
+						if (cmd->validate())
 						{
-							if (!cmd->hasOpe() ||
-							    (cmd->hasOpe() && _clients[i - 1]->_is_ope))
+							if (!cmd->needsAuth())
 								cmd->execute();
-							else
-								cmd->missingOpe();
+							else if (_clients[i - 1]->isAuthenticated())
+							{
+								if (!cmd->hasOpe() ||
+								    (cmd->hasOpe() && _clients[i - 1]->_is_ope))
+									cmd->execute();
+								else
+									cmd->missingOpe();
+							}
 						}
 						break;
 					}
