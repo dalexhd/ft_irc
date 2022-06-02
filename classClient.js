@@ -6,6 +6,7 @@ var classClient =
     [ "ban", "classClient.html#ac4b956d055baf39c6668a5519ba12157", null ],
     [ "canPerformPassCommand", "classClient.html#a978440cdf3fa686b2b06eef6a09413b9", null ],
     [ "disconnect", "classClient.html#a594e53d26f431c927b7e30343ac622d7", null ],
+    [ "getNick", "classClient.html#a8fe7fa561e8e852aca92036f92b92405", null ],
     [ "isAuthenticated", "classClient.html#adf579ce692a3c19e8886a901ade6d197", null ],
     [ "loginFail", "classClient.html#ae11f29fd80429643e4879d32ec295f53", null ],
     [ "message", "classClient.html#a9ee33da0a8d00f8416b934b6027d35cd", null ],

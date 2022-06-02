@@ -25,7 +25,7 @@ var searchData=
   ['err_5fnoprivileges_87',['ERR_NOPRIVILEGES',['../Replies_8hpp.html#a5fdd7fe68f882f1594b812266fb587ec',1,'Replies.hpp']]],
   ['err_5fnoprivs_88',['ERR_NOPRIVS',['../Replies_8hpp.html#a851f08a333757e7ba81dffbefc3e422d',1,'Replies.hpp']]],
   ['err_5fnosuchchannel_89',['ERR_NOSUCHCHANNEL',['../Replies_8hpp.html#affd021845869bcca7c84c3c7714ee006',1,'Replies.hpp']]],
-  ['err_5fnosuchnick_90',['ERR_NOSUCHNICK',['../Replies_8hpp.html#aa03a043e4867db10058e57ad934ef630',1,'Replies.hpp']]],
+  ['err_5fnosuchnick_90',['ERR_NOSUCHNICK',['../Replies_8hpp.html#a93843989218407d0a681ce939e5d8e88',1,'Replies.hpp']]],
   ['err_5fnosuchserver_91',['ERR_NOSUCHSERVER',['../Replies_8hpp.html#a5db94542b637fff0222d3618b525fe17',1,'Replies.hpp']]],
   ['err_5fnotonchannel_92',['ERR_NOTONCHANNEL',['../Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b',1,'Replies.hpp']]],
   ['err_5fnotregistered_93',['ERR_NOTREGISTERED',['../Replies_8hpp.html#a212152bb05361e627adb77f415dab88a',1,'Replies.hpp']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kick_303',['Kick',['../classKick.html',1,'']]]
+  ['kick_305',['Kick',['../classKick.html',1,'']]]
 ];

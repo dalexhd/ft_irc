@@ -11,7 +11,7 @@ var classServer =
     [ "createChannel", "classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed", null ],
     [ "getChannel", "classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc", null ],
     [ "getChannels", "classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2", null ],
-    [ "getClient", "classServer.html#ae4313a2ec9463bf58b75860457c737fb", null ],
+    [ "getClient", "classServer.html#a76b581021e9609b15f37bb2bea8e40e8", null ],
     [ "getClientIndex", "classServer.html#a399e5a12513223a087897a4a08d62df2", null ],
     [ "getCommand", "classServer.html#a9a198609328f8d6a866842ece540e236", null ],
     [ "getPassword", "classServer.html#a1e71fd484bc23c67814876c243fa08ca", null ],
