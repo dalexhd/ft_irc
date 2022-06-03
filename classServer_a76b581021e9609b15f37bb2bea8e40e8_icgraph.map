@@ -1,8 +1,9 @@
 <map id="Server::getClient" name="Server::getClient">
-<area shape="rect" id="node1" title=" " alt="" coords="188,107,319,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="188,132,319,159"/>
 <area shape="rect" id="node2" href="$classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="19,5,126,32"/>
 <area shape="rect" id="node3" href="$classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="19,56,126,83"/>
 <area shape="rect" id="node4" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="6,107,139,133"/>
 <area shape="rect" id="node5" href="$classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="19,157,127,184"/>
-<area shape="rect" id="node6" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,208,140,235"/>
+<area shape="rect" id="node6" href="$classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="13,208,132,235"/>
+<area shape="rect" id="node7" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,259,140,285"/>
 </map>

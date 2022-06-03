@@ -31,5 +31,6 @@ var searchData=
   ['_5fsocket_28',['_socket',['../classServer.html#a1800f84586a26a159c743c1c78be841e',1,'Server']]],
   ['_5fstatus_29',['_status',['../classServer.html#acefdea0217887b8e49b7c00024ff1201',1,'Server']]],
   ['_5fusage_30',['_usage',['../classCommand.html#a592b372988405206efc3af3e37457168',1,'Command']]],
-  ['_5fusername_31',['_username',['../classClient.html#a8f8d0427822b93815dec147dd420373f',1,'Client']]]
+  ['_5fusername_31',['_username',['../classClient.html#a8f8d0427822b93815dec147dd420373f',1,'Client']]],
+  ['_5fvoice_5fclients_32',['_voice_clients',['../classChannel.html#affad5998b3363341d58e0f2ebf921806',1,'Channel']]]
 ];
