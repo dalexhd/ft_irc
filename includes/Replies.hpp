@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/02 17:31:26 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 13:19:55 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,12 @@
 #define RPL_ENDOFWHOIS 318
 #define RPL_WHOISCHANNELS 319
 #define RPL_WHOISSPECIAL 320
-#define RPL_LISTSTART 321
-#define RPL_LIST 322
-#define RPL_LISTEND 323
+#define RPL_LISTSTART(servername, nick) \
+	":" + servername + " 321 " + nick + " Channel :Users Name\n"
+#define RPL_LIST(servername, nick, channel, users, topic) \
+	":" + servername + " 322 " + nick + " " + channel + " " + users + " :" + topic + "\n"
+#define RPL_LISTEND(servername, nick) \
+	":" + servername + " 323 " + nick + " :End of /LIST\n"
 #define RPL_CHANNELMODEIS 324
 #define RPL_CREATIONTIME 329
 #define RPL_WHOISACCOUNT 330

@@ -22,7 +22,6 @@ class Channel
 	std::vector<Client *> _ope_clients;
 	size_t const          _maxClients;
 
-
   public:
 	Channel(std::string &name, std::string &password)
 	    : _name(name), _password(password), _creator(NULL), _maxClients(2)
@@ -49,18 +48,27 @@ class Channel
 		return (_name);
 	}
 
+	std::string &getTopic(void)
+	{
+		return (_topic);
+	}
+
+	std::vector<Client *> getClients(void) const
+	{
+		std::vector<Client *> clients;
+		clients.insert(clients.end(), _normal_clients.begin(), _normal_clients.end());
+		clients.insert(clients.end(), _ope_clients.begin(), _ope_clients.end());
+		return (clients);
+	}
+
 	// --------------
 	// Client stuff
 	// --------------
 	bool joined(Client *client)
 	{
-		for (size_t i = 0; i < this->_normal_clients.size(); i++)
-			if (this->_normal_clients[i]->_nick == client->_nick)
-				return (true);
-		for (size_t i = 0; i < this->_ope_clients.size(); i++)
-			if (this->_ope_clients[i]->_nick == client->_nick)
-				return (true);
-		return (false);
+		std::vector<Client *> clients = this->getClients();
+
+		return (std::find(clients.begin(), clients.end(), client) != clients.end());
 	}
 };
 

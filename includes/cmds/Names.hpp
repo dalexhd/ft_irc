@@ -15,9 +15,6 @@ class Names : public Command
 		_example[0] = "names";
 		_example[0] = "names #hola";
 		_example[0] = "names #hola,#chau";
-
-		// RPL_NAMREPLY (353) k
-		// RPL_ENDOFNAMES (366) k
 	}
 
 	bool validate(void)
@@ -44,19 +41,15 @@ class Names : public Command
 
 	void send_channel(std::string &name)
 	{
-		Channel *                channel = _server->getChannel(name);
-		std::vector<std::string> users;
-		std::string              users_str = "";
-		for (size_t i = 0; i < channel->_normal_clients.size(); i++)
-			users.push_back(channel->_normal_clients[i]->_nick);
-		for (size_t i = 0; i < channel->_ope_clients.size(); i++)
-			users.push_back(channel->_ope_clients[i]->_nick);
-		for (size_t i = 0; i < users.size(); i++)
+		Channel *             channel = _server->getChannel(name);
+		std::vector<Client *> clients = channel->getClients();
+		std::string           users_str = "";
+		for (size_t i = 0; i < clients.size(); i++)
 		{
-			if (i == users.size() - 1)
-				users_str += users[i];
+			if (i == clients.size() - 1)
+				users_str += clients[i]->getNick();
 			else
-				users_str += users[i] + " ";
+				users_str += clients[i]->getNick() + " ";
 		}
 		_sender->message(RPL_NAMREPLY(_sender->_servername, _sender->_nick, name, users_str));
 	}
@@ -77,9 +70,11 @@ class Names : public Command
 		{
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
+			{
 				send_channel(channels[i]->getName());
-			_sender->message(std::string(_sender->_nick + " " + "*" + " : End of /NAMES list\n")
-			                     .c_str());
+				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick,
+				                                channels[i]->getName())); // TODO: Is this end of channels well implemented?
+			}
 		}
 	}
 };

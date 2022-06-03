@@ -15,14 +15,11 @@ class List : public Command
 		_example[0] = "list";
 		_example[1] = "list #hola";
 		_example[2] = "list #hola,#chau";
-
-		// RPL_LISTSTART (321)
-		// RPL_LIST (322)
-		// RPL_LISTEND (323) k
 	}
 
 	bool validate(void)
 	{
+		// TODO: Check if channel exists.
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() > 1)
 		{
@@ -34,9 +31,9 @@ class List : public Command
 
 		for (size_t i = 0; i < _ch_params.size(); i++)
 		{
-			if (_ch_params[i][0] != '#')
+			if (_ch_params[i][0] != '#') // TODO: Is this validation correct?
 			{
-				_sender->message(ERR_BADCHANMASK(_sender->_servername,_sender->_nick)); // ERR_BADCHANMASK (476)
+				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
 				return (false);
 			}
 		}
@@ -45,9 +42,8 @@ class List : public Command
 
 	void execute()
 	{
-		if (!validate())
-			return;
 		std::map<size_t, std::string> p = _message->getParams();
+		_sender->message(RPL_LISTSTART(_sender->_servername, _sender->_nick)); // RPL_LISTSTART (321)
 		if (p.size() == 1)
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
@@ -55,13 +51,10 @@ class List : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel)
-				{
-					_sender->message(std::string("Channel: " + channel->getName() + " " + (channel->joined(_sender) ? "(Joined)" : "") + "\n")
-					                     .c_str());
-				}
-				else
-					_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
+				_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
+				                          channel->getName(),
+				                          itoa(channel->getClients().size()),
+				                          channel->getTopic())); // RPL_LIST (322)
 			}
 		}
 		else
@@ -69,19 +62,13 @@ class List : public Command
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-				_sender->message(
-				    std::string(_sender->_nick + " Channel :Users  Name\n").c_str());
-				//"<client> <channel> <client count> :<topic>"
-				_sender->message(
-				    std::string(_sender->_nick + " " + channels[i]->getName() + " " +
-				                itoa((int) channels[i]->_normal_clients.size() +
-				                     (int) channels[i]->_ope_clients.size()) +
-				                " : " + "<Topic>" + "\n")
-				        .c_str());
-				_sender->message(
-				    std::string(_sender->_nick + " : End of /LIST\n").c_str());
+				_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
+				                          channels[i]->getName(),
+				                          itoa(channels[i]->getClients().size()),
+				                          channels[i]->getTopic())); // RPL_LIST (322)
 			}
 		}
+		_sender->message(RPL_LISTEND(_sender->_servername, _sender->_nick)); // RPL_LISTEND (323)
 	}
 };
 #endif

@@ -2,6 +2,7 @@
 #define CLIENT_H
 
 // Main libraries
+#include <algorithm>
 #include <cstring>
 #include <iostream>
 #include <map>
