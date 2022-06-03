@@ -16,15 +16,23 @@ class Channel
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
 	std::string            _topic;
+	enum ChannelMode
+	{
+		CHANNEL_MODE_PUBLIC = 0,
+		CHANNEL_MODE_PRIVATE = 1,
+		CHANNEL_MODE_SECRET = 2,
+	} _mode;
 
   public:
 	std::vector<Client *> _normal_clients;
+	std::vector<Client *> _voice_clients;
 	std::vector<Client *> _ope_clients;
 	size_t const          _maxClients;
 
   public:
+	// TODO: Should the channel be public or private?
 	Channel(std::string &name, std::string &password)
-	    : _name(name), _password(password), _creator(NULL), _maxClients(2)
+	    : _name(name), _password(password), _creator(NULL), _mode(CHANNEL_MODE_PUBLIC), _maxClients(2)
 	{
 		_created_at = time(0);
 	};
@@ -53,6 +61,21 @@ class Channel
 		return (_topic);
 	}
 
+	Client *getCreator(void)
+	{
+		return (_creator);
+	}
+
+	time_t getCreatedAt(void)
+	{
+		return (_created_at);
+	}
+
+	ChannelMode getMode(void)
+	{
+		return (_mode);
+	}
+
 	std::vector<Client *> getClients(void) const
 	{
 		std::vector<Client *> clients;
@@ -69,6 +92,54 @@ class Channel
 		std::vector<Client *> clients = this->getClients();
 
 		return (std::find(clients.begin(), clients.end(), client) != clients.end());
+	}
+
+	bool isOwner(Client *client)
+	{
+		return (_creator == client);
+	}
+
+	bool isOpe(Client *client)
+	{
+		return (std::find(_ope_clients.begin(), _ope_clients.end(), client) !=
+		        _ope_clients.end());
+	}
+
+	bool isNormal(Client *client)
+	{
+		return (std::find(_normal_clients.begin(), _normal_clients.end(), client) !=
+		        _normal_clients.end());
+	}
+
+	bool isVoice(Client *client)
+	{
+		return (std::find(_voice_clients.begin(), _voice_clients.end(), client) !=
+		        _voice_clients.end());
+	}
+
+	// --------------
+	// Utils
+	// --------------
+	std::string getModeString(void)
+	{
+		std::string mode;
+
+		if (_mode == CHANNEL_MODE_PRIVATE)
+			mode += "*";
+		else if (_mode == CHANNEL_MODE_SECRET)
+			mode += "@";
+		else if (_mode == CHANNEL_MODE_PUBLIC)
+			mode += "=";
+		return (mode);
+	}
+
+	std::string getClientRoleString(Client *client) // TODO: Can a user have multiple roles?
+	{
+		if (this->isOpe(client))
+			return ("@");
+		if (this->isVoice(client))
+			return ("+");
+		return ("");
 	}
 };
 

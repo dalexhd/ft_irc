@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/03 13:19:55 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:58:26 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@
 #define RPL_EXCEPTLIST 348
 #define RPL_ENDOFEXCEPTLIST 349
 #define RPL_VERSION 351
-#define RPL_NAMREPLY(servername, nick, channel, names) \
-	":" + servername + " 353 " + nick + " = " + channel + " :" + names + "\n"
+#define RPL_NAMREPLY(servername, nick, symbol, channel, users) \
+	":" + servername + " 353 " + nick + " " + symbol + " #" + channel + " :" + users + "\n"
 #define RPL_ENDOFNAMES(servername, nick, channel) \
 	":" + servername + " 366 " + nick + " " + channel + " :End of /NAMES list\n"
 #define RPL_BANLIST 367
@@ -125,8 +125,8 @@
 #define ERR_UNKNOWNMODE 472
 #define ERR_INVITEONLYCHAN 473
 #define ERR_BANNEDFROMCHAN 474
-#define ERR_BADCHANNELKEY(servername, nick) \
-	":" + servername + " 403 * " + nick + " :Wrong password\n"
+#define ERR_BADCHANNELKEY(servername, nick, channel) \
+	":" + servername + " 475 " + nick + " " + channel + " :Bad channel key\n"
 #define ERR_BADCHANMASK(servername, nick) \
 	":" + servername + " 476 * " + nick + " :Bad Channel Mask\n"
 #define ERR_NOPRIVILEGES 481

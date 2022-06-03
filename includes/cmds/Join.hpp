@@ -102,54 +102,35 @@ class Join : public Command
 						                     .c_str());
 					}
 					else
-						_sender->message(
-						    ERR_BADCHANNELKEY(_sender->_servername, _sender->_nick)); // ERR_BADCHANNELKEY (475)
+						_sender->message(ERR_BADCHANNELKEY(
+						    _sender->_servername, _sender->_nick, channel->getName())); // ERR_BADCHANNELKEY (475)
 				}
 				else
 				{
 					if (channel->getPassword() != "")
-						_sender->message(
-						    ERR_BADCHANNELKEY(_sender->_servername, _sender->_nick)); // ERR_BADCHANNELKEY (475)
+						_sender->message(ERR_BADCHANNELKEY(
+						    _sender->_servername, _sender->_nick, channel->getName())); // ERR_BADCHANNELKEY (475)
 					else
 					{
 						channel->_normal_clients.push_back(_sender);
-						std::vector<std::string> users;
-						std::string              users_str = "";
-						for (size_t i = 0; i < channel->_normal_clients.size(); i++)
-							users.push_back(channel->_normal_clients[i]->_nick);
-						for (size_t i = 0; i < channel->_ope_clients.size(); i++)
-							users.push_back(channel->_ope_clients[i]->_nick);
-						for (size_t i = 0; i < users.size(); i++)
+						std::vector<Client *> clients = channel->getClients();
+
+						for (size_t i = 0; i < clients.size(); i++)
 						{
-							if (i == users.size() - 1)
-								users_str += users[i];
-							else
-								users_str += users[i] + " ";
+							Client *client = clients[i];
+							client->message(std::string(":" + _sender->_nick + "!" +
+							                            _sender->_username + "@" +
+							                            _sender->_servername + " JOIN :#" +
+							                            channel->getName() + "\n")
+							                    .c_str());
 						}
-						for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-						{
-							if (_sender->_nick != channel->_normal_clients[j]->_nick)
-							{
-								channel->_normal_clients[i]->message(
-								    RPL_NAMREPLY(_sender->_servername,
-								                 channel->_normal_clients[j]->_nick, _ch_params[i], users_str));
-								channel->_normal_clients[i]->message(
-								    RPL_ENDOFNAMES(_sender->_servername,
-								                   channel->_normal_clients[j]->_nick, _ch_params[i]));
-							}
-						}
-						for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-						{
-							if (_sender->_nick != channel->_ope_clients[j]->_nick)
-							{
-								channel->_ope_clients[i]->message(
-								    RPL_NAMREPLY(_sender->_servername,
-								                 channel->_ope_clients[j]->_nick, _ch_params[i], users_str));
-								channel->_ope_clients[i]->message(
-								    RPL_ENDOFNAMES(_sender->_servername,
-								                   channel->_ope_clients[j]->_nick, _ch_params[i]));
-							}
-						}
+						Command *   cmd = _server->_commands["names"];
+						std::string names = "names #" + _ch_params[i];
+						Message *   message = new Message(names);
+						cmd->setSender(_sender, _sender_index);
+						cmd->setServer(_server);
+						cmd->setMessage(message);
+						cmd->execute();
 					}
 				}
 			}
@@ -195,18 +176,18 @@ class Join : public Command
 				// RPL_ENDOFNAMES (366) 366 marc459 #channel :End of /NAMES list.
 
 				_sender->message(std::string(":" + _sender->_nick + "!" +
-				                             _sender->_username + "@" + _sender->_servername + " JOIN :" + _ch_params[i] + "\n")
+				                             _sender->_username + "@" + _sender->_servername + " JOIN :#" + _ch_params[i] + "\n")
 				                     .c_str());
-				_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick, _ch_params[i], "No topic is set"));
+				_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick, "#" + _ch_params[i], "No topic is set"));
 				std::map<std::string, Command *>::iterator it;
 				channel->_ope_clients.push_back(_sender);
 				if ((it = _server->_commands.find("names")) !=
 				    _server->_commands.end())
 				{
-					Command *   cmd = it->second;
-					std::string names = "names";
+					Command *   cmd = _server->_commands["names"];
+					std::string names = "names #" + _ch_params[i];
 					Message *   message = new Message(names);
-					cmd->setSender(_sender, i - 1);
+					cmd->setSender(_sender, _sender_index);
 					cmd->setServer(_server);
 					cmd->setMessage(message);
 					cmd->execute();

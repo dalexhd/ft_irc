@@ -46,12 +46,14 @@ class Names : public Command
 		std::string           users_str = "";
 		for (size_t i = 0; i < clients.size(); i++)
 		{
+			users_str += channel->getClientRoleString(clients[i]);
 			if (i == clients.size() - 1)
 				users_str += clients[i]->getNick();
 			else
 				users_str += clients[i]->getNick() + " ";
 		}
-		_sender->message(RPL_NAMREPLY(_sender->_servername, _sender->_nick, name, users_str));
+		_sender->message(
+		    RPL_NAMREPLY(_sender->_servername, _sender->_nick, channel->getModeString(), name, users_str));
 	}
 
 	void execute()
@@ -63,7 +65,7 @@ class Names : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				send_channel(_ch_params[i]);
-				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick, _ch_params[i]));
+				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick, "#" + _ch_params[i]));
 			}
 		}
 		else
@@ -73,7 +75,7 @@ class Names : public Command
 			{
 				send_channel(channels[i]->getName());
 				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick,
-				                                channels[i]->getName())); // TODO: Is this end of channels well implemented?
+				                                "#" + channels[i]->getName())); // TODO: Is this end of channels well implemented?
 			}
 		}
 	}
