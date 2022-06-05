@@ -4,12 +4,14 @@
 // Our includes
 #include "../Command.hpp"
 
+#define _name
+#define _decription //Jajaja me he dejado la sesion abierta
 class User : public Command
 {
   public:
 	User()
 	{
-		_name = "user";
+		//_name = "user";
 		_description = "termina una sesión";
 		_usage = "user";
 		_example[0] = "user <nombre de usuario> <nombre de host> <nombre de "
