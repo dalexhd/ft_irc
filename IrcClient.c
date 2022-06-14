@@ -10,21 +10,17 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-/* QUES(jeremy): does his have the right scope? */
+#define MAX_MESSAGE_SIZE 512
+
 struct addrinfo *servinfo;
 
 void irc_free(int sockfd)
 {
 	freeaddrinfo(servinfo);
 	if (close(sockfd) == -1)
-	{
 		perror("connect close");
-	}
 }
 
-/* QUES(jeremy): return an irc struct?
- * TODO(jeremy): rename to dial?
- */
 int irc_connect(char *host, char *port)
 {
 	struct addrinfo hints;
@@ -35,8 +31,6 @@ int irc_connect(char *host, char *port)
 	hints.ai_socktype = SOCK_STREAM;
 
 	int status = getaddrinfo(host, port, &hints, &servinfo);
-	/* TODO(jeremy): don't assume the first address in servinfo is good */
-
 	if (status == -1)
 	{
 		perror("addrinfo");
@@ -60,9 +54,6 @@ int irc_connect(char *host, char *port)
 		irc_free(sock);
 		return -1;
 	}
-
-	/* QUES(jeremy): can i free servinfo here? do i want to? */
-
 	return sock;
 }
 
@@ -73,14 +64,14 @@ int irc_send_command(int sockfd, char *buf, size_t len)
 	return r;
 }
 
-/* TODO: synchronize writes to stdout */
+
 
 int main(int argc, char *argv[])
 {
 	int status;
 
-	char *host = "169.254.104.52";
-	char *port = "6777";
+	char *host = "127.0.0.1";
+	char *port = "6667";
 
 	int sock = irc_connect(host, port);
 
@@ -97,9 +88,21 @@ int main(int argc, char *argv[])
 	}
 	++nfds;
 
-	int MAX_MESSAGE_SIZE = 512;
-
 	int s;
+	if(send(sock, "USER user\r\n", strlen("USER user\r\n") + 1, 0) == -1)
+	{
+		perror("send");
+		irc_free(sock);
+		return -1;
+	}
+	if(send(sock, "NICK nick\r\n", strlen("NICK nick\r\n") + 1, 0) == -1)
+	{
+		perror("send");
+		irc_free(sock);
+		return -1;
+	}
+
+
 
 	while (1)
 	{
@@ -215,8 +218,6 @@ int main(int argc, char *argv[])
 					return -1;
 				}
 			}
-
-			/* write to stdout */
 			printf("%s", buf);
 		}
 	}
