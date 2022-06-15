@@ -26,6 +26,8 @@ make
 
 telnet `<serverip>` `<port>`
 
+ - The ircserver must be tested with Graphical Official Irc clients as limechat, weechat, textualchat
+
 ## COMMANDS DOCS
 
 https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands
