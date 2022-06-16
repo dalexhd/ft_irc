@@ -40,6 +40,15 @@ class Nick : public Command
 						return;
 					}
 				}
+
+				std::vector<Client *> clients = _server->_clients;
+				for (size_t i = 0; i < clients.size(); i++)
+				{
+					clients[i]->message(std::string(":" + _sender->_nick + "!" +
+					                                _sender->_username + "@" +
+					                                _sender->_servername + " NICK :" + name + "\n")
+					                        .c_str());
+				}
 				_sender->setNick(name);
 			}
 		}

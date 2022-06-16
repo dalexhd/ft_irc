@@ -78,19 +78,17 @@ class PrivMsg : public Command
 			std::vector<std::string> _ch_params = split(p[0], ",");
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
-				std::string name = _ch_params[i].substr(1).c_str();
-				Channel *   channel = _server->getChannel(name);
-				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
+				std::string           name = _ch_params[i].substr(1).c_str();
+				Channel *             channel = _server->getChannel(name);
+				std::vector<Client *> clients = channel->getClients();
+				for (size_t j = 0; j < clients.size(); j++)
 				{
-					if (channel->_ope_clients[j] != _sender &&
-					    channel->joined(channel->_ope_clients[j]))
-						channel->_ope_clients[j]->message(msg.c_str());
-				}
-				for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-				{
-					if (channel->_normal_clients[j] != _sender &&
-					    channel->joined(channel->_normal_clients[j]))
-						channel->_normal_clients[j]->message(msg.c_str());
+					if (clients[j] != _sender)
+					{
+						clients[j]->message(std::string(":" + _sender->_nick + " PRIVMSG #" +
+						                                channel->getName() + " :" + msg + "\n")
+						                        .c_str());
+					}
 				}
 			}
 		}
@@ -100,10 +98,12 @@ class PrivMsg : public Command
 			for (size_t i = 0; i < _cl_params.size(); i++)
 			{
 				Client *client = _server->getClient(_cl_params[i]);
-				client->message(std::string(_sender->_nick + " sent you a message: " + msg + "\n")
-				                    .c_str());
+				client->message(
+				    std::string(":" + _sender->_nick + " PRIVMSG " + client->getNick() + " :" + msg + "\n")
+				        .c_str());
 			}
 		}
 	}
 };
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/15 22:25:57 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:46:14 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 #include "../includes/cmds/Part.hpp"
 #include "../includes/cmds/Pass.hpp"
 #include "../includes/cmds/PrivMsg.hpp"
+#include "../includes/cmds/Quit.hpp"
 #include "../includes/cmds/User.hpp"
 
 /**
@@ -155,6 +156,7 @@ void Server::setupCommands(void)
 	_commands["help"] = new Help();
 	_commands["ban"] = new Ban();
 	_commands["ope"] = new Ope();
+	_commands["quit"] = new Quit();
 
 	// Channel commands
 	_commands["privmsg"] = new PrivMsg();
