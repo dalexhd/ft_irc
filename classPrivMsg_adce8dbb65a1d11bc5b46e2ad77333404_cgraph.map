@@ -1,10 +1,11 @@
 <map id="PrivMsg::execute" name="PrivMsg::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,132,139,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,139,209"/>
 <area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="192,5,339,32"/>
 <area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="200,56,331,83"/>
-<area shape="rect" id="node4" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="187,107,344,133"/>
-<area shape="rect" id="node5" href="$classChannel.html#acc7d04f494e076b78a8affae33d3bcf8" title=" " alt="" coords="204,157,327,184"/>
-<area shape="rect" id="node7" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="202,208,329,235"/>
-<area shape="rect" id="node8" href="$functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1" title=" " alt="" coords="240,259,291,285"/>
-<area shape="rect" id="node6" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="392,157,541,184"/>
+<area shape="rect" id="node4" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="191,107,340,133"/>
+<area shape="rect" id="node5" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="194,157,337,184"/>
+<area shape="rect" id="node6" href="$classClient.html#a8fe7fa561e8e852aca92036f92b92405" title=" " alt="" coords="206,208,325,235"/>
+<area shape="rect" id="node7" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="187,259,344,285"/>
+<area shape="rect" id="node8" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="202,309,329,336"/>
+<area shape="rect" id="node9" href="$functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1" title=" " alt="" coords="240,360,291,387"/>
 </map>
