@@ -70,7 +70,8 @@ class Command
 	{
 		return (true);
 	}
-	Command() : _is_ope(false), _needs_auth(true){};
+	Command()
+	    : _is_ope(false), _needs_auth(true), _sender(NULL), _server(NULL), _message(NULL), _sender_index(0){};
 	void missingOpe(void)
 	{
 		_sender->message(
