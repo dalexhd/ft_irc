@@ -5,3 +5,4 @@ ircserv
 *.gcov
 docs
 doxygen-awesome-css
+*DS_Store
