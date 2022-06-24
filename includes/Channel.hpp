@@ -3,36 +3,42 @@
 #define CHANNEL_H
 
 #include "./Client.hpp"
-#include <ctime>
-#include <vector>
+
+enum ChannelMode
+{
+	CHANNEL_MODE_PRIVATE = 0,
+	CHANNEL_MODE_SECRET = 1,
+	CHANNEL_MODE_INVITE_ONLY = 2,
+	CHANNEL_MODE_MODERATED = 3,
+	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4,
+	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5,
+	CHANNEL_MODE_BAN_MASK = 6,
+	CHANNEL_MODE_KEY = 7
+};
 
 class Channel
 {
+  public:
   private:
-	std::string _name; // Debe empezar por #
-	std::string _password;
-
+	std::string            _name;
+	std::string            _password;
 	Client *               _creator;
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
+	long long int          _max_clients;
 	std::string            _topic;
-	enum ChannelMode
-	{
-		CHANNEL_MODE_PUBLIC = 0,
-		CHANNEL_MODE_PRIVATE = 1,
-		CHANNEL_MODE_SECRET = 2,
-	} _mode;
+	ChannelMode            _mode;
+	// New mode implementation...
+	std::vector<ChannelMode> _modes;
 
   public:
 	std::vector<Client *> _normal_clients;
 	std::vector<Client *> _voice_clients;
 	std::vector<Client *> _ope_clients;
-	size_t const          _maxClients;
 
   public:
-	// TODO: Should the channel be public or private?
 	Channel(std::string &name, std::string &password)
-	    : _name(name), _password(password), _creator(NULL), _mode(CHANNEL_MODE_PUBLIC), _maxClients(2)
+	    : _name(name), _password(password), _creator(NULL), _max_clients(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
 	};
@@ -74,6 +80,10 @@ class Channel
 	ChannelMode getMode(void)
 	{
 		return (_mode);
+	}
+	size_t getMaxClients(void)
+	{
+		return (_max_clients);
 	}
 
 	std::vector<Client *> getClients(void) const
@@ -123,14 +133,34 @@ class Channel
 	std::string getModeString(void)
 	{
 		std::string mode;
-
-		if (_mode == CHANNEL_MODE_PRIVATE)
-			mode += "*";
-		else if (_mode == CHANNEL_MODE_SECRET)
-			mode += "@";
-		else if (_mode == CHANNEL_MODE_PUBLIC)
-			mode += "=";
+		for (size_t i = 0; i < _modes.size(); i++)
+		{
+			if (_modes[i] == CHANNEL_MODE_PRIVATE)
+				mode += "*";
+			if (_modes[i] == CHANNEL_MODE_SECRET)
+				mode += "@";
+		}
 		return (mode);
+	}
+
+	void addMode(ChannelMode mode)
+	{
+		this->_modes.push_back(mode);
+		std::cout << "Added mode" << mode << std::endl;
+	}
+
+	void removeMode(ChannelMode mode)
+	{
+		std::vector<ChannelMode>::iterator it = std::find(_modes.begin(), _modes.end(), mode);
+		if (it != _modes.end())
+		{
+			_modes.erase(it);
+			std::cout << "Removed mode" << mode << std::endl;
+		}
+		else
+		{
+			std::cout << "Could not Remove mode" << mode << std::endl;
+		}
 	}
 
 	std::string getClientRoleString(Client *client) // TODO: Can a user have multiple roles?

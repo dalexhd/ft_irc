@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/03 17:46:14 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:05:36 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,6 +168,7 @@ void Server::setupCommands(void)
 	_commands["nick"] = new Nick();
 	_commands["user"] = new User();
 	_commands["pass"] = new Pass();
+	_commands["mode"] = new Mode();
 }
 
 Server::~Server(void)
