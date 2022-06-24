@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/19 15:51:16 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:49:46 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 #include "./Client.hpp"
 #include "./Color.hpp"
 #include "./config.hpp"
-#include "./functions.hpp"
 
 // Commands
 class Command;
@@ -36,6 +35,8 @@ class Server
   private:
 	// Connection params
 	std::string const host;
+	std::string const servername;
+	std::string const version;
 	std::string const port;
 	std::string const password;
 
@@ -72,8 +73,51 @@ class Server
 	{
 		return (_status == ONLINE);
 	}
-	Command *findCmd(std::string str);
-	Client * findClient(std::string str);
+	bool hasPassword(void)
+	{
+		return (password != "");
+	}
+	std::string const getPassword(void)
+	{
+		return (password);
+	}
+
+	std::vector<Client *> getRelatedClients(Client *client)
+	{
+		std::vector<Channel *> channels = this->getChannels();
+		std::vector<Client *>  related_clients;
+
+		for (size_t i = 0; i < channels.size(); i++)
+		{
+			if (channels[i]->joined(client))
+			{
+				std::vector<Client *> channel_clients = channels[i]->getClients();
+				for (size_t u = 0; u < channel_clients.size(); u++)
+				{
+					std::cout << channel_clients[u]->getNick() << std::endl;
+					if (channel_clients[u] != client &&
+					    !std::count(related_clients.begin(), related_clients.end(), channel_clients[u]))
+						related_clients.push_back(channel_clients[u]);
+				}
+			}
+		}
+		return (related_clients);
+	}
+
+	std::vector<Channel *> getRelatedChannels(Client *client)
+	{
+		std::vector<Channel *> channels = this->getChannels();
+		std::vector<Channel *> related_channels;
+
+		for (size_t i = 0; i < channels.size(); i++)
+		{
+			if (channels[i]->joined(client))
+			{
+				related_channels.push_back(channels[i]);
+			}
+		}
+		return (related_channels);
+	}
 
   private:
 	void createServerListener(void);
@@ -86,13 +130,15 @@ class Server
 	// --------------
 	// Clients stuff
 	// --------------
-	Client *getClient(std::string &name)
+	Client *getClient(std::string const &name)
 	{
 		for (size_t i = 0; i < _clients.size(); i++)
 		{
-			if (_clients[i]->_name == name)
+			std::cout << "Client name: " << _clients[i]->getNick() << std::endl;
+			if (_clients[i]->getNick() == name)
 				return (_clients[i]);
 		}
+		std::cout << "Client not found" << std::endl;
 		return (NULL);
 	}
 
@@ -100,7 +146,7 @@ class Server
 	{
 		for (size_t i = 0; i < _clients.size(); i++)
 		{
-			if (_clients[i]->_name == name)
+			if (_clients[i]->_nick == name)
 				return (i);
 		}
 		return (-1);
@@ -131,6 +177,16 @@ class Server
 			name = name.substr(1);
 		_channels[name] = new Channel(name, password);
 		return _channels[name];
+	}
+
+	// --------------
+	// Commands stuff
+	// --------------
+	Command *getCommand(std::string &name)
+	{
+		if (_commands.find(name) != _commands.end())
+			return _commands[name];
+		return (NULL);
 	}
 };
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Message.cpp                                        :+:      :+:    :+:   */
+/*   message.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/11 15:40:29 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 14:17:25 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ Message::Message(std::string &buffer)
 	}
 	_end_pos = buffer.find_first_of(" \r\n", _start_pos);
 	_cmd = _buffer.substr(_start_pos, _end_pos - _start_pos);
+	// Convert cmd to lowercase
+	_cmd = to_lower(_cmd);
 
 	// Parse params
 	_start_pos = buffer.find_first_of(" ", _start_pos); // We find the index character after the cmd.

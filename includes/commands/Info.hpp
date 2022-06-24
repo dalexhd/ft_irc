@@ -19,14 +19,14 @@ class Info : public Command
 	{
 		_sender->message(
 		    std::string("Connected clients: " + itoa(_server->_clients.size()) + "\n" +
-		                "Name: " + _sender->_name + "\n")
+		                "Name: " + _sender->_nick + "\n")
 		        .c_str());
 		for (size_t i = 0; i < _server->_clients.size(); i++)
 		{
 			if (_server->_clients[i] != _sender)
 			{
 				_sender->message(
-				    std::string("Client " + _server->_clients[i]->_name + "\n").c_str());
+				    std::string("Client " + _server->_clients[i]->_nick + "\n").c_str());
 			}
 		}
 	}

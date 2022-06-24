@@ -1,6 +1,10 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+// Our includes
+#include "./Color.hpp"
+#include "./functions.hpp"
+
 #include <cstring>
 #include <iostream>
 #include <map>

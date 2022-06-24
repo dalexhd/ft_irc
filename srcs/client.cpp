@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/18 18:38:23 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:30:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void Client::message(char const *message)
 {
+	std::cout << C_BLUE ">> Sending message to client: " << _nick << ": " << C_X << message;
 	if (send(_fd, message, strlen(message), 0) == -1)
 		throw std::runtime_error("Error sending message");
 }
 
 void Client::message(std::string const message)
 {
+	std::cout << C_BLUE ">> Sending message to client: " << _nick << ": " << C_X << message;
 	if (send(_fd, message.c_str(), message.length(), 0) == -1)
 		throw std::runtime_error("Error sending message");
 }
@@ -35,7 +37,7 @@ Message *Client::read(void)
 			break;
 	}
 	buffer[strlen(buffer) - 2] = '\0';
-	std::string tmp = std::string(buffer);
+	std::string tmp(buffer);
 	_messagesSent.push_back(Message(tmp));
 	return (&(_messagesSent.back()));
 }

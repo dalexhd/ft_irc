@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/19 15:56:51 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:46:14 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@
 #include "../includes/commands/Exit.hpp"
 #include "../includes/commands/Help.hpp"
 #include "../includes/commands/Info.hpp"
-#include "../includes/commands/Name.hpp"
 #include "../includes/commands/Ope.hpp"
 #include "../includes/commands/Ping.hpp"
 
+// CHANNEL FUNCTIONS
+
+#include "../includes/cmds/Invite.hpp"
 #include "../includes/cmds/Join.hpp"
+#include "../includes/cmds/Kick.hpp"
 #include "../includes/cmds/List.hpp"
+#include "../includes/cmds/Mode.hpp"
+#include "../includes/cmds/Names.hpp"
+#include "../includes/cmds/Nick.hpp"
+#include "../includes/cmds/Part.hpp"
+#include "../includes/cmds/Pass.hpp"
 #include "../includes/cmds/PrivMsg.hpp"
+#include "../includes/cmds/Quit.hpp"
+#include "../includes/cmds/User.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -82,15 +92,15 @@ void Server::createServerPoll(void)
 					int new_fd;
 					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
 						throw std::runtime_error("error: accept");
-					_clients.push_back(
-					    new Client(new_fd, std::string("user" + itoa(_clients.size() + 1))));
+					_clients.push_back(new Client(new_fd, this->host, this->servername, this->version));
 					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 					_pfds.push_back(pfd);
-					std::cout << "Client connected" << std::endl;
+					std::cout << "Anonymous Client connected" << std::endl;
 				}
 				else if (i > 0)
 				{
 					Message *message = _clients[i - 1]->read();
+					std::cout << "Message received " << message->_buffer << std::endl;
 					std::map<std::string, Command *>::iterator it;
 					if ((it = _commands.find(message->getCmd())) != _commands.end())
 					{
@@ -98,10 +108,19 @@ void Server::createServerPoll(void)
 						cmd->setSender(_clients[i - 1], i - 1);
 						cmd->setServer(this);
 						cmd->setMessage(message);
-						if (!cmd->hasOpe() || (cmd->hasOpe() && _clients[i - 1]->_is_ope))
-							cmd->execute();
-						else
-							cmd->missingOpe();
+						if (cmd->validate())
+						{
+							if (!cmd->needsAuth())
+								cmd->execute();
+							else if (_clients[i - 1]->isAuthenticated())
+							{
+								if (!cmd->hasOpe() ||
+								    (cmd->hasOpe() && _clients[i - 1]->_is_ope))
+									cmd->execute();
+								else
+									cmd->missingOpe();
+							}
+						}
 						break;
 					}
 					else if (message->getCmd() == "close")
@@ -121,7 +140,7 @@ void Server::createServerPoll(void)
  * @param password The password to use
  */
 Server::Server(std::string host, std::string port, std::string password)
-    : host(host), port(port), password(password), _status(ONLINE)
+    : host(host), servername(SERVER_NAME), version(SERVER_VERSION), port(port), password(password), _status(ONLINE)
 {
 	createServerListener();
 	setupCommands();
@@ -137,11 +156,18 @@ void Server::setupCommands(void)
 	_commands["help"] = new Help();
 	_commands["ban"] = new Ban();
 	_commands["ope"] = new Ope();
-	_commands["name"] = new Name();
+	_commands["quit"] = new Quit();
 
+	// Channel commands
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
+	_commands["part"] = new Part();
 	_commands["list"] = new List();
+	_commands["names"] = new Names();
+	_commands["kick"] = new Kick();
+	_commands["nick"] = new Nick();
+	_commands["user"] = new User();
+	_commands["pass"] = new Pass();
 }
 
 Server::~Server(void)
@@ -162,22 +188,4 @@ Server::~Server(void)
 		delete (it_ch->second);
 	_channels.clear();
 	std::cout << "Server closed!" << std::endl;
-}
-
-Command *Server::findCmd(std::string str)
-{
-	std::map<std::string, Command *>::iterator cmd = _commands.find(str);
-	if (cmd != _commands.end())
-		return (cmd->second);
-	return (NULL);
-}
-
-Client *Server::findClient(std::string str)
-{
-	for (size_t i = 0; i < _clients.size(); i++)
-	{
-		if (str.compare(_clients[i]->_name) == 0)
-			return (_clients[i]);
-	}
-	return (NULL);
 }
