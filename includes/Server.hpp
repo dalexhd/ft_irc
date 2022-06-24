@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/02 16:13:42 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:49:46 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,43 @@ class Server
 	std::string const getPassword(void)
 	{
 		return (password);
+	}
+
+	std::vector<Client *> getRelatedClients(Client *client)
+	{
+		std::vector<Channel *> channels = this->getChannels();
+		std::vector<Client *>  related_clients;
+
+		for (size_t i = 0; i < channels.size(); i++)
+		{
+			if (channels[i]->joined(client))
+			{
+				std::vector<Client *> channel_clients = channels[i]->getClients();
+				for (size_t u = 0; u < channel_clients.size(); u++)
+				{
+					std::cout << channel_clients[u]->getNick() << std::endl;
+					if (channel_clients[u] != client &&
+					    !std::count(related_clients.begin(), related_clients.end(), channel_clients[u]))
+						related_clients.push_back(channel_clients[u]);
+				}
+			}
+		}
+		return (related_clients);
+	}
+
+	std::vector<Channel *> getRelatedChannels(Client *client)
+	{
+		std::vector<Channel *> channels = this->getChannels();
+		std::vector<Channel *> related_channels;
+
+		for (size_t i = 0; i < channels.size(); i++)
+		{
+			if (channels[i]->joined(client))
+			{
+				related_channels.push_back(channels[i]);
+			}
+		}
+		return (related_channels);
 	}
 
   private:

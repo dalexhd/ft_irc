@@ -141,6 +141,23 @@ class Channel
 			return ("+");
 		return ("");
 	}
+
+	void removeClientFromChannel(Client *client)
+	{
+		std::vector<Client *> related_channels_clients = getClients();
+		for (size_t j = 0; j < related_channels_clients.size(); j++)
+		{
+			if (related_channels_clients[j] == client)
+			{
+				if (isOpe(related_channels_clients[j]))
+					_ope_clients.erase(
+					    std::find(_ope_clients.begin(), _ope_clients.end(), client));
+				else
+					_normal_clients.erase(
+					    std::find(_normal_clients.begin(), _normal_clients.end(), client));
+			}
+		}
+	}
 };
 
 #endif
