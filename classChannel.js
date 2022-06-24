@@ -1,10 +1,12 @@
 var classChannel =
 [
     [ "Channel", "classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb", null ],
+    [ "addMode", "classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8", null ],
     [ "getClientRoleString", "classChannel.html#a8696ebad4f27227b4077f8a74339fbea", null ],
     [ "getClients", "classChannel.html#a16b4d2426593572de43f690e4d0f7325", null ],
     [ "getCreatedAt", "classChannel.html#a23ea1fe4e9d76d9e3f3fccdcb9308970", null ],
     [ "getCreator", "classChannel.html#a987451c61fb03a0bbbc78871368a7351", null ],
+    [ "getMaxClients", "classChannel.html#a89403c6ce1c78271ef2571845b3a52cc", null ],
     [ "getMode", "classChannel.html#a337b2d012bf753ceae9dad1001c454bb", null ],
     [ "getModeString", "classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d", null ],
     [ "getName", "classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c", null ],
@@ -16,8 +18,8 @@ var classChannel =
     [ "isVoice", "classChannel.html#ab4875ddd83ae031442d7c58a710b8000", null ],
     [ "joined", "classChannel.html#acc7d04f494e076b78a8affae33d3bcf8", null ],
     [ "removeClientFromChannel", "classChannel.html#a249c77224152ae0da4635fd0edcd1a5f", null ],
+    [ "removeMode", "classChannel.html#af72ea58ed6a994380416c80ff2b4dcea", null ],
     [ "setCreator", "classChannel.html#a1cc547a4312634c68769f1c62d2b4df9", null ],
-    [ "_maxClients", "classChannel.html#a213e143e931d19577faf0a74dcabcc27", null ],
     [ "_normal_clients", "classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8", null ],
     [ "_ope_clients", "classChannel.html#a6daf61a24bc288f5612698070c6d87d9", null ],
     [ "_voice_clients", "classChannel.html#affad5998b3363341d58e0f2ebf921806", null ]

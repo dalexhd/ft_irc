@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['server_335',['Server',['../classServer.html',1,'']]],
-  ['status_336',['Status',['../classStatus.html',1,'']]]
+  ['server_349',['Server',['../classServer.html',1,'']]],
+  ['status_350',['Status',['../classStatus.html',1,'']]]
 ];

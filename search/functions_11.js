@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['send_5fchannel_455',['send_channel',['../classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c',1,'Names']]],
-  ['server_456',['Server',['../classServer.html#adc13d87fce5c9a474b818750f289132b',1,'Server']]],
-  ['setcreator_457',['setCreator',['../classChannel.html#a1cc547a4312634c68769f1c62d2b4df9',1,'Channel']]],
-  ['setmessage_458',['setMessage',['../classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21',1,'Command']]],
-  ['setnick_459',['setNick',['../classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39',1,'Client']]],
-  ['setrealname_460',['setRealName',['../classClient.html#aa24e0f0bf8c07f5a62d7147a21d1285d',1,'Client']]],
-  ['setsender_461',['setSender',['../classCommand.html#a916a7b9fd85a5de03edd6f06ef78a690',1,'Command']]],
-  ['setserver_462',['setServer',['../classCommand.html#a9c147b76d590d0a2130c92c9ac9f6133',1,'Command']]],
-  ['setusername_463',['setUsername',['../classClient.html#a0ef8642315aae92725caeca341acf2b6',1,'Client']]],
-  ['split_464',['split',['../functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp'],['../functions_8cpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp']]],
-  ['status_465',['Status',['../classStatus.html#a944586fb328a3524805748c8f7b17f32',1,'Status']]]
+  ['send_5fchannel_474',['send_channel',['../classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c',1,'Names']]],
+  ['server_475',['Server',['../classServer.html#adc13d87fce5c9a474b818750f289132b',1,'Server']]],
+  ['setcreator_476',['setCreator',['../classChannel.html#a1cc547a4312634c68769f1c62d2b4df9',1,'Channel']]],
+  ['setmessage_477',['setMessage',['../classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21',1,'Command']]],
+  ['setnick_478',['setNick',['../classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39',1,'Client']]],
+  ['setrealname_479',['setRealName',['../classClient.html#aa24e0f0bf8c07f5a62d7147a21d1285d',1,'Client']]],
+  ['setsender_480',['setSender',['../classCommand.html#a916a7b9fd85a5de03edd6f06ef78a690',1,'Command']]],
+  ['setserver_481',['setServer',['../classCommand.html#a9c147b76d590d0a2130c92c9ac9f6133',1,'Command']]],
+  ['setusername_482',['setUsername',['../classClient.html#a0ef8642315aae92725caeca341acf2b6',1,'Client']]],
+  ['split_483',['split',['../functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp'],['../functions_8cpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp']]],
+  ['status_484',['Status',['../classStatus.html#a944586fb328a3524805748c8f7b17f32',1,'Status']]]
 ];

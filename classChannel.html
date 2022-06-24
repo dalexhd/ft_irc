@@ -110,8 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a987451c61fb03a0bbbc78871368a7351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23ea1fe4e9d76d9e3f3fccdcb9308970"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a23ea1fe4e9d76d9e3f3fccdcb9308970">getCreatedAt</a> (void)</td></tr>
 <tr class="separator:a23ea1fe4e9d76d9e3f3fccdcb9308970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a337b2d012bf753ceae9dad1001c454bb"><td class="memItemLeft" align="right" valign="top">ChannelMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a337b2d012bf753ceae9dad1001c454bb">getMode</a> (void)</td></tr>
+<tr class="memitem:a337b2d012bf753ceae9dad1001c454bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a337b2d012bf753ceae9dad1001c454bb">getMode</a> (void)</td></tr>
 <tr class="separator:a337b2d012bf753ceae9dad1001c454bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89403c6ce1c78271ef2571845b3a52cc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a89403c6ce1c78271ef2571845b3a52cc">getMaxClients</a> (void)</td></tr>
+<tr class="separator:a89403c6ce1c78271ef2571845b3a52cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b4d2426593572de43f690e4d0f7325"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">getClients</a> (void) const</td></tr>
 <tr class="separator:a16b4d2426593572de43f690e4d0f7325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc7d04f494e076b78a8affae33d3bcf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">joined</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
@@ -126,6 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab4875ddd83ae031442d7c58a710b8000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140faa6fa19c82e6ac76f2e202a29e3d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d">getModeString</a> (void)</td></tr>
 <tr class="separator:a140faa6fa19c82e6ac76f2e202a29e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9b98a4c5ae2f155f5d655083fe02b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">addMode</a> (<a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</td></tr>
+<tr class="separator:acd9b98a4c5ae2f155f5d655083fe02b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72ea58ed6a994380416c80ff2b4dcea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">removeMode</a> (<a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</td></tr>
+<tr class="separator:af72ea58ed6a994380416c80ff2b4dcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8696ebad4f27227b4077f8a74339fbea"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">getClientRoleString</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
 <tr class="separator:a8696ebad4f27227b4077f8a74339fbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249c77224152ae0da4635fd0edcd1a5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">removeClientFromChannel</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
@@ -139,8 +145,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:affad5998b3363341d58e0f2ebf921806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6daf61a24bc288f5612698070c6d87d9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a></td></tr>
 <tr class="separator:a6daf61a24bc288f5612698070c6d87d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a213e143e931d19577faf0a74dcabcc27"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a213e143e931d19577faf0a74dcabcc27">_maxClients</a></td></tr>
-<tr class="separator:a213e143e931d19577faf0a74dcabcc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26f5d4a249bab4b1bbc1863c943115fb"></a>
@@ -180,6 +184,41 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd9b98a4c5ae2f155f5d655083fe02b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9b98a4c5ae2f155f5d655083fe02b8">&#9670;&nbsp;</a></span>addMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Channel::addMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph.png" border="0" usemap="#classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph" alt=""/></div>
+<map name="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph" id="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph">
+<area shape="rect" title=" " alt="" coords="171,5,313,32"/>
+<area shape="rect" href="classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="5,5,123,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a8696ebad4f27227b4077f8a74339fbea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8696ebad4f27227b4077f8a74339fbea">&#9670;&nbsp;</a></span>getClientRoleString()</h2>
 
@@ -322,6 +361,41 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a89403c6ce1c78271ef2571845b3a52cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89403c6ce1c78271ef2571845b3a52cc">&#9670;&nbsp;</a></span>getMaxClients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Channel::getMaxClients </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a89403c6ce1c78271ef2571845b3a52cc_icgraph.png" border="0" usemap="#classChannel_a89403c6ce1c78271ef2571845b3a52cc_icgraph" alt=""/></div>
+<map name="classChannel_a89403c6ce1c78271ef2571845b3a52cc_icgraph" id="classChannel_a89403c6ce1c78271ef2571845b3a52cc_icgraph">
+<area shape="rect" title=" " alt="" coords="159,5,336,32"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="5,5,111,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a337b2d012bf753ceae9dad1001c454bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a337b2d012bf753ceae9dad1001c454bb">&#9670;&nbsp;</a></span>getMode()</h2>
 
@@ -332,7 +406,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ChannelMode Channel::getMode </td>
+          <td class="memname"><a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> Channel::getMode </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -701,6 +775,41 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="af72ea58ed6a994380416c80ff2b4dcea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72ea58ed6a994380416c80ff2b4dcea">&#9670;&nbsp;</a></span>removeMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Channel::removeMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph.png" border="0" usemap="#classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph" alt=""/></div>
+<map name="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph" id="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph">
+<area shape="rect" title=" " alt="" coords="171,5,340,32"/>
+<area shape="rect" href="classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="5,5,123,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1cc547a4312634c68769f1c62d2b4df9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cc547a4312634c68769f1c62d2b4df9">&#9670;&nbsp;</a></span>setCreator()</h2>
 
@@ -737,20 +846,6 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a213e143e931d19577faf0a74dcabcc27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a213e143e931d19577faf0a74dcabcc27">&#9670;&nbsp;</a></span>_maxClients</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const size_t Channel::_maxClients</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2af7dc5770799fdea6f624c040bbd8c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2af7dc5770799fdea6f624c040bbd8c8">&#9670;&nbsp;</a></span>_normal_clients</h2>
 
@@ -802,7 +897,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classChannel.html">Channel</a></li>
-    <li class="footer">Generated on Fri Jun 24 2022 13:55:28 for IRC SERVER by
+    <li class="footer">Generated on Fri Jun 24 2022 16:22:48 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['status_508',['Status',['../classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47',1,'Server']]]
+  ['channelmode_526',['ChannelMode',['../Channel_8hpp.html#a1896d4a571c398f57955773fce8af599',1,'Channel.hpp']]]
 ];

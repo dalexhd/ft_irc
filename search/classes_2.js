@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['channel_311',['Channel',['../classChannel.html',1,'']]],
-  ['client_312',['Client',['../classClient.html',1,'']]],
-  ['close_313',['Close',['../classClose.html',1,'']]],
-  ['command_314',['Command',['../classCommand.html',1,'']]]
+  ['channel_325',['Channel',['../classChannel.html',1,'']]],
+  ['client_326',['Client',['../classClient.html',1,'']]],
+  ['close_327',['Close',['../classClose.html',1,'']]],
+  ['command_328',['Command',['../classCommand.html',1,'']]]
 ];
