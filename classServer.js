@@ -15,6 +15,8 @@ var classServer =
     [ "getClientIndex", "classServer.html#a399e5a12513223a087897a4a08d62df2", null ],
     [ "getCommand", "classServer.html#a9a198609328f8d6a866842ece540e236", null ],
     [ "getPassword", "classServer.html#a1e71fd484bc23c67814876c243fa08ca", null ],
+    [ "getRelatedChannels", "classServer.html#ad1ad392e620df1b3ea922b313569df47", null ],
+    [ "getRelatedClients", "classServer.html#a0539ae23411198c85d50f1338711717c", null ],
     [ "hasPassword", "classServer.html#acd7b5a64b3a88554250f7d6666f208ba", null ],
     [ "is_running", "classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a", null ],
     [ "run", "classServer.html#abb27d30b40a94326e3fd629d3b30b7d5", null ],

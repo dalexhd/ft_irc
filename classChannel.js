@@ -15,6 +15,7 @@ var classChannel =
     [ "isOwner", "classChannel.html#a113a05869c11dec225484bf6124b8120", null ],
     [ "isVoice", "classChannel.html#ab4875ddd83ae031442d7c58a710b8000", null ],
     [ "joined", "classChannel.html#acc7d04f494e076b78a8affae33d3bcf8", null ],
+    [ "removeClientFromChannel", "classChannel.html#a249c77224152ae0da4635fd0edcd1a5f", null ],
     [ "setCreator", "classChannel.html#a1cc547a4312634c68769f1c62d2b4df9", null ],
     [ "_maxClients", "classChannel.html#a213e143e931d19577faf0a74dcabcc27", null ],
     [ "_normal_clients", "classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8", null ],

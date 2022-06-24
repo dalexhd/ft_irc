@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['names_436',['Names',['../classNames.html#ad8fd9b4e492dbf7347d64d6b2c1c5238',1,'Names']]],
-  ['needsauth_437',['needsAuth',['../classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88',1,'Command']]],
-  ['nick_438',['Nick',['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()'],['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()']]],
-  ['notice_439',['Notice',['../classNotice.html#a38ddbc4640546b325eb42aba16273f35',1,'Notice']]]
+  ['names_441',['Names',['../classNames.html#ad8fd9b4e492dbf7347d64d6b2c1c5238',1,'Names']]],
+  ['needsauth_442',['needsAuth',['../classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88',1,'Command']]],
+  ['nick_443',['Nick',['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()'],['../classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b',1,'Nick::Nick()']]],
+  ['notice_444',['Notice',['../classNotice.html#a38ddbc4640546b325eb42aba16273f35',1,'Notice']]]
 ];

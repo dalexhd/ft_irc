@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ban_307',['Ban',['../classBan.html',1,'']]]
+  ['ban_310',['Ban',['../classBan.html',1,'']]]
 ];

@@ -1,4 +1,7 @@
 <map id="Quit::execute" name="Quit::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,113,32"/>
-<area shape="rect" id="node2" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="161,5,319,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,113,83"/>
+<area shape="rect" id="node2" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="184,5,341,32"/>
+<area shape="rect" id="node3" href="$classServer.html#ad1ad392e620df1b3ea922b313569df47" title=" " alt="" coords="161,56,364,83"/>
+<area shape="rect" id="node5" href="$classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="169,107,357,133"/>
+<area shape="rect" id="node4" href="$classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2" title=" " alt="" coords="412,81,565,108"/>
 </map>

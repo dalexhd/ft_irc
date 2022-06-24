@@ -18,7 +18,9 @@ var searchData=
   ['getnick_132',['getNick',['../classClient.html#a8fe7fa561e8e852aca92036f92b92405',1,'Client']]],
   ['getparams_133',['getParams',['../classMessage.html#ae175384074674e34978f40261238d701',1,'Message']]],
   ['getpassword_134',['getPassword',['../classChannel.html#a5220250205f35b248205e2a4ba41519d',1,'Channel::getPassword()'],['../classServer.html#a1e71fd484bc23c67814876c243fa08ca',1,'Server::getPassword()']]],
-  ['getsender_135',['getSender',['../classCommand.html#a99274a8775f437acb302eefdb13057e5',1,'Command']]],
-  ['gettopic_136',['getTopic',['../classChannel.html#a18cec88efaa45792771b34c293195842',1,'Channel']]],
-  ['getusage_137',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]]
+  ['getrelatedchannels_135',['getRelatedChannels',['../classServer.html#ad1ad392e620df1b3ea922b313569df47',1,'Server']]],
+  ['getrelatedclients_136',['getRelatedClients',['../classServer.html#a0539ae23411198c85d50f1338711717c',1,'Server']]],
+  ['getsender_137',['getSender',['../classCommand.html#a99274a8775f437acb302eefdb13057e5',1,'Command']]],
+  ['gettopic_138',['getTopic',['../classChannel.html#a18cec88efaa45792771b34c293195842',1,'Channel']]],
+  ['getusage_139',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]]
 ];
