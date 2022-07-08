@@ -1,5 +1,6 @@
 <map id="Channel::getModeString" name="Channel::getModeString">
-<area shape="rect" id="node1" title=" " alt="" coords="393,5,572,32"/>
-<area shape="rect" id="node2" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" id="node3" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="393,31,572,57"/>
+<area shape="rect" id="node2" href="$classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="204,5,321,32"/>
+<area shape="rect" id="node3" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,56,345,83"/>
+<area shape="rect" id="node4" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,56,132,83"/>
 </map>

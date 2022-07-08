@@ -1,7 +1,9 @@
 <map id="Mode::validate" name="Mode::validate">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,124,108"/>
-<area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="177,5,324,32"/>
-<area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="185,56,316,83"/>
-<area shape="rect" id="node4" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="172,107,329,133"/>
-<area shape="rect" id="node5" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="187,157,314,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,124,133"/>
+<area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="188,5,335,32"/>
+<area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="196,56,327,83"/>
+<area shape="rect" id="node4" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="399,107,556,133"/>
+<area shape="rect" id="node5" href="$classMode.html#a0b79c4cd9924c634ee62dc500f487a25" title=" " alt="" coords="172,157,351,184"/>
+<area shape="rect" id="node7" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="414,208,541,235"/>
+<area shape="rect" id="node6" href="$classMessage.html#ad89a43eb39898c822b754288fef467b8" title=" " alt="" coords="408,157,547,184"/>
 </map>
