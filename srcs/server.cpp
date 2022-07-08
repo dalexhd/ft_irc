@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/24 15:05:36 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:31:49 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ void Server::createServerPoll(void)
 									cmd->missingOpe();
 							}
 						}
+						else
+							std::cout << "Command not valid" << std::endl;
 						break;
 					}
 					else if (message->getCmd() == "close")

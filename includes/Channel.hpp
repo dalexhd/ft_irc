@@ -1,4 +1,3 @@
-
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
@@ -18,7 +17,6 @@ enum ChannelMode
 
 class Channel
 {
-  public:
   private:
 	std::string            _name;
 	std::string            _password;
@@ -139,6 +137,18 @@ class Channel
 				mode += "*";
 			if (_modes[i] == CHANNEL_MODE_SECRET)
 				mode += "@";
+			if (_modes[i] == CHANNEL_MODE_INVITE_ONLY)
+				mode += "!";
+			if (_modes[i] == CHANNEL_MODE_MODERATED)
+				mode += "%";
+			if (_modes[i] == CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY)
+				mode += "+";
+			if (_modes[i] == CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE)
+				mode += "~";
+			if (_modes[i] == CHANNEL_MODE_BAN_MASK)
+				mode += "&";
+			if (_modes[i] == CHANNEL_MODE_KEY)
+				mode += "!";
 		}
 		return (mode);
 	}
@@ -158,9 +168,7 @@ class Channel
 			std::cout << "Removed mode" << mode << std::endl;
 		}
 		else
-		{
 			std::cout << "Could not Remove mode" << mode << std::endl;
-		}
 	}
 
 	std::string getClientRoleString(Client *client) // TODO: Can a user have multiple roles?
