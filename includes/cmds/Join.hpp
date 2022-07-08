@@ -90,7 +90,7 @@ class Join : public Command
 			if (channel)
 			{
 				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
-				    channel->_maxClients)
+				    channel->getMaxClients())
 					_sender->message(
 					    ERR_CHANNELISFULL(_sender->_servername, _sender->_nick, _ch_params[i]));
 				else if (_pw_params.size() > 0)

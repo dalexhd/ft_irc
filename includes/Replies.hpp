@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/03 15:58:26 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:52:41 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@
 	":" + servername + " 322 " + nick + " " + channel + " " + users + " :" + topic + "\n"
 #define RPL_LISTEND(servername, nick) \
 	":" + servername + " 323 " + nick + " :End of /LIST\n"
-#define RPL_CHANNELMODEIS 324
+#define RPL_CHANNELMODEIS(servername, nick, channel, modes) \
+	":" + servername + " 324 " + nick + " " + channel + " +" + modes + "\n"
 #define RPL_CREATIONTIME 329
 #define RPL_WHOISACCOUNT 330
 #define RPL_NOTOPIC 331
@@ -122,7 +123,8 @@
 	":" + servername + " 465 " + nick + " :You are banned from this server\n"
 #define ERR_CHANNELISFULL(servername, nick, channel) \
 	":" + servername + " 471 " + nick + " " + channel + " :Cannot join channel , channel is full(+l)\n"
-#define ERR_UNKNOWNMODE 472
+#define ERR_UNKNOWNMODE(servername, nick, mode) \
+	":" + servername + " 472 " + nick + " " + mode + " :is unknown mode char to me for that channel\n"
 #define ERR_INVITEONLYCHAN 473
 #define ERR_BANNEDFROMCHAN 474
 #define ERR_BADCHANNELKEY(servername, nick, channel) \

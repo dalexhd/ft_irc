@@ -3,12 +3,8 @@
 
 // Main libraries
 #include <algorithm>
-#include <cstring>
-#include <iostream>
-#include <map>
 #include <poll.h>
 #include <unistd.h>
-#include <vector>
 
 // Socket includes
 #include <netdb.h>
