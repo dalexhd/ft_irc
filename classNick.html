@@ -118,6 +118,8 @@ Collaboration diagram for Nick:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4f5b6f3c56272ae8ba78b1bbfed999b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b">Nick</a> ()</td></tr>
 <tr class="separator:ab4f5b6f3c56272ae8ba78b1bbfed999b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93005d1299cbb80f9f8ad534294fa879"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNick.html#a93005d1299cbb80f9f8ad534294fa879">validate</a> (void)</td></tr>
+<tr class="separator:a93005d1299cbb80f9f8ad534294fa879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac33be0d8bdeb6e18ec697d47c319fe43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNick.html#ac33be0d8bdeb6e18ec697d47c319fe43">execute</a> ()</td></tr>
 <tr class="separator:ac33be0d8bdeb6e18ec697d47c319fe43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f5b6f3c56272ae8ba78b1bbfed999b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNick.html#ab4f5b6f3c56272ae8ba78b1bbfed999b">Nick</a> ()</td></tr>
@@ -145,8 +147,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a69cc2e41b23641a2ff17d17343d3aeff inherit pub_methods_classCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa66a81d12ca8f9c457d976eaabcf7f88 inherit pub_methods_classCommand"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88">needsAuth</a> (void)</td></tr>
 <tr class="separator:aa66a81d12ca8f9c457d976eaabcf7f88 inherit pub_methods_classCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af178815ffd43a64b0bdf2e9f64e5dbb5 inherit pub_methods_classCommand"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#af178815ffd43a64b0bdf2e9f64e5dbb5">validate</a> (void)</td></tr>
-<tr class="separator:af178815ffd43a64b0bdf2e9f64e5dbb5 inherit pub_methods_classCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18df2d81039392daeb0b78c346a70537 inherit pub_methods_classCommand"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a18df2d81039392daeb0b78c346a70537">Command</a> ()</td></tr>
 <tr class="separator:a18df2d81039392daeb0b78c346a70537 inherit pub_methods_classCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd59bde053da57d6b7aaa1ba647ae179 inherit pub_methods_classCommand"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#abd59bde053da57d6b7aaa1ba647ae179">missingOpe</a> (void)</td></tr>
@@ -259,10 +259,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNick_ac33be0d8bdeb6e18ec697d47c319fe43_cgraph.png" border="0" usemap="#classNick_ac33be0d8bdeb6e18ec697d47c319fe43_cgraph" alt=""/></div>
 <map name="classNick_ac33be0d8bdeb6e18ec697d47c319fe43_cgraph" id="classNick_ac33be0d8bdeb6e18ec697d47c319fe43_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,116,83"/>
+<area shape="rect" title=" " alt="" coords="5,31,116,57"/>
 <area shape="rect" href="classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="164,5,321,32"/>
-<area shape="rect" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="179,56,306,83"/>
-<area shape="rect" href="classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39" title=" " alt="" coords="184,107,301,133"/>
+<area shape="rect" href="classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39" title=" " alt="" coords="184,56,301,83"/>
 </map>
 </div>
 
@@ -294,6 +293,44 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a93005d1299cbb80f9f8ad534294fa879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93005d1299cbb80f9f8ad534294fa879">&#9670;&nbsp;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Nick::validate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classCommand.html#af178815ffd43a64b0bdf2e9f64e5dbb5">Command</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNick_a93005d1299cbb80f9f8ad534294fa879_cgraph.png" border="0" usemap="#classNick_a93005d1299cbb80f9f8ad534294fa879_cgraph" alt=""/></div>
+<map name="classNick_a93005d1299cbb80f9f8ad534294fa879_cgraph" id="classNick_a93005d1299cbb80f9f8ad534294fa879_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,117,57"/>
+<area shape="rect" href="classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="165,5,323,32"/>
+<area shape="rect" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="181,56,307,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/cmds/<a class="el" href="cmds_2Nick_8hpp_source.html">Nick.hpp</a></li>
 </ul>
@@ -303,7 +340,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classNick.html">Nick</a></li>
-    <li class="footer">Generated on Fri Jul 8 2022 16:34:55 for IRC SERVER by
+    <li class="footer">Generated on Mon Sep 19 2022 13:30:35 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
