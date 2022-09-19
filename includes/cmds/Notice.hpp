@@ -19,6 +19,18 @@ class Notice : public Command
 		_example[1] = "notice guest500 :oye, eres un imbecil";
 	}
 
+	bool validate(void)
+	{
+		std::map<size_t, std::string> p = _message->getParams();
+		if (p.size() < 3)
+		{
+			_sender->message("Wrong command format. Ex: notice <nick> "
+			                 ":<texto>\n");
+			return (false);
+		}
+		return (true);
+	}
+
 	void execute()
 	{
 	}
