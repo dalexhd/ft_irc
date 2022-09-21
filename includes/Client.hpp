@@ -2,22 +2,13 @@
 #define CLIENT_H
 
 // Main libraries
-#include <algorithm>
-#include <poll.h>
-#include <unistd.h>
-
-// Socket includes
 #include <netdb.h>
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <sys/types.h>
+#include <unistd.h>
 
 // Our includes
 #include "./Message.hpp"
 #include "./Replies.hpp"
 #include "./config.hpp"
-
-#include <fstream>
 
 class Client
 {

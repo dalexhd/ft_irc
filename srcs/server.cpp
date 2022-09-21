@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/07/08 16:31:49 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:21:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 #include "../includes/commands/Ping.hpp"
 
 // CHANNEL FUNCTIONS
-
 #include "../includes/cmds/Invite.hpp"
 #include "../includes/cmds/Join.hpp"
 #include "../includes/cmds/Kick.hpp"
@@ -55,22 +54,25 @@ void Server::createServerListener()
 
 	// We create the socket.
 	if ((_socket = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
-		throw std::runtime_error("error: socket");
+		throw std::runtime_error("Error while creating socket");
+	// We set the socket options.
 	else if (setsockopt(_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
 	{
 		close(_socket);
 		freeaddrinfo(servinfo);
-		throw std::runtime_error("error: setsockopt");
+		throw std::runtime_error("Error while setting socket options");
 	}
+	// We bind the socket.
 	else if (bind(_socket, servinfo->ai_addr, servinfo->ai_addrlen) == -1)
 	{
 		close(_socket);
 		freeaddrinfo(servinfo);
-		throw std::runtime_error("error: bind");
+		throw std::runtime_error("Error while binding socket");
 	}
 	freeaddrinfo(servinfo);
-	if (listen(_socket, MAX_CONNECTIONS) == -1) // Make listen socket
-		throw std::runtime_error("error: listen");
+	// We listen for connections. We set the max connections to MAX_CONNECTIONS (defined in Server.hpp).
+	if (listen(_socket, MAX_CONNECTIONS) == -1)
+		throw std::runtime_error("Error while listening for connections");
 	std::cout << "Server is listening on port " << port << std::endl;
 }
 
@@ -82,11 +84,14 @@ void Server::createServerPoll(void)
 	while (is_running())
 	{
 		if (poll(_pfds.data(), _pfds.size(), -1) == -1)
-			throw std::runtime_error("error: poll");
+			throw std::runtime_error("Error while polling for events");
+		// We iterate through all the sockets.
 		for (size_t i = 0; i < _pfds.size(); i++)
 		{
+			// If event is POLLIN, we have data to read.
 			if (_pfds[i].revents & POLLIN)
 			{
+				// If the socket file descriptor is the server socket, we accept the connection.
 				if (_pfds[i].fd == _socket)
 				{
 					int new_fd;
@@ -97,7 +102,8 @@ void Server::createServerPoll(void)
 					_pfds.push_back(pfd);
 					std::cout << "Anonymous Client connected" << std::endl;
 				}
-				else if (i > 0)
+				// Else means that the socket is a client socket.
+				else
 				{
 					Message *message = _clients[i - 1]->read();
 					std::cout << "Message received " << message->_buffer << std::endl;

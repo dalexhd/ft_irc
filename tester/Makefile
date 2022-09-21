@@ -1,4 +1,4 @@
-OUTPUT				=	ircserv
+OUTPUT				=	ircserv_tester
 
 ifeq ($(shell whoami), runner)
 	CC				=	@g++ -std=c++98 -fprofile-arcs -ftest-coverage -O0 -fPIC
@@ -14,7 +14,7 @@ HEADER_DIR			=	includes
 OBJ_DIR				=	obj/
 SRC_DIR				=	srcs/
 RESULT				=	$(shell cat output.txt)
-AUTHOR				=	$(shell cat ../author)
+AUTHOR				=	$(shell cat ../../author)
 LAST_COMMIT_DATE	=	$(shell git log -1 --date=format:"%m/%d/%Y" --format="%ad   [%cr]")
 LAST_COMMIT_HASH	=	$(shell git log -1 --date=format:"%m/%d/%y %T" --format="%H")
 LAST_COMMIT_MESSAGE	=	$(shell git log -1 --date=format:"%m/%d/%y %T" --format=\'%s\')
@@ -27,11 +27,9 @@ COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
 
-UTILS				=	utils/validation.cpp utils/functions.cpp
+SRCS				=
 
-SRCS				=	server.cpp client.cpp message.cpp
-
-SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS)) $(addprefix $(SRC_DIR),$(UTILS))
+SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS))
 
 # Mandatory Objects
 OFILE				=	$(SOURCES:%.cpp=%.o)
@@ -121,9 +119,6 @@ re:			## Call fclean => all
 			@make all
 
 ##@ Testing
-
-test:		## Make test
-			@cd tester && make > /dev/null && ./ircserv_tester
 
 cov:		## Make coverage files
 			gcov $(OBJS)

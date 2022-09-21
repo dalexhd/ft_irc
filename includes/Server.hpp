@@ -6,17 +6,16 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/23 17:49:46 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/19 14:34:34 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <arpa/inet.h>
-#include <cstdlib>
-#include <fcntl.h>
-#include <string>
+// Main libraries
+#include <algorithm>
+#include <poll.h>
 
 // Our includes
 #include "./Channel.hpp"
@@ -112,9 +111,7 @@ class Server
 		for (size_t i = 0; i < channels.size(); i++)
 		{
 			if (channels[i]->joined(client))
-			{
 				related_channels.push_back(channels[i]);
-			}
 		}
 		return (related_channels);
 	}
