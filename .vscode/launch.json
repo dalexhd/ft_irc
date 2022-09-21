@@ -14,8 +14,7 @@
 			"environment": [],
 			"externalConsole": false,
 			"args": [
-				"9999",
-				"1234"
+				"6667"
 			],
 			"MIMode": "gdb",
 			"setupCommands": [

@@ -43,20 +43,13 @@ class Ban : public Command
 	{
 		std::string name = _message->getParams()[0];
 		Client *    client = _server->getClient(name);
-		size_t      client_index = _server->getClientIndex(name);
 
 		client->message(
 		    std::string("You've been banned by " + _sender->_nick + "\n").c_str());
 		_sender->message(
 		    std::string("Client " + client->_nick + " has been banned!\n").c_str());
 
-		// First we delete the client pointer, this will execute the client
-		// destructor which will close the socket. delete _clients[];
-		delete client;
-		// Then we remove the client from the clients map containers.
-		_server->_clients.erase(_server->_clients.begin() + client_index);
-		// Then we remove the client from the clients _pfds.
-		_server->_pfds.erase(_server->_pfds.begin() + client_index + 1);
+		this->_server->deleteClient(client->_fd);
 	}
 };
 #endif

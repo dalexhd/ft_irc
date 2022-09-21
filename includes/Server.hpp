@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/19 14:34:34 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/21 16:13:12 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // Main libraries
 #include <algorithm>
+#include <fcntl.h>
 #include <poll.h>
 
 // Our includes
@@ -41,7 +42,7 @@ class Server
 
   public:
 	// Clients
-	std::vector<Client *> _clients;
+	std::map<size_t, Client *> _clients;
 
 	// Commands
 	std::map<std::string, Command *> _commands;
@@ -59,7 +60,7 @@ class Server
 
 	// Socket specific vars
 	std::vector<pollfd> _pfds;
-	int                 _socket;
+	int                 _fd;
 
   public:
 	Server(std::string host, std::string port, std::string password);
@@ -137,6 +138,28 @@ class Server
 		}
 		std::cout << "Client not found" << std::endl;
 		return (NULL);
+	}
+
+	void deleteClient(int fd)
+	{
+		std::map<size_t, Client *>::iterator it = _clients.begin();
+		for (; it != _clients.end(); it++)
+		{
+			if (it->second->_fd == fd)
+			{
+				delete it->second;
+				_clients.erase(it);
+				std::vector<pollfd>::iterator it2 = _pfds.begin();
+				for (; it2 != _pfds.end(); it2++)
+				{
+					if (it2->fd == fd)
+					{
+						_pfds.erase(it2);
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	size_t getClientIndex(std::string &name)

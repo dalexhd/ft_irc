@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/06/03 15:30:30 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/21 16:37:33 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,27 @@ void Client::message(std::string const message)
 		throw std::runtime_error("Error sending message");
 }
 
-Message *Client::read(void)
+void Client::read(void)
 {
-	char buffer[MAX_BUFFER_SIZE];
+	char    buffer[MAX_BUFFER_SIZE];
+	ssize_t res;
 
-	while (!std::strstr(buffer, "\r\n"))
+	memset(buffer, '\0', sizeof(buffer));
+	res = recv(_fd, buffer, sizeof(buffer), 0);
+	if (res == -1)
 	{
-		memset(buffer, '\0', sizeof(buffer));
-		if (recv(_fd, buffer, sizeof(buffer), 0) <= 0)
-			break;
+		std::cout << "Error received -1" << std::endl;
+		return;
 	}
-	buffer[strlen(buffer) - 2] = '\0';
+	else if (res == 0)
+	{
+		std::cout << "No data received 0" << std::endl;
+		this->_status = DISCONNECTED;
+		return;
+	}
+	if (strlen(buffer) > 2)
+		buffer[strlen(buffer) - 2] = '\0';
 	std::string tmp(buffer);
 	_messagesSent.push_back(Message(tmp));
-	return (&(_messagesSent.back()));
+	_message = &(_messagesSent.back());
 }

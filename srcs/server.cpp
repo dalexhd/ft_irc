@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/21 14:21:30 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/21 16:35:38 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void Server::createServerListener()
 {
 	int      yes = 1;
 	addrinfo hints, *servinfo;
+
 	std::memset(&hints, 0, sizeof(addrinfo));
 
 	hints.ai_family = AF_UNSPEC;
@@ -53,89 +54,103 @@ void Server::createServerListener()
 		throw std::runtime_error("error: getaddrinfo");
 
 	// We create the socket.
-	if ((_socket = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
+	if ((_fd = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
 		throw std::runtime_error("Error while creating socket");
 	// We set the socket options.
-	else if (setsockopt(_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
+	else if (setsockopt(_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
 	{
-		close(_socket);
+		close(_fd);
 		freeaddrinfo(servinfo);
 		throw std::runtime_error("Error while setting socket options");
 	}
-	// We bind the socket.
-	else if (bind(_socket, servinfo->ai_addr, servinfo->ai_addrlen) == -1)
+	else if (fcntl(_fd, F_SETFL, O_NONBLOCK) == -1)
 	{
-		close(_socket);
+		close(_fd);
+		freeaddrinfo(servinfo);
+		throw std::runtime_error("Error while setting socket to non-blocking");
+	}
+	// We bind the socket.
+	else if (bind(_fd, servinfo->ai_addr, servinfo->ai_addrlen) == -1)
+	{
+		close(_fd);
 		freeaddrinfo(servinfo);
 		throw std::runtime_error("Error while binding socket");
 	}
 	freeaddrinfo(servinfo);
 	// We listen for connections. We set the max connections to MAX_CONNECTIONS (defined in Server.hpp).
-	if (listen(_socket, MAX_CONNECTIONS) == -1)
+	if (listen(_fd, MAX_CONNECTIONS) == -1)
 		throw std::runtime_error("Error while listening for connections");
+	// We add the socket to the pollfd vector.
+	pollfd pfd = {.fd = _fd, .events = POLLIN, .revents = 0};
+	_pfds.push_back(pfd);
 	std::cout << "Server is listening on port " << port << std::endl;
 }
 
 void Server::createServerPoll(void)
 {
-	pollfd pfd = {.fd = _socket, .events = POLLIN, .revents = 0};
-
-	_pfds.push_back(pfd);
 	while (is_running())
 	{
 		if (poll(_pfds.data(), _pfds.size(), -1) == -1)
 			throw std::runtime_error("Error while polling for events");
-		// We iterate through all the sockets.
-		for (size_t i = 0; i < _pfds.size(); i++)
+		if (_pfds[0].revents & POLLIN)
 		{
-			// If event is POLLIN, we have data to read.
-			if (_pfds[i].revents & POLLIN)
+			int new_fd;
+			if ((new_fd = accept(_fd, NULL, NULL)) == -1)
+				throw std::runtime_error("error: accept");
+			_clients[new_fd] = new Client(new_fd, this->host, this->servername, this->version);
+			pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
+			_pfds.push_back(pfd);
+			std::cout << "Anonymous Client connected" << std::endl;
+		}
+		else
+		{
+			std::vector<pollfd>::iterator i = _pfds.begin();
+			while (i != _pfds.end())
 			{
-				// If the socket file descriptor is the server socket, we accept the connection.
-				if (_pfds[i].fd == _socket)
+				if (i->revents & POLLIN)
 				{
-					int new_fd;
-					if ((new_fd = accept(_socket, NULL, NULL)) == -1)
-						throw std::runtime_error("error: accept");
-					_clients.push_back(new Client(new_fd, this->host, this->servername, this->version));
-					pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
-					_pfds.push_back(pfd);
-					std::cout << "Anonymous Client connected" << std::endl;
-				}
-				// Else means that the socket is a client socket.
-				else
-				{
-					Message *message = _clients[i - 1]->read();
-					std::cout << "Message received " << message->_buffer << std::endl;
-					std::map<std::string, Command *>::iterator it;
-					if ((it = _commands.find(message->getCmd())) != _commands.end())
+					_clients[i->fd]->read();
+					if (_clients[i->fd]->_status == DISCONNECTED)
 					{
-						Command *cmd = it->second;
-						cmd->setSender(_clients[i - 1], i - 1);
-						cmd->setServer(this);
-						cmd->setMessage(message);
-						if (cmd->validate())
-						{
-							if (!cmd->needsAuth())
-								cmd->execute();
-							else if (_clients[i - 1]->isAuthenticated())
-							{
-								if (!cmd->hasOpe() ||
-								    (cmd->hasOpe() && _clients[i - 1]->_is_ope))
-									cmd->execute();
-								else
-									cmd->missingOpe();
-							}
-						}
-						else
-							std::cout << "Command not valid" << std::endl;
+						deleteClient(_clients[i->fd]->_fd);
 						break;
 					}
-					else if (message->getCmd() == "close")
+					else
 					{
-						_status = Status(CLOSED);
+						Message *message = _clients[i->fd]->_message;
+						std::cout << "Message received " << message->_buffer << std::endl;
+						std::map<std::string, Command *>::iterator it;
+						if ((it = _commands.find(message->getCmd())) !=
+						    _commands.end())
+						{
+							Command *cmd = it->second;
+							cmd->setSender(_clients[i->fd]);
+							cmd->setServer(this);
+							cmd->setMessage(message);
+							if (cmd->validate())
+							{
+								if (!cmd->needsAuth())
+									cmd->execute();
+								else if (_clients[i->fd]->isAuthenticated())
+								{
+									if (!cmd->hasOpe() ||
+									    (cmd->hasOpe() && _clients[i->fd]->_is_ope))
+										cmd->execute();
+									else
+										cmd->missingOpe();
+								}
+							}
+							else
+								std::cout << "Command not valid" << std::endl;
+							break;
+						}
+						else if (message->getCmd() == "close")
+						{
+							_status = Status(CLOSED);
+						}
 					}
 				}
+				i++;
 			}
 		}
 	}

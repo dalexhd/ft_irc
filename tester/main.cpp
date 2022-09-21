@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		usleep(1000);
 		client.send("USER TestBot 0 * :TestBot");
 		usleep(1000);
-		client.send("PING");
+		client.send("quit");
 		usleep(1000);
 		response = client.read();
 		std::cout << response << std::endl;
