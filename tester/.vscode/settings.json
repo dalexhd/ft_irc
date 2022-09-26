@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.sol": "javascript",
+        "string": "cpp"
+    }
+}

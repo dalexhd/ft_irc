@@ -1,5 +1,11 @@
 #include "includes/Client.hpp"
 
+
+/*
+	IRC_TESTER_
+	Run several clients and execute commands from ./spec/* 
+	
+*/
 int main(int argc, char *argv[])
 {
 	std::string host = "127.0.0.1";

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/21 16:13:12 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:51:22 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,6 @@ class Server
 			if (it->second->_fd == fd)
 			{
 				delete it->second;
-				_clients.erase(it);
 				std::vector<pollfd>::iterator it2 = _pfds.begin();
 				for (; it2 != _pfds.end(); it2++)
 				{
