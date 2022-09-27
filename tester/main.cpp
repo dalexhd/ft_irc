@@ -1,6 +1,11 @@
 #include "includes/Client.hpp"
 
 
+void read ()
+{
+
+}
+
 int main(int argc, char *argv[])
 {
 	std::string host = "127.0.0.1"; //nc -c irc.irc-hispano.org 6667
@@ -13,28 +18,10 @@ int main(int argc, char *argv[])
 	}
 	try
 	{
-		std::string response;
-
 		Client client = Client(host, port);
 		std::cout << "Connected to " << client._host << ":" << client._port << std::endl;
-		client.send("NICK TestBot");
-		usleep(1000);
-		client.send("USER TestBot 0 * : TestBot");
-		usleep(1000);
-		response = client.read();
-
-		std::cout << response << std::endl;
-
-		for (std::string line; std::getline(std::cin, line);) {
-			client.send(line);
-			usleep(1000);
-			response = client.read();
-			std::cout << response << std::endl;
-		}
-		client.send("quit");
-		usleep(1000);
-
-		
+		client.login("Testbot");
+		client.requestingLoop();
 		return (0);
 	}
 	catch (const std::exception &e)

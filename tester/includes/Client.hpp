@@ -12,6 +12,7 @@
 class Client
 {
   public:
+	std::string _name;
 	std::string _host;
 	std::string _port;
 	int         _socket;
@@ -75,8 +76,29 @@ class Client
 			if (recv(this->_socket, buffer, sizeof(buffer), 0) <= 0)
 				break;
 		}
-		buffer[strlen(buffer) - 1] = '\0';
+		buffer[strlen(buffer)] = '\0';
 		std::string tmp(buffer);
 		return (tmp);
 	}
+
+	void login(std::string name)
+	{
+		send("NICK " + name);
+		usleep(1000);
+		send("USER TestBot 0 * : " + name);
+		usleep(1000);
+		std::cout << read() << std::endl;
+
+	}
+	void requestingLoop()
+	{
+		
+		
+		for (std::string line; line != "quit" && std::getline(std::cin, line) ;) {
+			send(line);
+			usleep(1000);
+			std::cout << read() << std::endl;
+		}
+	}
+
 };
