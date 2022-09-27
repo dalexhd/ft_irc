@@ -1,14 +1,9 @@
 #include "includes/Client.hpp"
 
 
-/*
-	IRC_TESTER_
-	Run several clients and execute commands from ./spec/* 
-	
-*/
 int main(int argc, char *argv[])
 {
-	std::string host = "127.0.0.1";
+	std::string host = "127.0.0.1"; //nc -c irc.irc-hispano.org 6667
 	std::string port = "6667";
 
 	if (argc == 3)
@@ -24,12 +19,22 @@ int main(int argc, char *argv[])
 		std::cout << "Connected to " << client._host << ":" << client._port << std::endl;
 		client.send("NICK TestBot");
 		usleep(1000);
-		client.send("USER TestBot 0 * :TestBot");
-		usleep(1000);
-		client.send("quit");
+		client.send("USER TestBot 0 * : TestBot");
 		usleep(1000);
 		response = client.read();
+
 		std::cout << response << std::endl;
+
+		for (std::string line; std::getline(std::cin, line);) {
+			client.send(line);
+			usleep(1000);
+			response = client.read();
+			std::cout << response << std::endl;
+		}
+		client.send("quit");
+		usleep(1000);
+
+		
 		return (0);
 	}
 	catch (const std::exception &e)

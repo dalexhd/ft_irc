@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/21 16:35:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:24:05 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ void Server::createServerPoll(void)
 									cmd->execute();
 								else if (_clients[i->fd]->isAuthenticated())
 								{
+									_clients[i->fd]->message("PING asdf");
 									if (!cmd->hasOpe() ||
 									    (cmd->hasOpe() && _clients[i->fd]->_is_ope))
 										cmd->execute();
