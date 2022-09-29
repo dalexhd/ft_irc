@@ -32,12 +32,16 @@ void parseFile(t_info *info,std::string filename)
 
 static void *clientConversation(void *)
 {
-	for(int i = 0; i < 1000; i++)
+
+	for(int i = 0; i < 5000; i++)
 	{
+
 		pthread_mutex_lock(&mutex);
 			count++;
 		pthread_mutex_unlock(&mutex);
+
 	}
+
 	return (0);
 
 }
@@ -46,19 +50,16 @@ void createClients(t_info *info)
 {
 	int	i;
 
-	i = 0;
-	while (i < info->num_clients)
+
+	for(i = 0; i < info->num_clients; i++)
 	{
 		pthread_t a;
 		info->clientThreads.push_back(a);
 		pthread_create(&info->clientThreads[i], NULL , *clientConversation, NULL);
-		i++;
+
 	}
-	while (i < info->num_clients)
-	{
+	for(i = 0; i < info->num_clients; i++)
 		pthread_join(info->clientThreads[i], NULL);
-		i++;
-	}
 
 
 }
