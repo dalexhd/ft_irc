@@ -4,8 +4,6 @@
 // Our includes
 #include "../Command.hpp"
 
-#define _name
-#define _decription // Jajaja me he dejado la sesion abierta
 class User : public Command
 {
   public:

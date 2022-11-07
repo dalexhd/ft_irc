@@ -27,9 +27,12 @@ class Quit : public Command
 			                        .c_str());
 		}
 
-		std::vector<Channel *> related_channels = _server->getRelatedChannels(_sender);
-		for (size_t i = 0; i < related_channels.size(); i++)
-			related_channels[i]->removeClientFromChannel(_sender);
+		std::map<std::string, Channel *> related_channels = _server->getRelatedChannels(_sender);
+		std::map<std::string, Channel *>::iterator it = related_channels.begin();
+		for (; it != related_channels.end(); it++)
+		{
+			it->second->removeClientFromChannel(_sender);
+		}
 		this->_server->deleteClient(_sender->_fd);
 	}
 };

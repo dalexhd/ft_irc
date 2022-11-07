@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/27 21:55:14 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:18:31 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@
 #include "../includes/cmds/Mode.hpp"
 #include "../includes/cmds/Names.hpp"
 #include "../includes/cmds/Nick.hpp"
+#include "../includes/cmds/Notice.hpp"
 #include "../includes/cmds/Part.hpp"
 #include "../includes/cmds/Pass.hpp"
 #include "../includes/cmds/PrivMsg.hpp"
 #include "../includes/cmds/Quit.hpp"
 #include "../includes/cmds/User.hpp"
+#include "../includes/cmds/Whois.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -165,6 +167,12 @@ void Server::createServerPoll(void)
 Server::Server(std::string host, std::string port, std::string password)
     : host(host), servername(SERVER_NAME), version(SERVER_VERSION), port(port), password(password), _status(ONLINE)
 {
+	std::string a = SERVER_NAME;
+	std::string bbbbbbb("asdsad");
+	char const *bbb = a.c_str();
+	char const *vvcvv = bbbbbbb.c_str();
+	(void) bbb;
+	(void) vvcvv;
 	createServerListener();
 	setupCommands();
 	createServerPoll();
@@ -188,10 +196,12 @@ void Server::setupCommands(void)
 	_commands["list"] = new List();
 	_commands["names"] = new Names();
 	_commands["kick"] = new Kick();
+	_commands["notice"] = new Notice();
 	_commands["nick"] = new Nick();
 	_commands["user"] = new User();
 	_commands["pass"] = new Pass();
 	_commands["mode"] = new Mode();
+	_commands["whois"] = new Whois();
 }
 
 Server::~Server(void)

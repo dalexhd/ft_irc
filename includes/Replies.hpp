@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/07/04 14:52:41 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:50:56 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,15 @@
 #define RPL_WHOREPLY 352
 #define RPL_ENDOFWHO 315
 #define RPL_WHOISREGNICK 307
-#define RPL_WHOISUSER 311
+#define RPL_WHOISUSER(servername, nick, user, host, realname) \
+	":" + servername + " 311 " + nick + " " + user + " " + host + " * :" + realname + "\n"
 #define RPL_WHOISSERVER 312
 #define RPL_WHOISOPERATOR 313
 #define RPL_WHOWASUSER 314
 #define RPL_WHOISIDLE 317
 #define RPL_ENDOFWHOIS 318
-#define RPL_WHOISCHANNELS 319
+#define RPL_WHOISCHANNELS(servername, nick, mode, channel) \
+	":" + servername + " 311 " + nick + " " + mode + " " + channel + "\n"
 #define RPL_WHOISSPECIAL 320
 #define RPL_LISTSTART(servername, nick) \
 	":" + servername + " 321 " + nick + " Channel :Users Name\n"
@@ -104,6 +106,8 @@
 #define ERR_INPUTTOOLONG 417
 #define ERR_UNKNOWNCOMMAND 421
 #define ERR_NOMOTD 422
+#define ERR_NONICKNAMEGIVEN(servername) \
+	":" + servername + " 431 " + servername + " :No nickname given\n"
 #define ERR_ERRONEUSNICKNAME 432
 #define ERR_NICKNAMEINUSE(servername, nick) \
 	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
@@ -116,7 +120,8 @@
 #define ERR_NOTREGISTERED 451
 #define ERR_NEEDMOREPARAMS(servername, nick, command) \
 	":" + servername + " 461 " + nick + " " + command + " :Wrong num parameters\n"
-#define ERR_ALREADYREGISTERED 462
+#define ERR_ALREADYREGISTRED(servername, nick) \
+	":" + servername + " 462 " + nick + " :You may not reregister\n"
 #define ERR_PASSWDMISMATCH(servername, nick) \
 	":" + servername + " 464 " + nick + " :Password incorrect\n"
 #define ERR_YOUREBANNEDCREEP(servername, nick) \

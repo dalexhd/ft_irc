@@ -88,17 +88,14 @@ class Client
 		send("USER TestBot 0 * : " + name + " Surname");
 		usleep(1000);
 		std::cout << read() << std::endl;
-
 	}
 	void requestingLoop()
 	{
-
-
-		for (std::string line; line != "quit" && std::getline(std::cin, line) ;) {
+		for (std::string line; line != "quit" && std::getline(std::cin, line);)
+		{
 			send(line);
 			usleep(1000);
 			std::cout << read() << std::endl;
 		}
 	}
-
 };
