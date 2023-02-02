@@ -56,7 +56,9 @@ var dir_3fdca8a50868ec24d989a972e0c983fb =
     [ "Status.hpp", "Status_8hpp.html", [
       [ "Status", "classStatus.html", "classStatus" ]
     ] ],
-    [ "User.hpp", "User_8hpp.html", "User_8hpp" ],
+    [ "User.hpp", "User_8hpp.html", [
+      [ "User", "classUser.html", "classUser" ]
+    ] ],
     [ "Who.hpp", "Who_8hpp.html", [
       [ "Who", "classWho.html", "classWho" ]
     ] ],

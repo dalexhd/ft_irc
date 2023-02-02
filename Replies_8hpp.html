@@ -195,8 +195,8 @@ Macros</h2></td></tr>
 <tr class="separator:aef10f7fe9193d175ca701f950d6e93e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b60e9a358e887b63b616dd92d202ea0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a9b60e9a358e887b63b616dd92d202ea0">RPL_WHOISREGNICK</a>&#160;&#160;&#160;307</td></tr>
 <tr class="separator:a9b60e9a358e887b63b616dd92d202ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c73dbfd64f81088daf5c75eb339761"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ad8c73dbfd64f81088daf5c75eb339761">RPL_WHOISUSER</a>&#160;&#160;&#160;311</td></tr>
-<tr class="separator:ad8c73dbfd64f81088daf5c75eb339761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ec7204f8230713c3dada608ef7e0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ae0ec7204f8230713c3dada608ef7e0c4">RPL_WHOISUSER</a>(servername,  nick,  user,  host,  realname)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 311 &quot; + nick + &quot; &quot; + user + &quot; &quot; + host + &quot; * :&quot; + realname + &quot;\n&quot;</td></tr>
+<tr class="separator:ae0ec7204f8230713c3dada608ef7e0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c02086a6702fe274723036cce22d1f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a5c02086a6702fe274723036cce22d1f8">RPL_WHOISSERVER</a>&#160;&#160;&#160;312</td></tr>
 <tr class="separator:a5c02086a6702fe274723036cce22d1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10213f164a4cf424879eceee3a4a7fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#af10213f164a4cf424879eceee3a4a7fa">RPL_WHOISOPERATOR</a>&#160;&#160;&#160;313</td></tr>
@@ -207,8 +207,8 @@ Macros</h2></td></tr>
 <tr class="separator:ab566e21a4856427af7f35277d0505150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab36792f0652d9f553bae9cacb23d3045"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ab36792f0652d9f553bae9cacb23d3045">RPL_ENDOFWHOIS</a>&#160;&#160;&#160;318</td></tr>
 <tr class="separator:ab36792f0652d9f553bae9cacb23d3045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5754853c65f2c80cce8fdaf278e0bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#aa5754853c65f2c80cce8fdaf278e0bf1">RPL_WHOISCHANNELS</a>&#160;&#160;&#160;319</td></tr>
-<tr class="separator:aa5754853c65f2c80cce8fdaf278e0bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa6eaf517d48c16a2215b1d9450f629"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#acaa6eaf517d48c16a2215b1d9450f629">RPL_WHOISCHANNELS</a>(servername,  nick,  mode,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 311 &quot; + nick + &quot; &quot; + mode + &quot; &quot; + channel + &quot;\n&quot;</td></tr>
+<tr class="separator:acaa6eaf517d48c16a2215b1d9450f629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee3f9bf9634463d0948101a429d7a58c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#aee3f9bf9634463d0948101a429d7a58c">RPL_WHOISSPECIAL</a>&#160;&#160;&#160;320</td></tr>
 <tr class="separator:aee3f9bf9634463d0948101a429d7a58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4adef4d6a4d249c3a371e5e4653254d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ae4adef4d6a4d249c3a371e5e4653254d">RPL_LISTSTART</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 321 &quot; + nick + &quot; Channel :Users Name\n&quot;</td></tr>
@@ -295,6 +295,8 @@ Macros</h2></td></tr>
 <tr class="separator:abd1a2c5226a56673ade839017d70d197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d98b1378f58b37c1db3ae099fb7532"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a09d98b1378f58b37c1db3ae099fb7532">ERR_NOMOTD</a>&#160;&#160;&#160;422</td></tr>
 <tr class="separator:a09d98b1378f58b37c1db3ae099fb7532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b3e548928ffb995b14d4bc3618ce1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f">ERR_NONICKNAMEGIVEN</a>(servername)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 431 &quot; + servername + &quot; :No nickname given\n&quot;</td></tr>
+<tr class="separator:a39b3e548928ffb995b14d4bc3618ce1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ff70e89c74c5898ca05e2b997d7d038"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a0ff70e89c74c5898ca05e2b997d7d038">ERR_ERRONEUSNICKNAME</a>&#160;&#160;&#160;432</td></tr>
 <tr class="separator:a0ff70e89c74c5898ca05e2b997d7d038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc5ed141738fe9a5a14fe173a567557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a6bc5ed141738fe9a5a14fe173a567557">ERR_NICKNAMEINUSE</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 433 * &quot; + nick + &quot; :Nickname is already in use\n&quot;</td></tr>
@@ -309,8 +311,8 @@ Macros</h2></td></tr>
 <tr class="separator:a212152bb05361e627adb77f415dab88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a956f2621e462cf802fc73955a4b3b2a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(servername,  nick,  command)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Wrong num parameters\n&quot;</td></tr>
 <tr class="separator:a956f2621e462cf802fc73955a4b3b2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a295f999284c03ce5a0787dc76551a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a6a295f999284c03ce5a0787dc76551a7">ERR_ALREADYREGISTERED</a>&#160;&#160;&#160;462</td></tr>
-<tr class="separator:a6a295f999284c03ce5a0787dc76551a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb49dbe57cd56973d83e30fa6aa5e9ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#afb49dbe57cd56973d83e30fa6aa5e9ff">ERR_ALREADYREGISTRED</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 462 &quot; + nick + &quot; :You may not reregister\n&quot;</td></tr>
+<tr class="separator:afb49dbe57cd56973d83e30fa6aa5e9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87b4118a854475a24e909f7e4a04db68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a87b4118a854475a24e909f7e4a04db68">ERR_PASSWDMISMATCH</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 464 &quot; + nick + &quot; :Password incorrect\n&quot;</td></tr>
 <tr class="separator:a87b4118a854475a24e909f7e4a04db68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a78821a40285c2146171737e46df182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a0a78821a40285c2146171737e46df182">ERR_YOUREBANNEDCREEP</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 465 &quot; + nick + &quot; :You are banned from this server\n&quot;</td></tr>
@@ -379,14 +381,28 @@ Macros</h2></td></tr>
 <tr class="separator:a42d1dc8c732ce26ee562ab5ca622d54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a6a295f999284c03ce5a0787dc76551a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a295f999284c03ce5a0787dc76551a7">&#9670;&nbsp;</a></span>ERR_ALREADYREGISTERED</h2>
+<a id="afb49dbe57cd56973d83e30fa6aa5e9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb49dbe57cd56973d83e30fa6aa5e9ff">&#9670;&nbsp;</a></span>ERR_ALREADYREGISTRED</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_ALREADYREGISTERED&#160;&#160;&#160;462</td>
+          <td class="memname">#define ERR_ALREADYREGISTRED</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 462 &quot; + nick + &quot; :You may not reregister\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -713,6 +729,24 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define ERR_NOMOTD&#160;&#160;&#160;422</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39b3e548928ffb995b14d4bc3618ce1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b3e548928ffb995b14d4bc3618ce1f">&#9670;&nbsp;</a></span>ERR_NONICKNAMEGIVEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_NONICKNAMEGIVEN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername</td><td>)</td>
+          <td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 431 &quot; + servername + &quot; :No nickname given\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2297,14 +2331,40 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa5754853c65f2c80cce8fdaf278e0bf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5754853c65f2c80cce8fdaf278e0bf1">&#9670;&nbsp;</a></span>RPL_WHOISCHANNELS</h2>
+<a id="acaa6eaf517d48c16a2215b1d9450f629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa6eaf517d48c16a2215b1d9450f629">&#9670;&nbsp;</a></span>RPL_WHOISCHANNELS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RPL_WHOISCHANNELS&#160;&#160;&#160;319</td>
+          <td class="memname">#define RPL_WHOISCHANNELS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 311 &quot; + nick + &quot; &quot; + mode + &quot; &quot; + channel + &quot;\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2423,14 +2483,46 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ad8c73dbfd64f81088daf5c75eb339761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8c73dbfd64f81088daf5c75eb339761">&#9670;&nbsp;</a></span>RPL_WHOISUSER</h2>
+<a id="ae0ec7204f8230713c3dada608ef7e0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ec7204f8230713c3dada608ef7e0c4">&#9670;&nbsp;</a></span>RPL_WHOISUSER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RPL_WHOISUSER&#160;&#160;&#160;311</td>
+          <td class="memname">#define RPL_WHOISUSER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">user, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">host, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">realname&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 311 &quot; + nick + &quot; &quot; + user + &quot; &quot; + host + &quot; * :&quot; + realname + &quot;\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2519,7 +2611,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Mon Sep 19 2022 13:30:52 for IRC SERVER by
+    <li class="footer">Generated on Thu Feb 2 2023 19:42:22 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

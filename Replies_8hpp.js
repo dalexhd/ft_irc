@@ -1,6 +1,6 @@
 var Replies_8hpp =
 [
-    [ "ERR_ALREADYREGISTERED", "Replies_8hpp.html#a6a295f999284c03ce5a0787dc76551a7", null ],
+    [ "ERR_ALREADYREGISTRED", "Replies_8hpp.html#afb49dbe57cd56973d83e30fa6aa5e9ff", null ],
     [ "ERR_BADCHANMASK", "Replies_8hpp.html#a13d76112e6cfd2c9a554a1bd79e32653", null ],
     [ "ERR_BADCHANNELKEY", "Replies_8hpp.html#a9fdbddfa0f643517822de1ee024cae2b", null ],
     [ "ERR_BANNEDFROMCHAN", "Replies_8hpp.html#ab1d0931825ba9a147bfd07170c0f1940", null ],
@@ -18,6 +18,7 @@ var Replies_8hpp =
     [ "ERR_NICKLOCKED", "Replies_8hpp.html#a6b97a5bfb889d7e12b4b11890d3d0b9f", null ],
     [ "ERR_NICKNAMEINUSE", "Replies_8hpp.html#a6bc5ed141738fe9a5a14fe173a567557", null ],
     [ "ERR_NOMOTD", "Replies_8hpp.html#a09d98b1378f58b37c1db3ae099fb7532", null ],
+    [ "ERR_NONICKNAMEGIVEN", "Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f", null ],
     [ "ERR_NOOPERHOST", "Replies_8hpp.html#a1e755a98836ac908dcabbd6c1f8b902d", null ],
     [ "ERR_NOORIGIN", "Replies_8hpp.html#a8752a957b7933be842fa5110e1488919", null ],
     [ "ERR_NOPRIVILEGES", "Replies_8hpp.html#a5fdd7fe68f882f1594b812266fb587ec", null ],
@@ -105,7 +106,7 @@ var Replies_8hpp =
     [ "RPL_WHOISACCOUNT", "Replies_8hpp.html#a199ad74d0b685e13c1f10150b3e1419e", null ],
     [ "RPL_WHOISACTUALLY", "Replies_8hpp.html#adc1d26e4a3de0d4964c515199e961e7b", null ],
     [ "RPL_WHOISCERTFP", "Replies_8hpp.html#a9e9bac5899188edef5b0ff8d332dab2a", null ],
-    [ "RPL_WHOISCHANNELS", "Replies_8hpp.html#aa5754853c65f2c80cce8fdaf278e0bf1", null ],
+    [ "RPL_WHOISCHANNELS", "Replies_8hpp.html#acaa6eaf517d48c16a2215b1d9450f629", null ],
     [ "RPL_WHOISHOST", "Replies_8hpp.html#a504f44049d99ce27342247be6c62f2d1", null ],
     [ "RPL_WHOISIDLE", "Replies_8hpp.html#ab566e21a4856427af7f35277d0505150", null ],
     [ "RPL_WHOISMODES", "Replies_8hpp.html#a32e63b945e4991da9ddb669096c89d23", null ],
@@ -114,7 +115,7 @@ var Replies_8hpp =
     [ "RPL_WHOISSECURE", "Replies_8hpp.html#a1fde91e328e088aeb1e12d8b253bff6f", null ],
     [ "RPL_WHOISSERVER", "Replies_8hpp.html#a5c02086a6702fe274723036cce22d1f8", null ],
     [ "RPL_WHOISSPECIAL", "Replies_8hpp.html#aee3f9bf9634463d0948101a429d7a58c", null ],
-    [ "RPL_WHOISUSER", "Replies_8hpp.html#ad8c73dbfd64f81088daf5c75eb339761", null ],
+    [ "RPL_WHOISUSER", "Replies_8hpp.html#ae0ec7204f8230713c3dada608ef7e0c4", null ],
     [ "RPL_WHOREPLY", "Replies_8hpp.html#a8c2708eb04cfc5acf3b73f8eeac08d1f", null ],
     [ "RPL_WHOWASUSER", "Replies_8hpp.html#af2dc7f1f2d7a5d2d161655d8f1693976", null ],
     [ "RPL_YOUREOPER", "Replies_8hpp.html#af815619191583e954da9323c8566360f", null ],

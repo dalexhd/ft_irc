@@ -13,7 +13,7 @@ var classClient =
     [ "message", "classClient.html#aa8b80aa00cdf8d687138511725c33a91", null ],
     [ "messagesReceived", "classClient.html#a42a1d767e2a3e08a5276b78e20193252", null ],
     [ "messagesSent", "classClient.html#a1a1d138438f5d59711ed240f00de1985", null ],
-    [ "read", "classClient.html#a1e017e3ed91082a1caf757c6c52c2d99", null ],
+    [ "read", "classClient.html#a2422c8199094e6cb2ea1f1740584c325", null ],
     [ "setNick", "classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39", null ],
     [ "setRealName", "classClient.html#aa24e0f0bf8c07f5a62d7147a21d1285d", null ],
     [ "setUsername", "classClient.html#a0ef8642315aae92725caeca341acf2b6", null ],
@@ -23,11 +23,13 @@ var classClient =
     [ "_is_authenticated", "classClient.html#aa002c1eb8e7ba7efb23de604ae3bf345", null ],
     [ "_is_ope", "classClient.html#a26b527a1aefdd7863c5caba1b40fd838", null ],
     [ "_maxChannels", "classClient.html#a873739014541c974a8c80317e151d4bd", null ],
+    [ "_message", "classClient.html#a704e6195f357f7cb3d8db52eceddc0ac", null ],
     [ "_messagesReceived", "classClient.html#a85a410db24cab3a8b0b8a316b418dbfc", null ],
     [ "_messagesSent", "classClient.html#ae059c95034c09b1ed2ae993c61eb5c57", null ],
     [ "_nick", "classClient.html#adc9a9e85762060c89ae4db308fae187c", null ],
     [ "_realname", "classClient.html#a8787f04d5b7661eccd76037ba9ebb981", null ],
     [ "_servername", "classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf", null ],
     [ "_serverversion", "classClient.html#a90f62c908f4f206abe12d7bbcb02b4d9", null ],
+    [ "_status", "classClient.html#a70a8f643b78e9ef1c99c6b3194e84bc9", null ],
     [ "_username", "classClient.html#a8f8d0427822b93815dec147dd420373f", null ]
 ];

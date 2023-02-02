@@ -12,7 +12,7 @@ var classCommand =
     [ "missingOpe", "classCommand.html#abd59bde053da57d6b7aaa1ba647ae179", null ],
     [ "needsAuth", "classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88", null ],
     [ "setMessage", "classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21", null ],
-    [ "setSender", "classCommand.html#a916a7b9fd85a5de03edd6f06ef78a690", null ],
+    [ "setSender", "classCommand.html#a76b0405daabf409f562a7e75acf12adb", null ],
     [ "setServer", "classCommand.html#a9c147b76d590d0a2130c92c9ac9f6133", null ],
     [ "validate", "classCommand.html#af178815ffd43a64b0bdf2e9f64e5dbb5", null ],
     [ "_description", "classCommand.html#a5a7e63a916f50b5346435e4d755bbb2b", null ],

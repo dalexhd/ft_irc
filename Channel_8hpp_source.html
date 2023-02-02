@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">   38</a></span>&#160;    <a class="code" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb">Channel</a>(std::string &amp;name, std::string &amp;password)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : <a class="code" href="User_8hpp.html#aec321dc1beac683ff60b65608dab6c9b">_name</a>(name), _password(password), _creator(NULL), _max_clients(<a class="code" href="config_8hpp.html#aacff24dd06cab1fe73f036f0671cf60f">MAX_CLIENTS_PER_CHANNEL</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : _name(name), _password(password), _creator(NULL), _max_clients(<a class="code" href="config_8hpp.html#aacff24dd06cab1fe73f036f0671cf60f">MAX_CLIENTS_PER_CHANNEL</a>)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        _created_at = time(0);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">   58</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c">getName</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="User_8hpp.html#aec321dc1beac683ff60b65608dab6c9b">_name</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> (_name);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classChannel.html#a18cec88efaa45792771b34c293195842">   63</a></span>&#160;    std::string &amp;<a class="code" href="classChannel.html#a18cec88efaa45792771b34c293195842">getTopic</a>(<span class="keywordtype">void</span>)</div>
@@ -314,7 +314,6 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599acfe184076ea944e56b2873af3bb8ebbb"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599acfe184076ea944e56b2873af3bb8ebbb">CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE</a></div><div class="ttdeci">@ CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE</div><div class="ttdef"><b>Definition:</b> Channel.hpp:13</div></div>
 <div class="ttc" id="aclassChannel_html_a113a05869c11dec225484bf6124b8120"><div class="ttname"><a href="classChannel.html#a113a05869c11dec225484bf6124b8120">Channel::isOwner</a></div><div class="ttdeci">bool isOwner(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:105</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118">CHANNEL_MODE_BAN_MASK</a></div><div class="ttdeci">@ CHANNEL_MODE_BAN_MASK</div><div class="ttdef"><b>Definition:</b> Channel.hpp:14</div></div>
-<div class="ttc" id="aUser_8hpp_html_aec321dc1beac683ff60b65608dab6c9b"><div class="ttname"><a href="User_8hpp.html#aec321dc1beac683ff60b65608dab6c9b">_name</a></div><div class="ttdeci">#define _name</div><div class="ttdef"><b>Definition:</b> User.hpp:7</div></div>
 <div class="ttc" id="aconfig_8hpp_html_aacff24dd06cab1fe73f036f0671cf60f"><div class="ttname"><a href="config_8hpp.html#aacff24dd06cab1fe73f036f0671cf60f">MAX_CLIENTS_PER_CHANNEL</a></div><div class="ttdeci">#define MAX_CLIENTS_PER_CHANNEL</div><div class="ttdef"><b>Definition:</b> config.hpp:10</div></div>
 <div class="ttc" id="aclassChannel_html_a249c77224152ae0da4635fd0edcd1a5f"><div class="ttname"><a href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">Channel::removeClientFromChannel</a></div><div class="ttdeci">void removeClientFromChannel(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:183</div></div>
 <div class="ttc" id="aclassChannel_html_a140faa6fa19c82e6ac76f2e202a29e3d"><div class="ttname"><a href="classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d">Channel::getModeString</a></div><div class="ttdeci">std::string getModeString(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:131</div></div>
@@ -323,7 +322,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_a6daf61a24bc288f5612698070c6d87d9"><div class="ttname"><a href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">Channel::_ope_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _ope_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:35</div></div>
 <div class="ttc" id="aclassChannel_html_acc7d04f494e076b78a8affae33d3bcf8"><div class="ttname"><a href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">Channel::joined</a></div><div class="ttdeci">bool joined(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:98</div></div>
 <div class="ttc" id="aclassChannel_html_a6682ab5cbaf8dee41a622561de1eaf32"><div class="ttname"><a href="classChannel.html#a6682ab5cbaf8dee41a622561de1eaf32">Channel::isNormal</a></div><div class="ttdeci">bool isNormal(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:116</div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:13</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a">CHANNEL_MODE_INVITE_ONLY</a></div><div class="ttdeci">@ CHANNEL_MODE_INVITE_ONLY</div><div class="ttdef"><b>Definition:</b> Channel.hpp:10</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
 <div class="ttc" id="aclassChannel_html_acd9b98a4c5ae2f155f5d655083fe02b8"><div class="ttname"><a href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">Channel::addMode</a></div><div class="ttdeci">void addMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:156</div></div>
@@ -331,7 +330,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Channel_8hpp.html">Channel.hpp</a></li>
-    <li class="footer">Generated on Mon Sep 19 2022 13:30:52 for IRC SERVER by
+    <li class="footer">Generated on Thu Feb 2 2023 19:42:22 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

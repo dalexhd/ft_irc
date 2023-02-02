@@ -120,12 +120,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acd7b5a64b3a88554250f7d6666f208ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e71fd484bc23c67814876c243fa08ca"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a1e71fd484bc23c67814876c243fa08ca">getPassword</a> (void)</td></tr>
 <tr class="separator:a1e71fd484bc23c67814876c243fa08ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe70c9e58827e88e9b53e4985d159092"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#afe70c9e58827e88e9b53e4985d159092">getServerName</a> (void)</td></tr>
+<tr class="separator:afe70c9e58827e88e9b53e4985d159092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0539ae23411198c85d50f1338711717c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a0539ae23411198c85d50f1338711717c">getRelatedClients</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
 <tr class="separator:a0539ae23411198c85d50f1338711717c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1ad392e620df1b3ea922b313569df47"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classChannel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#ad1ad392e620df1b3ea922b313569df47">getRelatedChannels</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
-<tr class="separator:ad1ad392e620df1b3ea922b313569df47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5d2cd48a0a76643bc749359030baa3"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classChannel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a4d5d2cd48a0a76643bc749359030baa3">getRelatedChannels</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
+<tr class="separator:a4d5d2cd48a0a76643bc749359030baa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b581021e9609b15f37bb2bea8e40e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a76b581021e9609b15f37bb2bea8e40e8">getClient</a> (std::string const &amp;name)</td></tr>
 <tr class="separator:a76b581021e9609b15f37bb2bea8e40e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72b8c5e3c0e845fc8994a0c20e57a0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#aa72b8c5e3c0e845fc8994a0c20e57a0e">deleteClient</a> (int fd)</td></tr>
+<tr class="separator:aa72b8c5e3c0e845fc8994a0c20e57a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a399e5a12513223a087897a4a08d62df2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a399e5a12513223a087897a4a08d62df2">getClientIndex</a> (std::string &amp;name)</td></tr>
 <tr class="separator:a399e5a12513223a087897a4a08d62df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fa910b5f5d034edcd67145c1df2d2cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChannel.html">Channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc">getChannel</a> (std::string &amp;name)</td></tr>
@@ -139,8 +143,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8c2b241438fc32daefe6857270915433"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a8c2b241438fc32daefe6857270915433">_clients</a></td></tr>
-<tr class="separator:a8c2b241438fc32daefe6857270915433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7c83bde7896c09e9a6c6d33477b73e"><td class="memItemLeft" align="right" valign="top">std::map&lt; size_t, <a class="el" href="classClient.html">Client</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a7d7c83bde7896c09e9a6c6d33477b73e">_clients</a></td></tr>
+<tr class="separator:a7d7c83bde7896c09e9a6c6d33477b73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8f7cc8f78c8641c39cbf86dcc0ad559"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classCommand.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a></td></tr>
 <tr class="separator:ab8f7cc8f78c8641c39cbf86dcc0ad559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681e496f50b233764572c310f5b822e0"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classChannel.html">Channel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a></td></tr>
@@ -149,8 +153,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acefdea0217887b8e49b7c00024ff1201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c9a45dc89d3b53b44050be89c384d39"><td class="memItemLeft" align="right" valign="top">std::vector&lt; pollfd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">_pfds</a></td></tr>
 <tr class="separator:a2c9a45dc89d3b53b44050be89c384d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1800f84586a26a159c743c1c78be841e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a1800f84586a26a159c743c1c78be841e">_socket</a></td></tr>
-<tr class="separator:a1800f84586a26a159c743c1c78be841e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0df714923b173991d1fa3a0390c4f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServer.html#a2e0df714923b173991d1fa3a0390c4f6">_fd</a></td></tr>
+<tr class="separator:a2e0df714923b173991d1fa3a0390c4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7755fd3a2ea35552d1dfd2c1a714ea47"></a>
@@ -296,6 +300,43 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="aa72b8c5e3c0e845fc8994a0c20e57a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72b8c5e3c0e845fc8994a0c20e57a0e">&#9670;&nbsp;</a></span>deleteClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Server::deleteClient </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classServer_aa72b8c5e3c0e845fc8994a0c20e57a0e_icgraph.png" border="0" usemap="#classServer_aa72b8c5e3c0e845fc8994a0c20e57a0e_icgraph" alt=""/></div>
+<map name="classServer_aa72b8c5e3c0e845fc8994a0c20e57a0e_icgraph" id="classServer_aa72b8c5e3c0e845fc8994a0c20e57a0e_icgraph">
+<area shape="rect" title=" " alt="" coords="161,56,312,83"/>
+<area shape="rect" href="classExit.html#a9ac94aba93705f1beb4a90e5f95810d0" title=" " alt="" coords="6,5,113,32"/>
+<area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,56,113,83"/>
+<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="6,107,113,133"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a4fa910b5f5d034edcd67145c1df2d2cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fa910b5f5d034edcd67145c1df2d2cc">&#9670;&nbsp;</a></span>getChannel()</h2>
 
@@ -371,12 +412,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classServer_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2_icgraph.png" border="0" usemap="#classServer_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2_icgraph" alt=""/></div>
 <map name="classServer_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2_icgraph" id="classServer_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2_icgraph">
-<area shape="rect" title=" " alt="" coords="412,81,565,108"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="211,5,315,32"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="199,56,326,83"/>
-<area shape="rect" href="classServer.html#ad1ad392e620df1b3ea922b313569df47" title=" " alt="" coords="161,107,364,133"/>
-<area shape="rect" href="classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="169,157,357,184"/>
-<area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,132,113,159"/>
+<area shape="rect" title=" " alt="" coords="397,31,551,57"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="203,5,307,32"/>
+<area shape="rect" href="classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="161,56,349,83"/>
+<area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,56,113,83"/>
 </map>
 </div>
 
@@ -410,13 +449,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classServer_a76b581021e9609b15f37bb2bea8e40e8_icgraph.png" border="0" usemap="#classServer_a76b581021e9609b15f37bb2bea8e40e8_icgraph" alt=""/></div>
 <map name="classServer_a76b581021e9609b15f37bb2bea8e40e8_icgraph" id="classServer_a76b581021e9609b15f37bb2bea8e40e8_icgraph">
-<area shape="rect" title=" " alt="" coords="188,132,319,159"/>
+<area shape="rect" title=" " alt="" coords="188,233,319,260"/>
 <area shape="rect" href="classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="19,5,126,32"/>
-<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="19,56,126,83"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="6,107,139,133"/>
-<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="19,157,127,184"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,208,140,235"/>
-<area shape="rect" href="classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="13,259,132,285"/>
+<area shape="rect" href="classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="11,56,134,83"/>
+<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="19,107,126,133"/>
+<area shape="rect" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="12,157,133,184"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="6,208,139,235"/>
+<area shape="rect" href="classBan.html#a7f38b7260f84fa4612f9ac28bc03170e" title=" " alt="" coords="19,259,127,285"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,309,140,336"/>
+<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="10,360,135,387"/>
+<area shape="rect" href="classWhois.html#a0ec1c1e57590276c15198231f36269c4" title=" " alt="" coords="11,411,134,437"/>
+<area shape="rect" href="classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="13,461,132,488"/>
 </map>
 </div>
 
@@ -445,15 +488,6 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classServer_a399e5a12513223a087897a4a08d62df2_icgraph.png" border="0" usemap="#classServer_a399e5a12513223a087897a4a08d62df2_icgraph" alt=""/></div>
-<map name="classServer_a399e5a12513223a087897a4a08d62df2_icgraph" id="classServer_a399e5a12513223a087897a4a08d62df2_icgraph">
-<area shape="rect" title=" " alt="" coords="160,5,327,32"/>
-<area shape="rect" href="classBan.html#aab15f55f6d7848dc3eb810b4c905fea7" title=" " alt="" coords="5,5,112,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -511,15 +545,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classServer_a1e71fd484bc23c67814876c243fa08ca_icgraph.png" border="0" usemap="#classServer_a1e71fd484bc23c67814876c243fa08ca_icgraph" alt=""/></div>
 <map name="classServer_a1e71fd484bc23c67814876c243fa08ca_icgraph" id="classServer_a1e71fd484bc23c67814876c243fa08ca_icgraph">
-<area shape="rect" title=" " alt="" coords="164,5,319,32"/>
-<area shape="rect" href="classPass.html#a2fa5568da262d5bf787c3445cb875230" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" title=" " alt="" coords="165,5,320,32"/>
+<area shape="rect" href="classPass.html#a4b3bbba67fcd5ec93de27d3b0ad6289e" title=" " alt="" coords="5,5,117,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad1ad392e620df1b3ea922b313569df47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1ad392e620df1b3ea922b313569df47">&#9670;&nbsp;</a></span>getRelatedChannels()</h2>
+<a id="a4d5d2cd48a0a76643bc749359030baa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5d2cd48a0a76643bc749359030baa3">&#9670;&nbsp;</a></span>getRelatedChannels()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,7 +562,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classChannel.html">Channel</a> *&gt; Server::getRelatedChannels </td>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="classChannel.html">Channel</a> *&gt; Server::getRelatedChannels </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classClient.html">Client</a> *&#160;</td>
           <td class="paramname"><em>client</em></td><td>)</td>
@@ -542,21 +576,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classServer_ad1ad392e620df1b3ea922b313569df47_cgraph.png" border="0" usemap="#classServer_ad1ad392e620df1b3ea922b313569df47_cgraph" alt=""/></div>
-<map name="classServer_ad1ad392e620df1b3ea922b313569df47_cgraph" id="classServer_ad1ad392e620df1b3ea922b313569df47_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,208,32"/>
-<area shape="rect" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2" title=" " alt="" coords="256,5,409,32"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classServer_ad1ad392e620df1b3ea922b313569df47_icgraph.png" border="0" usemap="#classServer_ad1ad392e620df1b3ea922b313569df47_icgraph" alt=""/></div>
-<map name="classServer_ad1ad392e620df1b3ea922b313569df47_icgraph" id="classServer_ad1ad392e620df1b3ea922b313569df47_icgraph">
-<area shape="rect" title=" " alt="" coords="161,5,364,32"/>
-<area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,5,113,32"/>
+<div class="center"><img src="classServer_a4d5d2cd48a0a76643bc749359030baa3_icgraph.png" border="0" usemap="#classServer_a4d5d2cd48a0a76643bc749359030baa3_icgraph" alt=""/></div>
+<map name="classServer_a4d5d2cd48a0a76643bc749359030baa3_icgraph" id="classServer_a4d5d2cd48a0a76643bc749359030baa3_icgraph">
+<area shape="rect" title=" " alt="" coords="175,31,377,57"/>
+<area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="12,5,120,32"/>
+<area shape="rect" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="5,56,127,83"/>
 </map>
 </div>
 
@@ -603,6 +629,32 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,5,113,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="afe70c9e58827e88e9b53e4985d159092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe70c9e58827e88e9b53e4985d159092">&#9670;&nbsp;</a></span>getServerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Server::getServerName </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -699,14 +751,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a8c2b241438fc32daefe6857270915433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c2b241438fc32daefe6857270915433">&#9670;&nbsp;</a></span>_clients</h2>
+<a id="a7d7c83bde7896c09e9a6c6d33477b73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7c83bde7896c09e9a6c6d33477b73e">&#9670;&nbsp;</a></span>_clients</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classClient.html">Client</a> *&gt; Server::_clients</td>
+          <td class="memname">std::map&lt;size_t, <a class="el" href="classClient.html">Client</a> *&gt; Server::_clients</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -727,6 +779,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a2e0df714923b173991d1fa3a0390c4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0df714923b173991d1fa3a0390c4f6">&#9670;&nbsp;</a></span>_fd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Server::_fd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2c9a45dc89d3b53b44050be89c384d39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c9a45dc89d3b53b44050be89c384d39">&#9670;&nbsp;</a></span>_pfds</h2>
 
@@ -735,20 +801,6 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;pollfd&gt; Server::_pfds</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1800f84586a26a159c743c1c78be841e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1800f84586a26a159c743c1c78be841e">&#9670;&nbsp;</a></span>_socket</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Server::_socket</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -779,7 +831,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classServer.html">Server</a></li>
-    <li class="footer">Generated on Mon Sep 19 2022 13:30:52 for IRC SERVER by
+    <li class="footer">Generated on Thu Feb 2 2023 19:42:22 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
