@@ -8,7 +8,6 @@ Run several clients and execute commands from ./spec/*
 
 make
 
-
 ### TESTER EXPLANATION
 
 IrcTester create multiple users that executes all commands presaved in ./spec/*
