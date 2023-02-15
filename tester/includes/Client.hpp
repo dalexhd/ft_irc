@@ -83,9 +83,9 @@ class Client
 
 	void login(std::string name)
 	{
-		send("NICK " + name);
+		send("NICK " + name); // NICK msantos-
 		usleep(1000);
-		send("USER TestBot 0 * : " + name + " Surname");
+		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
 		usleep(1000);
 		std::cout << read() << std::endl;
 	}

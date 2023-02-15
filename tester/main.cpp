@@ -6,6 +6,8 @@
 #include <sstream>
 #include <string>
 
+
+
 sem_t           sem1;
 int             count = 0;
 pthread_mutex_t mutex;
@@ -71,13 +73,30 @@ int main(int argc, char *argv[])
 	}
 	try
 	{
-		t_info info;
-		info.num_clients = 2;
-		// sem_init(&sem1, 0, 1);
+		std::cout << "Send 1 to manual Client , other key to auto tester\n";
+		std::string menu;
+  		std::cin >> menu;
+		if (menu == "1")
+		{
+			Client *client = new Client(host, port);
+			client->login("FirstClient");
+			client->requestingLoop();
 
-		parseFile(&info, "test1");
-		createClients(&info);
-		std::cout << count;
+		}
+		else{
+
+			std::cout << "Automated Test\n";
+			t_info info;
+			info.num_clients = 2;
+			// sem_init(&sem1, 0, 1);
+
+			parseFile(&info, "test1");
+			createClients(&info);
+			std::cout << count;
+
+		}
+
+
 	}
 	catch (const std::exception &e)
 	{
