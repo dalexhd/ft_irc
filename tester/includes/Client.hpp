@@ -66,14 +66,14 @@ class Client
 		return write(this->_socket, msg.c_str(), msg.length());
 	}
 
-	std::string read(void)
+	std::string reads(void)
 	{
 		char buffer[1024];
 
 		while (!std::strstr(buffer, "\n"))
 		{
 			memset(buffer, '\0', sizeof(buffer));
-			if (recv(this->_socket, buffer, sizeof(buffer), 0) <= 0)
+			if (read(this->_socket, buffer, sizeof(buffer)) <= 0)
 				break;
 		}
 		buffer[strlen(buffer)] = '\0';
@@ -87,7 +87,7 @@ class Client
 		usleep(1000);
 		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
 		usleep(1000);
-		std::cout << read() << std::endl;
+		std::cout << reads() << std::endl;
 	}
 	void requestingLoop()
 	{
@@ -95,7 +95,7 @@ class Client
 		{
 			send(line);
 			usleep(1000);
-			std::cout << read() << std::endl;
+			std::cout << reads() << std::endl;
 		}
 	}
 };

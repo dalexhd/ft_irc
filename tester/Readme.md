@@ -1,12 +1,12 @@
 # IRC TESTER #
 
-Run several clients and execute commands from ./spec/* 
+Run several clients and execute commands from ./spec/*
 
 ## GETTING STARTED
 
 ### USAGE
 
-make
+make && ./ircserv_tester
 
 ### TESTER EXPLANATION
 
@@ -26,3 +26,41 @@ After that, commands will be sent by the correct user in the required timestamp.
 
 [0] [NICK_0] [USER_0] [REAL_NAME_0] [IRCCOMMAND]
 
+
+## TESTER COMMANDS
+
+admin
+away
+connect
+error
+info
+invite
+join
+kick
+kill
+links
+list
+lusers
+mode
+motd
+names
+nick
+notice
+oper
+part
+pass
+ping
+pong
+privmsg
+quit
+server
+squit
+stats
+time
+topic
+trace
+user
+version
+wallops
+who
+whois
