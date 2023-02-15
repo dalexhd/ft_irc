@@ -89,17 +89,19 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><div align="center"></div><div align="center"><img src="https://i.giphy.com/media/dbtDDSvWErdf2/giphy.webp" alt="image" class="inline"/></div><div align="center"></div><h2><a class="anchor" id="autotoc_md0"></a>
 OUR OWN IRC SERVER</h2>
-<div align="center"> <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2uk1olu003009mgf4ilrst7/project/2564130" alt="aborboll's 42 ft_irc Score" class="inline"/></a></div><div align="center"><a href="https://github.com/dalexhd/ft_irc/commits"><img src="https://img.shields.io/github/last-commit/dalexhd/ft_irc?color=blue&amp;label=Last%20commit&amp;logo=git&amp;maxAge=3600" alt="GitHub last commit" class="inline"/></a> <a href="https://github.com/dalexhd/ft_irc/issues"><img src="https://img.shields.io/github/issues/dalexhd/ft_irc?label=Issues&amp;color=blue&amp;maxAge=3600" alt="GitHub issues" class="inline"/></a> <a href="https://github.com/dalexhd/ft_irc/network"><img src="https://img.shields.io/github/forks/dalexhd/ft_irc?label=Forks&amp;color=blue&amp;maxAge=3600" alt="GitHub forks" class="inline"/></a></div><div align="center"><a href="https://github.com/dalexhd/ft_irc/actions?query=workflow:Test"><object type="image/svg+xml" data="https://github.com/dalexhd/ft_irc/workflows/Test/badge.svg" style="pointer-events: none;">Test</object></a> <a href="https://codecov.io/gh/dalexhd/ft_irc"><object type="image/svg+xml" data="https://codecov.io/gh/dalexhd/ft_irc/branch/main/graph/badge.svg?token=D8A1FV32VL" style="pointer-events: none;">codecov</object></a> <a href="https://github.com/dalexhd/ft_irc"><img src="https://img.shields.io/github/languages/code-size/dalexhd/ft_irc?label=Code%20size&amp;maxAge=3600" alt="GitHub code size in bytes" class="inline"/></a></div><div align="center"></div><h2><a class="anchor" id="autotoc_md1"></a>
+<div align="center"> <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2uk1olu003009mgf4ilrst7/project/2564130" alt="aborboll's 42 ft_irc Score" class="inline"/></a></div><div align="center"><a href="https://github.com/dalexhd/ft_irc/commits"><img src="https://img.shields.io/github/last-commit/dalexhd/ft_irc?color=blue&amp;label=Last%20commit&amp;logo=git&amp;maxAge=3600" alt="GitHub last commit" class="inline"/></a> <a href="https://github.com/dalexhd/ft_irc/issues"><img src="https://img.shields.io/github/issues/dalexhd/ft_irc?label=Issues&amp;color=blue&amp;maxAge=3600" alt="GitHub issues" class="inline"/></a> <a href="https://github.com/dalexhd/ft_irc/network"><img src="https://img.shields.io/github/forks/dalexhd/ft_irc?label=Forks&amp;color=blue&amp;maxAge=3600" alt="GitHub forks" class="inline"/></a></div><div align="center"><a href="https://github.com/dalexhd/ft_irc/actions?query=workflow:Test"><object type="image/svg+xml" data="https://github.com/dalexhd/ft_irc/workflows/Test/badge.svg" style="pointer-events: none;">Test</object></a> <a href="https://codecov.io/gh/dalexhd/ft_irc"><object type="image/svg+xml" data="https://codecov.io/gh/dalexhd/ft_irc/branch/main/graph/badge.svg?token=D8A1FV32VL" style="pointer-events: none;">codecov</object></a> <a href="https://github.com/dalexhd/ft_irc"><img src="https://img.shields.io/github/languages/code-size/dalexhd/ft_irc?label=Code%20size&amp;maxAge=3600" alt="GitHub code size in bytes" class="inline"/></a></div><div align="center"></div><h1><a class="anchor" id="autotoc_md1"></a>
+USAGE</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
 SERVER</h2>
 <p>make</p>
 <p>./ircserv <code>&lt;port&gt;</code> <code>&lt;password&gt;</code></p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 CLIENT</h2>
-<p>telnet <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code></p>
+<p>telnet <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code> o nc <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code></p>
 <ul>
 <li>The <a href="ircserver">ircserver</a> must be tested with Graphical Official Irc clients as limechat, weechat, textualchat</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 COMMANDS DOCS</h2>
 <p><a href="https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands">https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands</a></p>
 <ul>
@@ -126,7 +128,7 @@ COMMANDS DOCS</h2>
 <li><b>kick</b> -&gt; Forcibly removes client from channel <pre class="fragment">ex: "/kick &lt;client&gt; &lt;channel&gt;"
 </pre></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 [](#message-format)Message Format</h2>
 <p>An IRC message is a single line, delimited by a pair of <code>CR</code> &lsquo;(&rsquo;\r', 0x0D)<code>and</code>LF('<br  />
 ', 0x0A)` characters.</p>
@@ -148,7 +150,7 @@ COMMANDS DOCS</h2>
 <p>These message parts, and parameters themselves, are separated by one or more ASCII SPACE characters &lsquo;(&rsquo; ', 0x20)`.</p>
 <p>Most IRC servers limit messages to 512 bytes in length, including the trailing <code>CR-LF</code> characters. Implementations which include <a href="https://ircv3.net/specs/extensions/message-tags.html">message tags</a> need to allow additional bytes for the <b>tags</b> section of a message; clients must allow 8191 additional bytes and servers must allow 4096 additional bytes.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 NUMERIC REPLIES</h2>
 <p><a href="https://modern.ircdocs.horse/#numerics">https://modern.ircdocs.horse/#numerics</a></p>
 <p>RPL_WELCOME (001)</p>
@@ -206,7 +208,7 @@ NUMERIC REPLIES</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 ADMIN</h2>
 <p>RPL_ADMINME (256)</p>
 <ul>
@@ -231,7 +233,7 @@ ADMIN</h2>
 <li><a class="el" href="classMessage.html">Message</a>: "-client- -command- :Please wait a while and try again."</li>
 <li>Usecase: When a server drops a command without processing it, this numeric MUST be sent to inform the client.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 LUSERS</h2>
 <p>RPL_LOCALUSERS (265)</p>
 <ul>
@@ -252,7 +254,7 @@ LUSERS</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 AWAY</h2>
 <p>RPL_AWAY (301)</p>
 <ul>
@@ -267,7 +269,7 @@ AWAY</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 WHO</h2>
 <p>RPL_NOWAWAY (306)</p>
 <ul>
@@ -321,7 +323,7 @@ WHO</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 LIST</h2>
 <p>RPL_LISTSTART (321)</p>
 <ul>
@@ -405,7 +407,7 @@ LIST</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 NAMES</h2>
 <p>RPL_ENDOFNAMES (366)</p>
 <ul>
@@ -427,7 +429,7 @@ NAMES</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 INFO</h2>
 <p>RPL_INFO (371)</p>
 <ul>
@@ -741,7 +743,7 @@ INFO</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 2 2023 20:37:53 for IRC SERVER by
+    <li class="footer">Generated on Wed Feb 15 2023 17:46:29 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

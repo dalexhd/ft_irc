@@ -23,20 +23,22 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "IRC SERVER", "index.html", [
-    [ "Classes", "annotated.html", [
+    [ "USAGE", "index.html#autotoc_md1", [
       [ "OUR OWN IRC SERVER", "index.html#autotoc_md0", null ],
-      [ "SERVER", "index.html#autotoc_md1", null ],
-      [ "CLIENT", "index.html#autotoc_md2", null ],
-      [ "COMMANDS DOCS", "index.html#autotoc_md3", null ],
-      [ "[](#message-format)Message Format", "index.html#autotoc_md4", null ],
-      [ "NUMERIC REPLIES", "index.html#autotoc_md7", null ],
-      [ "ADMIN", "index.html#autotoc_md8", null ],
-      [ "LUSERS", "index.html#autotoc_md9", null ],
-      [ "AWAY", "index.html#autotoc_md10", null ],
-      [ "WHO", "index.html#autotoc_md11", null ],
-      [ "LIST", "index.html#autotoc_md12", null ],
-      [ "NAMES", "index.html#autotoc_md13", null ],
-      [ "INFO", "index.html#autotoc_md14", null ],
+      [ "SERVER", "index.html#autotoc_md2", null ],
+      [ "CLIENT", "index.html#autotoc_md3", null ],
+      [ "COMMANDS DOCS", "index.html#autotoc_md4", null ],
+      [ "[](#message-format)Message Format", "index.html#autotoc_md5", null ],
+      [ "NUMERIC REPLIES", "index.html#autotoc_md8", null ],
+      [ "ADMIN", "index.html#autotoc_md9", null ],
+      [ "LUSERS", "index.html#autotoc_md10", null ],
+      [ "AWAY", "index.html#autotoc_md11", null ],
+      [ "WHO", "index.html#autotoc_md12", null ],
+      [ "LIST", "index.html#autotoc_md13", null ],
+      [ "NAMES", "index.html#autotoc_md14", null ],
+      [ "INFO", "index.html#autotoc_md15", null ]
+    ] ],
+    [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
