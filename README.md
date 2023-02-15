@@ -16,7 +16,7 @@
 
 </div>
 
-
+# USAGE
 ## SERVER
 
 make
@@ -26,6 +26,8 @@ make
 ## CLIENT
 
 telnet `<serverip>` `<port>`
+          o
+nc `<serverip>` `<port>`
 
  - The ircserver must be tested with Graphical Official Irc clients as limechat, weechat, textualchat
 

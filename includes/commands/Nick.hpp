@@ -10,7 +10,7 @@ class Nick : public Command
 	Nick()
 	{
 		_name = "Nick";
-		_description = "adssa";
+		_description = "description";
 		_usage = "Nick";
 		_example = "Nick";
 	}
