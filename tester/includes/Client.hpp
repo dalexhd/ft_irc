@@ -17,6 +17,7 @@ class Client
 	std::string _port;
 	int         _socket;
 	addrinfo    hints, *servinfo;
+	std::map<size_t, std::string> _commands;
 
   public:
 	Client(std::string host, std::string port)
