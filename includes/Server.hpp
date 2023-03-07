@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/26 18:06:20 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:12:38 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,7 @@ class Server
 					}
 				}
 				delete it->second;
+				//_clients.erase(it);
 				std::vector<pollfd>::iterator it2 = _pfds.begin();
 				for (; it2 != _pfds.end(); it2++)
 				{

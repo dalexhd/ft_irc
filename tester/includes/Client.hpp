@@ -1,6 +1,7 @@
 // Create IRC client in cpp
 #include <cstring>
 #include <iostream>
+#include <map>
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,33 +9,101 @@
 #include <string>
 #include <unistd.h>
 #include <vector>
-#include <map>
+
+class Command
+{
+  public:
+	size_t                   _ms;
+	std::string              _name;
+	std::vector<std::string> _params;
+
+  public:
+	Command(size_t ms, std::string name, std::vector<std::string> params)
+	{
+		this->_ms = ms;
+		this->_name = name;
+		this->_params = params;
+	}
+	~Command()
+	{
+	}
+
+	size_t ms()
+	{
+		return (this->_ms);
+	}
+
+	std::string name()
+	{
+		return (this->_name);
+	}
+
+	std::vector<std::string> params()
+	{
+		return (this->_params);
+	}
+
+	std::string getCommand()
+	{
+		std::string command = this->_name;
+		for (std::vector<std::string>::const_iterator it = this->_params.begin();
+		     it != this->_params.end(); ++it)
+		{
+			command += " " + *it;
+		}
+		return (command);
+	}
+
+  public:
+	friend std::ostream &operator<<(std::ostream &stream, const Command &command)
+	{
+		stream << command._ms << " " << command._name << " ";
+		for (std::vector<std::string>::const_iterator it = command._params.begin();
+		     it != command._params.end(); ++it)
+		{
+			stream << *it << " ";
+		}
+		return (stream);
+	}
+};
 
 class Client
 {
   public:
-	std::string _name;
-	std::string _host;
-	std::string _port;
-	int         _socket;
-	addrinfo    hints, *servinfo;
-	std::map<size_t, std::string> _commands;
+	std::string               _name;
+	std::string               _host;
+	std::string               _port;
+	int                       _socket;
+	addrinfo                  hints, *servinfo;
+	std::string               _username;
+	std::string               _realname;
+	std::map<size_t, Command> _commands;
+	bool                      _connected;
 
   public:
 	Client(std::string host, std::string port)
 	{
 		this->_host = host;
 		this->_port = port;
-		this->irc_connect();
+	}
+
+	Client(std::string name, std::string username, std::string realname)
+	{
+		this->_name = name;
+		this->_host = "127.0.0.1";
+		this->_port = "6667";
+		this->_username = username;
+		this->_realname = realname;
+		this->_connected = false;
 	}
 
 	~Client()
 	{
 		close(this->_socket);
-		freeaddrinfo(servinfo);
+		// freeaddrinfo(servinfo);
 	}
 
-  private:
+  public:
 	void irc_connect(void)
 	{
 		int status;
@@ -59,6 +128,18 @@ class Client
 			freeaddrinfo(servinfo);
 			throw std::runtime_error("Error connecting to server");
 		}
+
+		usleep(50000);
+		this->send("NICK " + this->_name);
+		usleep(50000);
+		this->send("USER " + this->_username + " 0 * :" + this->_realname);
+		this->_connected = true;
+				usleep(50000);
+	}
+
+	void irc_disconnect(void)
+	{
+		this->send("QUIT");
 	}
 
   public:
@@ -83,21 +164,16 @@ class Client
 		return (tmp);
 	}
 
-	void login(std::string name)
+	void addCommand(Command command)
 	{
-		send("NICK " + name); // NICK msantos-
-		usleep(1000);
-		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
-		usleep(1000);
-		std::cout << reads() << std::endl;
+		this->_commands.insert(std::pair<size_t, Command>(command.ms(), command));
 	}
-	void requestingLoop()
+
+	friend std::ostream &operator<<(std::ostream &stream, const Client &client)
 	{
-		for (std::string line; line != "quit" && std::getline(std::cin, line);)
-		{
-			send(line);
-			usleep(1000);
-			std::cout << reads() << std::endl;
-		}
+		stream << "Client Name: " << client._name << std::endl
+		       << "Username: " << client._username << std::endl
+		       << "Realname: " << client._realname << std::endl;
+		return (stream);
 	}
 };
