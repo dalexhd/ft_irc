@@ -18,7 +18,7 @@ typedef struct s_info
 {
 	int                                num_clients;
 	std::vector<pthread_t>             clientThreads;
-	std::map<std::string, Client>		clients;
+	std::map<std::string, Client*>		clients;
 	std::vector<std::string>			fileContent; //name timestamp command
 } t_info;
 
@@ -35,33 +35,33 @@ void parseFile(t_info *info,std::string filename)
 
 		size_t pos = 0;
 		size_t i = 0;
+		size_t ts = 0;
 
 		std::string token;
 		while ((pos = line.find(delimiter)) != std::string::npos) {
 			token = line.substr(0, pos);
 			switch(i){
-				case 1:
+				case 0:
+					ts = stoi(token);
+				case 1: //name
 
 					if(info->clients.count(token) > 0)
 					{
 						std::cout << "Already exists " << token << std::endl;
-
 					}
 					else{
 						std::cout << "Creating user " << token << std::endl;
 						Client *client = new Client(host, port);
 						client->login(token);
-						info->clients.insert(std::make_pair( token, client ).second);
+						info->clients.insert(std::make_pair( token, client ));
 					}
-
-
 			}
 
-			std::cout << pos << token << std::endl;
+			//std::cout << pos << token << std::endl;
 			line.erase(0, pos + delimiter.length());
 			i++;
 		}
-		std::cout << line << std::endl;
+		info->clients[token]->_commands.insert(std::make_pair( ts , line ));
 	}
 
 
