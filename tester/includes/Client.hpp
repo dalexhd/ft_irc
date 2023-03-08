@@ -129,12 +129,12 @@ class Client
 			throw std::runtime_error("Error connecting to server");
 		}
 
-		usleep(50000);
+		usleep(1000);
 		this->send("NICK " + this->_name);
-		usleep(50000);
+		usleep(1000);
 		this->send("USER " + this->_username + " 0 * :" + this->_realname);
 		this->_connected = true;
-				usleep(50000);
+		usleep(1000);
 	}
 
 	void irc_disconnect(void)

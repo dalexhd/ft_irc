@@ -37,12 +37,12 @@ int main(void)
 	for (std::vector<std::string>::const_iterator it = files.begin();
 	     it != files.end(); ++it)
 	{
-		std::cout << *it << std::endl;
+		std::cout << "klk " << *it << std::endl;
 
 		File file(*it);
 		file.parse();
 
-		for (std::map<std::string, Client>::iterator it = file._clients.begin();
+		/*for (std::map<std::string, Client>::iterator it = file._clients.begin();
 		     it != file._clients.end(); ++it)
 		{
 			std::cout << it->second << std::endl;
@@ -64,9 +64,9 @@ int main(void)
 		{
 			usleep(50000);
 			it->second.irc_disconnect();
-		}
+		}*/
 
-		sleep(20);
+		usleep(700);
 	}
 	return (0);
 }

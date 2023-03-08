@@ -53,7 +53,7 @@ class File
 		std::string              token;
 		std::vector<std::string> params;
 
-		while ((pos = line.find(delimiter)) != std::string::npos)
+		while ((pos = line.find(delimiter)) != std::string::npos) //fill line
 		{
 			token = line.substr(0, pos);
 			parts.push_back(token);
@@ -61,17 +61,20 @@ class File
 		}
 		parts.push_back(line);
 
-		for (size_t i = 5; i < parts.size(); i++)
+		if(parts.size() < 4)
 		{
-			params.push_back(parts[i]);
+			std::cout << "Test Command line not valid: '" << line << "'\n";
 		}
-		Command lineCommand = Command(std::atoi(parts[0].c_str()), parts[4], params);
-		if (this->_clients.find(parts[1]) == this->_clients.end())
+		else
 		{
-			this->_clients.insert(std::pair<std::string, Client>(parts[1], Client(parts[1], parts[2], parts[3])));
+			Command lineCommand = Command(std::atoi(parts[0].c_str()), parts[4], parts);
+			if (this->_clients.find(parts[1]) == this->_clients.end())
+			{
+				this->_clients.insert(std::pair<std::string, Client>(parts[1], Client(parts[1], parts[2], parts[3])));
+			}
+			this->_clients.find(parts[1])->second._commands.insert(
+				std::pair<size_t, Command>(std::atoi(parts[0].c_str()), lineCommand));
 		}
-		this->_clients.find(parts[1])->second._commands.insert(
-		    std::pair<size_t, Command>(std::atoi(parts[0].c_str()), lineCommand));
 	}
 
 	void parse()
@@ -79,7 +82,7 @@ class File
 		std::vector<std::string> lines = this->getFileContent();
 		for (std::vector<std::string>::iterator it = lines.begin(); it != lines.end(); ++it)
 		{
-			if ((*it).substr(0, 1) == "#" || (*it).substr(0, 2) == "//")
+			if ((*it).substr(0, 1) == "#" || (*it).substr(0, 2) == "//" )
 			{
 				continue;
 			}
@@ -111,6 +114,7 @@ class File
 			{
 				std::string file_path = path + "/" + entry->d_name;
 				files.push_back(file_path);
+				std::cout << "file " << "\n";
 			}
 		}
 		closedir(dir);
