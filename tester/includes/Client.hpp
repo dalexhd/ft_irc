@@ -46,10 +46,9 @@ class Command
 	std::string getCommand()
 	{
 		std::string command = this->_name;
-		for (std::vector<std::string>::const_iterator it = this->_params.begin();
-		     it != this->_params.end(); ++it)
+		for(size_t i = 5;i < this->_params.size(); i++)
 		{
-			command += " " + *it;
+			command += " " + _params[i];
 		}
 		return (command);
 	}
@@ -104,7 +103,7 @@ class Client
 	}
 
   public:
-	void irc_connect(void)
+	int irc_connect(void)
 	{
 		int status;
 		std::memset(&hints, 0, sizeof(addrinfo));
@@ -113,28 +112,34 @@ class Client
 		hints.ai_socktype = SOCK_STREAM;
 		hints.ai_flags = AI_CANONNAME;
 
-		// We get the server address.
-		if (getaddrinfo(this->_host.c_str(), this->_port.c_str(), &hints, &servinfo) != 0)
+		try{
+			// We get the server address.
+			if (getaddrinfo(this->_host.c_str(), this->_port.c_str(), &hints, &servinfo) != 0)
 			throw std::runtime_error("error: getaddrinfo");
-
-		// We create the socket.
-		if ((this->_socket =
-		         socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
-			throw std::runtime_error("Error while creating socket");
-		status = connect(this->_socket, servinfo->ai_addr, servinfo->ai_addrlen);
-		if (status == -1)
-		{
-			close(this->_socket);
-			freeaddrinfo(servinfo);
-			throw std::runtime_error("Error connecting to server");
+			// We create the socket.
+			if ((this->_socket =
+					socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
+				throw std::runtime_error("Error while creating socket");
+			status = connect(this->_socket, servinfo->ai_addr, servinfo->ai_addrlen);
+			if (status == -1)
+			{
+				close(this->_socket);
+				freeaddrinfo(servinfo);
+				throw std::runtime_error("Error connecting to server");
+			}
+			usleep(1000);
+			this->send("NICK " + this->_name);
+			usleep(1000);
+			this->send("USER " + this->_username + " 0 * :" + this->_realname);
+			this->_connected = true;
+			usleep(1000);
 		}
-
-		usleep(1000);
-		this->send("NICK " + this->_name);
-		usleep(1000);
-		this->send("USER " + this->_username + " 0 * :" + this->_realname);
-		this->_connected = true;
-		usleep(1000);
+		catch(std::exception & e)
+		{
+			std::cout << std::endl << e.what() << std::endl;
+			return (1);
+		}
+		return (0);
 	}
 
 	void irc_disconnect(void)
@@ -173,7 +178,13 @@ class Client
 	{
 		stream << "Client Name: " << client._name << std::endl
 		       << "Username: " << client._username << std::endl
-		       << "Realname: " << client._realname << std::endl;
+		       << "Realname: " << client._realname << std::endl << std::endl;
+
+		// SHOW CLIENT COMMANDS
+		/*for(size_t i = 0;i < client._commands.size(); i++)
+		{
+			 stream << client._commands.at(i)._name << std::endl << std::endl;
+		}*/
 		return (stream);
 	}
 };

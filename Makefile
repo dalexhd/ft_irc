@@ -123,7 +123,8 @@ re:			## Call fclean => all
 ##@ Testing
 
 test:		## Make test
-			@cd tester && make > /dev/null && ./ircserv_tester
+	@make -C ./tester 2> /dev/null
+	@make run -C ./tester 2> /dev/null
 
 cov:		## Make coverage files
 			gcov $(OBJS)

@@ -78,6 +78,9 @@ TAB					=	$(shell printf "\t")
 # Make all files.
 all:	$(OUTPUT)
 
+run:
+	@./ircserv_tester 2> /dev/null
+
 # Objects directory
 $(OBJ_DIR):
 			@echo ${CUT}[${Y}$(OUTPUT)]${X} ${B}Creating: ${R}$(OBJ_DIR)${X}

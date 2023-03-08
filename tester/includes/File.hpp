@@ -63,17 +63,18 @@ class File
 
 		if(parts.size() < 4)
 		{
-			std::cout << "Test Command line not valid: '" << line << "'\n";
+			std::cout << "  Command line not valid: '" << line << "'\n";
 		}
 		else
 		{
 			Command lineCommand = Command(std::atoi(parts[0].c_str()), parts[4], parts);
 			if (this->_clients.find(parts[1]) == this->_clients.end())
 			{
-				this->_clients.insert(std::pair<std::string, Client>(parts[1], Client(parts[1], parts[2], parts[3])));
+				this->_clients.insert(std::pair<std::string, Client>(parts[1], Client(parts[1], parts[2], parts[3]))); // Add client to map
 			}
+
 			this->_clients.find(parts[1])->second._commands.insert(
-				std::pair<size_t, Command>(std::atoi(parts[0].c_str()), lineCommand));
+				std::pair<size_t, Command>(std::atoi(parts[0].c_str()), lineCommand)); // ADD Command to already created client
 		}
 	}
 

@@ -37,34 +37,37 @@ int main(void)
 	for (std::vector<std::string>::const_iterator it = files.begin();
 	     it != files.end(); ++it)
 	{
-		std::cout << "klk " << *it << std::endl;
+		std::cout << "PATH: " << *it << std::endl;
 
 		File file(*it);
 		file.parse();
+		std::cout  << std::endl;
 
-		/*for (std::map<std::string, Client>::iterator it = file._clients.begin();
+		for (std::map<std::string, Client>::iterator it = file._clients.begin(); // CLIENT LOOP
 		     it != file._clients.end(); ++it)
 		{
 			std::cout << it->second << std::endl;
-			for (std::map<size_t, Command>::iterator it2 = it->second._commands.begin();
+			for (std::map<size_t, Command>::iterator it2 = it->second._commands.begin(); // COMMAND LOOP
 			     it2 != it->second._commands.end(); ++it2)
 			{
 				if (!it->second._connected)
 				{
 					usleep(it2->second._ms * 1000);
-					it->second.irc_connect();
+					if(it->second.irc_connect() > 0)
+						return (1);
 				}
 				usleep(it2->second._ms * 1000);
 				it->second.send(it2->second.getCommand());
+				//std::cout << "*full cmd" << it2->second.getCommand() << std::endl;
 			}
 			std::cout << std::endl << std::endl;
 		}
 		for (std::map<std::string, Client>::iterator it = file._clients.begin();
 		     it != file._clients.end(); ++it)
 		{
-			usleep(50000);
+			usleep(5000);
 			it->second.irc_disconnect();
-		}*/
+		}
 
 		usleep(700);
 	}
