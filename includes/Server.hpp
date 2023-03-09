@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/07 20:12:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:15:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ bool validate_args(int argc, char **argv);
 class Server
 {
   private:
+	typedef std::map<size_t, Client *>::iterator       clientMap_iterator;
+	typedef std::map<std::string, Channel *>::iterator channelMap_iterator;
+	typedef std::vector<pollfd>::iterator              pollVector_iterator;
+
 	// Connection params
 	std::string const host;
 	std::string const servername;
@@ -150,33 +154,37 @@ class Server
 
 	void deleteClient(int fd)
 	{
-		std::map<size_t, Client *>::iterator it = _clients.begin();
-		for (; it != _clients.end(); it++)
+		for (clientMap_iterator it = _clients.begin(); it != _clients.end();)
 		{
 			if (it->second->_fd == fd)
 			{
-				std::map<std::string, Channel *>::iterator itc = _channels.begin();
-				for (; itc != _channels.end(); itc++)
+				for (channelMap_iterator itc = _channels.begin();
+				     itc != _channels.end();)
 				{
 					itc->second->removeClientFromChannel(it->second);
 					if (itc->second->getClients().size() == 0)
 					{
 						delete itc->second;
-						_channels.erase(itc);
+						_channels.erase(itc++);
 					}
+					else
+						itc++;
 				}
 				delete it->second;
-				//_clients.erase(it);
-				std::vector<pollfd>::iterator it2 = _pfds.begin();
-				for (; it2 != _pfds.end(); it2++)
+				_clients.erase(it++);
+				for (pollVector_iterator it2 = _pfds.begin(); it2 != _pfds.end();)
 				{
 					if (it2->fd == fd)
 					{
-						_pfds.erase(it2);
+						_pfds.erase(it2++);
 						break;
 					}
+					else
+						it2++;
 				}
 			}
+			else
+				it++;
 		}
 	}
 
