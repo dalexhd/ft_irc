@@ -1,4 +1,5 @@
 #include "includes/File.hpp"
+#include "includes/Colors.hpp"
 
 
 void list_files(const std::string &path, std::vector<std::string> &files)
@@ -39,12 +40,12 @@ static void *clientConversation(void *client)
 		if (!c->_connected)
 		{
 			usleep(it2->second._ms * 1000);
-			if(c->irc_connect() > 0)
+			if(c->irc_connect())
 				return 0;
 		}
 		usleep(it2->second._ms * 1000);
 		c->send(it2->second.getCommand());
-		std::cout << c->_name << " does " << it2->first << " ms " << it2->second.getCommand() << std::endl;
+		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms " << it2->second.getCommand()  << RESET << std::endl;
 		//std::cout << "*full cmd" << it2->second.getCommand() << std::endl;
 	}
 	usleep(700);
@@ -75,12 +76,13 @@ int main(void)
 	if (menu == "1")
 	{
 		Client *client = new Client("Testbot", "Testbot", "Testbot");
-		client->irc_connect();
-		usleep(1000);
-		client->login("FirstClient");
-		usleep(1000);
-		client->requestingLoop();
-
+		if(!client->irc_connect())
+		{
+			usleep(1000);
+			client->login("FirstClient");
+			usleep(1000);
+			client->requestingLoop();
+		}
 	}
 	else{
 
@@ -91,7 +93,7 @@ int main(void)
 	for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 	     it != files.end(); ++it)
 	{
-		std::cout << "PATH: " << *it << std::endl;
+		std::cout << AZUL_T << "PATH: " << *it << RESET <<  std::endl;
 
 		File file(*it);
 		file.parse();
