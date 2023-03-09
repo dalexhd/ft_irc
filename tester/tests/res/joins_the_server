@@ -1,4 +1,0 @@
-Connected to 127.0.0.1:6667
-:42irc-server 001 TestBot :Welcome to the Internet Relay Network TestBot
-:42irc-server 002 TestBot :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 TestBot :This server was created January 1st, 1970
