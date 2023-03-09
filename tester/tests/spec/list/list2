@@ -1,2 +1,3 @@
-//multiple channels
+//multiple channel list
 0 NICK_1 USER_1 REAL_NAME_1 JOIN #CHANNEL1,#CHANNEL2,#CHANNEL3
+50 NICK_1 USER_1 REAL_NAME_1 LIST
