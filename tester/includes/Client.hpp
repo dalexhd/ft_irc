@@ -9,6 +9,7 @@
 #include <string>
 #include <unistd.h>
 #include <vector>
+#include "Colors.hpp"
 
 class Command
 {
@@ -125,17 +126,17 @@ class Client
 		try{
 			// We get the server address.
 			if (getaddrinfo(this->_host.c_str(), this->_port.c_str(), &hints, &servinfo) != 0)
-			throw std::runtime_error("error: getaddrinfo");
+			throw std::runtime_error(this->_name + "Error: getaddrinfo");
 			// We create the socket.
 			if ((this->_socket =
 					socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
-				throw std::runtime_error("Error while creating socket");
+				throw std::runtime_error(this->_name + " Error while creating socket");
 			status = connect(this->_socket, servinfo->ai_addr, servinfo->ai_addrlen);
 			if (status == -1)
 			{
 				close(this->_socket);
 				freeaddrinfo(servinfo);
-				throw std::runtime_error("Error connecting to server");
+				throw std::runtime_error(this->_name + " Error connecting to server");
 			}
 			usleep(1000);
 			this->send("NICK " + this->_name);
@@ -146,7 +147,7 @@ class Client
 		}
 		catch(std::exception & e)
 		{
-			std::cout << std::endl << e.what() << std::endl;
+			std::cout << ROJO_T << std::endl << e.what() << RESET << std::endl;
 			return (1);
 		}
 		return (0);
