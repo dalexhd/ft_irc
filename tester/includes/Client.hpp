@@ -78,6 +78,7 @@ class Client
 	std::string               _realname;
 	std::map<size_t, Command> _commands;
 	bool                      _connected;
+	pthread_t                 _thread;
 
   public:
 	Client(std::string host, std::string port)
@@ -94,6 +95,15 @@ class Client
 		this->_username = username;
 		this->_realname = realname;
 		this->_connected = false;
+	}
+	Client(const Client &copy)
+	{
+		this->_name = copy._name;
+		this->_host = copy._host;
+		this->_port = copy._port;
+		this->_username = copy._username;
+		this->_realname = copy._realname;
+		this->_connected = copy._connected;
 	}
 
 	~Client()
@@ -186,5 +196,22 @@ class Client
 			 stream << client._commands.at(i)._name << std::endl << std::endl;
 		}*/
 		return (stream);
+	}
+	void login(std::string name)
+	{
+		send("NICK " + name); // NICK msantos-
+		usleep(1000);
+		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
+		usleep(1000);
+		std::cout << reads() << std::endl;
+	}
+	void requestingLoop()
+	{
+		for (std::string line; line != "quit" && std::getline(std::cin, line);)
+		{
+			send(line);
+			usleep(1000);
+			std::cout << reads() << std::endl;
+		}
 	}
 };
