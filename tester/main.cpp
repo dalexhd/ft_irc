@@ -75,7 +75,10 @@ int main(void)
 	if (menu == "1")
 	{
 		Client *client = new Client("Testbot", "Testbot", "Testbot");
+		client->irc_connect();
+		usleep(1000);
 		client->login("FirstClient");
+		usleep(1000);
 		client->requestingLoop();
 
 	}

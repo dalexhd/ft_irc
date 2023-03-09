@@ -204,10 +204,18 @@ class Client
 		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
 		usleep(1000);
 		std::cout << reads() << std::endl;
+		usleep(1000);
+		/*this->send("JOIN #HOLA");
+		usleep(1000);
+		std::cout << reads() << std::endl;*/
+
 	}
 	void requestingLoop()
 	{
-		for (std::string line; line != "quit" && std::getline(std::cin, line);)
+		//this->send("");
+		std::string line;
+		std::getline(std::cin, line);
+		for (line="a"; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
