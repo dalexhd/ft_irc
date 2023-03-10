@@ -32,6 +32,7 @@ void list_files(const std::string &path, std::vector<std::string> &files)
 
 static void *clientConversation(void *client)
 {
+
 	Client *c = (Client *) client;
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
@@ -50,12 +51,14 @@ static void *clientConversation(void *client)
 		// std::cout << "*full cmd" << it2->second.getCommand() << std::endl;
 		std::cout << c->_name << " does " << it2->first << " ms " << it2->second.getCommand() << std::endl;
 		usleep(700);
+
 		std::ofstream myfile;
 		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
 		myfile << c->reads();
 		myfile.close();
 		usleep(700);
 	}
+
 	usleep(700);
 	c->irc_disconnect();
 	usleep(700);
@@ -86,7 +89,7 @@ int main(void)
 		Client *client = new Client("Testbot", "Testbot", "Testbot");
 		client->irc_connect();
 		usleep(1000);
-		client->login("FirstClient");
+		client->login("testbot");
 		usleep(1000);
 		client->requestingLoop();
 	}
@@ -107,6 +110,7 @@ int main(void)
 
 			executeFileClients(&file);
 			usleep(700);
+
 		}
 	}
 

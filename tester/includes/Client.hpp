@@ -73,6 +73,7 @@ class Client
 	std::string               _name;
 	std::string               _host;
 	std::string               _port;
+	std::string               _pass;
 	int                       _socket;
 	addrinfo                  hints, *servinfo;
 	std::string               _username;
@@ -93,6 +94,7 @@ class Client
 		this->_name = name;
 		this->_host = "127.0.0.1";
 		this->_port = "6667";
+		this->_pass = "pass";
 		this->_username = username;
 		this->_realname = realname;
 		this->_connected = false;
@@ -204,26 +206,25 @@ class Client
 	}
 	void login(std::string name)
 	{
-		send("NICK " + name); // NICK msantos-
+		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
+		send("PASS " + this->_pass); // PASS <server_password>
 		usleep(1000);
-		send("USER TestBot 0 * : " + name + " Surname"); // USER TestBot 0 * : msantos- Surname
+		send("NICK " + name); // NICK <nickname>
+		usleep(1000);
+		send("USER TestBot 0 * : " + name + " surname"); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		std::cout << reads() << std::endl;
 		usleep(1000);
-		/*this->send("JOIN #HOLA");
-		usleep(1000);
-		std::cout << reads() << std::endl;*/
 	}
 	void requestingLoop()
 	{
-		// this->send("");
 		std::string line;
 		std::getline(std::cin, line);
 		for (line = "a"; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
-			std::cout << reads() << std::endl;
+			std::cout << CYAN_T << reads() << RESET;
 		}
 	}
 };

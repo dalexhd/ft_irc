@@ -1,28 +1,13 @@
-:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
-:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_1 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_2 :Welcome to the Internet Relay Network NICK_2
-:42irc-server 002 NICK_2 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_2 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
-:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_1 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_2 :Welcome to the Internet Relay Network NICK_2
-:42irc-server 002 NICK_2 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_2 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_3 :Welcome to the Internet Relay Network NICK_3
-:42irc-server 002 NICK_3 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_3 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
-:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_1 :This server was created January 1st, 1970
-pong
-:42irc-server 001 NICK_2 :Welcome to the Internet Relay Network NICK_2
-:42irc-server 002 NICK_2 :Your host is 42irc-server, running version 0.0.1
-:42irc-server 003 NICK_2 :This server was created January 1st, 1970
-pong
+:10.12.7.5 001 USER_1 :Welcome to the Internet Relay Network, nick1!USER_1@10.12.7.5
+:10.12.7.5 461 nick1 PING :Not enough parameters
+:10.12.7.5 001 USER_2 :Welcome to the Internet Relay Network, nick2!USER_2@10.12.7.5
+:10.12.7.5 461 nick2 PING :Not enough parameters
+:10.12.7.5 001 USER_3 :Welcome to the Internet Relay Network, nick3!USER_3@10.12.7.5
+:10.12.7.5 461 nick3 PING :Not enough parameters
+:nick2!USER_2@10.12.7.5 PRIVMSG nick1 :hola nick1
+:nick1!USER_1@10.12.7.5 PRIVMSG nick2 :hola nick2
+ERROR :Closing link : (nick1!USER_1@10.12.7.5) [Client exited]
+ERROR :Closing link : (nick2!USER_2@10.12.7.5) [Client exited]
+:10.13.5.2 ERROR [Timeout]
+:10.13.5.2 ERROR [Timeout]
+:10.13.5.2 ERROR [Timeout]
