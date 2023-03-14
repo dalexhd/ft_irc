@@ -32,7 +32,6 @@ void list_files(const std::string &path, std::vector<std::string> &files)
 
 static void *clientConversation(void *client)
 {
-
 	Client *c = (Client *) client;
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
@@ -80,9 +79,9 @@ void executeFileClients(File *file)
 }
 
 /*
-	Buscar IRC consistente, descargar ejecutable para ir probando outouts
-	 y guardarlos en la respuestas de los test, buscar segfaults,
-	crear Diff de nuestro output con el archivo de output de un IRC bien hecho
+    Buscar IRC consistente, descargar ejecutable para ir probando outouts
+     y guardarlos en la respuestas de los test, buscar segfaults,
+    crear Diff de nuestro output con el archivo de output de un IRC bien hecho
 */
 int main(void)
 {
@@ -103,7 +102,7 @@ int main(void)
 		std::cout << "Automated Test\n";
 		std::vector<std::string> files;
 
-		list_files("./tests/spec/join", files);
+		list_files("./tests/new", files);
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
 		{
@@ -115,7 +114,6 @@ int main(void)
 
 			executeFileClients(&file);
 			usleep(700);
-
 		}
 	}
 
