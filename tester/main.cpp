@@ -114,6 +114,13 @@ int main(void)
 		executeFileClients(&file);
 		usleep(700);
 	}
+
+	Client *client = new Client("Testbot", "Testbot", "Testbot");
+	client->irc_connect();
+	usleep(1000);
+	client->login();
+	usleep(1000);
+	client->send("close");
 	// }
 
 	return (0);
