@@ -86,36 +86,35 @@ void executeFileClients(File *file)
 int main(void)
 {
 	std::cout << "Send 1 to Single Client , other key to Full Auto Tester\n";
-	std::string menu;
-	std::cin >> menu;
-	if (menu == "1")
+	/* 	std::string menu;
+	    std::cin >> menu;
+	    if (menu == "1")
+	    {
+	        Client *client = new Client("Testbot", "Testbot", "Testbot",
+	   "irc.irc-hispano.org"); client->irc_connect(); usleep(1000);
+	        client->login();
+	        usleep(1000);
+	        client->requestingLoop();
+	    }
+	    else
+	    { */
+	std::cout << "Automated Test\n";
+	std::vector<std::string> files;
+
+	list_files("./tests/new", files);
+	for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
+	     it != files.end(); ++it)
 	{
-		Client *client = new Client("Testbot", "Testbot", "Testbot", "irc.irc-hispano.org");
-		client->irc_connect();
-		usleep(1000);
-		client->login();
-		usleep(1000);
-		client->requestingLoop();
+		std::cout << AZUL_T << "PATH: " << *it << RESET << std::endl;
+
+		File file(*it);
+		file.parse();
+		std::cout << std::endl;
+
+		executeFileClients(&file);
+		usleep(700);
 	}
-	else
-	{
-		std::cout << "Automated Test\n";
-		std::vector<std::string> files;
-
-		list_files("./tests/new", files);
-		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
-		     it != files.end(); ++it)
-		{
-			std::cout << AZUL_T << "PATH: " << *it << RESET << std::endl;
-
-			File file(*it);
-			file.parse();
-			std::cout << std::endl;
-
-			executeFileClients(&file);
-			usleep(700);
-		}
-	}
+	// }
 
 	return (0);
 }
