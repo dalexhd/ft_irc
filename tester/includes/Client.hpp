@@ -89,7 +89,7 @@ class Client
 		this->_port = port;
 	}
 
-	Client(std::string name, std::string username, std::string realname,std::string host = "127.0.0.1")
+	Client(std::string name, std::string username, std::string realname, std::string host = "127.0.0.1")
 	{
 		this->_name = name;
 		this->_host = host;
@@ -178,7 +178,6 @@ class Client
 		buffer[strlen(buffer)] = '\0';
 		std::string tmp(buffer);
 		return (tmp);
-
 	}
 
 	void addCommand(Command command)
@@ -203,8 +202,8 @@ class Client
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
-		send("PASS " + this->_pass); // PASS <server_password>
-		usleep(1000);
+		// send("PASS " + this->_pass); // PASS <server_password>
+		// usleep(1000);
 		send("NICK " + this->_name); // NICK <nickname>
 		usleep(1000);
 		send("USER TestBot 0 * : " + this->_name + " surname"); // USER TestBot 0 * : msantos- surname
