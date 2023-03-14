@@ -123,7 +123,7 @@ re:			## Call fclean => all
 ##@ Testing
 
 test:		## Make test
-	@make -C ./tester
+	@make re -C ./tester
 	@make run -C ./tester
 
 cov:		## Make coverage files
