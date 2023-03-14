@@ -86,12 +86,18 @@ void executeFileClients(File *file)
 */
 int main(void)
 {
-	std::cout << "Send 1 to Single Client , other key to Full Auto Tester\n";
+	std::cout << "Send 1 or 2 to Single Client , other key to Full Auto Tester\n";
 	std::string menu;
 	std::cin >> menu;
-	if (menu == "1")
+	if (menu == "1" || menu == "2")
 	{
-		Client *client = new Client("Testbot", "Testbot", "Testbot", "irc.irc-hispano.org");
+		std::string server;
+		if(menu == "1")
+			server = "irc.irc-hispano.org";
+		else
+			server = "127.0.0.1";
+
+		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
 		client->irc_connect();
 		usleep(1000);
 		client->login();
