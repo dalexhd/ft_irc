@@ -1,5 +1,6 @@
 #include "includes/Colors.hpp"
 #include "includes/File.hpp"
+#include <pthread.h>
 
 void list_files(const std::string &path, std::vector<std::string> &files)
 {
