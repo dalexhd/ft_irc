@@ -208,6 +208,7 @@ class Client
 		usleep(1000);
 		send("USER TestBot 0 * : " + this->_name + " surname"); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
+		this->_connected = true;
 		std::cout << reads() << std::endl;
 		usleep(1000);
 	}
