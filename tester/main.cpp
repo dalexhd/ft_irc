@@ -32,7 +32,6 @@ void list_files(const std::string &path, std::vector<std::string> &files)
 
 static void *clientConversation(void *client)
 {
-
 	Client *c = (Client *) client;
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
@@ -80,49 +79,46 @@ void executeFileClients(File *file)
 }
 
 /*
-	Buscar IRC consistente, descargar ejecutable para ir probando outouts
-	 y guardarlos en la respuestas de los test, buscar segfaults,
-	crear Diff de nuestro output con el archivo de output de un IRC bien hecho
+    Buscar IRC consistente, descargar ejecutable para ir probando outouts
+     y guardarlos en la respuestas de los test, buscar segfaults,
+    crear Diff de nuestro output con el archivo de output de un IRC bien hecho
 */
 int main(void)
 {
-	std::cout << "Send 1 or 2 to Single Client , other key to Full Auto Tester\n";
-	std::string menu;
-	std::cin >> menu;
-	if (menu == "1" || menu == "2")
+	std::cout << "Send 1 to Single Client , other key to Full Auto Tester\n";
+	/* 	std::string menu;
+	    std::cin >> menu;
+	    if (menu == "1" ||  menu == "2")
+	    {
+			std::string server;
+			if(menu == "1")
+				server = "irc.irc-hispano.org";
+			else
+				server = "127.0.0.1";
+
+	        Client *client = new Client("Testbot", "Testbot", "Testbot",
+	   "irc.irc-hispano.org"); client->irc_connect(); usleep(1000);
+	        client->login();
+	        usleep(1000);
+	        client->requestingLoop();
+	    }
+	    else
+	    { */
+	std::cout << "Automated Test\n";
+	std::vector<std::string> files;
+
+	list_files("./tests/new", files);
+	for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
+	     it != files.end(); ++it)
 	{
-		std::string server;
-		if(menu == "1")
-			server = "irc.irc-hispano.org";
-		else
-			server = "127.0.0.1";
+		std::cout << AZUL_T << "PATH: " << *it << RESET << std::endl;
 
-		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
-		client->irc_connect();
-		usleep(1000);
-		client->login();
-		usleep(1000);
-		client->requestingLoop();
-	}
-	else
-	{
-		std::cout << "Automated Test\n";
-		std::vector<std::string> files;
+		File file(*it);
+		file.parse();
+		std::cout << std::endl;
 
-		list_files("./tests/spec/join", files);
-		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
-		     it != files.end(); ++it)
-		{
-			std::cout << AZUL_T << "PATH: " << *it << RESET << std::endl;
-
-			File file(*it);
-			file.parse();
-			std::cout << std::endl;
-
-			executeFileClients(&file);
-			usleep(700);
-
-		}
+		executeFileClients(&file);
+		usleep(700);
 	}
 
 	return (0);
