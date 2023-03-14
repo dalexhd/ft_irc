@@ -43,18 +43,18 @@ static void *clientConversation(void *client)
 			usleep(it2->second._ms * 1000);
 			if (c->irc_connect() > 0)
 				return 0;
+			c->login();
 		}
 		usleep(it2->second._ms * 1000);
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		// std::cout << "*full cmd" << it2->second.getCommand() << std::endl;
-		std::cout << c->_name << " does " << it2->first << " ms " << it2->second.getCommand() << std::endl;
 		usleep(700);
 
 		std::ofstream myfile;
 		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
 		myfile << c->reads();
+		std::cout << "Server response" << c->reads() << std::endl;
 		myfile.close();
 		usleep(700);
 	}
@@ -79,6 +79,11 @@ void executeFileClients(File *file)
 	}
 }
 
+/*
+	Buscar IRC consistente, descargar ejecutable para ir probando outouts
+	 y guardarlos en la respuestas de los test, buscar segfaults,
+	crear Diff de nuestro output con el archivo de output de un IRC bien hecho
+*/
 int main(void)
 {
 	std::cout << "Send 1 to Single Client , other key to Full Auto Tester\n";
@@ -89,7 +94,7 @@ int main(void)
 		Client *client = new Client("Testbot", "Testbot", "Testbot");
 		client->irc_connect();
 		usleep(1000);
-		client->login("testbot");
+		client->login();
 		usleep(1000);
 		client->requestingLoop();
 	}
@@ -98,7 +103,7 @@ int main(void)
 		std::cout << "Automated Test\n";
 		std::vector<std::string> files;
 
-		list_files("./tests/spec/privmsg", files);
+		list_files("./tests/spec/join", files);
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
 		{

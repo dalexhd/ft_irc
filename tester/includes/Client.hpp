@@ -143,11 +143,6 @@ class Client
 				                                       "server");
 			}
 			usleep(500);
-			this->send("NICK " + this->_name);
-			usleep(500);
-			this->send("USER " + this->_username + " 0 * :" + this->_realname);
-			this->_connected = true;
-			usleep(500);
 		}
 		catch (std::exception &e)
 		{
@@ -204,14 +199,14 @@ class Client
 		}*/
 		return (stream);
 	}
-	void login(std::string name)
+	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
 		send("PASS " + this->_pass); // PASS <server_password>
 		usleep(1000);
-		send("NICK " + name); // NICK <nickname>
+		send("NICK " + this->_name); // NICK <nickname>
 		usleep(1000);
-		send("USER TestBot 0 * : " + name + " surname"); // USER TestBot 0 * : msantos- surname
+		send("USER TestBot 0 * : " + this->_name + " surname"); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		std::cout << reads() << std::endl;
 		usleep(1000);
