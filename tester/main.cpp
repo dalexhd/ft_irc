@@ -91,7 +91,7 @@ int main(void)
 	std::cin >> menu;
 	if (menu == "1")
 	{
-		Client *client = new Client("Testbot", "Testbot", "Testbot");
+		Client *client = new Client("Testbot", "Testbot", "Testbot", "irc.irc-hispano.org");
 		client->irc_connect();
 		usleep(1000);
 		client->login();

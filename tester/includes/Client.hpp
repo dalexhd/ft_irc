@@ -89,10 +89,10 @@ class Client
 		this->_port = port;
 	}
 
-	Client(std::string name, std::string username, std::string realname)
+	Client(std::string name, std::string username, std::string realname,std::string host = "127.0.0.1")
 	{
 		this->_name = name;
-		this->_host = "127.0.0.1";
+		this->_host = host;
 		this->_port = "6667";
 		this->_pass = "pass";
 		this->_username = username;
@@ -178,6 +178,7 @@ class Client
 		buffer[strlen(buffer)] = '\0';
 		std::string tmp(buffer);
 		return (tmp);
+
 	}
 
 	void addCommand(Command command)

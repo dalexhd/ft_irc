@@ -31,3 +31,4 @@ ERROR :Closing link : (nick2!USER_2@10.12.7.5) [Client exited]
 :42irc-server 353 NICK_1  #CHANNEL2 :@NICK_1
 :42irc-server 366 NICK_1 #CHANNEL2 :End of /NAMES list
 s
+:10.11.3.3 ERROR [Timeout]
