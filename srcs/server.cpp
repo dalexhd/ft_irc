@@ -6,35 +6,12 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/16 16:27:53 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:40:37 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Server.hpp"
-
-#include "../includes/commands/Ban.hpp"
-#include "../includes/commands/Echo.hpp"
-#include "../includes/commands/Exit.hpp"
-#include "../includes/commands/Help.hpp"
-#include "../includes/commands/Info.hpp"
-#include "../includes/commands/Ope.hpp"
-#include "../includes/commands/Ping.hpp"
-
-// CHANNEL FUNCTIONS
-#include "../includes/cmds/Invite.hpp"
-#include "../includes/cmds/Join.hpp"
-#include "../includes/cmds/Kick.hpp"
-#include "../includes/cmds/List.hpp"
-#include "../includes/cmds/Mode.hpp"
-#include "../includes/cmds/Names.hpp"
-#include "../includes/cmds/Nick.hpp"
-#include "../includes/cmds/Notice.hpp"
-#include "../includes/cmds/Part.hpp"
-#include "../includes/cmds/Pass.hpp"
-#include "../includes/cmds/PrivMsg.hpp"
-#include "../includes/cmds/Quit.hpp"
-#include "../includes/cmds/User.hpp"
-#include "../includes/cmds/Whois.hpp"
+#include "../includes/Commands.hpp"
 
 /**
  * @brief Here we create the server object and we start the server listener.
@@ -175,15 +152,9 @@ Server::Server(std::string host, std::string port, std::string password)
 void Server::setupCommands(void)
 {
 	_commands["ping"] = new Ping();
-	_commands["info"] = new Info();
-	_commands["exit"] = new Exit();
-	_commands["echo"] = new Echo();
 	_commands["help"] = new Help();
-	_commands["ban"] = new Ban();
 	_commands["ope"] = new Ope();
 	_commands["quit"] = new Quit();
-
-	// Channel commands
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
 	_commands["part"] = new Part();
