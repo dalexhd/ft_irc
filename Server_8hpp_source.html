@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: aborboll &lt;aborboll@student.42.fr&gt;          +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2023/03/09 19:15:30 by aborboll         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2023/03/16 17:09:38 by aborboll         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -294,38 +294,41 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            name = name.substr(1);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">  211</a></span>&#160;    std::vector&lt;Channel *&gt; <a class="code" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">getChannels</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        std::vector&lt;Channel *&gt;                     channels;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        std::map&lt;std::string, Channel *&gt;::iterator it;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">for</span> (it = <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.begin(); it != <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.end(); it++)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            channels.push_back(it-&gt;second);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">return</span> channels;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">  220</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">createChannel</a>(std::string &amp;name, std::string &amp;password)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            name = name.substr(1);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name] = <span class="keyword">new</span> <a class="code" href="classChannel.html">Channel</a>(name, password);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// Commands stuff</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// --------------</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classServer.html#a9a198609328f8d6a866842ece540e236">  231</a></span>&#160;    <a class="code" href="classCommand.html">Command</a> *<a class="code" href="classServer.html#a9a198609328f8d6a866842ece540e236">getCommand</a>(std::string &amp;name)</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.find(name) != <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.end())</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>[name];</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;};</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.find(name) != <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.end())</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">  214</a></span>&#160;    std::vector&lt;Channel *&gt; <a class="code" href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">getChannels</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        std::vector&lt;Channel *&gt;                     channels;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        std::map&lt;std::string, Channel *&gt;::iterator it;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (it = <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.begin(); it != <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>.end(); it++)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            channels.push_back(it-&gt;second);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> channels;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">  223</a></span>&#160;    <a class="code" href="classChannel.html">Channel</a> *<a class="code" href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">createChannel</a>(std::string &amp;name, std::string &amp;password)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">if</span> (name.at(0) == <span class="charliteral">&#39;#&#39;</span>)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            name = name.substr(1);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name] = <span class="keyword">new</span> <a class="code" href="classChannel.html">Channel</a>(name, password);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classServer.html#a681e496f50b233764572c310f5b822e0">_channels</a>[name];</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Commands stuff</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// --------------</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classServer.html#a9a198609328f8d6a866842ece540e236">  234</a></span>&#160;    <a class="code" href="classCommand.html">Command</a> *<a class="code" href="classServer.html#a9a198609328f8d6a866842ece540e236">getCommand</a>(std::string &amp;name)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.find(name) != <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>.end())</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">_commands</a>[name];</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;};</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassServer_html_ac96eaa52d546b17ad1ff9308e99ce620"><div class="ttname"><a href="classServer.html#ac96eaa52d546b17ad1ff9308e99ce620">Server::close_server</a></div><div class="ttdeci">void close_server()</div></div>
@@ -336,19 +339,19 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div class="ttc" id="aclassServer_html_ab8f7cc8f78c8641c39cbf86dcc0ad559"><div class="ttname"><a href="classServer.html#ab8f7cc8f78c8641c39cbf86dcc0ad559">Server::_commands</a></div><div class="ttdeci">std::map&lt; std::string, Command * &gt; _commands</div><div class="ttdef"><b>Definition:</b> Server.hpp:52</div></div>
 <div class="ttc" id="aclassServer_html_a2c9a45dc89d3b53b44050be89c384d39"><div class="ttname"><a href="classServer.html#a2c9a45dc89d3b53b44050be89c384d39">Server::_pfds</a></div><div class="ttdeci">std::vector&lt; pollfd &gt; _pfds</div><div class="ttdef"><b>Definition:</b> Server.hpp:66</div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
-<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdef"><b>Definition:</b> server.cpp:207</div></div>
+<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdef"><b>Definition:</b> server.cpp:201</div></div>
 <div class="ttc" id="aServer_8hpp_html_aee8960a54b0fdcad5e9652e5918d69b0"><div class="ttname"><a href="Server_8hpp.html#aee8960a54b0fdcad5e9652e5918d69b0">validate_args</a></div><div class="ttdeci">bool validate_args(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> validation.cpp:15</div></div>
 <div class="ttc" id="aclassServer_html_a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d"><div class="ttname"><a href="classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d">Server::OFFLINE</a></div><div class="ttdeci">@ OFFLINE</div><div class="ttdef"><b>Definition:</b> Server.hpp:60</div></div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> Command.hpp:7</div></div>
 <div class="ttc" id="aclassServer_html_a0539ae23411198c85d50f1338711717c"><div class="ttname"><a href="classServer.html#a0539ae23411198c85d50f1338711717c">Server::getRelatedClients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; getRelatedClients(Client *client)</div><div class="ttdef"><b>Definition:</b> Server.hpp:94</div></div>
 <div class="ttc" id="aclassServer_html_a681e496f50b233764572c310f5b822e0"><div class="ttname"><a href="classServer.html#a681e496f50b233764572c310f5b822e0">Server::_channels</a></div><div class="ttdeci">std::map&lt; std::string, Channel * &gt; _channels</div><div class="ttdef"><b>Definition:</b> Server.hpp:55</div></div>
 <div class="ttc" id="aclassStatus_html"><div class="ttname"><a href="classStatus.html">Status</a></div><div class="ttdef"><b>Definition:</b> Status.hpp:7</div></div>
-<div class="ttc" id="aclassServer_html_aa6b758514ffdc34ac3c5a1bcf245a3ed"><div class="ttname"><a href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">Server::createChannel</a></div><div class="ttdeci">Channel * createChannel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Server.hpp:220</div></div>
+<div class="ttc" id="aclassServer_html_aa6b758514ffdc34ac3c5a1bcf245a3ed"><div class="ttname"><a href="classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed">Server::createChannel</a></div><div class="ttdeci">Channel * createChannel(std::string &amp;name, std::string &amp;password)</div><div class="ttdef"><b>Definition:</b> Server.hpp:223</div></div>
 <div class="ttc" id="aclassServer_html_a3e30a0afff7c3779e4c63c178c98ac4a"><div class="ttname"><a href="classServer.html#a3e30a0afff7c3779e4c63c178c98ac4a">Server::is_running</a></div><div class="ttdeci">bool is_running(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:76</div></div>
 <div class="ttc" id="aclassServer_html_a7d7c83bde7896c09e9a6c6d33477b73e"><div class="ttname"><a href="classServer.html#a7d7c83bde7896c09e9a6c6d33477b73e">Server::_clients</a></div><div class="ttdeci">std::map&lt; size_t, Client * &gt; _clients</div><div class="ttdef"><b>Definition:</b> Server.hpp:49</div></div>
-<div class="ttc" id="aclassServer_html_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2"><div class="ttname"><a href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">Server::getChannels</a></div><div class="ttdeci">std::vector&lt; Channel * &gt; getChannels(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:211</div></div>
+<div class="ttc" id="aclassServer_html_aa2cfc9cb9ab81f42d6fd6e7f9e5185c2"><div class="ttname"><a href="classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2">Server::getChannels</a></div><div class="ttdeci">std::vector&lt; Channel * &gt; getChannels(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:214</div></div>
 <div class="ttc" id="aclassServer_html_acd7b5a64b3a88554250f7d6666f208ba"><div class="ttname"><a href="classServer.html#acd7b5a64b3a88554250f7d6666f208ba">Server::hasPassword</a></div><div class="ttdeci">bool hasPassword(void)</div><div class="ttdef"><b>Definition:</b> Server.hpp:80</div></div>
-<div class="ttc" id="aclassServer_html_a9a198609328f8d6a866842ece540e236"><div class="ttname"><a href="classServer.html#a9a198609328f8d6a866842ece540e236">Server::getCommand</a></div><div class="ttdeci">Command * getCommand(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:231</div></div>
+<div class="ttc" id="aclassServer_html_a9a198609328f8d6a866842ece540e236"><div class="ttname"><a href="classServer.html#a9a198609328f8d6a866842ece540e236">Server::getCommand</a></div><div class="ttdeci">Command * getCommand(std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> Server.hpp:234</div></div>
 <div class="ttc" id="aclassServer_html_a2e0df714923b173991d1fa3a0390c4f6"><div class="ttname"><a href="classServer.html#a2e0df714923b173991d1fa3a0390c4f6">Server::_fd</a></div><div class="ttdeci">int _fd</div><div class="ttdef"><b>Definition:</b> Server.hpp:67</div></div>
 <div class="ttc" id="aChannel_8hpp_html"><div class="ttname"><a href="Channel_8hpp.html">Channel.hpp</a></div></div>
 <div class="ttc" id="aclassServer_html_aa72b8c5e3c0e845fc8994a0c20e57a0e"><div class="ttname"><a href="classServer.html#aa72b8c5e3c0e845fc8994a0c20e57a0e">Server::deleteClient</a></div><div class="ttdeci">void deleteClient(int fd)</div><div class="ttdef"><b>Definition:</b> Server.hpp:155</div></div>
@@ -368,7 +371,7 @@ $(document).ready(function(){initNavTree('Server_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Server_8hpp.html">Server.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 16 2023 16:11:45 for IRC SERVER by
+    <li class="footer">Generated on Thu Mar 16 2023 17:17:01 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
