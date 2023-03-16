@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ban_2ehpp_360',['Ban.hpp',['../Ban_8hpp.html',1,'']]]
+  ['functions_2ecpp_342',['functions.cpp',['../functions_8cpp.html',1,'']]],
+  ['functions_2ehpp_343',['functions.hpp',['../functions_8hpp.html',1,'']]]
 ];

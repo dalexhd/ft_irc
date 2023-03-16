@@ -1,4 +1,5 @@
-<map id="includes/cmds/Kick.hpp" name="includes/cmds/Kick.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$server_8cpp.html" title=" " alt="" coords="33,80,152,107"/>
+<map id="includes/commands/Kick.hpp" name="includes/commands/Kick.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,217,32"/>
+<area shape="rect" id="node2" href="$Commands_8hpp.html" title=" " alt="" coords="20,80,203,107"/>
+<area shape="rect" id="node3" href="$server_8cpp.html" title=" " alt="" coords="52,155,171,181"/>
 </map>

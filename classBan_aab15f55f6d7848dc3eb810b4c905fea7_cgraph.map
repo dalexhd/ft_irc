@@ -1,7 +1,0 @@
-<map id="Ban::execute" name="Ban::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,112,108"/>
-<area shape="rect" id="node2" href="$classServer.html#aa72b8c5e3c0e845fc8994a0c20e57a0e" title=" " alt="" coords="163,5,314,32"/>
-<area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="173,56,304,83"/>
-<area shape="rect" id="node4" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="160,107,317,133"/>
-<area shape="rect" id="node5" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="175,157,302,184"/>
-</map>

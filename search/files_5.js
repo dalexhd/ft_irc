@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['help_2ehpp_372',['Help.hpp',['../cmds_2Help_8hpp.html',1,'(Global Namespace)'],['../commands_2Help_8hpp.html',1,'(Global Namespace)']]]
+  ['kick_2ehpp_347',['Kick.hpp',['../Kick_8hpp.html',1,'']]]
 ];

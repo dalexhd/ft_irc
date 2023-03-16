@@ -1,30 +1,55 @@
 var dir_5e90428ea02abe37c2ad725f205d5900 =
 [
-    [ "Ban.hpp", "Ban_8hpp.html", [
-      [ "Ban", "classBan.html", "classBan" ]
-    ] ],
-    [ "Echo.hpp", "Echo_8hpp.html", [
-      [ "Echo", "classEcho.html", "classEcho" ]
-    ] ],
-    [ "Exit.hpp", "commands_2Exit_8hpp.html", [
-      [ "Exit", "classExit.html", "classExit" ]
-    ] ],
-    [ "Help.hpp", "commands_2Help_8hpp.html", [
+    [ "Help.hpp", "Help_8hpp.html", [
       [ "Help", "classHelp.html", "classHelp" ]
     ] ],
-    [ "Info.hpp", "Info_8hpp.html", [
-      [ "Info", "classInfo.html", "classInfo" ]
+    [ "Invite.hpp", "Invite_8hpp.html", [
+      [ "Invite", "classInvite.html", "classInvite" ]
     ] ],
-    [ "Nick.hpp", "commands_2Nick_8hpp.html", [
+    [ "Join.hpp", "Join_8hpp.html", [
+      [ "Join", "classJoin.html", "classJoin" ]
+    ] ],
+    [ "Kick.hpp", "Kick_8hpp.html", [
+      [ "Kick", "classKick.html", "classKick" ]
+    ] ],
+    [ "List.hpp", "List_8hpp.html", [
+      [ "List", "classList.html", "classList" ]
+    ] ],
+    [ "Mode.hpp", "Mode_8hpp.html", [
+      [ "Mode", "classMode.html", "classMode" ]
+    ] ],
+    [ "Names.hpp", "Names_8hpp.html", [
+      [ "Names", "classNames.html", "classNames" ]
+    ] ],
+    [ "Nick.hpp", "Nick_8hpp.html", [
       [ "Nick", "classNick.html", "classNick" ]
+    ] ],
+    [ "Notice.hpp", "Notice_8hpp.html", [
+      [ "Notice", "classNotice.html", "classNotice" ]
     ] ],
     [ "Ope.hpp", "Ope_8hpp.html", [
       [ "Ope", "classOpe.html", "classOpe" ]
     ] ],
-    [ "Ping.hpp", "commands_2Ping_8hpp.html", [
+    [ "Part.hpp", "Part_8hpp.html", [
+      [ "Part", "classPart.html", "classPart" ]
+    ] ],
+    [ "Pass.hpp", "Pass_8hpp.html", [
+      [ "Pass", "classPass.html", "classPass" ]
+    ] ],
+    [ "Ping.hpp", "Ping_8hpp.html", [
       [ "Ping", "classPing.html", "classPing" ]
     ] ],
-    [ "PrivMsg.hpp", "commands_2PrivMsg_8hpp.html", [
+    [ "PrivMsg.hpp", "PrivMsg_8hpp.html", [
       [ "PrivMsg", "classPrivMsg.html", "classPrivMsg" ]
+    ] ],
+    [ "Quit.hpp", "Quit_8hpp.html", [
+      [ "Quit", "classQuit.html", "classQuit" ]
+    ] ],
+    [ "Topic.hpp", "Topic_8hpp.html", null ],
+    [ "User.hpp", "User_8hpp.html", [
+      [ "User", "classUser.html", "classUser" ]
+    ] ],
+    [ "Whois.hpp", "Whois_8hpp.html", [
+      [ "Whois", "classWhois.html", "classWhois" ]
     ] ]
 ];

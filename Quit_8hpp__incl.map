@@ -1,5 +1,5 @@
-<map id="includes/cmds/Quit.hpp" name="includes/cmds/Quit.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="363,5,538,32"/>
+<map id="includes/commands/Quit.hpp" name="includes/commands/Quit.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="345,5,556,32"/>
 <area shape="rect" id="node2" href="$Command_8hpp.html" title=" " alt="" coords="386,80,515,107"/>
 <area shape="rect" id="node3" href="$Server_8hpp.html" title=" " alt="" coords="401,155,500,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="157,229,243,256"/>

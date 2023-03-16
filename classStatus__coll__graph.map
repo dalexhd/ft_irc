@@ -1,7 +1,0 @@
-<map id="Status" name="Status">
-<area shape="rect" id="node1" title=" " alt="" coords="86,260,149,287"/>
-<area shape="rect" id="node2" href="$classCommand.html" title=" " alt="" coords="73,184,162,211"/>
-<area shape="rect" id="node3" href="$classServer.html" title=" " alt="" coords="5,95,69,121"/>
-<area shape="rect" id="node4" href="$classClient.html" title=" " alt="" coords="213,95,273,121"/>
-<area shape="rect" id="node5" href="$classMessage.html" title=" " alt="" coords="99,5,179,32"/>
-</map>

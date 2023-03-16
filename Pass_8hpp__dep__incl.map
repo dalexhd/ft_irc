@@ -1,4 +1,5 @@
-<map id="includes/cmds/Pass.hpp" name="includes/cmds/Pass.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,181,32"/>
-<area shape="rect" id="node2" href="$server_8cpp.html" title=" " alt="" coords="34,80,153,107"/>
+<map id="includes/commands/Pass.hpp" name="includes/commands/Pass.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,219,32"/>
+<area shape="rect" id="node2" href="$Commands_8hpp.html" title=" " alt="" coords="21,80,203,107"/>
+<area shape="rect" id="node3" href="$server_8cpp.html" title=" " alt="" coords="53,155,171,181"/>
 </map>
