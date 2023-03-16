@@ -45,7 +45,9 @@ var dir_5e90428ea02abe37c2ad725f205d5900 =
     [ "Quit.hpp", "Quit_8hpp.html", [
       [ "Quit", "classQuit.html", "classQuit" ]
     ] ],
-    [ "Topic.hpp", "Topic_8hpp.html", null ],
+    [ "Topic.hpp", "Topic_8hpp.html", [
+      [ "Topic", "classTopic.html", "classTopic" ]
+    ] ],
     [ "User.hpp", "User_8hpp.html", [
       [ "User", "classUser.html", "classUser" ]
     ] ],

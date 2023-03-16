@@ -1,12 +1,12 @@
 <map id="includes/config.hpp" name="includes/config.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="4134,5,4281,32"/>
-<area shape="rect" id="node2" href="$Client_8hpp.html" title=" " alt="" coords="4079,80,4226,107"/>
-<area shape="rect" id="node4" href="$Server_8hpp.html" title=" " alt="" coords="4038,229,4187,256"/>
-<area shape="rect" id="node3" href="$Channel_8hpp.html" title=" " alt="" coords="3913,155,4075,181"/>
-<area shape="rect" id="node26" href="$client_8cpp.html" title=" " alt="" coords="4150,155,4265,181"/>
-<area shape="rect" id="node5" href="$Command_8hpp.html" title=" " alt="" coords="2073,304,2248,331"/>
-<area shape="rect" id="node8" href="$server_8cpp.html" title=" " alt="" coords="3016,528,3135,555"/>
-<area shape="rect" id="node25" href="$validation_8cpp.html" title=" " alt="" coords="4150,304,4326,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="4377,5,4523,32"/>
+<area shape="rect" id="node2" href="$Client_8hpp.html" title=" " alt="" coords="4322,80,4469,107"/>
+<area shape="rect" id="node4" href="$Server_8hpp.html" title=" " alt="" coords="4281,229,4430,256"/>
+<area shape="rect" id="node3" href="$Channel_8hpp.html" title=" " alt="" coords="4156,155,4317,181"/>
+<area shape="rect" id="node27" href="$client_8cpp.html" title=" " alt="" coords="4393,155,4507,181"/>
+<area shape="rect" id="node5" href="$Command_8hpp.html" title=" " alt="" coords="2195,304,2369,331"/>
+<area shape="rect" id="node8" href="$server_8cpp.html" title=" " alt="" coords="3137,528,3256,555"/>
+<area shape="rect" id="node26" href="$validation_8cpp.html" title=" " alt="" coords="4393,304,4569,331"/>
 <area shape="rect" id="node6" href="$Help_8hpp.html" title=" " alt="" coords="5,379,220,405"/>
 <area shape="rect" id="node9" href="$Invite_8hpp.html" title=" " alt="" coords="245,379,466,405"/>
 <area shape="rect" id="node10" href="$Join_8hpp.html" title=" " alt="" coords="490,379,698,405"/>
@@ -24,5 +24,6 @@
 <area shape="rect" id="node22" href="$Quit_8hpp.html" title=" " alt="" coords="3379,379,3590,405"/>
 <area shape="rect" id="node23" href="$User_8hpp.html" title=" " alt="" coords="3614,379,3827,405"/>
 <area shape="rect" id="node24" href="$Whois_8hpp.html" title=" " alt="" coords="3851,379,4075,405"/>
+<area shape="rect" id="node25" href="$Topic_8hpp.html" title=" " alt="" coords="4100,379,4317,405"/>
 <area shape="rect" id="node7" href="$Commands_8hpp.html" title=" " alt="" coords="2069,453,2252,480"/>
 </map>

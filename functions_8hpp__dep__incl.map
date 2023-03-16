@@ -1,15 +1,15 @@
 <map id="includes/functions.hpp" name="includes/functions.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="4267,5,4435,32"/>
-<area shape="rect" id="node2" href="$Message_8hpp.html" title=" " alt="" coords="4172,80,4339,107"/>
-<area shape="rect" id="node29" href="$functions_8cpp.html" title=" " alt="" coords="4363,80,4534,107"/>
-<area shape="rect" id="node3" href="$Client_8hpp.html" title=" " alt="" coords="4099,155,4246,181"/>
-<area shape="rect" id="node28" href="$message_8cpp.html" title=" " alt="" coords="4270,155,4409,181"/>
-<area shape="rect" id="node4" href="$Channel_8hpp.html" title=" " alt="" coords="3973,229,4135,256"/>
-<area shape="rect" id="node5" href="$Server_8hpp.html" title=" " alt="" coords="4038,304,4187,331"/>
-<area shape="rect" id="node27" href="$client_8cpp.html" title=" " alt="" coords="4210,229,4325,256"/>
-<area shape="rect" id="node6" href="$Command_8hpp.html" title=" " alt="" coords="2073,379,2248,405"/>
-<area shape="rect" id="node9" href="$server_8cpp.html" title=" " alt="" coords="3016,603,3135,629"/>
-<area shape="rect" id="node26" href="$validation_8cpp.html" title=" " alt="" coords="4150,379,4326,405"/>
+<area shape="rect" id="node1" title=" " alt="" coords="4510,5,4678,32"/>
+<area shape="rect" id="node2" href="$Message_8hpp.html" title=" " alt="" coords="4415,80,4581,107"/>
+<area shape="rect" id="node30" href="$functions_8cpp.html" title=" " alt="" coords="4606,80,4777,107"/>
+<area shape="rect" id="node3" href="$Client_8hpp.html" title=" " alt="" coords="4342,155,4489,181"/>
+<area shape="rect" id="node29" href="$message_8cpp.html" title=" " alt="" coords="4513,155,4651,181"/>
+<area shape="rect" id="node4" href="$Channel_8hpp.html" title=" " alt="" coords="4216,229,4377,256"/>
+<area shape="rect" id="node5" href="$Server_8hpp.html" title=" " alt="" coords="4281,304,4430,331"/>
+<area shape="rect" id="node28" href="$client_8cpp.html" title=" " alt="" coords="4453,229,4567,256"/>
+<area shape="rect" id="node6" href="$Command_8hpp.html" title=" " alt="" coords="2195,379,2369,405"/>
+<area shape="rect" id="node9" href="$server_8cpp.html" title=" " alt="" coords="3137,603,3256,629"/>
+<area shape="rect" id="node27" href="$validation_8cpp.html" title=" " alt="" coords="4393,379,4569,405"/>
 <area shape="rect" id="node7" href="$Help_8hpp.html" title=" " alt="" coords="5,453,220,480"/>
 <area shape="rect" id="node10" href="$Invite_8hpp.html" title=" " alt="" coords="245,453,466,480"/>
 <area shape="rect" id="node11" href="$Join_8hpp.html" title=" " alt="" coords="490,453,698,480"/>
@@ -27,5 +27,6 @@
 <area shape="rect" id="node23" href="$Quit_8hpp.html" title=" " alt="" coords="3379,453,3590,480"/>
 <area shape="rect" id="node24" href="$User_8hpp.html" title=" " alt="" coords="3614,453,3827,480"/>
 <area shape="rect" id="node25" href="$Whois_8hpp.html" title=" " alt="" coords="3851,453,4075,480"/>
+<area shape="rect" id="node26" href="$Topic_8hpp.html" title=" " alt="" coords="4100,453,4317,480"/>
 <area shape="rect" id="node8" href="$Commands_8hpp.html" title=" " alt="" coords="2069,528,2252,555"/>
 </map>

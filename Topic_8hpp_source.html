@@ -87,13 +87,47 @@ $(document).ready(function(){initNavTree('Topic_8hpp_source.html',''); initResiz
 <div class="title">Topic.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Topic_8hpp.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="Topic_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TOPIC_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TOPIC_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Our includes</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../Command.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classTopic.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTopic.html">Topic</a> : <span class="keyword">public</span> <a class="code" href="classCommand.html">Command</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classTopic.html#af3301cb0d535eb066a3ea4ed54e28414">   10</a></span>&#160;    <a class="code" href="classTopic.html#af3301cb0d535eb066a3ea4ed54e28414">Topic</a>()</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classCommand.html#aa185da210b9542bb8c67d6127a67b019">_name</a> = <span class="stringliteral">&quot;topic&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classCommand.html#a5a7e63a916f50b5346435e4d755bbb2b">_description</a> = <span class="stringliteral">&quot;Allows the client to query or set the channel topic on channel&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classCommand.html#a592b372988405206efc3af3e37457168">_usage</a> = <span class="stringliteral">&quot;topic&quot;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">_example</a>[0] = <span class="stringliteral">&quot;TOPIC #channel1 :another topic&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">_example</a>[1] = <span class="stringliteral">&quot;TOPIC #channel1&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc">execute</a>()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<span class="stringliteral">&quot;Hello world\n&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassCommand_html_a5a7e63a916f50b5346435e4d755bbb2b"><div class="ttname"><a href="classCommand.html#a5a7e63a916f50b5346435e4d755bbb2b">Command::_description</a></div><div class="ttdeci">std::string _description</div><div class="ttdef"><b>Definition:</b> Command.hpp:12</div></div>
+<div class="ttc" id="aclassCommand_html_aa185da210b9542bb8c67d6127a67b019"><div class="ttname"><a href="classCommand.html#aa185da210b9542bb8c67d6127a67b019">Command::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Command.hpp:11</div></div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> Command.hpp:7</div></div>
+<div class="ttc" id="aclassClient_html_a9ee33da0a8d00f8416b934b6027d35cd"><div class="ttname"><a href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">Client::message</a></div><div class="ttdeci">void message(char const *message)</div><div class="ttdef"><b>Definition:</b> client.cpp:15</div></div>
+<div class="ttc" id="aclassTopic_html_aa892a61c82db5a6e237825a684c4e1bc"><div class="ttname"><a href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc">Topic::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> Topic.hpp:19</div></div>
+<div class="ttc" id="aclassCommand_html_a71d2184d3bc1861c55ba45e652c5774b"><div class="ttname"><a href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">Command::_example</a></div><div class="ttdeci">std::map&lt; size_t, std::string &gt; _example</div><div class="ttdef"><b>Definition:</b> Command.hpp:16</div></div>
+<div class="ttc" id="aclassTopic_html_af3301cb0d535eb066a3ea4ed54e28414"><div class="ttname"><a href="classTopic.html#af3301cb0d535eb066a3ea4ed54e28414">Topic::Topic</a></div><div class="ttdeci">Topic()</div><div class="ttdef"><b>Definition:</b> Topic.hpp:10</div></div>
+<div class="ttc" id="aclassTopic_html"><div class="ttname"><a href="classTopic.html">Topic</a></div><div class="ttdef"><b>Definition:</b> Topic.hpp:7</div></div>
+<div class="ttc" id="aclassCommand_html_a592b372988405206efc3af3e37457168"><div class="ttname"><a href="classCommand.html#a592b372988405206efc3af3e37457168">Command::_usage</a></div><div class="ttdeci">std::string _usage</div><div class="ttdef"><b>Definition:</b> Command.hpp:13</div></div>
+<div class="ttc" id="aclassCommand_html_ac490ca794e6536066afbdda39f3fed56"><div class="ttname"><a href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">Command::_sender</a></div><div class="ttdeci">Client * _sender</div><div class="ttdef"><b>Definition:</b> Command.hpp:19</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Topic_8hpp.html">Topic.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 16 2023 19:35:20 for IRC SERVER by
+    <li class="footer">Generated on Thu Mar 16 2023 19:49:09 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
