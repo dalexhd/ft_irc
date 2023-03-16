@@ -93,15 +93,17 @@ OUR OWN IRC SERVER</h2>
 USAGE</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
 SERVER</h2>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Version used RFC 1459 https://datatracker.ietf.org/doc/html/rfc1459</h2>
 <p>make</p>
 <p>./ircserv <code>&lt;port&gt;</code> <code>&lt;password&gt;</code></p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 CLIENT</h2>
 <p>telnet <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code> o nc <code>&lt;serverip&gt;</code> <code>&lt;port&gt;</code></p>
 <ul>
 <li>The <a href="ircserver">ircserver</a> must be tested with Graphical Official Irc clients as limechat, weechat, textualchat</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 COMMANDS DOCS</h2>
 <p><a href="https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands">https://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands</a></p>
 <ul>
@@ -128,7 +130,7 @@ COMMANDS DOCS</h2>
 <li><b>kick</b> -&gt; Forcibly removes client from channel <pre class="fragment">ex: "/kick &lt;client&gt; &lt;channel&gt;"
 </pre></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 [](#message-format)Message Format</h2>
 <p>An IRC message is a single line, delimited by a pair of <code>CR</code> &lsquo;(&rsquo;\r', 0x0D)<code>and</code>LF('<br  />
 ', 0x0A)` characters.</p>
@@ -150,7 +152,7 @@ COMMANDS DOCS</h2>
 <p>These message parts, and parameters themselves, are separated by one or more ASCII SPACE characters &lsquo;(&rsquo; ', 0x20)`.</p>
 <p>Most IRC servers limit messages to 512 bytes in length, including the trailing <code>CR-LF</code> characters. Implementations which include <a href="https://ircv3.net/specs/extensions/message-tags.html">message tags</a> need to allow additional bytes for the <b>tags</b> section of a message; clients must allow 8191 additional bytes and servers must allow 4096 additional bytes.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 NUMERIC REPLIES</h2>
 <p><a href="https://modern.ircdocs.horse/#numerics">https://modern.ircdocs.horse/#numerics</a></p>
 <p>RPL_WELCOME (001)</p>
@@ -208,7 +210,7 @@ NUMERIC REPLIES</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 ADMIN</h2>
 <p>RPL_ADMINME (256)</p>
 <ul>
@@ -233,7 +235,7 @@ ADMIN</h2>
 <li><a class="el" href="classMessage.html">Message</a>: "-client- -command- :Please wait a while and try again."</li>
 <li>Usecase: When a server drops a command without processing it, this numeric MUST be sent to inform the client.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 LUSERS</h2>
 <p>RPL_LOCALUSERS (265)</p>
 <ul>
@@ -254,7 +256,7 @@ LUSERS</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 AWAY</h2>
 <p>RPL_AWAY (301)</p>
 <ul>
@@ -269,7 +271,7 @@ AWAY</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 WHO</h2>
 <p>RPL_NOWAWAY (306)</p>
 <ul>
@@ -323,7 +325,7 @@ WHO</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 LIST</h2>
 <p>RPL_LISTSTART (321)</p>
 <ul>
@@ -407,7 +409,7 @@ LIST</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 NAMES</h2>
 <p>RPL_ENDOFNAMES (366)</p>
 <ul>
@@ -429,7 +431,7 @@ NAMES</h2>
 <li><a class="el" href="classMessage.html">Message</a>:</li>
 <li>Usecase:</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 INFO</h2>
 <p>RPL_INFO (371)</p>
 <ul>
@@ -743,7 +745,7 @@ INFO</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Mar 16 2023 17:20:16 for IRC SERVER by
+    <li class="footer">Generated on Thu Mar 16 2023 17:23:25 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
