@@ -112,7 +112,7 @@ int main(void)
 		std::cout << "Automated Test\n";
 		std::vector<std::string> files;
 
-		list_files("./tests/new", files);
+		list_files("./tests/spec", files);
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 			it != files.end(); ++it)
 		{
