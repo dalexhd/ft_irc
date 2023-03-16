@@ -131,6 +131,7 @@ class Join : public Command
 						cmd->setServer(_server);
 						cmd->setMessage(message);
 						cmd->execute();
+						delete message;
 					}
 				}
 			}
@@ -191,6 +192,7 @@ class Join : public Command
 					cmd->setServer(_server);
 					cmd->setMessage(message);
 					cmd->execute();
+					delete message;
 				}
 			}
 		}

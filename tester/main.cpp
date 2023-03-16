@@ -54,7 +54,6 @@ static void *clientConversation(void *client)
 		myfile << c->reads();
 		myfile.close();*/
 		std::cout << "Server response" << c->reads() << std::endl;
-
 	}
 
 	usleep(700);
@@ -81,29 +80,27 @@ void executeFileClients(File *file)
     Buscar IRC consistente, descargar ejecutable para ir probando outouts
      y guardarlos en la respuestas de los test, buscar segfaults,
     crear Diff de nuestro output con el archivo de output de un IRC bien hecho
-	quit automaticos al final de cata file test
-	Añadir test de todos los comando principales
+    quit automaticos al final de cata file test
+    Añadir test de todos los comando principales
 */
 
 #define MENU 6
 int main(void)
 {
-
-	if (MENU == 1 ||  MENU == 2)
+	if (MENU == 1 || MENU == 2)
 	{
 		std::cout << "Single Client\n";
 		std::string server;
-		if(MENU == 1)
+		if (MENU == 1)
 			server = "irc.irc-hispano.org";
 		else
 			server = "127.0.0.1";
 
-		Client *client = new Client("Testbot", "Testbot", "Testbot",
-	server);
+		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
-		//std::cout <<  client->reads() << std::endl;
+		// std::cout <<  client->reads() << std::endl;
 		usleep(500);
 		client->requestingLoop();
 	}
@@ -114,7 +111,7 @@ int main(void)
 
 		list_files("./tests/spec", files);
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
-			it != files.end(); ++it)
+		     it != files.end(); ++it)
 		{
 			std::cout << AZUL_T << "PATH: " << *it << RESET << std::endl;
 
@@ -123,9 +120,15 @@ int main(void)
 			std::cout << std::endl;
 
 			executeFileClients(&file);
+
 			usleep(700);
 		}
 	}
-
+	Client *client = new Client("Testbot", "Testbot", "Testbot");
+	client->irc_connect();
+	usleep(1000);
+	client->login();
+	usleep(1000);
+	client->send("close");
 	return (0);
 }

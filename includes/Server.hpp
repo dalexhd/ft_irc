@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/09 19:15:30 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:09:38 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,10 @@ class Server
 	{
 		if (name.at(0) == '#')
 			name = name.substr(1);
-		return _channels[name];
+		if (_channels.find(name) != _channels.end())
+			return _channels[name];
+		else
+			return NULL;
 	}
 
 	std::vector<Channel *> getChannels(void)

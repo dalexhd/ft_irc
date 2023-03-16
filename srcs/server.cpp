@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/07 19:52:02 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:27:53 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,12 +167,6 @@ void Server::createServerPoll(void)
 Server::Server(std::string host, std::string port, std::string password)
     : host(host), servername(SERVER_NAME), version(SERVER_VERSION), port(port), password(password), _status(ONLINE)
 {
-	std::string a = SERVER_NAME;
-	std::string bbbbbbb("asdsad");
-	char const *bbb = a.c_str();
-	char const *vvcvv = bbbbbbb.c_str();
-	(void) bbb;
-	(void) vvcvv;
 	createServerListener();
 	setupCommands();
 	createServerPoll();
