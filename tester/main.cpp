@@ -77,11 +77,13 @@ void executeFileClients(File *file)
 }
 
 /*
-    Buscar IRC consistente, descargar ejecutable para ir probando outouts
+        Buscar IRC consistente, descargar ejecutable para ir probando outouts
      y guardarlos en la respuestas de los test, buscar segfaults,
     crear Diff de nuestro output con el archivo de output de un IRC bien hecho
-    quit automaticos al final de cata file test
-    Añadir test de todos los comando principales
+	quit automaticos al final de cata file test
+	Añadir test de todos los comando principales:
+	Invite, join, kick, list, mode, names, nick
+	notice, part, pass, ping, privmsg, quit, topic, user
 */
 
 #define MENU 6
