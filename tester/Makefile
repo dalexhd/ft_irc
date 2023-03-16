@@ -1,20 +1,20 @@
-OUTPUT				=	ircserv
+OUTPUT				=	ircserv_tester
 
 ifeq ($(shell whoami), runner)
 	CC				=	@g++ -std=c++98 -fprofile-arcs -ftest-coverage -O0 -fPIC
 else
-	CC				=	@clang++ -std=c++98
+	CC				=	@clang++ -std=c++11
 endif
 SH					=	@bash
 RM					=	@/bin/rm -rf
-FLAGS				=	-Wextra -Wall -Werror -g -fsanitize=address
-LEAKS_FLAGS			=
+FLAGS				=	-Wextra -Wall -Werror -g -pthread
+LEAKS_FLAGS			=	--tool=memcheck --leak-check=full --leak-resolution=high --show-leak-kinds=all --track-origins=yes
 
 HEADER_DIR			=	includes
 OBJ_DIR				=	obj/
 SRC_DIR				=	srcs/
 RESULT				=	$(shell cat output.txt)
-AUTHOR				=	$(shell cat ../author)
+AUTHOR				=	$(shell cat ../../author)
 LAST_COMMIT_DATE	=	$(shell git log -1 --date=format:"%m/%d/%Y" --format="%ad   [%cr]")
 LAST_COMMIT_HASH	=	$(shell git log -1 --date=format:"%m/%d/%y %T" --format="%H")
 LAST_COMMIT_MESSAGE	=	$(shell git log -1 --date=format:"%m/%d/%y %T" --format=\'%s\')
@@ -27,11 +27,9 @@ COLUMNS				=	$(shell stty size | cut -d" " -f2)
 
 # Mandatory part
 
-UTILS				=	utils/validation.cpp utils/functions.cpp
+SRCS				=
 
-SRCS				=	server.cpp client.cpp message.cpp
-
-SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS)) $(addprefix $(SRC_DIR),$(UTILS))
+SOURCES				=	main.cpp $(addprefix $(SRC_DIR),$(SRCS))
 
 # Mandatory Objects
 OFILE				=	$(SOURCES:%.cpp=%.o)
@@ -80,6 +78,9 @@ TAB					=	$(shell printf "\t")
 # Make all files.
 all:	$(OUTPUT)
 
+run:
+	@./ircserv_tester
+
 # Objects directory
 $(OBJ_DIR):
 			@echo ${CUT}[${Y}$(OUTPUT)]${X} ${B}Creating: ${R}$(OBJ_DIR)${X}
@@ -121,10 +122,6 @@ re:			## Call fclean => all
 			@make all
 
 ##@ Testing
-
-test:		## Make test
-	@make re -C ./tester
-	@make run -C ./tester
 
 cov:		## Make coverage files
 			gcov $(OBJS)

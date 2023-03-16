@@ -9,4 +9,10 @@
 #define SERVER_VERSION "0.0.1"
 #define MAX_CLIENTS_PER_CHANNEL 255
 
+enum ClientStatus
+{
+	ALIVE,
+	DISCONNECTED
+};
+
 #endif

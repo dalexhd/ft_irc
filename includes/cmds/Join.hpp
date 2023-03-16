@@ -127,10 +127,11 @@ class Join : public Command
 						Command *   cmd = _server->_commands["names"];
 						std::string names = "names #" + _ch_params[i];
 						Message *   message = new Message(names);
-						cmd->setSender(_sender, _sender_index);
+						cmd->setSender(_sender);
 						cmd->setServer(_server);
 						cmd->setMessage(message);
 						cmd->execute();
+						delete message;
 					}
 				}
 			}
@@ -187,10 +188,11 @@ class Join : public Command
 					Command *   cmd = _server->_commands["names"];
 					std::string names = "names #" + _ch_params[i];
 					Message *   message = new Message(names);
-					cmd->setSender(_sender, _sender_index);
+					cmd->setSender(_sender);
 					cmd->setServer(_server);
 					cmd->setMessage(message);
 					cmd->execute();
+					delete message;
 				}
 			}
 		}

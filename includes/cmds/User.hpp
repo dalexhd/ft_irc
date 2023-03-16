@@ -4,8 +4,6 @@
 // Our includes
 #include "../Command.hpp"
 
-#define _name
-#define _decription //Jajaja me he dejado la sesion abierta
 class User : public Command
 {
   public:
@@ -38,11 +36,12 @@ class User : public Command
 			}
 			else
 			{
-				for (size_t i = 0; i < _server->_clients.size(); i++)
+				std::map<size_t, Client *>::iterator it = _server->_clients.begin();
+				for (; it != _server->_clients.end(); it++)
 				{
-					if (_server->_clients[i]->_username == username)
+					if (it->second->_username == username)
 					{
-						_sender->message(ERR_NICKNAMEINUSE(_sender->_servername, username));
+						it->second->message(ERR_NICKNAMEINUSE(_sender->_servername, username));
 						return;
 					}
 				}

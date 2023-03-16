@@ -2,32 +2,24 @@
 #define CLIENT_H
 
 // Main libraries
-#include <algorithm>
-#include <poll.h>
-#include <unistd.h>
-
-// Socket includes
 #include <netdb.h>
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <sys/types.h>
+#include <unistd.h>
 
 // Our includes
 #include "./Message.hpp"
 #include "./Replies.hpp"
 #include "./config.hpp"
 
-#include <fstream>
-
 class Client
 {
   public:
-	int                  _fd;
-	std::string          _nick;
-	std::string          _username;
-	std::string          _realname;
-	std::string          _host;
-	std::string          _servername;
+	int         _fd;
+	std::string _nick;
+	std::string _username;
+	std::string _realname;
+	std::string _host;
+	std::string _servername;
+
 	std::string          _serverversion;
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
@@ -35,12 +27,14 @@ class Client
 	bool                 _is_ope;
 	int const            _maxChannels;
 	int                  _attempts;
+	ClientStatus         _status;
+	Message *            _message;
 
   public:
 	Client(int &fd, std::string host, std::string servername, std::string version)
-	    : _fd(fd), _host(host), _servername(servername), _serverversion(version), _is_authenticated(false), _is_ope(false), _maxChannels(MAX_CHANNELS), _attempts(0){
-	                                                                                                                                                        // message(RPL_WELCOME(_servername, _nick));
-	                                                                                                                                                    };
+	    : _fd(fd), _host(host), _servername(servername), _serverversion(version), _is_authenticated(false), _is_ope(false), _maxChannels(MAX_CHANNELS), _attempts(0), _status(ALIVE){
+	                                                                                                                                                                      // message(RPL_WELCOME(_servername, _nick));
+	                                                                                                                                                                  };
 	~Client()
 	{
 		close(_fd);
@@ -49,10 +43,10 @@ class Client
 	};
 
 	// Helpers
-	void     message(char const *message);
-	void     message(std::string const message);
-	Message *read(void);
-	void     disconnect(void)
+	void message(char const *message);
+	void message(std::string const message);
+	void read(void);
+	void disconnect(void)
 	{
 		delete this;
 	}

@@ -22,17 +22,17 @@ class Notice : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 3)
-		{
-			_sender->message("Wrong command format. Ex: notice <nick> "
-			                 ":<texto>\n");
+		if (p.size() < 3 || _server->getClient(p[0]) == NULL)
 			return (false);
-		}
 		return (true);
 	}
 
 	void execute()
 	{
+		std::map<size_t, std::string> p = _message->getParams();
+
+		Client *client = _server->getClient(p[0]);
+		client->message(":" + _sender->_nick + " NOTICE " + p[0] + " :" + p[1]);
 	}
 };
 #endif

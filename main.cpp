@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:36:41 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/11 15:42:56 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:53:18 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ int main(int argc, char **argv)
 	Server *                 server;
 	std::vector<std::string> args;
 
-	for (int i(0); i < argc; ++i)
+	for (int i = 0; i < argc; ++i)
 		args.push_back(argv[i]); // We store args inside a vector with std::string
+
+	if (args.size() == 2)
+		args.push_back(""); // If there is no password, we add an empty string
 
 	if (!validate_args(argc, argv))
 		return (1);

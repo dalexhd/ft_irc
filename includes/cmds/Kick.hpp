@@ -38,7 +38,8 @@ class Kick : public Command
 
 		if (p.size() > 3 || p.size() < 2)
 		{
-			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,_sender->_nick,_message->getCmd())); // ERR_NEEDMOREPARAMS (461)
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
+			                                    _message->getCmd())); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
 		else
@@ -77,19 +78,21 @@ class Kick : public Command
 
 					if (getUserChannel == false)
 					{
-						_sender->message(ERR_USERNOTINCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
+						_sender->message(ERR_USERNOTINCHANNEL(
+						    _sender->_servername, _sender->_nick, channel->getName()));
 						return (false);
 					}
 					if (isSenderOnChannel == false)
 					{
-						_sender->message(ERR_NOTONCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
+						_sender->message(ERR_NOTONCHANNEL(
+						    _sender->_servername, _sender->_nick, channel->getName()));
 						return (false);
 					}
 				}
 			}
 			else
 			{
-				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername,_sender->_nick,channel->getName()));
+				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 				return (false);
 			}
 		}

@@ -70,12 +70,12 @@ class Names : public Command
 		}
 		else
 		{
-			std::vector<Channel *> channels = _server->getChannels();
-			for (size_t i = 0; i < channels.size(); i++)
+			std::map<std::string, Channel *>::iterator it = _server->_channels.begin();
+			for (; it != _server->_channels.end(); it++)
 			{
-				send_channel(channels[i]->getName());
+				send_channel(it->second->getName());
 				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick,
-				                                "#" + channels[i]->getName())); // TODO: Is this end of channels well implemented?
+				                                "#" + it->first)); // TODO: Is this end of channels well implemented?
 			}
 		}
 	}

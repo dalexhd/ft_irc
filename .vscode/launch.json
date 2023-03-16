@@ -14,9 +14,26 @@
 			"environment": [],
 			"externalConsole": false,
 			"args": [
-				"9999",
-				"1234"
+				"6667"
 			],
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Habilitar la impresión con sangría para gdb",
+					"text": "-gdb-set follow-fork-mode parent",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(terminal + gdb) Child test fork",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/tester/ircserv_tester",
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/tester",
+			"environment": [],
+			"externalConsole": false,
 			"MIMode": "gdb",
 			"setupCommands": [
 				{

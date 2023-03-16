@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 	char *host = "127.0.0.1";
 	char *port = "6667";
 
-	if(argc == 3)
+	if (argc == 3)
 	{
 		host = argv[1];
 		port = argv[2];
@@ -78,26 +78,24 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-
-	//Automatic Registration
-	if(send(sock, "NICK nick\r\n", strlen("NICK nick\r\n") + 1, 0) == -1)
+	// Automatic Registration
+	if (send(sock, "NICK nick\r\n", strlen("NICK nick\r\n") + 1, 0) == -1)
 	{
 		perror("send");
 		irc_free(sock);
 		return -1;
 	}
-	if(send(sock, "USER user\r\n", strlen("USER user\r\n") + 1, 0) == -1)
+	if (send(sock, "USER user\r\n", strlen("USER user\r\n") + 1, 0) == -1)
 	{
 		perror("send");
 		irc_free(sock);
 		return -1;
 	}
-
 
 	while (1)
 	{
 		ssize_t r;
-		int s;
+		int     s;
 
 		char inbuf[MAX_MESSAGE_SIZE + 2];
 		memset(&inbuf, 0, sizeof inbuf);
@@ -122,7 +120,6 @@ int main(int argc, char *argv[])
 			irc_free(sock);
 			return -1;
 		}
-
 	}
 
 	irc_free(sock);

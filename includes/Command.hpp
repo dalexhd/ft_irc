@@ -42,10 +42,9 @@ class Command
 	{
 		return _sender;
 	};
-	void setSender(Client *sender, size_t index)
+	void setSender(Client *sender)
 	{
 		_sender = sender;
-		_sender_index = index;
 	};
 	void setServer(Server *server)
 	{
@@ -71,7 +70,7 @@ class Command
 		return (true);
 	}
 	Command()
-	    : _is_ope(false), _needs_auth(true), _sender(NULL), _server(NULL), _message(NULL), _sender_index(0){};
+	    : _is_ope(false), _needs_auth(true), _sender(NULL), _server(NULL), _message(NULL){};
 	void missingOpe(void)
 	{
 		_sender->message(
