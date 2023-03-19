@@ -167,13 +167,13 @@ class Client
 
 	std::string reads(void)
 	{
-		char buffer[1024];
-
+		char buffer[1024] ="";
 		while (!std::strstr(buffer, "\n"))
 		{
 			memset(buffer, '\0', sizeof(buffer));
 			if (read(this->_socket, buffer, sizeof(buffer)) <= 0)
 				break;
+
 		}
 		buffer[strlen(buffer)] = '\0';
 		std::string tmp(buffer);
@@ -199,6 +199,31 @@ class Client
 		}*/
 		return (stream);
 	}
+
+	std::string trim(std::string str) {
+		std::size_t first = str.find_first_not_of(' ');
+		if (first == std::string::npos) {
+			return "";
+		}
+		std::size_t last = str.find_last_not_of(' ');
+		return str.substr(first, last - first + 1);
+	}
+
+	int pingpong(std::string res)
+	{
+		std::cout << CYAN_T << res << RESET << std::endl;
+		std::string pongArg;
+		if((std::strstr(res.c_str(), "PING")))
+		{
+			pongArg = trim(res.substr(4,res.find('\n')));
+			//std::cout << MAGENTA_T << pongArg << RESET << std::endl;
+			send("PONG " + pongArg);
+			return (0);
+
+		}
+
+		return (1);
+	}
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
@@ -209,18 +234,19 @@ class Client
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		this->_connected = true;
-		std::cout << reads() << std::endl;
+		pingpong(reads());
+		//std::cout << reads() << std::endl;
+
 		usleep(1000);
 	}
 	void requestingLoop()
 	{
-		std::string line;
-		std::getline(std::cin, line);
-		for (line = "a"; line != "quit" && std::getline(std::cin, line);)
+		for (std::string line = ""; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
-			std::cout << CYAN_T << reads() << RESET;
+			pingpong(reads());
+			//std::cout << CYAN_T << reads() << RESET;
 		}
 	}
 };

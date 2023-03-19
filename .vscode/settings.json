@@ -113,7 +113,10 @@
 		"stdio.h": "c",
 		"socket.h": "c",
 		"inet.h": "c",
-		"thread": "cpp"
+		"thread": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"numbers": "cpp"
 	},
 	"files.autoSave": "off"
 }
