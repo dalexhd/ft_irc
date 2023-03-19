@@ -102,7 +102,6 @@ int main(void)
 		client->irc_connect();
 		usleep(500);
 		client->login();
-		//std::cout <<  client->reads() << std::endl;
 		usleep(500);
 		client->requestingLoop();
 	}
