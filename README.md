@@ -19,6 +19,8 @@
 # USAGE
 ## SERVER
 
+## Version used RFC 1459 https://datatracker.ietf.org/doc/html/rfc1459
+
 make
 
 ./ircserv `<port>` `<password>`

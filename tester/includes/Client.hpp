@@ -167,13 +167,13 @@ class Client
 
 	std::string reads(void)
 	{
-		char buffer[1024];
-
+		char buffer[1024] ="";
 		while (!std::strstr(buffer, "\n"))
 		{
 			memset(buffer, '\0', sizeof(buffer));
 			if (read(this->_socket, buffer, sizeof(buffer)) <= 0)
 				break;
+
 		}
 		buffer[strlen(buffer)] = '\0';
 		std::string tmp(buffer);
@@ -214,9 +214,7 @@ class Client
 	}
 	void requestingLoop()
 	{
-		std::string line;
-		std::getline(std::cin, line);
-		for (line = "a"; line != "quit" && std::getline(std::cin, line);)
+		for (std::string line = ""; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);

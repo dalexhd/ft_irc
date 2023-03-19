@@ -86,7 +86,7 @@ void executeFileClients(File *file)
 	notice, part, pass, ping, privmsg, quit, topic, user
 */
 
-#define MENU 6
+#define MENU 2
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
@@ -96,13 +96,13 @@ int main(void)
 		if (MENU == 1)
 			server = "irc.irc-hispano.org";
 		else
-			server = "127.0.0.1";
+			server = "127.0.1.1";
 
 		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
-		// std::cout <<  client->reads() << std::endl;
+		//std::cout <<  client->reads() << std::endl;
 		usleep(500);
 		client->requestingLoop();
 	}
@@ -111,7 +111,7 @@ int main(void)
 		std::cout << "Automated Test\n";
 		std::vector<std::string> files;
 
-		list_files("./tests/spec", files);
+		list_files("./tests/spec/FOO", files);
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
 		{
