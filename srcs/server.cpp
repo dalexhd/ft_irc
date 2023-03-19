@@ -65,6 +65,15 @@ void Server::createServerListener()
 	std::cout << "Server is listening on port " << port << std::endl;
 }
 
+
+void servermessage(int fd, std::string message)
+{
+	//std::cout << C_BLUE ">> Sending message to client: " << _nick << ": " << C_X << message;
+	std::string msg = message.append("\r\n");
+	if (send(fd, msg.c_str(), msg.length(), 0) == -1)
+		throw std::runtime_error("Error sending message");
+}
+
 void Server::createServerPoll(void)
 {
 	while (is_running())
@@ -120,12 +129,22 @@ void Server::createServerPoll(void)
 								}
 							}
 							else
-								std::cout << "Command not valid" << std::endl;
+							{
+								servermessage(i->fd, "Command not valid1");
+								std::cout << "Command not valid" << i->fd << std::endl;
+							}
+
+
 							break;
 						}
 						else if (message->getCmd() == "close")
 						{
 							_status = Status(CLOSED);
+						}
+						else
+						{
+							//std::cout << "Command not valid2" << std::endl;
+							servermessage(i->fd, "");
 						}
 					}
 				}
