@@ -213,11 +213,10 @@ class Client
 	{
 		std::cout << CYAN_T << res << RESET << std::endl;
 		std::string pongArg;
-		//char buff[1024];
 		if((std::strstr(res.c_str(), "PING")))
 		{
 			pongArg = trim(res.substr(4,res.find('\n')));
-			std::cout << MAGENTA_T << pongArg << RESET << std::endl;
+			//std::cout << MAGENTA_T << pongArg << RESET << std::endl;
 			send("PONG " + pongArg);
 			return (0);
 
