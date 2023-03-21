@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['send_5fchannel_445',['send_channel',['../classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c',1,'Names']]],
-  ['server_446',['Server',['../classServer.html#adc13d87fce5c9a474b818750f289132b',1,'Server']]],
-  ['servermessage_447',['servermessage',['../server_8cpp.html#a50a7912133228d8854916352493d0fa1',1,'server.cpp']]],
+  ['send_5fchannel_446',['send_channel',['../classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c',1,'Names']]],
+  ['server_447',['Server',['../classServer.html#adc13d87fce5c9a474b818750f289132b',1,'Server']]],
   ['setcreator_448',['setCreator',['../classChannel.html#a1cc547a4312634c68769f1c62d2b4df9',1,'Channel']]],
   ['setmessage_449',['setMessage',['../classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21',1,'Command']]],
   ['setnick_450',['setNick',['../classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39',1,'Client']]],
