@@ -7,7 +7,7 @@ var searchData=
   ['err_5fcannotsendtochan_78',['ERR_CANNOTSENDTOCHAN',['../Replies_8hpp.html#ab0449b14e42c6b600feeea55e6bbff8c',1,'Replies.hpp']]],
   ['err_5fcantkillserver_79',['ERR_CANTKILLSERVER',['../Replies_8hpp.html#a16efccb06260d2bbad55aca592793fe5',1,'Replies.hpp']]],
   ['err_5fchannelisfull_80',['ERR_CHANNELISFULL',['../Replies_8hpp.html#ab2ea3780f74d27a21a1ba4a2de905663',1,'Replies.hpp']]],
-  ['err_5fchanoprivsneeded_81',['ERR_CHANOPRIVSNEEDED',['../Replies_8hpp.html#abb2da7fac1f65330581397e54a1ef7cc',1,'Replies.hpp']]],
+  ['err_5fchanoprivsneeded_81',['ERR_CHANOPRIVSNEEDED',['../Replies_8hpp.html#a21dd676c6a68b701c77c6b9f5bdf7989',1,'Replies.hpp']]],
   ['err_5ferroneusnickname_82',['ERR_ERRONEUSNICKNAME',['../Replies_8hpp.html#a0ff70e89c74c5898ca05e2b997d7d038',1,'Replies.hpp']]],
   ['err_5fhelpnotfound_83',['ERR_HELPNOTFOUND',['../Replies_8hpp.html#ae74184b5bdc2c483f885b44963d63d57',1,'Replies.hpp']]],
   ['err_5finputtoolong_84',['ERR_INPUTTOOLONG',['../Replies_8hpp.html#add9fac7a4649456b408a2f28acc1f6d2',1,'Replies.hpp']]],

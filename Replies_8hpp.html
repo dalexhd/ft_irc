@@ -320,8 +320,8 @@ Macros</h2></td></tr>
 <tr class="separator:a13d76112e6cfd2c9a554a1bd79e32653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fdd7fe68f882f1594b812266fb587ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a5fdd7fe68f882f1594b812266fb587ec">ERR_NOPRIVILEGES</a>&#160;&#160;&#160;481</td></tr>
 <tr class="separator:a5fdd7fe68f882f1594b812266fb587ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb2da7fac1f65330581397e54a1ef7cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#abb2da7fac1f65330581397e54a1ef7cc">ERR_CHANOPRIVSNEEDED</a>&#160;&#160;&#160;482</td></tr>
-<tr class="separator:abb2da7fac1f65330581397e54a1ef7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21dd676c6a68b701c77c6b9f5bdf7989"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a21dd676c6a68b701c77c6b9f5bdf7989">ERR_CHANOPRIVSNEEDED</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 482 &quot; + nick + &quot; &quot; + channel + &quot; :You're not channel operator\n&quot;</td></tr>
+<tr class="separator:a21dd676c6a68b701c77c6b9f5bdf7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16efccb06260d2bbad55aca592793fe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a16efccb06260d2bbad55aca592793fe5">ERR_CANTKILLSERVER</a>&#160;&#160;&#160;483</td></tr>
 <tr class="separator:a16efccb06260d2bbad55aca592793fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e755a98836ac908dcabbd6c1f8b902d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a1e755a98836ac908dcabbd6c1f8b902d">ERR_NOOPERHOST</a>&#160;&#160;&#160;491</td></tr>
@@ -536,14 +536,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="abb2da7fac1f65330581397e54a1ef7cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb2da7fac1f65330581397e54a1ef7cc">&#9670;&nbsp;</a></span>ERR_CHANOPRIVSNEEDED</h2>
+<a id="a21dd676c6a68b701c77c6b9f5bdf7989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21dd676c6a68b701c77c6b9f5bdf7989">&#9670;&nbsp;</a></span>ERR_CHANOPRIVSNEEDED</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_CHANOPRIVSNEEDED&#160;&#160;&#160;482</td>
+          <td class="memname">#define ERR_CHANOPRIVSNEEDED</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 482 &quot; + nick + &quot; &quot; + channel + &quot; :You're not channel operator\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2600,7 +2620,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 21 2023 19:02:59 for IRC SERVER by
+    <li class="footer">Generated on Tue Mar 21 2023 19:39:28 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
