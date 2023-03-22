@@ -24,8 +24,8 @@ class PrivMsg : public Command
 		std::cout << "p.size() = " << p.size() << std::endl;
 		if (p.size() == 0 || p.size() < 2)
 		{
-			_sender->message("Please send valid params! Ex: privmsg <nickname> "
-			                 ":<message>\n");
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
+			                                    _message->getCmd()));
 			return (false);
 		}
 		else if (p[0].at(0) == '#')
@@ -33,19 +33,22 @@ class PrivMsg : public Command
 			std::vector<std::string> _ch_params = split(p[0], ",");
 			for (size_t i = 1; i < _ch_params.size(); i++)
 			{
-				if (_ch_params[i][0] != '#')
+				std::cout << "channel: " << _ch_params[i] << std::endl;
+				Channel *channel = _server->getChannel(_ch_params[i]);
+				if (channel == NULL || channel->joined(_sender) == false)
 				{
-					_sender->message("Wrong command format. Ex: privmsg "
-					                 "#uruguay,#peru :hola, buenas tardes\n");
+					_sender->message(
+					    ERR_CANNOTSENDTOCHAN(_sender->_servername, _sender->_nick, _ch_params[i]));
 					return (false);
 				}
-				else if (!_server->getChannel(_ch_params[i]))
+				if (channel->isModerated() && channel->isOpe(_sender) == false)
 				{
-					_sender->message(std::string("Channel" + _ch_params[i] + "doesn't exist\n")
-					                     .c_str());
+					_sender->message(
+					    ERR_CANNOTSENDTOCHAN(_sender->_servername, _sender->_nick, _ch_params[i]));
 					return (false);
 				}
 			}
+			return (true);
 		}
 		else
 		{

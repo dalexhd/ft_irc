@@ -196,6 +196,12 @@ class Channel
 			}
 		}
 	}
+
+	bool isModerated(void)
+	{
+		return (std::find(_modes.begin(), _modes.end(), CHANNEL_MODE_MODERATED) !=
+		        _modes.end());
+	}
 };
 
 #endif
