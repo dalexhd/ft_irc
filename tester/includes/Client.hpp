@@ -167,7 +167,7 @@ class Client
 
 	std::string reads(void)
 	{
-		char buffer[1024];
+		char buffer[10240];
 
 		while (!std::strstr(buffer, "\n"))
 		{
