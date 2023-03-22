@@ -167,6 +167,7 @@ void Server::setupCommands(void)
 	_commands["pass"] = new Pass();
 	_commands["mode"] = new Mode();
 	_commands["whois"] = new Whois();
+	_commands["topic"] = new Topic();
 }
 
 Server::~Server(void)

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/26 17:50:56 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:36:27 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,8 @@
 #define ERR_BADCHANMASK(servername, nick) \
 	":" + servername + " 476 * " + nick + " :Bad Channel Mask\n"
 #define ERR_NOPRIVILEGES 481
-#define ERR_CHANOPRIVSNEEDED 482
+#define ERR_CHANOPRIVSNEEDED(servername, nick, channel) \
+	":" + servername + " 482 " + nick + " " + channel + " :You're not channel operator\n"
 #define ERR_CANTKILLSERVER 483
 #define ERR_NOOPERHOST 491
 #define ERR_UMODEUNKNOWNFLAG 501

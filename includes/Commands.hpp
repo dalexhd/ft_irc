@@ -16,6 +16,7 @@
 #include "./commands/Ping.hpp"
 #include "./commands/PrivMsg.hpp"
 #include "./commands/Quit.hpp"
+#include "./commands/Topic.hpp"
 #include "./commands/User.hpp"
 #include "./commands/Whois.hpp"
 
