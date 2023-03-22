@@ -18,7 +18,6 @@ var hierarchy =
       [ "Ping", "classPing.html", null ],
       [ "PrivMsg", "classPrivMsg.html", null ],
       [ "Quit", "classQuit.html", null ],
-      [ "Topic", "classTopic.html", null ],
       [ "User", "classUser.html", null ],
       [ "Whois", "classWhois.html", null ]
     ] ],

@@ -1,8 +1,7 @@
 <map id="Channel::isOpe" name="Channel::isOpe">
-<area shape="rect" id="node1" title=" " alt="" coords="651,60,771,87"/>
-<area shape="rect" id="node2" href="$classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,31,603,57"/>
-<area shape="rect" id="node6" href="$classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="396,82,600,123"/>
+<area shape="rect" id="node1" title=" " alt="" coords="651,35,771,61"/>
+<area shape="rect" id="node2" href="$classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,5,603,32"/>
+<area shape="rect" id="node5" href="$classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="396,57,600,98"/>
 <area shape="rect" id="node3" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" id="node5" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="205,56,321,83"/>
 <area shape="rect" id="node4" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
 </map>

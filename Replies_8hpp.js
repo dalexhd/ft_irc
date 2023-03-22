@@ -7,7 +7,7 @@ var Replies_8hpp =
     [ "ERR_CANNOTSENDTOCHAN", "Replies_8hpp.html#ab0449b14e42c6b600feeea55e6bbff8c", null ],
     [ "ERR_CANTKILLSERVER", "Replies_8hpp.html#a16efccb06260d2bbad55aca592793fe5", null ],
     [ "ERR_CHANNELISFULL", "Replies_8hpp.html#ab2ea3780f74d27a21a1ba4a2de905663", null ],
-    [ "ERR_CHANOPRIVSNEEDED", "Replies_8hpp.html#a21dd676c6a68b701c77c6b9f5bdf7989", null ],
+    [ "ERR_CHANOPRIVSNEEDED", "Replies_8hpp.html#abb2da7fac1f65330581397e54a1ef7cc", null ],
     [ "ERR_ERRONEUSNICKNAME", "Replies_8hpp.html#a0ff70e89c74c5898ca05e2b997d7d038", null ],
     [ "ERR_HELPNOTFOUND", "Replies_8hpp.html#ae74184b5bdc2c483f885b44963d63d57", null ],
     [ "ERR_INPUTTOOLONG", "Replies_8hpp.html#add9fac7a4649456b408a2f28acc1f6d2", null ],
