@@ -4,6 +4,7 @@
 // Main libraries
 #include <netdb.h>
 #include <unistd.h>
+#include <algorithm>
 
 // Our includes
 #include "./Message.hpp"

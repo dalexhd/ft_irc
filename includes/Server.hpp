@@ -14,7 +14,6 @@
 #define SERVER_H
 
 // Main libraries
-#include <algorithm>
 #include <fcntl.h>
 #include <poll.h>
 
