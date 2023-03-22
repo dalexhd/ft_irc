@@ -270,8 +270,8 @@ Macros</h2></td></tr>
 <tr class="separator:a5db94542b637fff0222d3618b525fe17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affd021845869bcca7c84c3c7714ee006"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#affd021845869bcca7c84c3c7714ee006">ERR_NOSUCHCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 403 &quot; + nick + &quot; &quot; + channel + &quot; :No such channel\n&quot;</td></tr>
 <tr class="separator:affd021845869bcca7c84c3c7714ee006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0449b14e42c6b600feeea55e6bbff8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ab0449b14e42c6b600feeea55e6bbff8c">ERR_CANNOTSENDTOCHAN</a>&#160;&#160;&#160;404</td></tr>
-<tr class="separator:ab0449b14e42c6b600feeea55e6bbff8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0e39386494da0c287265a9fd961365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#aed0e39386494da0c287265a9fd961365">ERR_CANNOTSENDTOCHAN</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 404 &quot; + nick + &quot; &quot; + channel + &quot; :Cannot send to channel\n&quot;</td></tr>
+<tr class="separator:aed0e39386494da0c287265a9fd961365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60b1d9711ff66337c3121adbfda7d58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#ad60b1d9711ff66337c3121adbfda7d58">ERR_TOOMANYCHANNELS</a>&#160;&#160;&#160;405</td></tr>
 <tr class="separator:ad60b1d9711ff66337c3121adbfda7d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f504c5b1a45267113fcd238d9871ad5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a8f504c5b1a45267113fcd238d9871ad5">ERR_WASNOSUCHNICK</a>&#160;&#160;&#160;406</td></tr>
@@ -474,14 +474,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0449b14e42c6b600feeea55e6bbff8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0449b14e42c6b600feeea55e6bbff8c">&#9670;&nbsp;</a></span>ERR_CANNOTSENDTOCHAN</h2>
+<a id="aed0e39386494da0c287265a9fd961365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0e39386494da0c287265a9fd961365">&#9670;&nbsp;</a></span>ERR_CANNOTSENDTOCHAN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_CANNOTSENDTOCHAN&#160;&#160;&#160;404</td>
+          <td class="memname">#define ERR_CANNOTSENDTOCHAN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 404 &quot; + nick + &quot; &quot; + channel + &quot; :Cannot send to channel\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2620,7 +2640,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 22 2023 18:46:08 for IRC SERVER by
+    <li class="footer">Generated on Wed Mar 22 2023 19:27:37 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

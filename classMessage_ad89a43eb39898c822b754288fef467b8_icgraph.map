@@ -1,11 +1,12 @@
 <map id="Message::getCmd" name="Message::getCmd">
-<area shape="rect" id="node1" title=" " alt="" coords="399,132,537,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="399,157,537,184"/>
 <area shape="rect" id="node2" href="$classMode.html#a0b79c4cd9924c634ee62dc500f487a25" title=" " alt="" coords="172,5,351,32"/>
 <area shape="rect" id="node4" href="$classPass.html#a4b3bbba67fcd5ec93de27d3b0ad6289e" title=" " alt="" coords="205,56,317,83"/>
 <area shape="rect" id="node5" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="203,107,319,133"/>
-<area shape="rect" id="node6" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="207,157,315,184"/>
-<area shape="rect" id="node8" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="208,208,315,235"/>
-<area shape="rect" id="node9" href="$classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="206,259,317,285"/>
+<area shape="rect" id="node6" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="194,157,329,184"/>
+<area shape="rect" id="node7" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="207,208,315,235"/>
+<area shape="rect" id="node9" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="208,259,315,285"/>
+<area shape="rect" id="node10" href="$classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="206,309,317,336"/>
 <area shape="rect" id="node3" href="$classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node7" href="$classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="11,157,118,184"/>
+<area shape="rect" id="node8" href="$classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="11,208,118,235"/>
 </map>

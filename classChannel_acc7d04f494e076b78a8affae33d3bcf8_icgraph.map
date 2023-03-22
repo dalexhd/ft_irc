@@ -1,7 +1,8 @@
 <map id="Channel::joined" name="Channel::joined">
-<area shape="rect" id="node1" title=" " alt="" coords="324,56,447,83"/>
-<area shape="rect" id="node2" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="160,5,276,32"/>
-<area shape="rect" id="node3" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="164,56,272,83"/>
-<area shape="rect" id="node5" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="165,107,271,133"/>
-<area shape="rect" id="node4" href="$classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="5,56,112,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="343,81,465,108"/>
+<area shape="rect" id="node2" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="169,5,285,32"/>
+<area shape="rect" id="node3" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="160,56,295,83"/>
+<area shape="rect" id="node4" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="173,107,281,133"/>
+<area shape="rect" id="node6" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="174,157,281,184"/>
+<area shape="rect" id="node5" href="$classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="5,107,112,133"/>
 </map>

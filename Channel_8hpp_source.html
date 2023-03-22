@@ -285,9 +285,15 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;};</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">  200</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">isModerated</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> (std::find(_modes.begin(), _modes.end(), <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599afc49decc72a1bfd359d939127c13af71">CHANNEL_MODE_MODERATED</a>) !=</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                _modes.end());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;};</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassChannel_html"><div class="ttname"><a href="classChannel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> Channel.hpp:18</div></div>
@@ -323,6 +329,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_acc7d04f494e076b78a8affae33d3bcf8"><div class="ttname"><a href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8">Channel::joined</a></div><div class="ttdeci">bool joined(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:98</div></div>
 <div class="ttc" id="aclassChannel_html_a6682ab5cbaf8dee41a622561de1eaf32"><div class="ttname"><a href="classChannel.html#a6682ab5cbaf8dee41a622561de1eaf32">Channel::isNormal</a></div><div class="ttdeci">bool isNormal(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:116</div></div>
 <div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:14</div></div>
+<div class="ttc" id="aclassChannel_html_a26fc58b2679d5e7e194834a34b5e95d1"><div class="ttname"><a href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">Channel::isModerated</a></div><div class="ttdeci">bool isModerated(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:200</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a">CHANNEL_MODE_INVITE_ONLY</a></div><div class="ttdeci">@ CHANNEL_MODE_INVITE_ONLY</div><div class="ttdef"><b>Definition:</b> Channel.hpp:10</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
 <div class="ttc" id="aclassChannel_html_acd9b98a4c5ae2f155f5d655083fe02b8"><div class="ttname"><a href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">Channel::addMode</a></div><div class="ttdeci">void addMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:156</div></div>
@@ -330,7 +337,7 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Channel_8hpp.html">Channel.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 22 2023 18:46:08 for IRC SERVER by
+    <li class="footer">Generated on Wed Mar 22 2023 19:27:37 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
