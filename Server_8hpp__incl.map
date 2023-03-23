@@ -1,14 +1,14 @@
 <map id="includes/Server.hpp" name="includes/Server.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="417,5,567,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="219,80,282,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="307,80,365,107"/>
-<area shape="rect" id="node4" href="$Channel_8hpp.html" title=" " alt="" coords="390,80,501,107"/>
-<area shape="rect" id="node5" href="$Client_8hpp.html" title=" " alt="" coords="389,155,485,181"/>
-<area shape="rect" id="node10" href="$Color_8hpp.html" title=" " alt="" coords="527,304,617,331"/>
-<area shape="rect" id="node18" href="$config_8hpp.html" title=" " alt="" coords="589,229,686,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="394,229,465,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="489,229,564,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="12,229,97,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="425,5,575,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="227,80,290,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="315,80,373,107"/>
+<area shape="rect" id="node4" href="$Channel_8hpp.html" title=" " alt="" coords="398,80,509,107"/>
+<area shape="rect" id="node5" href="$Client_8hpp.html" title=" " alt="" coords="397,155,493,181"/>
+<area shape="rect" id="node10" href="$Color_8hpp.html" title=" " alt="" coords="531,304,621,331"/>
+<area shape="rect" id="node18" href="$config_8hpp.html" title=" " alt="" coords="598,229,695,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="393,229,479,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="503,229,574,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="23,229,97,256"/>
 <area shape="rect" id="node9" href="$Message_8hpp.html" title=" " alt="" coords="122,229,238,256"/>
 <area shape="rect" id="node17" href="$Replies_8hpp.html" title=" " alt="" coords="263,229,369,256"/>
 <area shape="rect" id="node11" href="$functions_8hpp.html" title=" " alt="" coords="275,304,394,331"/>

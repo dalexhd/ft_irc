@@ -9,6 +9,8 @@ var Channel_8hpp =
       [ "CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a3c65b958731331fdd584fc1925c89adf", null ],
       [ "CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599acfe184076ea944e56b2873af3bb8ebbb", null ],
       [ "CHANNEL_MODE_BAN_MASK", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118", null ],
-      [ "CHANNEL_MODE_KEY", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361", null ]
+      [ "CHANNEL_MODE_KEY", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361", null ],
+      [ "CHANNEL_MODE_USER_LIMIT", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a73686a4597e45a6d722dd7ec8b0794bc", null ],
+      [ "CHANNEL_MODE_OPERATOR", "Channel_8hpp.html#a1896d4a571c398f57955773fce8af599abc2a7191346b27c50d7797dcab63736a", null ]
     ] ]
 ];

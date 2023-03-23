@@ -91,9 +91,9 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CLIENT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Main libraries</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Our includes</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Message_8hpp.html">./Message.hpp</a>&quot;</span></div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        close(<a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">_fd</a> = -1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Client &quot;</span> &lt;&lt; <a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a> &lt;&lt; <span class="stringliteral">&quot; disconnected&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::cout &lt;&lt; <a class="code" href="Color_8hpp.html#a7adb9aaa1eed15caecd92e3837581b53">C_RED</a> &lt;&lt; <span class="stringliteral">&quot;Client &quot;</span> &lt;&lt; <a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a> &lt;&lt; <span class="stringliteral">&quot; disconnected&quot;</span> <a class="code" href="Color_8hpp.html#a942e3d31ded03e31170997850f98dff2">C_X</a> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Helpers</span></div>
@@ -216,6 +216,7 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div class="ttc" id="aclassClient_html_a85a410db24cab3a8b0b8a316b418dbfc"><div class="ttname"><a href="classClient.html#a85a410db24cab3a8b0b8a316b418dbfc">Client::_messagesReceived</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesReceived</div><div class="ttdef"><b>Definition:</b> Client.hpp:26</div></div>
 <div class="ttc" id="aclassClient_html_ac4b956d055baf39c6668a5519ba12157"><div class="ttname"><a href="classClient.html#ac4b956d055baf39c6668a5519ba12157">Client::ban</a></div><div class="ttdeci">void ban(void)</div><div class="ttdef"><b>Definition:</b> Client.hpp:54</div></div>
 <div class="ttc" id="aclassClient_html_ae059c95034c09b1ed2ae993c61eb5c57"><div class="ttname"><a href="classClient.html#ae059c95034c09b1ed2ae993c61eb5c57">Client::_messagesSent</a></div><div class="ttdeci">std::vector&lt; Message &gt; _messagesSent</div><div class="ttdef"><b>Definition:</b> Client.hpp:25</div></div>
+<div class="ttc" id="aColor_8hpp_html_a7adb9aaa1eed15caecd92e3837581b53"><div class="ttname"><a href="Color_8hpp.html#a7adb9aaa1eed15caecd92e3837581b53">C_RED</a></div><div class="ttdeci">#define C_RED</div><div class="ttdef"><b>Definition:</b> Color.hpp:6</div></div>
 <div class="ttc" id="aclassClient_html_a8f8d0427822b93815dec147dd420373f"><div class="ttname"><a href="classClient.html#a8f8d0427822b93815dec147dd420373f">Client::_username</a></div><div class="ttdeci">std::string _username</div><div class="ttdef"><b>Definition:</b> Client.hpp:19</div></div>
 <div class="ttc" id="aclassClient_html_a8fe7fa561e8e852aca92036f92b92405"><div class="ttname"><a href="classClient.html#a8fe7fa561e8e852aca92036f92b92405">Client::getNick</a></div><div class="ttdeci">const std::string getNick(void) const</div><div class="ttdef"><b>Definition:</b> Client.hpp:96</div></div>
 <div class="ttc" id="aReplies_8hpp_html_a0a78821a40285c2146171737e46df182"><div class="ttname"><a href="Replies_8hpp.html#a0a78821a40285c2146171737e46df182">ERR_YOUREBANNEDCREEP</a></div><div class="ttdeci">#define ERR_YOUREBANNEDCREEP(servername, nick)</div><div class="ttdef"><b>Definition:</b> Replies.hpp:128</div></div>
@@ -245,6 +246,7 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div class="ttc" id="aconfig_8hpp_html_a7e5fc64e45e1ab3af52e22eaf1c1bfc4a4f34c5c191d6e0d028ca831b6c0b1571"><div class="ttname"><a href="config_8hpp.html#a7e5fc64e45e1ab3af52e22eaf1c1bfc4a4f34c5c191d6e0d028ca831b6c0b1571">ALIVE</a></div><div class="ttdeci">@ ALIVE</div><div class="ttdef"><b>Definition:</b> config.hpp:14</div></div>
 <div class="ttc" id="aclassClient_html_adc9a9e85762060c89ae4db308fae187c"><div class="ttname"><a href="classClient.html#adc9a9e85762060c89ae4db308fae187c">Client::_nick</a></div><div class="ttdeci">std::string _nick</div><div class="ttdef"><b>Definition:</b> Client.hpp:18</div></div>
 <div class="ttc" id="aclassClient_html_a76a7d1bb0a940f1b180ac251b47e6cf4"><div class="ttname"><a href="classClient.html#a76a7d1bb0a940f1b180ac251b47e6cf4">Client::_fd</a></div><div class="ttdeci">int _fd</div><div class="ttdef"><b>Definition:</b> Client.hpp:17</div></div>
+<div class="ttc" id="aColor_8hpp_html_a942e3d31ded03e31170997850f98dff2"><div class="ttname"><a href="Color_8hpp.html#a942e3d31ded03e31170997850f98dff2">C_X</a></div><div class="ttdeci">#define C_X</div><div class="ttdef"><b>Definition:</b> Color.hpp:4</div></div>
 <div class="ttc" id="aclassClient_html_a4c542a9070d73b6613e2f43ebf07d1bf"><div class="ttname"><a href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">Client::_servername</a></div><div class="ttdeci">std::string _servername</div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
 <div class="ttc" id="aReplies_8hpp_html"><div class="ttname"><a href="Replies_8hpp.html">Replies.hpp</a></div></div>
 <div class="ttc" id="aclassClient_html_a7cb99af0b1a9e254e7574eba0fa9a5c4"><div class="ttname"><a href="classClient.html#a7cb99af0b1a9e254e7574eba0fa9a5c4">Client::authenticate</a></div><div class="ttdeci">void authenticate(void)</div><div class="ttdef"><b>Definition:</b> Client.hpp:59</div></div>
@@ -253,7 +255,7 @@ $(document).ready(function(){initNavTree('Client_8hpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Client_8hpp.html">Client.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 22 2023 19:27:37 for IRC SERVER by
+    <li class="footer">Generated on Thu Mar 23 2023 18:36:30 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

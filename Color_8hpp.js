@@ -6,6 +6,7 @@ var Color_8hpp =
     [ "C_CUT", "Color_8hpp.html#a2a8c51364bbbe29c7b7ddb04c018cb4b", null ],
     [ "C_CYAN", "Color_8hpp.html#a8318e037c99fbf82089b68ba5d603cd0", null ],
     [ "C_GREEN", "Color_8hpp.html#a448d973f9ee30250ec93e600f5d89ed1", null ],
+    [ "C_MAGENTA", "Color_8hpp.html#a47da0a04e6c59fa061f60d36c10d9561", null ],
     [ "C_RED", "Color_8hpp.html#a7adb9aaa1eed15caecd92e3837581b53", null ],
     [ "C_U", "Color_8hpp.html#a9050b4dfd5a1ccffd43498c0a433026a", null ],
     [ "C_UP", "Color_8hpp.html#a3a5f27e59f50a9296b6c44f4b5d66c50", null ],
