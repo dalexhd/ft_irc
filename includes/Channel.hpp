@@ -12,7 +12,9 @@ enum ChannelMode
 	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4,
 	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5,
 	CHANNEL_MODE_BAN_MASK = 6,
-	CHANNEL_MODE_KEY = 7
+	CHANNEL_MODE_KEY = 7,
+	CHANNEL_MODE_USER_LIMIT = 8,
+	CHANNEL_MODE_OPERATOR = 9,
 };
 
 class Channel
@@ -200,6 +202,12 @@ class Channel
 	bool isModerated(void)
 	{
 		return (std::find(_modes.begin(), _modes.end(), CHANNEL_MODE_MODERATED) !=
+		        _modes.end());
+	}
+
+	bool hasKey(void)
+	{
+		return (std::find(_modes.begin(), _modes.end(), CHANNEL_MODE_KEY) !=
 		        _modes.end());
 	}
 };

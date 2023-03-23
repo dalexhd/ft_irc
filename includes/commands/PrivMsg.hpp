@@ -21,7 +21,6 @@ class PrivMsg : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		std::cout << "p.size() = " << p.size() << std::endl;
 		if (p.size() == 0 || p.size() < 2)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
@@ -33,7 +32,6 @@ class PrivMsg : public Command
 			std::vector<std::string> _ch_params = split(p[0], ",");
 			for (size_t i = 1; i < _ch_params.size(); i++)
 			{
-				std::cout << "channel: " << _ch_params[i] << std::endl;
 				Channel *channel = _server->getChannel(_ch_params[i]);
 				if (channel == NULL || channel->joined(_sender) == false)
 				{
@@ -57,7 +55,6 @@ class PrivMsg : public Command
 			{
 				if (_server->getClient(_cl_params[i]) == NULL)
 				{
-					std::cout << _sender->_nick << _cl_params[i] << std::endl;
 					_sender->message(ERR_NOSUCHNICK(_sender->_servername, _cl_params[i]));
 					return (false);
 				}

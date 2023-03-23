@@ -2,9 +2,9 @@
 #define CLIENT_H
 
 // Main libraries
+#include <algorithm>
 #include <netdb.h>
 #include <unistd.h>
-#include <algorithm>
 
 // Our includes
 #include "./Message.hpp"
@@ -40,7 +40,7 @@ class Client
 	{
 		close(_fd);
 		_fd = -1;
-		std::cout << "Client " << _nick << " disconnected" << std::endl;
+		std::cout << C_RED << "Client " << _nick << " disconnected" C_X << std::endl;
 	};
 
 	// Helpers

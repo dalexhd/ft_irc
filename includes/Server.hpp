@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:13:29 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/16 17:09:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:29:43 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ class Server
 				std::vector<Client *> channel_clients = channels[i]->getClients();
 				for (size_t u = 0; u < channel_clients.size(); u++)
 				{
-					std::cout << channel_clients[u]->getNick() << std::endl;
 					if (channel_clients[u] != client &&
 					    !std::count(related_clients.begin(), related_clients.end(), channel_clients[u]))
 						related_clients.push_back(channel_clients[u]);

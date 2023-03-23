@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/16 17:40:37 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:22:06 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void Server::createServerPoll(void)
 			_clients[new_fd] = new Client(new_fd, this->host, this->servername, this->version);
 			pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 			_pfds.push_back(pfd);
-			std::cout << "Anonymous Client connected" << std::endl;
 		}
 		else
 		{
@@ -96,8 +95,12 @@ void Server::createServerPoll(void)
 					}
 					else
 					{
-						Message *message = _clients[i->fd]->_message;
-						std::cout << "Message received " << message->_buffer << std::endl;
+						Message *   message = _clients[i->fd]->_message;
+						std::string nick = _clients[i->fd]->getNick();
+						if (nick.empty())
+							nick = "Anonymous";
+						std::cout << C_MAGENTA "<< Received message from " << nick << ": " << C_X
+						          << message->_buffer << std::endl;
 						std::map<std::string, Command *>::iterator it;
 						if ((it = _commands.find(message->getCmd())) !=
 						    _commands.end())
@@ -119,8 +122,6 @@ void Server::createServerPoll(void)
 										cmd->missingOpe();
 								}
 							}
-							else
-								std::cout << "Command not valid" << std::endl;
 							break;
 						}
 						else if (message->getCmd() == "close")

@@ -38,7 +38,6 @@ static void *clientConversation(void *client)
 	{
 		if (!c->_connected)
 		{
-			std::cout << c->_name << " is not connected, trying to connect\n";
 			usleep(it2->second._ms * 1000);
 			if (c->irc_connect() > 0)
 				return 0;
@@ -53,7 +52,7 @@ static void *clientConversation(void *client)
 		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
 		myfile << c->reads();
 		myfile.close();*/
-		std::cout << "Server response" << c->reads() << std::endl;
+		std::cout << c->reads() << std::endl;
 	}
 
 	usleep(700);

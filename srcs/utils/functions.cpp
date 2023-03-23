@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:21:52 by aborboll          #+#    #+#             */
-/*   Updated: 2022/05/26 17:43:07 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:33:20 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,12 @@ std::vector<std::string> split(const std::string &str, const std::string &delimi
 		pos = str.find_first_of(delimiters, lastPos);
 	}
 	return tokens;
+}
+
+bool is_number(const std::string &s)
+{
+	std::string::const_iterator it = s.begin();
+	while (it != s.end() && std::isdigit(*it))
+		++it;
+	return !s.empty() && it == s.end();
 }

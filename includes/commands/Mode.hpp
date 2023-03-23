@@ -24,11 +24,89 @@ class Mode : public Command
 	{
 		_name = "mode";
 		_description = "add or remove a mode to a channel or user";
-		_usage = "mode";
-		_example[0] = "mode <canal> {[+|-]|o|p|s|i|t|n|b|v} [<límite>] "
-		              "[<usuario>] [<máscara de ban>]";
-		_example[1] = "mode <nick> {[+|-]|i|w|s|o}";
-		_is_ope = true;
+		_usage = "mode <canal> {[+|-]|o|p|s|i|t|n|b|v} [<límite>] "
+		         "[<usuario>] [<máscara de ban>]";
+		_example[0] = "mode #canal +o nick";
+		_example[1] = "mode #canal +l 10";
+		_example[2] = "mode roberto +i";
+		//_is_ope = true;
+	}
+
+	bool isValidModelKeyPair(ModeSign sign, ChannelMode channelMode)
+	{
+		std::map<size_t, std::string> target = _message->getParams();
+
+		if (channelMode != CHANNEL_MODE_USER_LIMIT && channelMode != CHANNEL_MODE_OPERATOR && channelMode != CHANNEL_MODE_KEY && channelMode != CHANNEL_MODE_BAN_MASK)
+		{
+			_sender->message(ERR_UNKNOWNMODE(_sender->_servername, _sender->_nick, target[1]));
+			return (false);
+		}
+
+		if (channelMode == CHANNEL_MODE_USER_LIMIT)
+		{
+			if (sign == PLUS && (target.size() < 2 || !is_number(target[2])))
+			{
+				_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,
+				                                    _sender->_nick, _message->getCmd()));
+				return (false);
+			}
+			return (true);
+		}
+		else if (channelMode == CHANNEL_MODE_OPERATOR)
+		{
+			if (target.size() < 3)
+			{
+				return (false);
+			}
+			Channel *channel = _server->getChannel(target[0]);
+			Client * client = _server->getClient(target[2]);
+
+			if (!client)
+			{
+				_sender->message(
+				    ERR_USERSDONTMATCH(_sender->_servername, _sender->_nick));
+				return (false);
+			}
+			else if (!channel->joined(client))
+			{
+				_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, target[0]));
+				return (false);
+			}
+			if ((sign == PLUS && channel->isOpe(client)) ||
+			    (sign == MINUS && !channel->isOpe(client))) // In case the client is already an operator, or is not an operator, return false. No more checks are done.
+			{
+				return (false);
+			}
+			return (true);
+		}
+		else if (channelMode == CHANNEL_MODE_KEY)
+		{
+			Channel *channel = _server->getChannel(target[0]);
+			if (sign == PLUS)
+			{
+				if (target.size() < 3)
+				{
+					_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,
+					                                    _sender->_nick, _message->getCmd()));
+					return (false);
+				}
+				else if (channel->hasKey())
+				{
+					_sender->message(ERR_KEYSET(_sender->_servername, _sender->_nick, target[0]));
+					return (false);
+				}
+			}
+		}
+		else if (channelMode == CHANNEL_MODE_BAN_MASK)
+		{
+			if (sign == PLUS && target.size() < 3)
+			{
+				_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,
+				                                    _sender->_nick, _message->getCmd()));
+				return (false);
+			}
+		}
+		return (true);
 	}
 
 	bool isValidModelType(void)
@@ -42,23 +120,45 @@ class Mode : public Command
 			if (target.size() < 2)
 			{
 				_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername,
-				                                    _sender->_nick, _message->getCmd())); // ERR_NEEDMOREPARAMS (461)
+				                                    _sender->_nick, _message->getCmd()));
 				return (false);
 			}
+
+			// Check if mode is valid
 			for (size_t i = 0; i < payload.size(); i++)
 			{
 				if (payload[i] == '+' || payload[i] == '-')
 					continue;
-				if (payload[i] == 'o' || payload[i] == 'p' || payload[i] == 's' || payload[i] == 'i' || payload[i] == 't' || payload[i] == 'n' || payload[i] == 'b' || payload[i] == 'v')
+				if (payload[i] == 'o' || payload[i] == 'p' || payload[i] == 's' || payload[i] == 'i' || payload[i] == 't' || payload[i] == 'n' || payload[i] == 'm' || payload[i] == 'l' || payload[i] == 'b' || payload[i] == 'v' || payload[i] == 'k')
 					continue;
-				_sender->message(ERR_UNKNOWNMODE(_sender->_servername, _sender->_nick,
-				                                 payload[i])); // ERR_UNKNOWNMODE (472)
+				_sender->message(ERR_UNKNOWNMODE(_sender->_servername, _sender->_nick, payload[i]));
 				return (false);
 			}
-			if (target.size() == 3)
+
+			Channel *channel = _server->getChannel(target[0]);
+			if (!channel)
 			{
-				// TODO: Here we should throw an error if the user is not in the channel
-				if (std::atoi(target[2].c_str()) < 0)
+				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, target[0]));
+				return (false);
+			}
+			else if (!channel->joined(_sender))
+			{
+				_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, target[0]));
+				return (false);
+			}
+			else if (channel->isOpe(_sender) == false)
+			{
+				_sender->message(
+				    ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick, target[0]));
+				return (false);
+			}
+
+			std::vector<std::pair<ModeSign, ChannelMode> > modes = parseChannelMode();
+			std::vector<std::pair<ModeSign, ChannelMode> >::iterator it;
+
+			for (size_t i = 0; i < modes.size(); i++)
+			{
+				if (isValidModelKeyPair(modes[i].first, modes[i].second) == false)
 					return (false);
 			}
 		}
@@ -84,25 +184,13 @@ class Mode : public Command
 
 		if (target.size() < 1)
 		{
-			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick, _name)); // ERR_NEEDMOREPARAMS (461)
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick, _name));
 			return (false);
 		}
-		else if (target[0].at(0) == '#')
+		else if (target[0].at(0) == '#' && !_server->getChannel(target[0]))
 		{
-			if (!_server->getChannel(target[0]))
-			{
-				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, target[0])); // ERR_NOSUCHCHANNEL (403)
-				return (false);
-			}
-		}
-		else
-		{
-			if (_server->getClient(target[0]) == NULL)
-			{
-				std::cout << _sender->_nick << target[0] << std::endl;
-				_sender->message(ERR_NOSUCHNICK(_sender->_servername, target[0]));
-				return (false);
-			}
+			_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, target[0]));
+			return (false);
 		}
 		return (isValidModelType());
 	}
@@ -114,7 +202,7 @@ class Mode : public Command
 		return target[0].at(0) == '#' ? CHANNEL_MODE : USER_MODE;
 	}
 
-	std::vector<std::pair<ModeSign, ChannelMode> > parseChannelModel()
+	std::vector<std::pair<ModeSign, ChannelMode> > parseChannelMode()
 	{
 		std::string payload = _message->getParams()[1];
 		ModeSign    sign = payload[0] == '+' ? PLUS : MINUS;
@@ -124,6 +212,9 @@ class Mode : public Command
 		{
 			switch (payload[i])
 			{
+			case 'o':
+				modes.push_back(std::pair<ModeSign, ChannelMode>(sign, CHANNEL_MODE_OPERATOR));
+				break;
 			case 'p':
 				modes.push_back(std::pair<ModeSign, ChannelMode>(sign, CHANNEL_MODE_PRIVATE));
 				break;
@@ -148,6 +239,9 @@ class Mode : public Command
 			case 'k':
 				modes.push_back(std::pair<ModeSign, ChannelMode>(sign, CHANNEL_MODE_KEY));
 				break;
+			case 'l':
+				modes.push_back(std::pair<ModeSign, ChannelMode>(sign, CHANNEL_MODE_USER_LIMIT));
+				break;
 			}
 		}
 		return (modes);
@@ -161,7 +255,7 @@ class Mode : public Command
 			Channel *channel = _server->getChannel(_message->getParams()[0]);
 			std::vector<Client *> clients = channel->getClients();
 
-			std::vector<std::pair<ModeSign, ChannelMode> > modes = parseChannelModel();
+			std::vector<std::pair<ModeSign, ChannelMode> > modes = parseChannelMode();
 			std::vector<std::pair<ModeSign, ChannelMode> >::iterator it;
 
 			for (size_t i = 0; i < modes.size(); i++)
@@ -182,7 +276,6 @@ class Mode : public Command
 		}
 		else if (type == USER_MODE)
 		{
-			std::cout << "User mode " << type << std::endl;
 		}
 	}
 };

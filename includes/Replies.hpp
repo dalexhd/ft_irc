@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/22 19:05:10 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/23 17:05:00 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@
 	":" + servername + " 464 " + nick + " :Password incorrect\n"
 #define ERR_YOUREBANNEDCREEP(servername, nick) \
 	":" + servername + " 465 " + nick + " :You are banned from this server\n"
+#define ERR_KEYSET(servername, nick, channel) \
+	":" + servername + " 467 " + nick + " " + channel + " :Channel key already set\n"
 #define ERR_CHANNELISFULL(servername, nick, channel) \
 	":" + servername + " 471 " + nick + " " + channel + " :Cannot join channel , channel is full(+l)\n"
 #define ERR_UNKNOWNMODE(servername, nick, mode) \
@@ -143,7 +145,8 @@
 #define ERR_CANTKILLSERVER 483
 #define ERR_NOOPERHOST 491
 #define ERR_UMODEUNKNOWNFLAG 501
-#define ERR_USERSDONTMATCH 502
+#define ERR_USERSDONTMATCH(servername, nick) \
+	":" + servername + " 502 " + nick + " :Cant change mode for other users\n"
 #define ERR_HELPNOTFOUND 524
 #define ERR_INVALIDKEY 525
 #define RPL_STARTTLS 670
