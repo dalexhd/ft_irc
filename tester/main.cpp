@@ -36,8 +36,6 @@ static void *clientConversation(void *client)
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
 	{
-		usleep(700);
-
 		if (!c->_connected)
 		{
 			usleep(it2->second._ms);
@@ -49,11 +47,16 @@ static void *clientConversation(void *client)
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		/*std::ofstream myfile;
-		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
+/* 		std::ofstream myfile;
+		myfile.open("tests/res" + c->_filename.substr(12,99), std::ios_base::app);
 		myfile << c->reads();
-		myfile.close();*/
-		std::cout << c->reads() << std::endl;
+		myfile.close(); */
+		/* usleep(700000);
+		std::ofstream myfile;
+		myfile.open("dir/XDDDDDDD", std::ios_base::app);
+		myfile << c->reads();
+		myfile.close(); */
+		//std::cout << "tests/res" + c->_filename.substr(12,99) << c->reads() << std::endl;
 	}
 
 	usleep(700);
@@ -67,6 +70,7 @@ void executeFileClients(File *file)
 	for (std::map<std::string, Client>::iterator it = (*file)._clients.begin(); // CLIENT LOOP
 	     it != (*file)._clients.end(); ++it)
 	{
+		it->second._filename = file->_name;
 		pthread_create(&it->second._thread, NULL, *clientConversation, &it->second);
 	}
 	for (std::map<std::string, Client>::iterator it = (*file)._clients.begin();
@@ -84,7 +88,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 1
+#define MENU 3
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)

@@ -1,0 +1,16 @@
+:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
+:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
+:42irc-server 003 NICK_1 :This server was created January 1st, 1970
+:42irc-server 001 NICK_2 :Welcome to the Internet Relay Network NICK_2
+:42irc-server 002 NICK_2 :Your host is 42irc-server, running version 0.0.1
+:42irc-server 003 NICK_2 :This server was created January 1st, 1970
+pong
+:42irc-server 404 NICK_2 peru :Cannot send to channel
+:NICK_1!USER_1@42irc-server JOIN :#uruguay
+:42irc-server 332 NICK_1 #uruguay :No topic is set
+:42irc-server 353 NICK_1  #uruguay :@NICK_1
+:42irc-server 366 NICK_1 #uruguay :End of /NAMES list
+:NICK_1!USER_1@42irc-server JOIN :#peru
+:42irc-server 332 NICK_1 #peru :No topic is set
+:42irc-server 353 NICK_1  #peru :@NICK_1
+:42irc-server 366 NICK_1 #peru :End of /NAMES list

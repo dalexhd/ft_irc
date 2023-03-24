@@ -6,6 +6,7 @@
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <fstream>
 #include <string.h>
 #include <string>
 #include <unistd.h>
@@ -81,6 +82,7 @@ class Client
 	std::map<size_t, Command> _commands;
 	bool                      _connected;
 	pthread_t                 _thread;
+	std::string              _filename;
 
   public:
 	Client(std::string host, std::string port)
@@ -234,7 +236,12 @@ class Client
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		this->_connected = true;
-		pingpong(reads());
+/* 		usleep(1000);
+
+		std::ofstream myfile;
+		myfile.open("tests/res" + _filename.substr(12,99), std::ios_base::app);
+		myfile << reads();
+		myfile.close(); */
 		usleep(1000);
 	}
 	void requestingLoop()

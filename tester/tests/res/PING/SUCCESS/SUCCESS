@@ -1,0 +1,4 @@
+:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
+:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
+:42irc-server 003 NICK_1 :This server was created January 1st, 1970
+pong

@@ -1,0 +1,13 @@
+:42irc-server 001 NICK_1 :Welcome to the Internet Relay Network NICK_1
+:42irc-server 002 NICK_1 :Your host is 42irc-server, running version 0.0.1
+:42irc-server 003 NICK_1 :This server was created January 1st, 1970
+:42irc-server 001 NICK_2 :Welcome to the Internet Relay Network NICK_2
+:42irc-server 002 NICK_2 :Your host is 42irc-server, running version 0.0.1
+:42irc-server 003 NICK_2 :This server was created January 1st, 1970
+pong
+pong
+:NICK_1!USER_1@42irc-server JOIN :#channel
+:42irc-server 332 NICK_1 #channel :No topic is set
+:42irc-server 353 NICK_1  #channel :@NICK_1
+:42irc-server 366 NICK_1 #channel :End of /NAMES list
+:42irc-server 502 NICK_1 :Cant change mode for other users
