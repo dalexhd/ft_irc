@@ -168,16 +168,16 @@ class Client
 	std::string reads(void)
 	{
 		char buffer[10240];
+		memset(buffer, 0, sizeof(buffer)); // initialize buffer to all zeros
 
 		while (!std::strstr(buffer, "\n"))
 		{
-			memset(buffer, '\0', sizeof(buffer));
 			if (read(this->_socket, buffer, sizeof(buffer)) <= 0)
-				break;
+				break; // exit the loop if read returns a value less than or equal to zero
 		}
-		buffer[strlen(buffer)] = '\0';
+
 		std::string tmp(buffer);
-		return (tmp);
+		return tmp;
 	}
 
 	void addCommand(Command command)
