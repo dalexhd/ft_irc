@@ -41,7 +41,7 @@ var Replies_8hpp =
     [ "ERR_UNKNOWNERROR", "Replies_8hpp.html#a1bb6c5f0a32af6c3e805b488930283ba", null ],
     [ "ERR_UNKNOWNMODE", "Replies_8hpp.html#a672b737c668aa46a92bf1cab2005d8fe", null ],
     [ "ERR_USERNOTINCHANNEL", "Replies_8hpp.html#a045a8b4fb55a17dba2282fe798974c3b", null ],
-    [ "ERR_USERONCHANNEL", "Replies_8hpp.html#a00c1f58c5da72ed665e55dc8a28d2406", null ],
+    [ "ERR_USERONCHANNEL", "Replies_8hpp.html#a30a8217a863d9ebb8128a17e23644cb3", null ],
     [ "ERR_USERSDONTMATCH", "Replies_8hpp.html#a11e7269c3ea3c6b48cb86c819ac7fd9a", null ],
     [ "ERR_WASNOSUCHNICK", "Replies_8hpp.html#a8f504c5b1a45267113fcd238d9871ad5", null ],
     [ "ERR_YOUREBANNEDCREEP", "Replies_8hpp.html#a0a78821a40285c2146171737e46df182", null ],

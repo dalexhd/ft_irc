@@ -202,11 +202,11 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a6bc5ed141738fe9a5a14fe173a567557">  113</a></span>&#160;<span class="preprocessor">#define ERR_NICKNAMEINUSE(servername, nick) \</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 433 * &quot; + nick + &quot; :Nickname is already in use\n&quot;</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a045a8b4fb55a17dba2282fe798974c3b">  115</a></span>&#160;<span class="preprocessor">#define ERR_USERNOTINCHANNEL(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 441 * &quot; + nick + &quot; :They aren&#39;t on that channel\n&quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 441 * &quot; + nick + &quot; &quot; + channel + &quot; :They aren&#39;t on that channel\n&quot;</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a22aa2a137786380c918b1f41c8a8054b">  117</a></span>&#160;<span class="preprocessor">#define ERR_NOTONCHANNEL(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 442 * &quot; + nick + &quot; :You&#39;re not on that channel\n&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a00c1f58c5da72ed665e55dc8a28d2406">  119</a></span>&#160;<span class="preprocessor">#define ERR_USERONCHANNEL(servername, nick) \</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 443 * &quot; + nick + &quot; :You&#39;re already member of that channel\n&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 442 * &quot; + nick + &quot; &quot; + channel + &quot; :You&#39;re not on that channel\n&quot;</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a30a8217a863d9ebb8128a17e23644cb3">  119</a></span>&#160;<span class="preprocessor">#define ERR_USERONCHANNEL(servername, nick, username, channel) \</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 443 * &quot; + nick + &quot; &quot; + username + &quot; &quot; + channel + &quot; :is already on channel\n&quot;</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a212152bb05361e627adb77f415dab88a">  121</a></span>&#160;<span class="preprocessor">#define ERR_NOTREGISTERED 451</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">  122</a></span>&#160;<span class="preprocessor">#define ERR_NEEDMOREPARAMS(servername, nick, command) \</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 461 &quot; + nick + &quot; &quot; + command + &quot; :Wrong num parameters\n&quot;</span></div>
@@ -263,7 +263,7 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 24 2023 18:46:16 for IRC SERVER by
+    <li class="footer">Generated on Fri Mar 24 2023 19:17:59 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

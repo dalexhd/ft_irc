@@ -40,6 +40,7 @@ var NAVTREEINDEX1 =
 "classInvite.html":[1,0,4],
 "classInvite.html#a17511ed16dd5b06174df476e023aaaa7":[1,0,4,1],
 "classInvite.html#abc7ac035e70bcfe6c6b40ffe85f8378a":[1,0,4,0],
+"classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5":[1,0,4,2],
 "classJoin.html":[1,0,5],
 "classJoin.html#a207289889718fa33c1a6892241aa60d4":[1,0,5,2],
 "classJoin.html#a77631ed35ab8829cd152d82db3b51578":[1,0,5,1],
