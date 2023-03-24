@@ -16,13 +16,20 @@ class Nick : public Command
 		_example[1] = "nick <nuevo_nick>";
 		_needs_auth = false;
 	}
+	// ERR_NONICKNAMEGIVEN k
+	// ERR_ERRONEUSNICKNAME is alphanumeric
+	// ERR_NICKNAMEINUSE k
+	// ERR_NICKCOLLISION
 
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() == 0 || p.size() > 2)
 		{
-			_sender->message("Wrong command format. Ex: nick <nick>\n");
+			if (p.size() == 0)
+				_sender->message(ERR_NONICKNAMEGIVEN(_sender->_servername));
+			else
+				_sender->message("Wrong command format. Ex: nick <nick>\n"); // ESTO EXISTE EN EL PROTOCOLO??????????
 			return (false);
 		}
 		std::string                          name = _message->getParams()[0];

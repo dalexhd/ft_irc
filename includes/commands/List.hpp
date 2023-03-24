@@ -16,7 +16,7 @@ class List : public Command
 		_example[1] = "list #hola";
 		_example[2] = "list #hola,#chau";
 	}
-
+	// ERR_NOSUCHSERVER
 	bool validate(void)
 	{
 		// TODO: Check if channel exists.
