@@ -113,11 +113,11 @@
 #define ERR_NICKNAMEINUSE(servername, nick) \
 	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
 #define ERR_USERNOTINCHANNEL(servername, nick, channel) \
-	":" + servername + " 441 * " + nick + " :They aren't on that channel\n"
+	":" + servername + " 441 * " + nick + " " + channel + " :They aren't on that channel\n"
 #define ERR_NOTONCHANNEL(servername, nick, channel) \
-	":" + servername + " 442 * " + nick + " :You're not on that channel\n"
-#define ERR_USERONCHANNEL(servername, nick) \
-	":" + servername + " 443 * " + nick + " :You're already member of that channel\n"
+	":" + servername + " 442 * " + nick + " " + channel + " :You're not on that channel\n"
+#define ERR_USERONCHANNEL(servername, nick, username, channel) \
+	":" + servername + " 443 * " + nick + " " + username + " " + channel + " :is already on channel\n"
 #define ERR_NOTREGISTERED 451
 #define ERR_NEEDMOREPARAMS(servername, nick, command) \
 	":" + servername + " 461 " + nick + " " + command + " :Wrong num parameters\n"

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/24 18:50:29 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/24 20:21:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ void Server::createServerPoll(void)
 					}
 					else
 					{
-						Message *   message = client->_message;
-						std::string nick = client->getNick();
+						Message    *message = _clients[i->fd]->_message;
+						std::string nick = _clients[i->fd]->getNick();
 						if (nick.empty())
 							nick = "Anonymous";
 						std::cout << C_MAGENTA "<< Received message from " << nick << ": " << C_X
@@ -173,6 +173,7 @@ void Server::setupCommands(void)
 	_commands["pass"] = new Pass();
 	_commands["mode"] = new Mode();
 	_commands["whois"] = new Whois();
+	_commands["invite"] = new Invite();
 	_commands["topic"] = new Topic();
 }
 
