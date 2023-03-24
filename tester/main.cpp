@@ -83,7 +83,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 6
+#define MENU 1
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
