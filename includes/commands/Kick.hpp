@@ -78,14 +78,14 @@ class Kick : public Command
 
 					if (getUserChannel == false)
 					{
-						_sender->message(ERR_USERNOTINCHANNEL(
-						    _sender->_servername, _sender->_nick, channel->getName()));
+						_sender->message(
+						    ERR_USERNOTINCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 						return (false);
 					}
 					if (isSenderOnChannel == false)
 					{
-						_sender->message(ERR_NOTONCHANNEL(
-						    _sender->_servername, _sender->_nick, channel->getName()));
+						_sender->message(
+						    ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 						return (false);
 					}
 				}
