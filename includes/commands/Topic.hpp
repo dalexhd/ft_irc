@@ -35,7 +35,7 @@ class Topic : public Command
 				_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 				return (false);
 			}
-			else if (channel->getClientRoleString(_sender) != "o")
+			else if (!channel->isOpe(_sender))
 			{
 				_sender->message(
 				    ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick, p[0]));

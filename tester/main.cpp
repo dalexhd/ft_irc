@@ -36,18 +36,19 @@ static void *clientConversation(void *client)
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
 	{
+		usleep(700);
+
 		if (!c->_connected)
 		{
-			usleep(it2->second._ms * 1000);
+			usleep(it2->second._ms);
 			if (c->irc_connect() > 0)
 				return 0;
 			c->login();
 		}
-		usleep(it2->second._ms * 1000);
+		usleep(it2->second._ms);
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		usleep(700);
 		/*std::ofstream myfile;
 		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
 		myfile << c->reads();

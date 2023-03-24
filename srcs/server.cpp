@@ -95,7 +95,7 @@ void Server::createServerPoll(void)
 					}
 					else
 					{
-						Message *   message = _clients[i->fd]->_message;
+						Message    *message = _clients[i->fd]->_message;
 						std::string nick = _clients[i->fd]->getNick();
 						if (nick.empty())
 							nick = "Anonymous";
@@ -168,6 +168,7 @@ void Server::setupCommands(void)
 	_commands["pass"] = new Pass();
 	_commands["mode"] = new Mode();
 	_commands["whois"] = new Whois();
+	_commands["invite"] = new Invite();
 	_commands["topic"] = new Topic();
 }
 
