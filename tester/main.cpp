@@ -47,10 +47,10 @@ static void *clientConversation(void *client)
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-/* 		std::ofstream myfile;
+ 		std::ofstream myfile;
 		myfile.open("tests/res" + c->_filename.substr(12,99), std::ios_base::app);
 		myfile << c->reads();
-		myfile.close(); */
+		myfile.close();
 		/* usleep(700000);
 		std::ofstream myfile;
 		myfile.open("dir/XDDDDDDD", std::ios_base::app);
@@ -115,6 +115,7 @@ int main(void)
 		std::vector<std::string> files;
 
 		list_files("./tests/spec", files);
+		createResTest();
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
 		{
