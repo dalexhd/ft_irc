@@ -1,4 +1,5 @@
 <map id="Server::getRelatedClients" name="Server::getRelatedClients">
-<area shape="rect" id="node1" title=" " alt="" coords="161,5,349,32"/>
-<area shape="rect" id="node2" href="$classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="164,31,352,57"/>
+<area shape="rect" id="node2" href="$classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="7,5,115,32"/>
+<area shape="rect" id="node3" href="$classNick.html#ac33be0d8bdeb6e18ec697d47c319fe43" title=" " alt="" coords="5,56,116,83"/>
 </map>

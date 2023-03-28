@@ -286,8 +286,8 @@ Macros</h2></td></tr>
 <tr class="separator:a09d98b1378f58b37c1db3ae099fb7532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b3e548928ffb995b14d4bc3618ce1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f">ERR_NONICKNAMEGIVEN</a>(servername)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 431 &quot; + servername + &quot; :No nickname given\n&quot;</td></tr>
 <tr class="separator:a39b3e548928ffb995b14d4bc3618ce1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff70e89c74c5898ca05e2b997d7d038"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a0ff70e89c74c5898ca05e2b997d7d038">ERR_ERRONEUSNICKNAME</a>&#160;&#160;&#160;432</td></tr>
-<tr class="separator:a0ff70e89c74c5898ca05e2b997d7d038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2e2bd647319bfc0ce74b5c3eea6ab1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#afb2e2bd647319bfc0ce74b5c3eea6ab1">ERR_ERRONEUSNICKNAME</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 432 * &quot; + nick + &quot; :Erroneous nickname\n&quot;</td></tr>
+<tr class="separator:afb2e2bd647319bfc0ce74b5c3eea6ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc5ed141738fe9a5a14fe173a567557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a6bc5ed141738fe9a5a14fe173a567557">ERR_NICKNAMEINUSE</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 433 * &quot; + nick + &quot; :Nickname is already in use\n&quot;</td></tr>
 <tr class="separator:a6bc5ed141738fe9a5a14fe173a567557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045a8b4fb55a17dba2282fe798974c3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a045a8b4fb55a17dba2282fe798974c3b">ERR_USERNOTINCHANNEL</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 441 * &quot; + nick + &quot; &quot; + channel + &quot; :They aren't on that channel\n&quot;</td></tr>
@@ -592,14 +592,28 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ff70e89c74c5898ca05e2b997d7d038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff70e89c74c5898ca05e2b997d7d038">&#9670;&nbsp;</a></span>ERR_ERRONEUSNICKNAME</h2>
+<a id="afb2e2bd647319bfc0ce74b5c3eea6ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2e2bd647319bfc0ce74b5c3eea6ab1">&#9670;&nbsp;</a></span>ERR_ERRONEUSNICKNAME</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ERR_ERRONEUSNICKNAME&#160;&#160;&#160;432</td>
+          <td class="memname">#define ERR_ERRONEUSNICKNAME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 432 * &quot; + nick + &quot; :Erroneous nickname\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2702,7 +2716,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 28 2023 18:07:32 for IRC SERVER by
+    <li class="footer">Generated on Tue Mar 28 2023 19:02:15 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -8,7 +8,7 @@ var searchData=
   ['err_5fcantkillserver_544',['ERR_CANTKILLSERVER',['../Replies_8hpp.html#a16efccb06260d2bbad55aca592793fe5',1,'Replies.hpp']]],
   ['err_5fchannelisfull_545',['ERR_CHANNELISFULL',['../Replies_8hpp.html#ab2ea3780f74d27a21a1ba4a2de905663',1,'Replies.hpp']]],
   ['err_5fchanoprivsneeded_546',['ERR_CHANOPRIVSNEEDED',['../Replies_8hpp.html#a21dd676c6a68b701c77c6b9f5bdf7989',1,'Replies.hpp']]],
-  ['err_5ferroneusnickname_547',['ERR_ERRONEUSNICKNAME',['../Replies_8hpp.html#a0ff70e89c74c5898ca05e2b997d7d038',1,'Replies.hpp']]],
+  ['err_5ferroneusnickname_547',['ERR_ERRONEUSNICKNAME',['../Replies_8hpp.html#afb2e2bd647319bfc0ce74b5c3eea6ab1',1,'Replies.hpp']]],
   ['err_5fhelpnotfound_548',['ERR_HELPNOTFOUND',['../Replies_8hpp.html#ae74184b5bdc2c483f885b44963d63d57',1,'Replies.hpp']]],
   ['err_5finputtoolong_549',['ERR_INPUTTOOLONG',['../Replies_8hpp.html#add9fac7a4649456b408a2f28acc1f6d2',1,'Replies.hpp']]],
   ['err_5finvalidkey_550',['ERR_INVALIDKEY',['../Replies_8hpp.html#a93525901f975f50045c71090b907a4ec',1,'Replies.hpp']]],

@@ -1,6 +1,7 @@
 <map id="Server::getChannels" name="Server::getChannels">
-<area shape="rect" id="node1" title=" " alt="" coords="397,31,551,57"/>
-<area shape="rect" id="node2" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="203,5,307,32"/>
-<area shape="rect" id="node3" href="$classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="161,56,349,83"/>
-<area shape="rect" id="node4" href="$classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="5,56,113,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="400,31,553,57"/>
+<area shape="rect" id="node2" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="206,5,310,32"/>
+<area shape="rect" id="node3" href="$classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="164,56,352,83"/>
+<area shape="rect" id="node4" href="$classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="7,31,115,57"/>
+<area shape="rect" id="node5" href="$classNick.html#ac33be0d8bdeb6e18ec697d47c319fe43" title=" " alt="" coords="5,81,116,108"/>
 </map>
