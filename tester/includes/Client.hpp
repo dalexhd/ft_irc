@@ -1,12 +1,12 @@
 // Create IRC client in cpp
 #include "Colors.hpp"
 #include <cstring>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <fstream>
 #include <string.h>
 #include <string>
 #include <unistd.h>
@@ -82,7 +82,7 @@ class Client
 	std::map<size_t, Command> _commands;
 	bool                      _connected;
 	pthread_t                 _thread;
-	std::string              _filename;
+	std::string               _filename;
 
   public:
 	Client(std::string host, std::string port)
@@ -156,7 +156,7 @@ class Client
 
 	void irc_disconnect(void)
 	{
-		//this->send("QUIT");
+		// this->send("QUIT");
 		freeaddrinfo(servinfo);
 	}
 
@@ -201,9 +201,12 @@ class Client
 		}*/
 		return (stream);
 	}
-	std::string trim(std::string str) {
+
+	std::string trim(std::string str)
+	{
 		std::size_t first = str.find_first_not_of(' ');
-		if (first == std::string::npos) {
+		if (first == std::string::npos)
+		{
 			return "";
 		}
 		std::size_t last = str.find_last_not_of(' ');
@@ -214,13 +217,12 @@ class Client
 	{
 		std::cout << CYAN_T << res << RESET << std::endl;
 
-		if((std::strstr(res.c_str(), "PING")))
+		if ((std::strstr(res.c_str(), "PING")))
 		{
-			std::string pongArg = trim(res.substr(4,res.find('\n')));
-			//std::cout << MAGENTA_T << pongArg << RESET << std::endl;
+			std::string pongArg = trim(res.substr(4, res.find('\n')));
+			// std::cout << MAGENTA_T << pongArg << RESET << std::endl;
 			send("PONG " + pongArg);
 			return (0);
-
 		}
 
 		return (1);
@@ -237,12 +239,6 @@ class Client
 		usleep(1000);
 		this->_connected = true;
 		pingpong(reads());
-/* 		usleep(1000);
-
-		std::ofstream myfile;
-		myfile.open("tests/res" + _filename.substr(12,99), std::ios_base::app);
-		myfile << reads();
-		myfile.close(); */
 		usleep(1000);
 	}
 	void requestingLoop()

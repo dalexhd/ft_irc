@@ -36,6 +36,8 @@ static void *clientConversation(void *client)
 	for (std::map<size_t, Command>::iterator it2 = c->_commands.begin(); // COMMAND LOOP
 	     it2 != c->_commands.end(); ++it2)
 	{
+		usleep(700);
+
 		if (!c->_connected)
 		{
 			usleep(it2->second._ms);

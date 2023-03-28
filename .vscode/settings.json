@@ -113,7 +113,8 @@
 		"stdio.h": "c",
 		"socket.h": "c",
 		"inet.h": "c",
-		"thread": "cpp"
+		"thread": "cpp",
+		"codecvt": "cpp"
 	},
 	"files.autoSave": "off"
 }
