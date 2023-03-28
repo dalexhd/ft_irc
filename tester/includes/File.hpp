@@ -21,7 +21,7 @@ class File
 	std::map<std::string, Client> _clients;
 
   public:
-	File(std::string filename)
+	File(const std::string &filename)
 	{
 		this->_name = filename;
 	}
