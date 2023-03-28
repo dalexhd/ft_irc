@@ -19,7 +19,7 @@ class Nick : public Command
 	// ERR_NONICKNAMEGIVEN k
 	// ERR_ERRONEUSNICKNAME is alphanumeric
 	// ERR_NICKNAMEINUSE k
-	// ERR_NICKCOLLISION
+	// ERR_NICKCOLLISION nick existente en otro server conectado al server. Error exclusivo de redes con varios servidores.
 
 	bool validate(void)
 	{
@@ -42,10 +42,22 @@ class Nick : public Command
 				return (false);
 			}
 		}
+		/*
+		A through to Z. (Lowercase and uppercase.)
+		0 through to 9.
+		`|^_-{}[] and \
+		And a name cannot start with a number or hyphen.
+		*/
+		if (std::count_if(name.begin(), name.end(), ::isalnum) == name.length())
+		{
+			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, name)); // NO ESTA DEFINIDO EL ERROR
+			return (false);
+		}
+
 		return (true);
 	}
 
-	void execute()
+	void execute() // doesnt work fine
 	{
 		std::map<size_t, Client *>           clients = _server->_clients;
 		std::string                          name = _message->getParams()[0];
