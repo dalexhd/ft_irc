@@ -212,8 +212,8 @@ Macros</h2></td></tr>
 <tr class="separator:a820e14ea3c22e99e3bd5ab620d6d017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a199ad74d0b685e13c1f10150b3e1419e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a199ad74d0b685e13c1f10150b3e1419e">RPL_WHOISACCOUNT</a>&#160;&#160;&#160;330</td></tr>
 <tr class="separator:a199ad74d0b685e13c1f10150b3e1419e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a068f08f42f84509e823271b5d66b73af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a068f08f42f84509e823271b5d66b73af">RPL_NOTOPIC</a>&#160;&#160;&#160;331</td></tr>
-<tr class="separator:a068f08f42f84509e823271b5d66b73af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3864731b6495f20214906a2f39bab34d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a3864731b6495f20214906a2f39bab34d">RPL_NOTOPIC</a>(servername,  nick,  channel)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 331 &quot; + nick + &quot; &quot; + channel + &quot; :No topic is set\n&quot;</td></tr>
+<tr class="separator:a3864731b6495f20214906a2f39bab34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9bc69a0fdd3466f892ce20e8b618c6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#af9bc69a0fdd3466f892ce20e8b618c6e">RPL_TOPIC</a>(servername,  nick,  channel,  topic)&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 332 &quot; + nick + &quot; &quot; + channel + &quot; :&quot; + topic + &quot;\n&quot;</td></tr>
 <tr class="separator:af9bc69a0fdd3466f892ce20e8b618c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3732c2a0eef1d119649da17ebd941ed6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a3732c2a0eef1d119649da17ebd941ed6">RPL_TOPICWHOTIME</a>&#160;&#160;&#160;333</td></tr>
@@ -2144,14 +2144,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a068f08f42f84509e823271b5d66b73af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a068f08f42f84509e823271b5d66b73af">&#9670;&nbsp;</a></span>RPL_NOTOPIC</h2>
+<a id="a3864731b6495f20214906a2f39bab34d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3864731b6495f20214906a2f39bab34d">&#9670;&nbsp;</a></span>RPL_NOTOPIC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RPL_NOTOPIC&#160;&#160;&#160;331</td>
+          <td class="memname">#define RPL_NOTOPIC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">channel&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot; 331 &quot; + nick + &quot; &quot; + channel + &quot; :No topic is set\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2716,7 +2736,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 28 2023 19:23:22 for IRC SERVER by
+    <li class="footer">Generated on Tue Mar 28 2023 19:52:49 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -89,7 +89,7 @@ var Replies_8hpp =
     [ "RPL_MYINFO", "Replies_8hpp.html#a1f7e64e01aae6c30bbfa7973c88fcc87", null ],
     [ "RPL_NAMREPLY", "Replies_8hpp.html#a634c1d35d5ea99b3506b513f04731b74", null ],
     [ "RPL_NONE", "Replies_8hpp.html#ae06cc3bea4d38d158c481f78f01cb5d2", null ],
-    [ "RPL_NOTOPIC", "Replies_8hpp.html#a068f08f42f84509e823271b5d66b73af", null ],
+    [ "RPL_NOTOPIC", "Replies_8hpp.html#a3864731b6495f20214906a2f39bab34d", null ],
     [ "RPL_NOWAWAY", "Replies_8hpp.html#ada72c77888e616e7a59b7d9951b00bf3", null ],
     [ "RPL_REHASHING", "Replies_8hpp.html#a0361a07ced6fc0a9f572573c8d6760c0", null ],
     [ "RPL_SASLMECHS", "Replies_8hpp.html#a42d1dc8c732ce26ee562ab5ca622d54c", null ],

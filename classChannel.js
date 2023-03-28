@@ -22,6 +22,7 @@ var classChannel =
     [ "removeClientFromChannel", "classChannel.html#a249c77224152ae0da4635fd0edcd1a5f", null ],
     [ "removeMode", "classChannel.html#af72ea58ed6a994380416c80ff2b4dcea", null ],
     [ "setCreator", "classChannel.html#a1cc547a4312634c68769f1c62d2b4df9", null ],
+    [ "setTopic", "classChannel.html#ac95eb79f7df633dfbfb130d0a68e1963", null ],
     [ "_normal_clients", "classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8", null ],
     [ "_ope_clients", "classChannel.html#a6daf61a24bc288f5612698070c6d87d9", null ],
     [ "_voice_clients", "classChannel.html#affad5998b3363341d58e0f2ebf921806", null ]
