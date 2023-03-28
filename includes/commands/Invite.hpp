@@ -15,9 +15,14 @@ class Invite : public Command
 		_example[0] = "invite <nick> <canal>";
 		//		_is_opec = true;
 	}
-	// ERR_USERONCHANNEL
-	// ERR_CHANOPRIVSNEEDED
+	/* ERR_CHANOPRIVSNEEDED
+	                    "<channel> :You're not channel operator"
 
+	            - Any command requiring 'chanop' privileges (such as
+	              MODE messages) must return this error if the client
+	              making the attempt is not a chanop on the specified
+	              channel.
+	*/
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
