@@ -124,9 +124,9 @@ class Join : public Command
 							                            channel->getName() + "\n")
 							                    .c_str());
 						}
-						Command    *cmd = _server->_commands["names"];
+						Command *   cmd = _server->_commands["names"];
 						std::string names = "names #" + _ch_params[i];
-						Message    *message = new Message(names);
+						Message *   message = new Message(names);
 						cmd->setSender(_sender);
 						cmd->setServer(_server);
 						cmd->setMessage(message);
@@ -185,9 +185,9 @@ class Join : public Command
 				if ((it = _server->_commands.find("names")) !=
 				    _server->_commands.end())
 				{
-					Command    *cmd = _server->_commands["names"];
+					Command *   cmd = _server->_commands["names"];
 					std::string names = "names #" + _ch_params[i];
-					Message    *message = new Message(names);
+					Message *   message = new Message(names);
 					cmd->setSender(_sender);
 					cmd->setServer(_server);
 					cmd->setMessage(message);

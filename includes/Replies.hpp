@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/23 17:05:00 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:15:58 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@
 #define ERR_NOMOTD 422
 #define ERR_NONICKNAMEGIVEN(servername) \
 	":" + servername + " 431 " + servername + " :No nickname given\n"
-#define ERR_ERRONEUSNICKNAME 432
+#define ERR_ERRONEUSNICKNAME(servername, nick) \
+	":" + servername + " 432 * " + nick + " :Erroneous nickname\n"
 #define ERR_NICKNAMEINUSE(servername, nick) \
 	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
 #define ERR_USERNOTINCHANNEL(servername, nick, channel) \

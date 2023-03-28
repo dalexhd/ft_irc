@@ -16,29 +16,6 @@ class List : public Command
 		_example[1] = "list #hola";
 		_example[2] = "list #hola,#chau";
 	}
-	// ERR_NOSUCHSERVER
-	bool validate(void)
-	{
-		// TODO: Check if channel exists.
-		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() > 1)
-		{
-			_sender->message("Wrong command format. Ex: list "
-			                 "[<canal>{,<canal>}]\n");
-			return (false);
-		}
-		std::vector<std::string> _ch_params = split(p[0], ",");
-
-		for (size_t i = 0; i < _ch_params.size(); i++)
-		{
-			if (_ch_params[i][0] != '#') // TODO: Is this validation correct?
-			{
-				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
-				return (false);
-			}
-		}
-		return (true);
-	}
 
 	void execute()
 	{
@@ -51,10 +28,13 @@ class List : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
-				                          channel->getName(),
-				                          itoa(channel->getClients().size()),
-				                          channel->getTopic())); // RPL_LIST (322)
+				if (channel)
+				{
+					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
+					                          channel->getName(),
+					                          itoa(channel->getClients().size()),
+					                          channel->getTopic())); // RPL_LIST (322)
+				}
 			}
 		}
 		else

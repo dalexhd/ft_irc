@@ -16,22 +16,21 @@ class Nick : public Command
 		_example[1] = "nick <nuevo_nick>";
 		_needs_auth = false;
 	}
-	// ERR_NONICKNAMEGIVEN k
-	// ERR_ERRONEUSNICKNAME is alphanumeric
-	// ERR_NICKNAMEINUSE k
-	// ERR_NICKCOLLISION nick existente en otro server conectado al server. Error exclusivo de redes con varios servidores.
 
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() == 0 || p.size() > 2)
+
+		if (p.size() == 0)
 		{
-			if (p.size() == 0)
-				_sender->message(ERR_NONICKNAMEGIVEN(_sender->_servername));
-			else
-				_sender->message("Wrong command format. Ex: nick <nick>\n"); // ESTO EXISTE EN EL PROTOCOLO??????????
+			_sender->message(ERR_NONICKNAMEGIVEN(_sender->_servername));
+		}
+		else if (p.size() > 1)
+		{
+			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, p[0]));
 			return (false);
 		}
+
 		std::string                          name = _message->getParams()[0];
 		std::map<size_t, Client *>::iterator it = _server->_clients.begin();
 		for (; it != _server->_clients.end(); it++)
@@ -42,36 +41,26 @@ class Nick : public Command
 				return (false);
 			}
 		}
-		/*
-		A through to Z. (Lowercase and uppercase.)
-		0 through to 9.
-		`|^_-{}[] and \
-		And a name cannot start with a number or hyphen.
-		*/
-		if (std::count_if(name.begin(), name.end(), ::isalnum) == name.length())
+		if (std::count_if(name.begin(), name.end(), ::isalnum) != static_cast<long>(name.length()))
 		{
-			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, name)); // NO ESTA DEFINIDO EL ERROR
+			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, name));
 			return (false);
 		}
-
 		return (true);
 	}
 
 	void execute() // doesnt work fine
 	{
-		std::map<size_t, Client *>           clients = _server->_clients;
-		std::string                          name = _message->getParams()[0];
-		std::map<size_t, Client *>::iterator it = _server->_clients.begin();
+		std::map<size_t, Client *> clients = _server->_clients;
+		std::string                name = _message->getParams()[0];
 
-		for (; it != _server->_clients.end(); it++)
+		std::vector<Client *> related_clients = _server->getRelatedClients(_sender);
+		for (size_t i = 0; i < related_clients.size(); i++)
 		{
-			if (it->second->_nick == name)
-			{
-				it->second->message(std::string(":" + _sender->_nick + "!" +
-				                                _sender->_username + "@" +
-				                                _sender->_servername + " NICK :" + name + "\n")
-				                        .c_str());
-			}
+			related_clients[i]->message(std::string(":" + _sender->_nick + "!" +
+			                                        _sender->_username + "@" +
+			                                        _sender->_servername + " NICK :" + name + "\n")
+			                                .c_str());
 		}
 		_sender->setNick(name);
 	}
