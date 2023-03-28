@@ -156,7 +156,7 @@ class Client
 
 	void irc_disconnect(void)
 	{
-		// this->send("QUIT");
+		//this->send("QUIT");
 		freeaddrinfo(servinfo);
 	}
 
@@ -236,6 +236,7 @@ class Client
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		this->_connected = true;
+		pingpong(reads());
 /* 		usleep(1000);
 
 		std::ofstream myfile;

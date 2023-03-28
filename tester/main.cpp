@@ -60,6 +60,7 @@ static void *clientConversation(void *client)
 	}
 
 	usleep(700);
+	c->send("QUIT");
 	c->irc_disconnect();
 	usleep(700);
 	return 0;
@@ -100,7 +101,7 @@ int main(void)
 		else
 			server = "127.0.0.1";
 
-		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
+		Client *client = new Client("Ttestbot", "Ttestbot", "Ttestbot", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
