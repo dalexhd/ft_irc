@@ -1,6 +1,7 @@
 // Create IRC client in cpp
 #include "Colors.hpp"
 #include <cstring>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <netdb.h>
@@ -81,6 +82,7 @@ class Client
 	std::map<size_t, Command> _commands;
 	bool                      _connected;
 	pthread_t                 _thread;
+	std::string               _filename;
 
   public:
 	Client(std::string host, std::string port)
@@ -167,7 +169,7 @@ class Client
 
 	std::string reads(void)
 	{
-		char buffer[10240];
+		char buffer[1024];
 		memset(buffer, 0, sizeof(buffer)); // initialize buffer to all zeros
 
 		while (!std::strstr(buffer, "\n"))
@@ -199,6 +201,33 @@ class Client
 		}*/
 		return (stream);
 	}
+
+	std::string trim(std::string str)
+	{
+		std::size_t first = str.find_first_not_of(' ');
+		if (first == std::string::npos)
+		{
+			return "";
+		}
+		std::size_t last = str.find_last_not_of(' ');
+		return str.substr(first, last - first + 1);
+	}
+
+	int pingpong(std::string res)
+	{
+		std::cout << CYAN_T << res << RESET << std::endl;
+
+		if ((std::strstr(res.c_str(), "PING")))
+		{
+			std::string pongArg = trim(res.substr(4, res.find('\n')));
+			// std::cout << MAGENTA_T << pongArg << RESET << std::endl;
+			send("PONG " + pongArg);
+			return (0);
+		}
+
+		return (1);
+	}
+
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
@@ -209,18 +238,17 @@ class Client
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		usleep(1000);
 		this->_connected = true;
-		std::cout << reads() << std::endl;
+		pingpong(reads());
 		usleep(1000);
 	}
 	void requestingLoop()
 	{
 		std::string line;
-		std::getline(std::cin, line);
-		for (line = "a"; line != "quit" && std::getline(std::cin, line);)
+		for (line = ""; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
-			std::cout << CYAN_T << reads() << RESET;
+			pingpong(reads());
 		}
 	}
 };

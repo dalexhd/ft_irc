@@ -1,0 +1,2 @@
+0 NICK1 USER_1 REAL_NAME_1 JOIN #channel1 password
+200 NICK_2 USER_2 REAL_NAME_1 JOIN #channel1 wrongpassword

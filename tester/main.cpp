@@ -49,14 +49,21 @@ static void *clientConversation(void *client)
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		/*std::ofstream myfile;
-		myfile.open("tests/res/privmsg/privmsg_1", std::ios_base::app);
+ 		/*std::ofstream myfile;
+		myfile.open("tests/res" + c->_filename.substr(12,99), std::ios_base::app);
 		myfile << c->reads();
 		myfile.close();*/
+		/* usleep(700000);
+		std::ofstream myfile;
+		myfile.open("dir/XDDDDDDD", std::ios_base::app);
+		myfile << c->reads();
+		myfile.close(); */
+		//std::cout << "tests/res" + c->_filename.substr(12,99) << c->reads() << std::endl;
 		std::cout << c->reads() << std::endl;
 	}
 
 	usleep(700);
+	c->send("QUIT");
 	c->irc_disconnect();
 	usleep(700);
 	return 0;
@@ -67,6 +74,7 @@ void executeFileClients(File *file)
 	for (std::map<std::string, Client>::iterator it = (*file)._clients.begin(); // CLIENT LOOP
 	     it != (*file)._clients.end(); ++it)
 	{
+		it->second._filename = file->_name;
 		pthread_create(&it->second._thread, NULL, *clientConversation, &it->second);
 	}
 	for (std::map<std::string, Client>::iterator it = (*file)._clients.begin();
@@ -84,7 +92,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 6
+#define MENU 3
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
@@ -96,7 +104,7 @@ int main(void)
 		else
 			server = "127.0.0.1";
 
-		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
+		Client *client = new Client("Ttestbot", "Ttestbot", "Ttestbot", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
@@ -110,6 +118,7 @@ int main(void)
 		std::vector<std::string> files;
 
 		list_files("./tests/spec", files);
+		createResTest();
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
 		{
