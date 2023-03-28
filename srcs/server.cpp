@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/23 18:22:06 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/24 20:21:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,11 @@ void Server::createServerPoll(void)
 			{
 				if (i->revents & POLLIN)
 				{
-					_clients[i->fd]->read();
-					if (_clients[i->fd]->_status == DISCONNECTED)
+					Client *client = _clients[i->fd];
+					client->read();
+					if (client->_status == DISCONNECTED)
 					{
-						deleteClient(_clients[i->fd]->_fd);
+						deleteClient(client->_fd);
 						break;
 					}
 					else
@@ -106,17 +107,17 @@ void Server::createServerPoll(void)
 						    _commands.end())
 						{
 							Command *cmd = it->second;
-							cmd->setSender(_clients[i->fd]);
+							cmd->setSender(client);
 							cmd->setServer(this);
 							cmd->setMessage(message);
 							if (cmd->validate())
 							{
 								if (!cmd->needsAuth())
 									cmd->execute();
-								else if (_clients[i->fd]->isAuthenticated())
+								else if (client->isAuthenticated())
 								{
 									if (!cmd->hasOpe() ||
-									    (cmd->hasOpe() && _clients[i->fd]->_is_ope))
+									    (cmd->hasOpe() && client->_is_ope))
 										cmd->execute();
 									else
 										cmd->missingOpe();
@@ -127,6 +128,10 @@ void Server::createServerPoll(void)
 						else if (message->getCmd() == "close")
 						{
 							_status = Status(CLOSED);
+						}
+						else
+						{
+							client->message("\n");
 						}
 					}
 				}
