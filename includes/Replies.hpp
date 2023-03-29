@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/23 17:05:00 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:43:39 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@
 	":" + servername + " 324 " + nick + " " + channel + " +" + modes + "\n"
 #define RPL_CREATIONTIME 329
 #define RPL_WHOISACCOUNT 330
-#define RPL_NOTOPIC 331
+#define RPL_NOTOPIC(servername, nick, channel) \
+	":" + servername + " 331 " + nick + " " + channel + " :No topic is set\n"
 #define RPL_TOPIC(servername, nick, channel, topic) \
 	":" + servername + " 332 " + nick + " " + channel + " :" + topic + "\n"
 #define RPL_TOPICWHOTIME 333
@@ -109,7 +110,8 @@
 #define ERR_NOMOTD 422
 #define ERR_NONICKNAMEGIVEN(servername) \
 	":" + servername + " 431 " + servername + " :No nickname given\n"
-#define ERR_ERRONEUSNICKNAME 432
+#define ERR_ERRONEUSNICKNAME(servername, nick) \
+	":" + servername + " 432 * " + nick + " :Erroneous nickname\n"
 #define ERR_NICKNAMEINUSE(servername, nick) \
 	":" + servername + " 433 * " + nick + " :Nickname is already in use\n"
 #define ERR_USERNOTINCHANNEL(servername, nick, channel) \

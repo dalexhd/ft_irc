@@ -1,17 +1,18 @@
 // Create IRC client in cpp
 #include "./Client.hpp"
-#include <map>
-#include <string>
-
+#include <cstdlib>
 #include <cstring>
 #include <dirent.h>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <string>
+#include <sys/stat.h>
 #include <unistd.h>
 
 class File
@@ -21,7 +22,7 @@ class File
 	std::map<std::string, Client> _clients;
 
   public:
-	File(std::string filename)
+	File(const std::string &filename)
 	{
 		this->_name = filename;
 	}
@@ -122,3 +123,92 @@ class File
 		closedir(dir);
 	}
 };
+
+// Function to create a directory
+int create_directory(const char *path)
+{
+	char *p = strdup(path);
+
+	size_t len = strlen(p);
+
+	for (size_t i = 1; i < len; i++)
+	{
+		if (p[i] == '/')
+		{
+			p[i] = '\0';
+			std::cout << "Path: " << p << "\n";
+			if (mkdir(p, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0 && errno != EEXIST)
+			{
+				std::cerr << "Error creating directory: " << p << std::endl;
+				free(p);
+				return -1;
+			}
+			p[i] = '/';
+		}
+	}
+
+	if (mkdir(p, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0 && errno != EEXIST)
+	{
+		std::cerr << "Error creating directory: " << p << std::endl;
+		free(p);
+		return -1;
+	}
+
+	free(p);
+	return 0;
+}
+
+// Function to create an empty file
+int create_file(const std::string &path)
+{
+	// Create the file
+	std::ofstream file(path.c_str());
+	if (!file)
+	{
+		std::cerr << "Error creating file: " << path << std::endl;
+		return -1;
+	}
+	file.close();
+
+	return 0;
+}
+
+int createResTest()
+{
+	// Source directory
+	const std::string src_dir = "./tests/spec";
+
+	// Destination directory
+	const std::string dest_dir = "./tests/res";
+
+	// Create the destination directory if it doesn't exist
+	if (create_directory(dest_dir.c_str()) != 0)
+	{
+		return EXIT_FAILURE;
+	}
+
+	// Loop through all files in the source directory
+	std::string cmd = "find " + src_dir + " -type f";
+	FILE *      pipe = popen(cmd.c_str(), "r");
+	char        buffer[256];
+	while (fgets(buffer, 256, pipe) != NULL)
+	{
+		// Remove newline character from the path
+		std::string src_file = buffer;
+		src_file.erase(src_file.size() - 1);
+
+		// Get the relative path of the file
+		std::string rel_path = src_file.substr(src_dir.size());
+
+		// Create the destination directory if it does not exist
+		std::string dest_path = dest_dir + rel_path;
+		std::string dest_dirname = dest_path.substr(0, dest_path.find_last_of("/\\"));
+		if (create_directory(dest_dirname.c_str()) != 0)
+		{
+			return EXIT_FAILURE;
+		}
+	}
+	pclose(pipe);
+
+	return EXIT_SUCCESS;
+}

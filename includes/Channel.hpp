@@ -51,6 +51,11 @@ class Channel
 		_creator = creator;
 	};
 
+	void setTopic(std::string &topic)
+	{
+		_topic = topic;
+	};
+
 	// Getter
 	std::string &getPassword(void)
 	{

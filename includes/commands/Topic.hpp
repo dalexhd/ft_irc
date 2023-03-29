@@ -20,7 +20,7 @@ class Topic : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 1 || p.size() > 3)
+		if (p.size() < 1)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
 			                                    _message->getCmd())); // ERR_NEEDMOREPARAMS (461)
@@ -35,7 +35,7 @@ class Topic : public Command
 				_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 				return (false);
 			}
-			else if (!channel->isOpe(_sender))
+			else if (!channel->isOpe(_sender) && p.size() > 1)
 			{
 				_sender->message(
 				    ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick, p[0]));
@@ -52,7 +52,25 @@ class Topic : public Command
 
 	void execute()
 	{
-		_sender->message("Hello world\n");
+		std::map<size_t, std::string> p = _message->getParams();
+		Channel *                     channel = _server->getChannel(p[0]);
+
+		if (p.size() == 1)
+		{
+			std::string topic = channel->getTopic();
+			if (topic.empty())
+				_sender->message(
+				    RPL_NOTOPIC(_sender->_servername, _sender->_nick, channel->getName()));
+			else
+				_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick,
+				                           channel->getName(), channel->getTopic()));
+		}
+		else
+		{
+			channel->setTopic(p[1]);
+			_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick,
+			                           channel->getName(), channel->getTopic()));
+		}
 	}
 };
 #endif
