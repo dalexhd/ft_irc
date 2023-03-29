@@ -15,11 +15,16 @@ class Whois : public Command
 		_example[0] = "whois <máscara de nick>[,<máscara de nick>[,...]]";
 		_example[1] = "whois guest500";
 
-		// ERR_NOSUCHSERVER                ERR_NONICKNAMEGIVEN
-		// RPL_WHOISUSER                   RPL_WHOISCHANNELS
-		// RPL_WHOISCHANNELS               RPL_WHOISSERVER
-		// RPL_AWAY                        RPL_WHOISOPERATOR
-		// RPL_WHOISIDLE                   ERR_NOSUCHNICK
+		// ERR_NOSUCHSERVER
+		// ERR_NONICKNAMEGIVEN
+		// RPL_WHOISUSER
+		// RPL_WHOISCHANNELS
+		// RPL_WHOISCHANNELS
+		// RPL_WHOISSERVER
+		// RPL_AWAY
+		// RPL_WHOISOPERATOR
+		// RPL_WHOISIDLE
+		// ERR_NOSUCHNICK
 		// RPL_ENDOFWHOIS
 	}
 
