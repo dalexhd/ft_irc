@@ -26,7 +26,7 @@ class Nick : public Command
 		std::map<size_t, std::string> p = _message->getParams();
 		if (p.size() == 0 || p.size() > 2)
 		{
-			if (p.size() == 0)
+			if (p.size() < 1)
 				_sender->message(ERR_NONICKNAMEGIVEN(_sender->_servername));
 			else
 				_sender->message("Wrong command format. Ex: nick <nick>\n"); // ESTO EXISTE EN EL PROTOCOLO??????????
