@@ -15,7 +15,13 @@ class Whois : public Command
 		_example[0] = "whois <máscara de nick>[,<máscara de nick>[,...]]";
 		_example[1] = "whois guest500";
 
-		// ERR_NOSUCHSERVER
+		// ERR_NOSUCHSERVER FALTA!!!!
+		/*
+		"<server name> :No such server"
+
+		- Used to indicate the server name given currently
+		doesn't exist.
+		*/
 		// ERR_NONICKNAMEGIVEN
 		// ERR_NOSUCHNICK
 
