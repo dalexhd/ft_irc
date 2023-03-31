@@ -21,7 +21,7 @@ class Pass : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 2)
+		if (p.size() < 1)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
 			                                    _message->getCmd()));
