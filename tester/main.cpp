@@ -116,7 +116,7 @@ int main(void)
 		std::cout << "Automated Test\n";
 		std::vector<std::string> files;
 
-		list_files("./tests/spec/NICK", files);
+		list_files("./tests/spec", files);
 		createResTest();
 		for (std::vector<std::string>::const_iterator it = files.begin(); // ITERATE FILES
 		     it != files.end(); ++it)
