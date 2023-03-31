@@ -17,7 +17,6 @@ class Pass : public Command
 	}
 
 	// ERR_NEEDMOREPARAMS comprobar tras arreglar nick
-	// ERR_ALREADYREGISTRED Ni idea de que debe hacer en PASS
 
 	bool validate(void)
 	{
@@ -32,10 +31,6 @@ class Pass : public Command
 		{
 			_sender->message(ERR_ALREADYREGISTRED(_sender->_servername, _sender->_nick));
 			return (false);
-		}
-		if (_message->getParams()[0] != _server->getPassword())
-		{
-			_sender->message(ERR_PASSWDMISMATCH(_sender->_servername, _sender->_nick));
 		}
 		return (true);
 	}
