@@ -87,7 +87,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 1
+#define MENU 2
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
@@ -99,7 +99,7 @@ int main(void)
 		else
 			server = "127.0.0.1";
 
-		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
+		Client *client = new Client("Testbot2", "Testbot2", "Testbot2", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
