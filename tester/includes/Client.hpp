@@ -1,5 +1,6 @@
 // Create IRC client in cpp
 #include "Colors.hpp"
+	#include <sys/select.h>
 #include <cstring>
 #include <fstream>
 #include <iostream>
@@ -172,6 +173,38 @@ class Client
 		char buffer[1024];
 		memset(buffer, 0, sizeof(buffer)); // initialize buffer to all zeros
 
+		fd_set readfds;
+		FD_ZERO(&readfds);
+		FD_SET(this->_socket, &readfds);
+
+		struct timeval timeout;
+		timeout.tv_sec = 4; // Wait up to 5 seconds for data to arrive
+		timeout.tv_usec = 0;
+
+		int ready = select(this->_socket + 1, &readfds, NULL, NULL, &timeout);
+		if (ready < 0) {
+			// Handle error
+			return "";
+		}
+		else if (ready == 0) {
+			// No data received within the timeout period
+			return "";
+		}
+
+		// Data is available to be read
+		if (read(this->_socket, buffer, sizeof(buffer)) <= 0) {
+			// Handle error
+			return "";
+		}
+
+		std::string tmp(buffer);
+		return tmp;
+	}
+	/*std::string reads(void)
+	{
+		char buffer[1024];
+		memset(buffer, 0, sizeof(buffer)); // initialize buffer to all zeros
+
 		while (!std::strstr(buffer, "\n"))
 		{
 			if (read(this->_socket, buffer, sizeof(buffer)) <= 0)
@@ -180,7 +213,7 @@ class Client
 
 		std::string tmp(buffer);
 		return tmp;
-	}
+	}*/
 
 	void addCommand(Command command)
 	{
@@ -231,8 +264,8 @@ class Client
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
-		// send("PASS " + this->_pass); // PASS <server_password>
-		// usleep(1000);
+		send("PASS " + this->_pass); // PASS <server_password>
+		usleep(1000);
 		send("NICK " + this->_name); // NICK <nickname>
 		usleep(1000);
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname

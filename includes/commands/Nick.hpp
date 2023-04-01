@@ -24,6 +24,7 @@ class Nick : public Command
 		if (p.size() == 0)
 		{
 			_sender->message(ERR_NONICKNAMEGIVEN(_sender->_servername));
+			return (false);
 		}
 		else if (p.size() > 1)
 		{
