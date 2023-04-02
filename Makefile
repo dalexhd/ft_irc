@@ -125,6 +125,8 @@ re:			## Call fclean => all
 test:		## Make test
 	@make re -C ./tester
 	@make run -C ./tester
+weechat:		## Make test
+	@make weechat -C ./tester
 
 cov:		## Make coverage files
 			gcov $(OBJS)

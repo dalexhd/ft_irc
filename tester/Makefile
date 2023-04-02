@@ -103,6 +103,18 @@ $(OBJ_DIR)%.o: %.cpp $(DEPS)
 			$(eval LEN=$(shell echo $$(($(COLUMNS)-$(shell echo \'$(STR)$(COMPILED)\' | wc -m)))))
 			@$(SH) -c "printf '\r$(STR)%$(LEN)s $(COMPILED) $(shell seq -s. $(COUNTER)|tr -d '[:digit:]')\0'"
 			$(CC) -c $(FLAGS) -I$(HEADER_DIR) -Itests $< -o $@
+weechat:
+	if [ ! $$(docker ps -qa -f name=weechat) ]; then \
+    	echo "El contenedor no está en ejecución"; \
+	else \
+		docker stop weechat; \
+		docker rm weechat; \
+	fi
+	docker pull jkaberg/weechat
+	docker run -it --name weechat -e UID=1000 -e GID=1000  jkaberg/weechat
+# -v ./weechat/config:/weechat
+#/server add ft_irc 10.11.11.1/6667
+#/connect ft_irc
 
 ##@ Cleaning
 clean:		## Clean all objects.
