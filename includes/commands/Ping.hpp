@@ -17,7 +17,7 @@ class Ping : public Command
 
 	void execute()
 	{
-		_sender->message("pong\n");
+		_sender->message("PONG\n");
 	}
 };
 #endif

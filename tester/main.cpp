@@ -89,15 +89,20 @@ void executeFileClients(File *file)
 #define MENU 2
 int main(void)
 {
-	if (MENU == 1 || MENU == 2)
+
+	int option;
+	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
+	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
+	std::cout << "1. Connect to Local Server" << std::endl;
+	std::cout << "2. Connect to Chat Hispano Server" << std::endl;
+	std::cout << "3. Automated Test" << std::endl << std::endl << ">> ";
+	std::cin >> option;
+	if (option == 1 || option == 2)
 	{
 		std::cout << "Single Client\n";
-		std::string server;
-		if (MENU == 1)
+		std::string server = "127.0.0.1";
+		if (option == 2)
 			server = "irc.irc-hispano.org";
-		else
-			server = "127.0.0.1";
-
 		Client *client = new Client("Testbot2", "Testbot2", "Testbot2", server);
 		client->irc_connect();
 		usleep(500);

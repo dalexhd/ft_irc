@@ -63,6 +63,10 @@ class Nick : public Command
 			                                        _sender->_servername + " NICK :" + name + "\n")
 			                                .c_str());
 		}
+		_sender->message(std::string(":" + _sender->_nick + "!" +
+			                        _sender->_username + "@" +
+			                        _sender->_servername + " NICK :" + name + "\n")
+									.c_str());
 		_sender->setNick(name);
 	}
 };
