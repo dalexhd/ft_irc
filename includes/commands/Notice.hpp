@@ -19,6 +19,12 @@ class Notice : public Command
 		_example[1] = "notice guest500 :oye, eres un imbecil";
 	}
 
+	/*
+	The NOTICE message is used similarly to PRIVMSG.  The difference
+   between NOTICE and PRIVMSG is that automatic replies must never be
+   sent in response to a NOTICE message.
+   */
+
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();

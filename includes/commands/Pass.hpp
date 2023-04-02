@@ -16,10 +16,12 @@ class Pass : public Command
 		_needs_auth = false;
 	}
 
+	// ERR_NEEDMOREPARAMS comprobar tras arreglar nick
+
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 2)
+		if (p.size() < 1)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
 			                                    _message->getCmd()));
@@ -29,10 +31,6 @@ class Pass : public Command
 		{
 			_sender->message(ERR_ALREADYREGISTRED(_sender->_servername, _sender->_nick));
 			return (false);
-		}
-		if (_message->getParams()[0] != _server->getPassword())
-		{
-			_sender->message(ERR_PASSWDMISMATCH(_sender->_servername, _sender->_nick));
 		}
 		return (true);
 	}
