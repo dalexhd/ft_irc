@@ -104,58 +104,70 @@ $(document).ready(function(){initNavTree('Whois_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">_example</a>[0] = <span class="stringliteral">&quot;whois &lt;máscara de nick&gt;[,&lt;máscara de nick&gt;[,...]]&quot;</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">_example</a>[1] = <span class="stringliteral">&quot;whois guest500&quot;</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">// ERR_NOSUCHSERVER                ERR_NONICKNAMEGIVEN</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">// RPL_WHOISUSER                   RPL_WHOISCHANNELS</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">// RPL_WHOISCHANNELS               RPL_WHOISSERVER</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// RPL_AWAY                        RPL_WHOISOPERATOR</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// RPL_WHOISIDLE                   ERR_NOSUCHNICK</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// RPL_ENDOFWHOIS</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">   26</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">validate</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::vector&lt;std::string&gt;      _cl_params = <a class="code" href="functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1">split</a>(p[0], <span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (_cl_params.size() &lt; 1)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f">ERR_NONICKNAMEGIVEN</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>));</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _cl_params.size(); i++)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a76b581021e9609b15f37bb2bea8e40e8">getClient</a>(_cl_params[i]) == NULL)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a93843989218407d0a681ce939e5d8e88">ERR_NOSUCHNICK</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">execute</a>()</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::vector&lt;std::string&gt;      _cl_params = <a class="code" href="functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1">split</a>(p[0], <span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _cl_params.size(); i++)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classClient.html">Client</a> *client = <a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a76b581021e9609b15f37bb2bea8e40e8">getClient</a>(_cl_params[i]);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            client-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#ae0ec7204f8230713c3dada608ef7e0c4">RPL_WHOISUSER</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                          client-&gt;<a class="code" href="classClient.html#a8f8d0427822b93815dec147dd420373f">_username</a>, client-&gt;<a class="code" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a>,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                          client-&gt;<a class="code" href="classClient.html#a8787f04d5b7661eccd76037ba9ebb981">_realname</a>));</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            std::map&lt;std::string, Channel *&gt; related_channels = <a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a4d5d2cd48a0a76643bc749359030baa3">getRelatedChannels</a>(client);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::map&lt;std::string, Channel *&gt;::iterator it = related_channels.begin();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;servername&quot;</span> &lt;&lt; <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">for</span> (; it != related_channels.end(); it++)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                client-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#acaa6eaf517d48c16a2215b1d9450f629">RPL_WHOISCHANNELS</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                  it-&gt;second-&gt;getClientRoleString(client), it-&gt;first));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">// ERR_NOSUCHSERVER FALTA!!!!</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        &quot;&lt;server name&gt; :No such server&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        - Used to indicate the server name given currently</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">        doesn&#39;t exist.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// ERR_NONICKNAMEGIVEN</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// ERR_NOSUCHNICK</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// RPL_ENDOFWHOIS</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// RPL_WHOISUSER</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// RPL_WHOISCHANNELS</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// RPL_WHOISIDLE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// RPL_WHOISOPERATOR</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// RPL_WHOISSERVER</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// RPL_AWAY</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// RPL_WHOISCHANNELS</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">   38</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">validate</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::vector&lt;std::string&gt;      _cl_params = <a class="code" href="functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1">split</a>(p[0], <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (_cl_params.size() &lt; 1)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f">ERR_NONICKNAMEGIVEN</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _cl_params.size(); i++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a76b581021e9609b15f37bb2bea8e40e8">getClient</a>(_cl_params[i]) == NULL)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a93843989218407d0a681ce939e5d8e88">ERR_NOSUCHNICK</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">execute</a>()</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::vector&lt;std::string&gt;      _cl_params = <a class="code" href="functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1">split</a>(p[0], <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _cl_params.size(); i++)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classClient.html">Client</a> *client = <a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a76b581021e9609b15f37bb2bea8e40e8">getClient</a>(_cl_params[i]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            client-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#ae0ec7204f8230713c3dada608ef7e0c4">RPL_WHOISUSER</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                          client-&gt;<a class="code" href="classClient.html#a8f8d0427822b93815dec147dd420373f">_username</a>, client-&gt;<a class="code" href="classClient.html#a9b53e47e860f4656b348654643ddb76e">_host</a>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                          client-&gt;<a class="code" href="classClient.html#a8787f04d5b7661eccd76037ba9ebb981">_realname</a>));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            std::map&lt;std::string, Channel *&gt; related_channels = <a class="code" href="classCommand.html#a879add8ce9599f66692965fab3acd919">_server</a>-&gt;<a class="code" href="classServer.html#a4d5d2cd48a0a76643bc749359030baa3">getRelatedChannels</a>(client);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            std::map&lt;std::string, Channel *&gt;::iterator it = related_channels.begin();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;servername&quot;</span> &lt;&lt; <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">for</span> (; it != related_channels.end(); it++)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                client-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#acaa6eaf517d48c16a2215b1d9450f629">RPL_WHOISCHANNELS</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, client-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                  it-&gt;second-&gt;getClientRoleString(client), it-&gt;first));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassWhois_html_a3d37fa31b8b97c0fb6b8fed1ec6471e1"><div class="ttname"><a href="classWhois.html#a3d37fa31b8b97c0fb6b8fed1ec6471e1">Whois::Whois</a></div><div class="ttdeci">Whois()</div><div class="ttdef"><b>Definition:</b> Whois.hpp:10</div></div>
@@ -167,7 +179,7 @@ $(document).ready(function(){initNavTree('Whois_8hpp_source.html',''); initResiz
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> Command.hpp:7</div></div>
 <div class="ttc" id="aclassClient_html_a9ee33da0a8d00f8416b934b6027d35cd"><div class="ttname"><a href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">Client::message</a></div><div class="ttdeci">void message(char const *message)</div><div class="ttdef"><b>Definition:</b> client.cpp:15</div></div>
 <div class="ttc" id="aclassClient_html_a9b53e47e860f4656b348654643ddb76e"><div class="ttname"><a href="classClient.html#a9b53e47e860f4656b348654643ddb76e">Client::_host</a></div><div class="ttdeci">std::string _host</div><div class="ttdef"><b>Definition:</b> Client.hpp:21</div></div>
-<div class="ttc" id="aclassWhois_html_a0ec1c1e57590276c15198231f36269c4"><div class="ttname"><a href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">Whois::validate</a></div><div class="ttdeci">bool validate(void)</div><div class="ttdef"><b>Definition:</b> Whois.hpp:26</div></div>
+<div class="ttc" id="aclassWhois_html_a0ec1c1e57590276c15198231f36269c4"><div class="ttname"><a href="classWhois.html#a0ec1c1e57590276c15198231f36269c4">Whois::validate</a></div><div class="ttdeci">bool validate(void)</div><div class="ttdef"><b>Definition:</b> Whois.hpp:38</div></div>
 <div class="ttc" id="aReplies_8hpp_html_a39b3e548928ffb995b14d4bc3618ce1f"><div class="ttname"><a href="Replies_8hpp.html#a39b3e548928ffb995b14d4bc3618ce1f">ERR_NONICKNAMEGIVEN</a></div><div class="ttdeci">#define ERR_NONICKNAMEGIVEN(servername)</div><div class="ttdef"><b>Definition:</b> Replies.hpp:111</div></div>
 <div class="ttc" id="aReplies_8hpp_html_a93843989218407d0a681ce939e5d8e88"><div class="ttname"><a href="Replies_8hpp.html#a93843989218407d0a681ce939e5d8e88">ERR_NOSUCHNICK</a></div><div class="ttdeci">#define ERR_NOSUCHNICK(servername, nick)</div><div class="ttdef"><b>Definition:</b> Replies.hpp:98</div></div>
 <div class="ttc" id="aclassCommand_html_af1c29aa4830e9fcc3a5c0c938084604f"><div class="ttname"><a href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">Command::_message</a></div><div class="ttdeci">Message * _message</div><div class="ttdef"><b>Definition:</b> Command.hpp:21</div></div>
@@ -184,12 +196,12 @@ $(document).ready(function(){initNavTree('Whois_8hpp_source.html',''); initResiz
 <div class="ttc" id="aReplies_8hpp_html_acaa6eaf517d48c16a2215b1d9450f629"><div class="ttname"><a href="Replies_8hpp.html#acaa6eaf517d48c16a2215b1d9450f629">RPL_WHOISCHANNELS</a></div><div class="ttdeci">#define RPL_WHOISCHANNELS(servername, nick, mode, channel)</div><div class="ttdef"><b>Definition:</b> Replies.hpp:55</div></div>
 <div class="ttc" id="aclassClient_html_a4c542a9070d73b6613e2f43ebf07d1bf"><div class="ttname"><a href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">Client::_servername</a></div><div class="ttdeci">std::string _servername</div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
 <div class="ttc" id="aclassCommand_html_a879add8ce9599f66692965fab3acd919"><div class="ttname"><a href="classCommand.html#a879add8ce9599f66692965fab3acd919">Command::_server</a></div><div class="ttdeci">Server * _server</div><div class="ttdef"><b>Definition:</b> Command.hpp:20</div></div>
-<div class="ttc" id="aclassWhois_html_a2bdd4b2620f2105cc38d465facd51e88"><div class="ttname"><a href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">Whois::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> Whois.hpp:47</div></div>
+<div class="ttc" id="aclassWhois_html_a2bdd4b2620f2105cc38d465facd51e88"><div class="ttname"><a href="classWhois.html#a2bdd4b2620f2105cc38d465facd51e88">Whois::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> Whois.hpp:59</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Whois_8hpp.html">Whois.hpp</a></li>
-    <li class="footer">Generated on Sat Apr 1 2023 20:33:46 for IRC SERVER by
+    <li class="footer">Generated on Sun Apr 2 2023 11:58:06 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

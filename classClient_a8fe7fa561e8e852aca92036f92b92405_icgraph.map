@@ -1,5 +1,4 @@
 <map id="Client::getNick" name="Client::getNick">
-<area shape="rect" id="node1" title=" " alt="" coords="187,31,305,57"/>
-<area shape="rect" id="node2" href="$classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="11,5,133,32"/>
-<area shape="rect" id="node3" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="5,56,139,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="187,5,305,32"/>
+<area shape="rect" id="node2" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="5,5,139,32"/>
 </map>

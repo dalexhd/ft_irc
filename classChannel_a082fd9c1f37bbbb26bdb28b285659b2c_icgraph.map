@@ -1,9 +1,8 @@
 <map id="Channel::getName" name="Channel::getName">
-<area shape="rect" id="node1" title=" " alt="" coords="187,132,329,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="187,107,329,133"/>
 <area shape="rect" id="node2" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="20,5,124,32"/>
 <area shape="rect" id="node3" href="$classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="15,56,129,83"/>
 <area shape="rect" id="node4" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="5,107,139,133"/>
-<area shape="rect" id="node5" href="$classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="11,157,133,184"/>
-<area shape="rect" id="node6" href="$classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="19,208,125,235"/>
-<area shape="rect" id="node7" href="$classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="13,259,131,285"/>
+<area shape="rect" id="node5" href="$classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="19,157,125,184"/>
+<area shape="rect" id="node6" href="$classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="13,208,131,235"/>
 </map>

@@ -1,13 +1,13 @@
 <map id="Server::getClient" name="Server::getClient">
 <area shape="rect" id="node1" title=" " alt="" coords="644,208,775,235"/>
 <area shape="rect" id="node2" href="$classOpe.html#a17e5dc74c6e7daa30922ca1c8ac57b14" title=" " alt="" coords="444,5,551,32"/>
-<area shape="rect" id="node3" href="$classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="437,56,558,83"/>
-<area shape="rect" id="node4" href="$classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="436,107,559,133"/>
+<area shape="rect" id="node3" href="$classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="436,56,559,83"/>
+<area shape="rect" id="node4" href="$classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="437,107,558,133"/>
 <area shape="rect" id="node5" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="431,157,564,184"/>
 <area shape="rect" id="node6" href="$classMode.html#a5274eaea7882519643fd6aa37ba00f08" title=" " alt="" coords="399,208,596,235"/>
 <area shape="rect" id="node9" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="430,259,565,285"/>
-<area shape="rect" id="node10" href="$classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="435,309,560,336"/>
-<area shape="rect" id="node11" href="$classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="437,360,557,387"/>
+<area shape="rect" id="node10" href="$classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="437,309,557,336"/>
+<area shape="rect" id="node11" href="$classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="435,360,560,387"/>
 <area shape="rect" id="node12" href="$classWhois.html#a0ec1c1e57590276c15198231f36269c4" title=" " alt="" coords="436,411,559,437"/>
 <area shape="rect" id="node7" href="$classMode.html#a0b79c4cd9924c634ee62dc500f487a25" title=" " alt="" coords="172,208,351,235"/>
 <area shape="rect" id="node8" href="$classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="5,208,124,235"/>

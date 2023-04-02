@@ -1,5 +1,4 @@
 <map id="Channel::isModerated" name="Channel::isModerated">
-<area shape="rect" id="node1" title=" " alt="" coords="188,31,352,57"/>
-<area shape="rect" id="node2" href="$classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="10,5,135,32"/>
-<area shape="rect" id="node3" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,56,140,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="188,5,352,32"/>
+<area shape="rect" id="node2" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,5,140,32"/>
 </map>
