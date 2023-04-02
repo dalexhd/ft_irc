@@ -10,13 +10,12 @@ class Notice : public Command
 	Notice()
 	{
 		_name = "notice";
-		_description = "inicia una conexión con el host especificado. Si no se "
-		               "especifica un puerto la conexión será en el puerto "
-		               "default de Telnet(21). El host puede ser un nombre o "
-		               "ip ";
-		_usage = "notice";
-		_example[0] = "notice <nick> :<texto>";
-		_example[1] = "notice guest500 :oye, eres un imbecil";
+		_description = "Send message to a set of users/channels";
+		_usage = "notice <receptor|channel>{,<receptor|channel>} :<texto>";
+		_example[0] = "notice alfred hello";
+		_example[1] = "notice alfred,manolo hello";
+		_example[2] = "notice #uruguay :hola, buenas tardes";
+		_example[3] = "notice #uruguay,#peru :hola, buenas tardes";
 	}
 
 	/*
@@ -28,17 +27,74 @@ class Notice : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 3 || _server->getClient(p[0]) == NULL)
+		if (p.size() < 2)
+		{
 			return (false);
+		}
+		else if (p[0].at(0) == '#')
+		{
+			std::vector<std::string> _ch_params = split(p[0], ",");
+			for (size_t i = 1; i < _ch_params.size(); i++)
+			{
+				Channel *channel = _server->getChannel(_ch_params[i]);
+				if (channel == NULL || channel->joined(_sender) == false ||
+				    (channel->isModerated() && channel->isOpe(_sender) == false))
+				{
+					return (false);
+				}
+			}
+			return (true);
+		}
+		else
+		{
+			std::vector<std::string> _cl_params = split(p[0], ",");
+			for (size_t i = 0; i < _cl_params.size(); i++)
+			{
+				if (_server->getClient(_cl_params[i]) == NULL ||
+				    _cl_params[i] == _sender->_nick)
+				{
+					return (false);
+				}
+			}
+		}
 		return (true);
 	}
 
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-
-		Client *client = _server->getClient(p[0]);
-		client->message(":" + _sender->_nick + " NOTICE " + p[0] + " :" + p[1]);
+		std::string                   msg = std::string(p[1] + "\n").c_str();
+		if (p[0].at(0) == '#')
+		{
+			std::vector<std::string> _ch_params = split(p[0], ",");
+			for (size_t i = 0; i < _ch_params.size(); i++)
+			{
+				std::string           name = _ch_params[i].substr(1).c_str();
+				Channel *             channel = _server->getChannel(name);
+				std::vector<Client *> clients = channel->getClients();
+				for (size_t j = 0; j < clients.size(); j++)
+				{
+					if (clients[j] != _sender)
+					{
+						clients[j]->message(std::string(":" + _sender->_nick + " NOTICE #" +
+						                                channel->getName() + " :" + msg + "\n")
+						                        .c_str());
+					}
+				}
+			}
+		}
+		else
+		{
+			std::vector<std::string> _cl_params = split(p[0], ",");
+			for (size_t i = 0; i < _cl_params.size(); i++)
+			{
+				Client *client = _server->getClient(_cl_params[i]);
+				client->message(
+				    std::string(":" + _sender->_nick + " NOTICE " + client->getNick() + " :" + msg + "\n")
+				        .c_str());
+			}
+		}
 	}
 };
+
 #endif

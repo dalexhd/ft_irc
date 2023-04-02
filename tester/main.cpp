@@ -40,24 +40,19 @@ static void *clientConversation(void *client)
 
 		if (!c->_connected)
 		{
-			usleep(it2->second._ms);
+			usleep(it2->second._ms * 10);
 			if (c->irc_connect() > 0)
 				return 0;
 			c->login();
 		}
-		usleep(it2->second._ms);
+		usleep(it2->second._ms * 10);
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
 		/*std::ofstream myfile;
-		myfile.open("tests/res" + c->_filename.substr(12,99),
-		std::ios_base::app); myfile << c->reads(); myfile.close();*/
-		/* usleep(700000);
-		std::ofstream myfile;
-		myfile.open("dir/XDDDDDDD", std::ios_base::app);
-		myfile << c->reads();
-		myfile.close(); */
-		// std::cout << "tests/res" + c->_filename.substr(12,99) << c->reads() << std::endl;
+		myfile.open("tests/res" + c->_filename.substr(12, 99),
+		std::ios_base::app); myfile << c->reads(); myfile.close(); usleep(700);
+		// std::cout << c->reads() << std::endl;*/
 		std::cout << c->reads() << std::endl;
 	}
 
@@ -91,7 +86,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 3
+#define MENU 6
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
@@ -103,7 +98,7 @@ int main(void)
 		else
 			server = "127.0.0.1";
 
-		Client *client = new Client("Ttestbot", "Ttestbot", "Ttestbot", server);
+		Client *client = new Client("Testbot2", "Testbot2", "Testbot2", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();

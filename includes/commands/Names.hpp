@@ -17,31 +17,11 @@ class Names : public Command
 		_example[0] = "names #hola,#chau";
 	}
 
-	bool validate(void)
-	{
-		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() > 1)
-		{
-			_sender->message("Wrong command format. Ex: list "
-			                 "[<canal>{,<canal>}]\n");
-			return (false);
-		}
-		std::vector<std::string> _ch_params = split(p[0], ",");
-
-		for (size_t i = 0; i < _ch_params.size(); i++)
-		{
-			if (_ch_params[i][0] != '#')
-			{
-				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
-				return (false);
-			}
-		}
-		return (true);
-	}
-
 	void send_channel(std::string &name)
 	{
-		Channel *             channel = _server->getChannel(name);
+		Channel *channel = _server->getChannel(name);
+		if (channel == NULL)
+			return;
 		std::vector<Client *> clients = channel->getClients();
 		std::string           users_str = "";
 		for (size_t i = 0; i < clients.size(); i++)
