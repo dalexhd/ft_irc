@@ -115,7 +115,8 @@ weechat:
 	docker run -it --name weechat -e UID=1000 -e GID=1000   jkaberg/weechat
 
 #-v $$(pwd)/weechat/config:/weechat
-#/server add ft_irc 10.11.10.2/6667
+#/server add ft_irc 10.11.11.3/6667
+#/set irc.server.ft_irc.username "Evil"
 #/set irc.server.ft_irc.username "Quines"
 #/set irc.server.ft_irc.realname "Marcos"
 #/connect ft_irc

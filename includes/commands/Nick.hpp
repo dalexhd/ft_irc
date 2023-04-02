@@ -42,7 +42,7 @@ class Nick : public Command
 				return (false);
 			}
 		}
-		if (std::count_if(name.begin(), name.end(), ::isalnum) != static_cast<long>(name.length()))
+		if (std::count_if(name.begin(), name.end(), ::isalnum) != static_cast<long>(name.length())) // MAAAAL
 		{
 			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, name));
 			return (false);
