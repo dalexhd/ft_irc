@@ -2,8 +2,31 @@
 2. test client -> chat_hispano
 
 sin revisar: OPE, PASS, USER, MODE
-claro funcionamiento erroneo:
+claro funcionamiento erroneo: PRIVMSG (con nc solo coge la primera palabra)
 PART es CLOSE
+
+CONTROL + Z en NC no desconecta al cliente en el servidor
+
+REVISAR DETENIDAMENTE:
+NETWORKING SPECIALS
+PARAMETROS DEL NICK
+
+
+<< Received message from user: PRIVMSG #channel quieres porros?
+>> Sending message to client: evila: :user PRIVMSG #channel :quieres
+
+<< Received message from evila: PING 10.11.11.3
+>> Sending message to client: evila: PONG
+<< Received message from user: PRIVMSG #channel "quieres porros?"
+>> Sending message to client: evila: :user PRIVMSG #channel :"quieres
+
+<< Received message from evila: PING 10.11.11.3
+>> Sending message to client: evila: PONG
+<< Received message from evila: PRIVMSG marcos ::no
+>> Sending message to client: evila: :42irc-server 401 marcos :No such nick/channel
+<< Received message from evila: PRIVMSG user ::no
+>> Sending message to client: user: :evila PRIVMSG user ::no
+
 
 << Received message from evila: WHOIS evila
 >> Sending message to client: evila: :42irc-server 311 evila evil 0.0.0.0 * :Evila

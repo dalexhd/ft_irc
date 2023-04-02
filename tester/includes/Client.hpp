@@ -97,7 +97,7 @@ class Client
 		this->_name = name;
 		this->_host = host;
 		this->_port = "6667";
-		this->_pass = "pass";
+		this->_pass = "";
 		this->_username = username;
 		this->_realname = realname;
 		this->_connected = false;
@@ -246,20 +246,27 @@ class Client
 			send("PONG " + pongArg);
 			return (0);
 		}
-
+		if (!_connected && (std::strstr(res.c_str(), "001")))
+		{
+			std::cout << MAGENTA_T << "CLIENT CONNECTED" << RESET << std::endl;
+			this->_connected = true;
+			return (0);
+		}
 		return (1);
 	}
 
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
-		send("PASS " + this->_pass);                 // PASS <server_password>
-		usleep(1000);
+		if (this->_pass != "")
+		{
+			send("PASS " + this->_pass); // PASS <server_password>
+			usleep(1000);
+		}
 		send("NICK " + this->_name); // NICK <nickname>
 		usleep(1000);
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
-		usleep(1000);
-		this->_connected = true;
+		// this->_connected = true;
 		pingpong(reads());
 		usleep(1000);
 	}

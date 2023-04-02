@@ -18,39 +18,35 @@ class User : public Command
 		_needs_auth = false;
 	}
 
+	bool validate(void)
+	{
+		std::map<size_t, std::string> p = _message->getParams();
+
+		if (_sender->getNick() == "")
+		{
+			return (false);
+		}
+		if (p.size() < 4)
+		{
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
+			                                    _message->getCmd()));
+			return (false);
+		}
+		if (_sender->isAuthenticated())
+		{
+			_sender->message(ERR_ALREADYREGISTRED(_sender->_servername, _sender->_nick));
+			return (false);
+		}
+		return (true);
+	}
+
 	void execute()
 	{
-		if (_message->getParams().size() == 0 || _message->getParams().size() > 4)
-		{
-			_sender->message("Please send valid params! Ex: user <username> "
-			                 "<hostname> <servername> : <realname>\n");
-		}
-		else
-		{
-			std::string username = _message->getParams()[0];
-			std::string realname = _message->getParams()[3];
-
-			if (_sender->_username == username)
-			{
-				_sender->message("You can't assign the same name yourself!\n");
-			}
-			else
-			{
-				std::map<size_t, Client *>::iterator it = _server->_clients.begin();
-				for (; it != _server->_clients.end(); it++)
-				{
-					if (it->second->_username == username)
-					{
-						it->second->message(ERR_NICKNAMEINUSE(_sender->_servername, username));
-						return;
-					}
-				}
-				_sender->setUsername(username);
-				_sender->setRealName(realname);
-				if (!_sender->isAuthenticated() && !_server->hasPassword())
-					_sender->authenticate();
-			}
-		}
+		std::string username = _message->getParams()[0];
+		std::string realname = _message->getParams()[3];
+		_sender->setUsername(username);
+		_sender->setRealName(realname);
+		_sender->authenticate();
 	}
 };
 #endif
