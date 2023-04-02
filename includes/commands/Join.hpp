@@ -160,8 +160,6 @@ class Join : public Command
 				if (_pw_params.size() > 0)
 				{
 					channel = _server->createChannel(_ch_params[i], _pw_params[i]);
-					_sender->message(std::string("Channel " + _ch_params[i] + " with password \"" + _pw_params[i] + "\" created\n")
-					                     .c_str());
 				}
 				else
 				{

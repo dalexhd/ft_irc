@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/02 13:18:10 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/02 14:05:00 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void Server::createServerPoll(void)
 								else
 									cmd->execute();
 							}
-							else if (!client->isAuthenticated() && !cmd->needsAuth() && cmd->validate())
+							else if (!cmd->needsAuth() && cmd->validate())
 								cmd->execute();
 							break;
 						}
