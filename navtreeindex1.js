@@ -134,6 +134,7 @@ var NAVTREEINDEX1 =
 "classUser.html":[1,0,21],
 "classUser.html#a057292d49dc002123ef4054b26131896":[1,0,21,1],
 "classUser.html#a4a0137053e591fbb79d9057dd7d2283d":[1,0,21,0],
+"classUser.html#a7d7f584c27af249f1033708cccb82e92":[1,0,21,2],
 "classWhois.html":[1,0,22],
 "classWhois.html#a0ec1c1e57590276c15198231f36269c4":[1,0,22,2],
 "classWhois.html#a2bdd4b2620f2105cc38d465facd51e88":[1,0,22,1],
