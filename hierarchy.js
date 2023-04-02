@@ -12,7 +12,6 @@ var hierarchy =
       [ "Names", "classNames.html", null ],
       [ "Nick", "classNick.html", null ],
       [ "Notice", "classNotice.html", null ],
-      [ "Ope", "classOpe.html", null ],
       [ "Part", "classPart.html", null ],
       [ "Pass", "classPass.html", null ],
       [ "Ping", "classPing.html", null ],

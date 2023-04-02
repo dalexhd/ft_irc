@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['whois_475',['Whois',['../classWhois.html#a3d37fa31b8b97c0fb6b8fed1ec6471e1',1,'Whois']]]
+  ['_7eclient_471',['~Client',['../classClient.html#a840e519ca781888cbd54181572ebe3a7',1,'Client']]],
+  ['_7ecommand_472',['~Command',['../classCommand.html#a641c23ef533dd6f77d0a4ef0311598b2',1,'Command']]],
+  ['_7eserver_473',['~Server',['../classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]]
 ];

@@ -27,9 +27,6 @@ var dir_5e90428ea02abe37c2ad725f205d5900 =
     [ "Notice.hpp", "Notice_8hpp.html", [
       [ "Notice", "classNotice.html", "classNotice" ]
     ] ],
-    [ "Ope.hpp", "Ope_8hpp.html", [
-      [ "Ope", "classOpe.html", "classOpe" ]
-    ] ],
     [ "Part.hpp", "Part_8hpp.html", [
       [ "Part", "classPart.html", "classPart" ]
     ] ],
