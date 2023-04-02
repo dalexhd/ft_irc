@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2022/09/21 16:37:33 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/02 13:57:14 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,12 @@ void Client::read(void)
 		this->_status = DISCONNECTED;
 		return;
 	}
-	if (strlen(buffer) > 2)
-		buffer[strlen(buffer) - 2] = '\0';
 	std::string tmp(buffer);
+	size_t      pos = tmp.find_first_of("\r\n");
+	if (pos != std::string::npos)
+	{
+		tmp = tmp.substr(0, pos);
+	}
 	_messagesSent.push_back(Message(tmp));
 	_message = &(_messagesSent.back());
 }

@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/03/24 20:21:47 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/02 14:05:00 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void Server::createServerPoll(void)
 					}
 					else
 					{
-						Message    *message = _clients[i->fd]->_message;
+						Message *   message = _clients[i->fd]->_message;
 						std::string nick = _clients[i->fd]->getNick();
 						if (nick.empty())
 							nick = "Anonymous";
@@ -110,19 +110,15 @@ void Server::createServerPoll(void)
 							cmd->setSender(client);
 							cmd->setServer(this);
 							cmd->setMessage(message);
-							if (cmd->validate())
+							if (client->isAuthenticated() && cmd->needsAuth() && cmd->validate())
 							{
-								if (!cmd->needsAuth())
+								if (cmd->hasOpe() && !client->_is_ope)
+									cmd->missingOpe();
+								else
 									cmd->execute();
-								else if (client->isAuthenticated())
-								{
-									if (!cmd->hasOpe() ||
-									    (cmd->hasOpe() && client->_is_ope))
-										cmd->execute();
-									else
-										cmd->missingOpe();
-								}
 							}
+							else if (!cmd->needsAuth() && cmd->validate())
+								cmd->execute();
 							break;
 						}
 						else if (message->getCmd() == "close")
@@ -159,7 +155,6 @@ void Server::setupCommands(void)
 {
 	_commands["ping"] = new Ping();
 	_commands["help"] = new Help();
-	_commands["ope"] = new Ope();
 	_commands["quit"] = new Quit();
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
