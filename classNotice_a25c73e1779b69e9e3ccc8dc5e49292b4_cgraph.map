@@ -1,6 +1,11 @@
 <map id="Notice::execute" name="Notice::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,128,83"/>
-<area shape="rect" id="node2" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="189,5,320,32"/>
-<area shape="rect" id="node3" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="176,56,333,83"/>
-<area shape="rect" id="node4" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="191,107,318,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,128,209"/>
+<area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="181,5,328,32"/>
+<area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="189,56,320,83"/>
+<area shape="rect" id="node4" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="180,107,329,133"/>
+<area shape="rect" id="node5" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="183,157,326,184"/>
+<area shape="rect" id="node6" href="$classClient.html#a8fe7fa561e8e852aca92036f92b92405" title=" " alt="" coords="195,208,314,235"/>
+<area shape="rect" id="node7" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="176,259,333,285"/>
+<area shape="rect" id="node8" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="191,309,318,336"/>
+<area shape="rect" id="node9" href="$functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1" title=" " alt="" coords="229,360,280,387"/>
 </map>

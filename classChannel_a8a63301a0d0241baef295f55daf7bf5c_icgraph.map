@@ -1,11 +1,12 @@
 <map id="Channel::isOpe" name="Channel::isOpe">
-<area shape="rect" id="node1" title=" " alt="" coords="664,136,784,163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="664,165,784,192"/>
 <area shape="rect" id="node2" href="$classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="407,5,616,32"/>
 <area shape="rect" id="node5" href="$classMode.html#a5274eaea7882519643fd6aa37ba00f08" title=" " alt="" coords="413,56,610,83"/>
 <area shape="rect" id="node6" href="$classMode.html#a0b79c4cd9924c634ee62dc500f487a25" title=" " alt="" coords="180,81,359,108"/>
 <area shape="rect" id="node8" href="$classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="409,158,613,199"/>
 <area shape="rect" id="node9" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="453,224,569,251"/>
 <area shape="rect" id="node10" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="444,275,579,301"/>
+<area shape="rect" id="node11" href="$classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="449,325,574,352"/>
 <area shape="rect" id="node3" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="187,5,352,32"/>
 <area shape="rect" id="node4" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
 <area shape="rect" id="node7" href="$classMode.html#aa3628a6407640048b50828b7200647f2" title=" " alt="" coords="9,81,128,108"/>
