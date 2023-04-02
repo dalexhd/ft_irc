@@ -10,7 +10,6 @@
 #include "./commands/Names.hpp"
 #include "./commands/Nick.hpp"
 #include "./commands/Notice.hpp"
-#include "./commands/Ope.hpp"
 #include "./commands/Part.hpp"
 #include "./commands/Pass.hpp"
 #include "./commands/Ping.hpp"

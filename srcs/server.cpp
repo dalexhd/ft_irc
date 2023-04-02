@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/02 13:06:23 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/02 13:18:10 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,6 @@ void Server::setupCommands(void)
 {
 	_commands["ping"] = new Ping();
 	_commands["help"] = new Help();
-	_commands["ope"] = new Ope();
 	_commands["quit"] = new Quit();
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
