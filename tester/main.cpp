@@ -86,7 +86,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 6
+#define MENU 2
 int main(void)
 {
 	if (MENU == 1 || MENU == 2)
@@ -102,7 +102,6 @@ int main(void)
 		client->irc_connect();
 		usleep(500);
 		client->login();
-		// std::cout <<  client->reads() << std::endl;
 		usleep(500);
 		client->requestingLoop();
 	}
