@@ -17,7 +17,8 @@ class Ping : public Command
 
 	void execute()
 	{
-		_sender->message("PONG\n");
+		std::map<size_t, std::string> p = _message->getParams();
+		_sender->message("PONG " + p[0] + "\n" );
 	}
 };
 #endif

@@ -117,6 +117,7 @@ weechat:
 #-e MYIP=$$(ifconfig en0 | grep 'inet ' | awk '{print $2}')
 
 #/server add ft_irc 10.11.11.1/6667
+#/set irc.server.libera.nicks "mynick,mynick2,mynick3,mynick4,mynick5"
 #/set irc.server.ft_irc.username "Quines"
 #/set irc.server.ft_irc.realname "Marcos"
 #/connect ft_irc
