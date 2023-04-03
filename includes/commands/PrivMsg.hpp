@@ -72,7 +72,6 @@ class PrivMsg : public Command
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		std::cout << "msg sended" << p[1];
 		std::string                   msg = "";
 		for(size_t i = 1; i < p.size(); i++)
 		{

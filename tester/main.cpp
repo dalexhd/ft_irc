@@ -1,5 +1,13 @@
 #include "includes/Colors.hpp"
 #include "includes/File.hpp"
+#include <iostream>
+#include <string>
+#include <thread>
+#include <chrono>
+#include <mutex>
+#include <condition_variable>
+
+
 
 void list_files(const std::string &path, std::vector<std::string> &files)
 {
@@ -89,20 +97,21 @@ void executeFileClients(File *file)
 #define MENU 2
 int main(void)
 {
-
-	int option;
+	int option = 3;
 	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
 	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
 	std::cout << "1. Connect to Local Server" << std::endl;
 	std::cout << "2. Connect to Chat Hispano Server" << std::endl;
 	std::cout << "3. Automated Test" << std::endl << std::endl << ">> ";
-	std::cin >> option;
+
+	//std::cin >> option;
 	if (option == 1 || option == 2)
 	{
-		std::cout << "Single Client\n";
+
 		std::string server = "127.0.0.1";
 		if (option == 2)
 			server = "irc.irc-hispano.org";
+		std::cout << "Single Client to " + server + "\n";
 		Client *client = new Client("Testbot2", "Testbot2", "Testbot2", server);
 		client->irc_connect();
 		usleep(500);

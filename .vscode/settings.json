@@ -22,6 +22,7 @@
 		"ADA"
 	],
 	"files.associations": {
+		"*.sol": "javascript",
 		"*.json.liquid": "json",
 		"*.yaml.liquid": "yaml",
 		"*.md.liquid": "markdown",
@@ -114,7 +115,9 @@
 		"socket.h": "c",
 		"inet.h": "c",
 		"thread": "cpp",
-		"codecvt": "cpp"
+		"codecvt": "cpp",
+		"condition_variable": "cpp",
+		"future": "cpp"
 	},
 	"files.autoSave": "off"
 }
