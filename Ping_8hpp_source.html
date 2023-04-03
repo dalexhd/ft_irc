@@ -106,10 +106,11 @@ $(document).ready(function(){initNavTree('Ping_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8">execute</a>()</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<span class="stringliteral">&quot;PONG\n&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<span class="stringliteral">&quot;PONG &quot;</span> + p[0] + <span class="stringliteral">&quot;\n&quot;</span> );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassPing_html"><div class="ttname"><a href="classPing.html">Ping</a></div><div class="ttdef"><b>Definition:</b> Ping.hpp:7</div></div>
@@ -117,8 +118,10 @@ $(document).ready(function(){initNavTree('Ping_8hpp_source.html',''); initResiza
 <div class="ttc" id="aclassCommand_html_aa185da210b9542bb8c67d6127a67b019"><div class="ttname"><a href="classCommand.html#aa185da210b9542bb8c67d6127a67b019">Command::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> Command.hpp:11</div></div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> Command.hpp:7</div></div>
 <div class="ttc" id="aclassClient_html_a9ee33da0a8d00f8416b934b6027d35cd"><div class="ttname"><a href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">Client::message</a></div><div class="ttdeci">void message(char const *message)</div><div class="ttdef"><b>Definition:</b> client.cpp:15</div></div>
+<div class="ttc" id="aclassCommand_html_af1c29aa4830e9fcc3a5c0c938084604f"><div class="ttname"><a href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">Command::_message</a></div><div class="ttdeci">Message * _message</div><div class="ttdef"><b>Definition:</b> Command.hpp:21</div></div>
 <div class="ttc" id="aclassCommand_html_a71d2184d3bc1861c55ba45e652c5774b"><div class="ttname"><a href="classCommand.html#a71d2184d3bc1861c55ba45e652c5774b">Command::_example</a></div><div class="ttdeci">std::map&lt; size_t, std::string &gt; _example</div><div class="ttdef"><b>Definition:</b> Command.hpp:16</div></div>
 <div class="ttc" id="aclassPing_html_a2d0a96efcb954426b31d5a6a3f792ec8"><div class="ttname"><a href="classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8">Ping::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> Ping.hpp:18</div></div>
+<div class="ttc" id="aclassMessage_html_ae175384074674e34978f40261238d701"><div class="ttname"><a href="classMessage.html#ae175384074674e34978f40261238d701">Message::getParams</a></div><div class="ttdeci">std::map&lt; size_t, std::string &gt; getParams(void) const</div><div class="ttdef"><b>Definition:</b> message.cpp:79</div></div>
 <div class="ttc" id="aclassCommand_html_a592b372988405206efc3af3e37457168"><div class="ttname"><a href="classCommand.html#a592b372988405206efc3af3e37457168">Command::_usage</a></div><div class="ttdeci">std::string _usage</div><div class="ttdef"><b>Definition:</b> Command.hpp:13</div></div>
 <div class="ttc" id="aclassCommand_html_ac490ca794e6536066afbdda39f3fed56"><div class="ttname"><a href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">Command::_sender</a></div><div class="ttdeci">Client * _sender</div><div class="ttdef"><b>Definition:</b> Command.hpp:19</div></div>
 <div class="ttc" id="aclassPing_html_af5927f79e7c2503e999e7a5b936ebc0e"><div class="ttname"><a href="classPing.html#af5927f79e7c2503e999e7a5b936ebc0e">Ping::Ping</a></div><div class="ttdeci">Ping()</div><div class="ttdef"><b>Definition:</b> Ping.hpp:10</div></div>
@@ -126,7 +129,7 @@ $(document).ready(function(){initNavTree('Ping_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Ping_8hpp.html">Ping.hpp</a></li>
-    <li class="footer">Generated on Mon Apr 3 2023 13:51:43 for IRC SERVER by
+    <li class="footer">Generated on Mon Apr 3 2023 16:41:06 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
