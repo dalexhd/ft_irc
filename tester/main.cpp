@@ -57,11 +57,15 @@ static void *clientConversation(void *client)
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		/*std::ofstream myfile;
+		std::ofstream myfile;
 		myfile.open("tests/res" + c->_filename.substr(12, 99),
-		std::ios_base::app); myfile << c->reads(); myfile.close(); usleep(700);
-		// std::cout << c->reads() << std::endl;*/
-		std::cout << c->reads() << std::endl;
+		std::ios_base::app);
+		std::string tmpread(c->reads());
+		myfile << tmpread;
+		myfile.close();
+		usleep(700);
+		std::cout << tmpread << std::endl;
+		//std::cout << c->reads() << std::endl;
 	}
 
 	usleep(700);
@@ -94,7 +98,6 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 2
 int main(void)
 {
 	int option = 3;

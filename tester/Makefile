@@ -126,7 +126,7 @@ weechat:
 ##@ Cleaning
 clean:		## Clean all objects.
 			$(RM) $(OBJ_DIR)
-
+			$(RM) ./tests/res
 
 fclean:		## Remove all objects and executables.
 			$(RM) $(OUTPUT)
