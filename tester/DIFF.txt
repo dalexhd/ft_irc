@@ -12,13 +12,6 @@ NETWORKING SPECIALS
 PARAMETROS DEL NICK
 
 
-<< Received message from user: PRIVMSG #channel quieres porros?
->> Sending message to client: evila: :user PRIVMSG #channel :quieres
-
-<< Received message from evila: PING 10.11.11.3
->> Sending message to client: evila: PONG
-<< Received message from user: PRIVMSG #channel "quieres porros?"
->> Sending message to client: evila: :user PRIVMSG #channel :"quieres
 
 << Received message from evila: PING 10.11.11.3
 >> Sending message to client: evila: PONG
@@ -224,13 +217,3 @@ ping
 PING :stirling.chathispano.com
 :stirling.chathispano.com 461 evila PING :Not enough parameters.
 PING :stirling.chathispano.com
-
-<< Received message from evila: PART #CHANNEL2 :WeeChat 3.0
->> Sending message to client: evila: :42irc-server 461 evila part :Wrong num parameters
-
-part #CHANNEL2
-:evila!Testbot2@rj6.j18.j49ElA.virtual JOIN :#CHANNEL2
-:stirling.chathispano.com 353 evila = #CHANNEL2 :@evila
-:stirling.chathispano.com 366 evila #CHANNEL2 :End of /NAMES list.
-:stirling.chathispano.com 421 evila PIN :Unknown command
-
