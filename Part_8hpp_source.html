@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('Part_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4">   23</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4">validate</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::map&lt;size_t, std::string&gt; p = <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (p.size() &lt; 1 || p.size() &gt; 1)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (p.size() &lt; 1)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a9ee33da0a8d00f8416b934b6027d35cd">message</a>(<a class="code" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#adc9a9e85762060c89ae4db308fae187c">_nick</a>,</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                <a class="code" href="classCommand.html#af1c29aa4830e9fcc3a5c0c938084604f">_message</a>-&gt;<a class="code" href="classMessage.html#ad89a43eb39898c822b754288fef467b8">getCmd</a>()));</div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('Part_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Part_8hpp.html">Part.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 4 2023 20:21:50 for IRC SERVER by
+    <li class="footer">Generated on Tue Apr 4 2023 20:42:13 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
