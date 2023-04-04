@@ -72,16 +72,7 @@ class PrivMsg : public Command
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		std::string                   msg = "";
-		for(size_t i = 1; i < p.size(); i++)
-		{
-			if(i == 1)
-				msg += p[i];
-			msg += " " + p[i];
-		}
-
-		msg += "\n";
-		//std::string                   msg = std::string(p[1] + "\n").c_str();
+		std::string                   msg = std::string(p[1] + "\n").c_str();
 		if (p[0].at(0) == '#')
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");

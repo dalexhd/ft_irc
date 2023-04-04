@@ -107,7 +107,7 @@ int main(void)
 	std::cout << "2. Connect to Chat Hispano Server" << std::endl;
 	std::cout << "3. Automated Test" << std::endl << std::endl << ">> ";
 
-	//std::cin >> option;
+	std::cin >> option;
 	if (option == 1 || option == 2)
 	{
 
