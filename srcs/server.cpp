@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/02 14:05:00 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:25:23 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void Server::createServerPoll(void)
 			if ((new_fd = accept(_fd, NULL, NULL)) == -1)
 				throw std::runtime_error("error: accept");
 			_clients[new_fd] = new Client(new_fd, this->host, this->servername, this->version);
+			if(!hasPassword())
+				_clients[new_fd]->_is_passLogged = true;
 			pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 			_pfds.push_back(pfd);
 		}

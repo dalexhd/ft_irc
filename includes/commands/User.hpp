@@ -46,7 +46,8 @@ class User : public Command
 		std::string realname = _message->getParams()[3];
 		_sender->setUsername(username);
 		_sender->setRealName(realname);
-		_sender->authenticate();
+		if(_sender->_is_passLogged)
+			_sender->authenticate();
 	}
 };
 #endif

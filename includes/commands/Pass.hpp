@@ -32,12 +32,29 @@ class Pass : public Command
 			_sender->message(ERR_ALREADYREGISTRED(_sender->_servername, _sender->_nick));
 			return (false);
 		}
+		if(_server->getPassword() == "")
+		{
+			_sender->message(ERR_NOTPASSNEEDED(_sender->_servername, _sender->_nick));
+			return (false);
+
+		}
+		if(_server->getPassword() != _message->getParams()[0])
+		{
+			_sender->message(ERR_WRONGPASS(_sender->_servername, _sender->_nick));
+			return (false);
+		}
+
 		return (true);
 	}
 
 	void execute()
 	{
-		_sender->authenticate();
+		std::cout << _sender->getUsername() << "-    " << _sender->_is_authenticated << " ---" << _server->getPassword() << "-" << _message->getParams()[0] << "\n";
+		_sender->_is_passLogged=true;
+		if((_sender->getUsername() != "" && _sender->getRealname() != ""))
+			_sender->authenticate();
+
+
 	}
 };
 #endif
