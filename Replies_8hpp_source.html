@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: aborboll &lt;aborboll@student.42.fr&gt;          +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2023/03/28 19:43:39 by aborboll         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2023/04/14 15:01:20 by aborboll         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -258,14 +258,20 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a131647073e18647a7ae927fcbc7255a6">  169</a></span>&#160;<span class="preprocessor">#define ERR_SASLALREADY 907</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a42d1dc8c732ce26ee562ab5ca622d54c">  170</a></span>&#160;<span class="preprocessor">#define RPL_SASLMECHS 908</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">// FICTICIAS</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a73250e11c73c733bf599e71764e764c2">  173</a></span>&#160;<span class="preprocessor">#define ERR_WRONGPASS(servername, nick) \</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :Wrong pass\n&quot;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a56015b3f9c7d2e6393f8d7ae79cf8255">  175</a></span>&#160;<span class="preprocessor">#define ERR_NOTPASSNEEDED(servername, nick) \</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :This server does not need any pass\n&quot;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 4 2023 20:42:13 for IRC SERVER by
+    <li class="footer">Generated on Fri Apr 14 2023 13:31:59 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

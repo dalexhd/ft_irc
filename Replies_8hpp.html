@@ -369,6 +369,10 @@ Macros</h2></td></tr>
 <tr class="separator:a131647073e18647a7ae927fcbc7255a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d1dc8c732ce26ee562ab5ca622d54c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a42d1dc8c732ce26ee562ab5ca622d54c">RPL_SASLMECHS</a>&#160;&#160;&#160;908</td></tr>
 <tr class="separator:a42d1dc8c732ce26ee562ab5ca622d54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73250e11c73c733bf599e71764e764c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a73250e11c73c733bf599e71764e764c2">ERR_WRONGPASS</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :Wrong pass\n&quot;</td></tr>
+<tr class="separator:a73250e11c73c733bf599e71764e764c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56015b3f9c7d2e6393f8d7ae79cf8255"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Replies_8hpp.html#a56015b3f9c7d2e6393f8d7ae79cf8255">ERR_NOTPASSNEEDED</a>(servername,  nick)&#160;&#160;&#160;&quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :This server does not need any pass\n&quot;</td></tr>
+<tr class="separator:a56015b3f9c7d2e6393f8d7ae79cf8255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="afb49dbe57cd56973d83e30fa6aa5e9ff"></a>
@@ -997,6 +1001,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a56015b3f9c7d2e6393f8d7ae79cf8255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56015b3f9c7d2e6393f8d7ae79cf8255">&#9670;&nbsp;</a></span>ERR_NOTPASSNEEDED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_NOTPASSNEEDED</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :This server does not need any pass\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a212152bb05361e627adb77f415dab88a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a212152bb05361e627adb77f415dab88a">&#9670;&nbsp;</a></span>ERR_NOTREGISTERED</h2>
 
@@ -1309,6 +1341,34 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define ERR_WASNOSUCHNICK&#160;&#160;&#160;406</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73250e11c73c733bf599e71764e764c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73250e11c73c733bf599e71764e764c2">&#9670;&nbsp;</a></span>ERR_WRONGPASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_WRONGPASS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">servername, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nick&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;&quot;:&quot; + servername + &quot;  &quot; + nick + &quot; :Wrong pass\n&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2735,7 +2795,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 4 2023 20:42:13 for IRC SERVER by
+    <li class="footer">Generated on Fri Apr 14 2023 13:31:59 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
