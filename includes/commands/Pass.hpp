@@ -49,7 +49,6 @@ class Pass : public Command
 
 	void execute()
 	{
-		std::cout << _sender->getUsername() << "-    " << _sender->_is_authenticated << " ---" << _server->getPassword() << "-" << _message->getParams()[0] << "\n";
 		_sender->_is_passLogged=true;
 		if((_sender->getUsername() != "" && _sender->getRealname() != ""))
 			_sender->authenticate();
