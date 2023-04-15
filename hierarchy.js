@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "Channel", "classChannel.html", null ],
+    [ "ChannelModeType", "classChannelModeType.html", null ],
     [ "Client", "classClient.html", null ],
     [ "Command", "classCommand.html", [
       [ "Help", "classHelp.html", null ],

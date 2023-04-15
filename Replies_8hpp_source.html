@@ -219,20 +219,20 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a0a78821a40285c2146171737e46df182">  130</a></span>&#160;<span class="preprocessor">#define ERR_YOUREBANNEDCREEP(servername, nick) \</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 465 &quot; + nick + &quot; :You are banned from this server\n&quot;</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a14da83a731916abf60f104eeeb7a9a77">  132</a></span>&#160;<span class="preprocessor">#define ERR_KEYSET(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 467 &quot; + nick + &quot; &quot; + channel + &quot; :Channel key already set\n&quot;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 467 &quot; + nick + &quot; #&quot; + channel + &quot; :Channel key already set\n&quot;</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#ab2ea3780f74d27a21a1ba4a2de905663">  134</a></span>&#160;<span class="preprocessor">#define ERR_CHANNELISFULL(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 471 &quot; + nick + &quot; &quot; + channel + &quot; :Cannot join channel , channel is full(+l)\n&quot;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 471 &quot; + nick + &quot; #&quot; + channel + &quot; :Cannot join channel , channel is full(+l)\n&quot;</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a672b737c668aa46a92bf1cab2005d8fe">  136</a></span>&#160;<span class="preprocessor">#define ERR_UNKNOWNMODE(servername, nick, mode) \</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 472 &quot; + nick + &quot; &quot; + mode + &quot; :is unknown mode char to me for that channel\n&quot;</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a015ed442325af11daf16aef057884ffb">  138</a></span>&#160;<span class="preprocessor">#define ERR_INVITEONLYCHAN 473</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#ab1d0931825ba9a147bfd07170c0f1940">  139</a></span>&#160;<span class="preprocessor">#define ERR_BANNEDFROMCHAN 474</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a9fdbddfa0f643517822de1ee024cae2b">  140</a></span>&#160;<span class="preprocessor">#define ERR_BADCHANNELKEY(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 475 &quot; + nick + &quot; &quot; + channel + &quot; :Bad channel key\n&quot;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 475 &quot; + nick + &quot; #&quot; + channel + &quot; :Bad channel key\n&quot;</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a13d76112e6cfd2c9a554a1bd79e32653">  142</a></span>&#160;<span class="preprocessor">#define ERR_BADCHANMASK(servername, nick) \</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 476 * &quot; + nick + &quot; :Bad Channel Mask\n&quot;</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a5fdd7fe68f882f1594b812266fb587ec">  144</a></span>&#160;<span class="preprocessor">#define ERR_NOPRIVILEGES 481</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a21dd676c6a68b701c77c6b9f5bdf7989">  145</a></span>&#160;<span class="preprocessor">#define ERR_CHANOPRIVSNEEDED(servername, nick, channel) \</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 482 &quot; + nick + &quot; &quot; + channel + &quot; :You&#39;re not channel operator\n&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">    &quot;:&quot; + servername + &quot; 482 &quot; + nick + &quot; #&quot; + channel + &quot; :You&#39;re not channel operator\n&quot;</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a16efccb06260d2bbad55aca592793fe5">  147</a></span>&#160;<span class="preprocessor">#define ERR_CANTKILLSERVER 483</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a1e755a98836ac908dcabbd6c1f8b902d">  148</a></span>&#160;<span class="preprocessor">#define ERR_NOOPERHOST 491</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="Replies_8hpp.html#a7a6e99d9acd535504b321609a364016e">  149</a></span>&#160;<span class="preprocessor">#define ERR_UMODEUNKNOWNFLAG 501</span></div>
@@ -271,7 +271,7 @@ $(document).ready(function(){initNavTree('Replies_8hpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Replies_8hpp.html">Replies.hpp</a></li>
-    <li class="footer">Generated on Sat Apr 15 2023 17:11:47 for IRC SERVER by
+    <li class="footer">Generated on Sat Apr 15 2023 19:38:12 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

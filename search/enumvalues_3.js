@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['offline_533',['OFFLINE',['../classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a6b62ab256dfe6a7f51d2d9ddaf59b29d',1,'Server']]],
-  ['online_534',['ONLINE',['../classServer.html#a7755fd3a2ea35552d1dfd2c1a714ea47a2cd47d7f0fdaa48b73658562292528f8',1,'Server']]]
+  ['minus_576',['MINUS',['../Mode_8hpp.html#a6e10210a66874c8530cec09251af3179af613d73b4e7b570ffd967df4a13c4225',1,'Mode.hpp']]]
 ];

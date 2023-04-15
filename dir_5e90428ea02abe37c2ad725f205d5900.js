@@ -15,9 +15,7 @@ var dir_5e90428ea02abe37c2ad725f205d5900 =
     [ "List.hpp", "List_8hpp.html", [
       [ "List", "classList.html", "classList" ]
     ] ],
-    [ "Mode.hpp", "Mode_8hpp.html", [
-      [ "Mode", "classMode.html", "classMode" ]
-    ] ],
+    [ "Mode.hpp", "Mode_8hpp.html", "Mode_8hpp" ],
     [ "Names.hpp", "Names_8hpp.html", [
       [ "Names", "classNames.html", "classNames" ]
     ] ],

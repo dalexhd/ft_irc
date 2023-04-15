@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "Channel", "classChannel.html", "classChannel" ],
+    [ "ChannelModeType", "classChannelModeType.html", "classChannelModeType" ],
     [ "Client", "classClient.html", "classClient" ],
     [ "Command", "classCommand.html", "classCommand" ],
     [ "Help", "classHelp.html", "classHelp" ],

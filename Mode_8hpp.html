@@ -84,37 +84,58 @@ $(document).ready(function(){initNavTree('Mode_8hpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Mode.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Command_8hpp_source.html">../Command.hpp</a>&quot;</code><br />
+<code>#include &quot;./mode/BanMask.hpp&quot;</code><br />
+<code>#include &quot;./mode/CantSentMessagesOutside.hpp&quot;</code><br />
+<code>#include &quot;./mode/InviteOnly.hpp&quot;</code><br />
+<code>#include &quot;./mode/Key.hpp&quot;</code><br />
+<code>#include &quot;./mode/Moderated.hpp&quot;</code><br />
+<code>#include &quot;./mode/Operator.hpp&quot;</code><br />
+<code>#include &quot;./mode/Private.hpp&quot;</code><br />
+<code>#include &quot;./mode/Secret.hpp&quot;</code><br />
+<code>#include &quot;./mode/TopicSettableByChannelOperatorOnly.hpp&quot;</code><br />
+<code>#include &quot;./mode/UserLimit.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Mode.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Mode_8hpp__incl.png" border="0" usemap="#includes_2commands_2Mode_8hpp" alt=""/></div>
 <map name="includes_2commands_2Mode_8hpp" id="includes_2commands_2Mode_8hpp">
-<area shape="rect" title=" " alt="" coords="390,5,610,32"/>
-<area shape="rect" href="Command_8hpp.html" title=" " alt="" coords="435,80,565,107"/>
-<area shape="rect" href="Server_8hpp.html" title=" " alt="" coords="451,155,549,181"/>
-<area shape="rect" title=" " alt="" coords="227,229,290,256"/>
-<area shape="rect" title=" " alt="" coords="315,229,373,256"/>
-<area shape="rect" href="Channel_8hpp.html" title=" " alt="" coords="398,229,509,256"/>
-<area shape="rect" href="Client_8hpp.html" title=" " alt="" coords="397,304,493,331"/>
-<area shape="rect" href="Color_8hpp.html" title=" " alt="" coords="531,453,621,480"/>
-<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="598,379,695,405"/>
-<area shape="rect" title=" " alt="" coords="393,379,479,405"/>
-<area shape="rect" title=" " alt="" coords="503,379,574,405"/>
-<area shape="rect" title=" " alt="" coords="23,379,97,405"/>
-<area shape="rect" href="Message_8hpp.html" title=" " alt="" coords="122,379,238,405"/>
-<area shape="rect" href="Replies_8hpp.html" title=" " alt="" coords="263,379,369,405"/>
-<area shape="rect" href="functions_8hpp.html" title=" " alt="" coords="275,453,394,480"/>
-<area shape="rect" title=" " alt="" coords="5,453,72,480"/>
-<area shape="rect" title=" " alt="" coords="96,453,176,480"/>
-<area shape="rect" title=" " alt="" coords="200,453,251,480"/>
-<area shape="rect" title=" " alt="" coords="263,528,321,555"/>
-<area shape="rect" title=" " alt="" coords="346,528,409,555"/>
+<area shape="rect" title=" " alt="" coords="1377,5,1597,32"/>
+<area shape="rect" href="Command_8hpp.html" title=" " alt="" coords="435,87,565,114"/>
+<area shape="rect" title=" " alt="" coords="589,87,747,114"/>
+<area shape="rect" title=" " alt="" coords="771,87,1045,114"/>
+<area shape="rect" title=" " alt="" coords="1069,87,1233,114"/>
+<area shape="rect" title=" " alt="" coords="1257,87,1378,114"/>
+<area shape="rect" title=" " alt="" coords="1402,87,1571,114"/>
+<area shape="rect" title=" " alt="" coords="1596,87,1751,114"/>
+<area shape="rect" title=" " alt="" coords="1775,87,1921,114"/>
+<area shape="rect" title=" " alt="" coords="1945,87,2085,114"/>
+<area shape="rect" title=" " alt="" coords="2109,80,2337,121"/>
+<area shape="rect" title=" " alt="" coords="2361,87,2524,114"/>
+<area shape="rect" href="Server_8hpp.html" title=" " alt="" coords="451,169,549,196"/>
+<area shape="rect" title=" " alt="" coords="227,244,290,271"/>
+<area shape="rect" title=" " alt="" coords="315,244,373,271"/>
+<area shape="rect" href="Channel_8hpp.html" title=" " alt="" coords="398,244,509,271"/>
+<area shape="rect" href="Client_8hpp.html" title=" " alt="" coords="397,319,493,345"/>
+<area shape="rect" href="Color_8hpp.html" title=" " alt="" coords="531,468,621,495"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="598,393,695,420"/>
+<area shape="rect" title=" " alt="" coords="393,393,479,420"/>
+<area shape="rect" title=" " alt="" coords="503,393,574,420"/>
+<area shape="rect" title=" " alt="" coords="23,393,97,420"/>
+<area shape="rect" href="Message_8hpp.html" title=" " alt="" coords="122,393,238,420"/>
+<area shape="rect" href="Replies_8hpp.html" title=" " alt="" coords="263,393,369,420"/>
+<area shape="rect" href="functions_8hpp.html" title=" " alt="" coords="275,468,394,495"/>
+<area shape="rect" title=" " alt="" coords="5,468,72,495"/>
+<area shape="rect" title=" " alt="" coords="96,468,176,495"/>
+<area shape="rect" title=" " alt="" coords="200,468,251,495"/>
+<area shape="rect" title=" " alt="" coords="263,543,321,569"/>
+<area shape="rect" title=" " alt="" coords="346,543,409,569"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -132,16 +153,44 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannelModeType.html">ChannelModeType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMode.html">Mode</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a6e10210a66874c8530cec09251af3179"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mode_8hpp.html#a6e10210a66874c8530cec09251af3179">ModeSign</a> { <a class="el" href="Mode_8hpp.html#a6e10210a66874c8530cec09251af3179a87fe59ef12c3d13dc2a4d14c9b16c1f9">PLUS</a> = 0, 
+<a class="el" href="Mode_8hpp.html#a6e10210a66874c8530cec09251af3179af613d73b4e7b570ffd967df4a13c4225">MINUS</a> = 1
+ }</td></tr>
+<tr class="separator:a6e10210a66874c8530cec09251af3179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a6e10210a66874c8530cec09251af3179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e10210a66874c8530cec09251af3179">&#9670;&nbsp;</a></span>ModeSign</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Mode_8hpp.html#a6e10210a66874c8530cec09251af3179">ModeSign</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6e10210a66874c8530cec09251af3179a87fe59ef12c3d13dc2a4d14c9b16c1f9"></a>PLUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6e10210a66874c8530cec09251af3179af613d73b4e7b570ffd967df4a13c4225"></a>MINUS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Mode_8hpp.html">Mode.hpp</a></li>
-    <li class="footer">Generated on Sat Apr 15 2023 17:11:47 for IRC SERVER by
+    <li class="footer">Generated on Sat Apr 15 2023 19:38:12 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

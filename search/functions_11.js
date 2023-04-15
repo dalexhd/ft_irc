@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['to_5flower_476',['to_lower',['../functions_8hpp.html#a40b443ced6fb40c747991e41e12494f4',1,'to_lower(std::string str):&#160;functions.cpp'],['../functions_8cpp.html#a40b443ced6fb40c747991e41e12494f4',1,'to_lower(std::string str):&#160;functions.cpp']]],
-  ['topic_477',['Topic',['../classTopic.html#af3301cb0d535eb066a3ea4ed54e28414',1,'Topic']]]
+  ['to_5flower_508',['to_lower',['../functions_8hpp.html#a40b443ced6fb40c747991e41e12494f4',1,'to_lower(std::string str):&#160;functions.cpp'],['../functions_8cpp.html#a40b443ced6fb40c747991e41e12494f4',1,'to_lower(std::string str):&#160;functions.cpp']]],
+  ['topic_509',['Topic',['../classTopic.html#af3301cb0d535eb066a3ea4ed54e28414',1,'Topic']]]
 ];
