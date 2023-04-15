@@ -32,9 +32,30 @@ void Server::createServerListener()
 	if (getaddrinfo(host.c_str(), port.c_str(), &hints, &servinfo) != 0)
 		throw std::runtime_error("error: getaddrinfo");
 
+	// Need to accept the socket?
+	/*
+	static int acceptSocket(int listenSocket)
+	{
+	    sockaddr_in client;
+	    socklen_t addr_size = sizeof(sockaddr_in);
+	    return (accept(listenSocket, (sockaddr *)&client, &addr_size));
+	}
+	*/
+
 	// We create the socket.
 	if ((_fd = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1)
 		throw std::runtime_error("Error while creating socket");
+
+	// Room for a new client ???
+	/*
+	static void	tooManyClients(int client_socket)
+	{
+	    std::cout << RED << ERR_FULL_SERV << RESET << std::endl;
+	    send(client_socket, ERR_FULL_SERV, strlen(ERR_FULL_SERV) + 1, 0);
+	    close(client_socket);
+	}
+	*/
+
 	// We set the socket options.
 	else if (setsockopt(_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
 	{
@@ -65,8 +86,32 @@ void Server::createServerListener()
 	std::cout << "Server is listening on port " << port << std::endl;
 }
 
+// Add handle existing connection
+/*
+POLLOUT and POLLERR
+            else if (it->revents & POLLOUT) // = "Alert me when I can send() data to this socket without blocking."
+            {
+                if (handlePolloutEvent(poll_fds, it, it->fd) == BREAK)
+                    break;
+            }
+            else if (it->revents & POLLERR)
+            {
+                if (handlePollerEvent(poll_fds, it) == BREAK)
+                    break ;
+                else
+                    return (FAILURE);
+            }
+            it++;
+*/
+
 void Server::createServerPoll(void)
 {
+	/*
+	???? It's something like that present ???
+	    poll_fds.insert(poll_fds.end(), new_pollfds.begin(), new_pollfds.end());
+	    // Add the range of NEW_pollfds in poll_fds (helps recalculating poll_fds.end() in the for loop)
+	*/
+
 	while (is_running())
 	{
 		if (poll(_pfds.data(), _pfds.size(), -1) == -1)
@@ -91,12 +136,21 @@ void Server::createServerPoll(void)
 					client->read();
 					if (client->_status == DISCONNECTED)
 					{
+						/*
+						Error 456 ???
+						if (read_count <= FAILURE) // when recv returns an error
+						{
+						    std::cerr << RED << "[Server] Recv() failed [456]"
+						<< RESET << std::endl; delClient(poll_fds, it, it->fd);
+						    return (BREAK);
+						}
+						*/
 						deleteClient(client->_fd);
 						break;
 					}
 					else
 					{
-						Message *   message = _clients[i->fd]->_message;
+						Message    *message = _clients[i->fd]->_message;
 						std::string nick = _clients[i->fd]->getNick();
 						if (nick.empty())
 							nick = "Anonymous";
