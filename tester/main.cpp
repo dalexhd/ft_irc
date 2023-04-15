@@ -91,10 +91,9 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 3
 int main(void)
 {
-	int option = 1;
+	int option = 3;
 	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
 	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
 	std::cout << "1. Connect to Local Server" << std::endl;
@@ -109,7 +108,7 @@ int main(void)
 		if (option == 2)
 			server = "irc.irc-hispano.org";
 		std::cout << "Single Client to " + server + "\n";
-		Client *client = new Client("Testbot2", "Testbot2", "Testbot2", server);
+		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
 		client->irc_connect();
 		usleep(500);
 		client->login();
