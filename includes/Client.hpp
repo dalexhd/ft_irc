@@ -25,6 +25,7 @@ class Client
 	std::vector<Message> _messagesSent;
 	std::vector<Message> _messagesReceived;
 	bool                 _is_authenticated;
+	bool                 _is_passLogged;
 	bool                 _is_ope;
 	int const            _maxChannels;
 	int                  _attempts;
@@ -33,9 +34,9 @@ class Client
 
   public:
 	Client(int &fd, std::string host, std::string servername, std::string version)
-	    : _fd(fd), _host(host), _servername(servername), _serverversion(version), _is_authenticated(false), _is_ope(false), _maxChannels(MAX_CHANNELS), _attempts(0), _status(ALIVE){
+	    : _fd(fd), _host(host), _servername(servername), _serverversion(version), _is_authenticated(false), _is_passLogged(false), _is_ope(false), _maxChannels(MAX_CHANNELS), _attempts(0), _status(ALIVE){
 	                                                                                                                                                                      // message(RPL_WELCOME(_servername, _nick));
-	                                                                                                                                                                  };
+	};
 	~Client()
 	{
 		close(_fd);
@@ -97,6 +98,18 @@ class Client
 	{
 		return _nick;
 	};
+
+	std::string const getUsername(void) const
+	{
+		return _username;
+	};
+
+	std::string const getRealname(void) const
+	{
+		return _realname;
+	};
+
+
 
 	// Setters
 	void setNick(std::string const &nick)

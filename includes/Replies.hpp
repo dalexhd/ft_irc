@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/15 18:39:24 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:01:20 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,5 +168,11 @@
 #define ERR_SASLABORTED 906
 #define ERR_SASLALREADY 907
 #define RPL_SASLMECHS 908
+
+// FICTICIAS
+#define ERR_WRONGPASS(servername, nick) \
+	":" + servername + "  " + nick + " :Wrong pass\n"
+#define ERR_NOTPASSNEEDED(servername, nick) \
+	":" + servername + "  " + nick + " :This server does not need any pass\n"
 
 #endif

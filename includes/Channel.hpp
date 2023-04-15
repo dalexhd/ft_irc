@@ -5,16 +5,16 @@
 
 enum ChannelMode
 {
-	CHANNEL_MODE_PRIVATE = 0,
-	CHANNEL_MODE_SECRET = 1,
-	CHANNEL_MODE_INVITE_ONLY = 2,
-	CHANNEL_MODE_MODERATED = 3,
-	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4,
-	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5,
-	CHANNEL_MODE_BAN_MASK = 6,
-	CHANNEL_MODE_KEY = 7,
-	CHANNEL_MODE_USER_LIMIT = 8,
-	CHANNEL_MODE_OPERATOR = 9,
+	CHANNEL_MODE_PRIVATE = 0, //+p OK
+	CHANNEL_MODE_SECRET = 1, //+s OK
+	CHANNEL_MODE_INVITE_ONLY = 2, //+i
+	CHANNEL_MODE_MODERATED = 3, //+m OK
+	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4, //+t
+	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5, //+n
+	CHANNEL_MODE_BAN_MASK = 6, //+b
+	CHANNEL_MODE_KEY = 7, //+k
+	CHANNEL_MODE_USER_LIMIT = 8, //+l OK
+	CHANNEL_MODE_OPERATOR = 9, //+o
 };
 
 enum ClientMode
@@ -49,6 +49,7 @@ class Channel
 	    : _name(name), _password(password), _creator(NULL), _user_limit(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
+		_modes.push_back(CHANNEL_MODE_MODERATED);
 	};
 
 	// Setters
@@ -99,6 +100,56 @@ class Channel
 	{
 		return (_mode);
 	}
+
+	std::vector<ChannelMode> getModes(void)
+	{
+		return (_modes);
+	}
+
+	std::string getStringModes(void)
+	{
+		std::string stringModes = "";
+		for (std::vector<ChannelMode>::const_iterator it = _modes.begin(); it != _modes.end(); ++it) {
+    		// Do something with each mode value
+			switch (*it) {
+				case CHANNEL_MODE_PRIVATE:
+					stringModes += "p";
+					break;
+				case CHANNEL_MODE_SECRET:
+					stringModes += "s";
+					break;
+				case CHANNEL_MODE_INVITE_ONLY:
+					stringModes += "i";
+					break;
+				case CHANNEL_MODE_MODERATED:
+					stringModes += "m";
+					break;
+				case CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY:
+					stringModes += "t";
+					break;
+				case CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE:
+					stringModes += "n";
+					break;
+				case CHANNEL_MODE_BAN_MASK:
+					stringModes += "b";
+					break;
+				case CHANNEL_MODE_KEY:
+					stringModes += "k";
+					break;
+				case CHANNEL_MODE_USER_LIMIT:
+					stringModes += "l";
+					break;
+				case CHANNEL_MODE_OPERATOR:
+					stringModes += "o";
+					break;
+				default:
+					// Handle unknown mode
+					break;
+			}
+		}
+		return (stringModes);
+	}
+
 	size_t getUserLimit(void)
 	{
 		return (_user_limit);

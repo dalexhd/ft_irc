@@ -13,6 +13,10 @@
 #include <unistd.h>
 #include <vector>
 
+#include <thread>
+#include <chrono>
+
+
 class Command
 {
   public:
@@ -255,6 +259,22 @@ class Client
 		return (1);
 	}
 
+	std::vector<std::string> split(const std::string &str, const std::string &delimiters)
+	{
+		std::vector<std::string> tokens;
+
+		std::string::size_type lastPos = str.find_first_not_of(delimiters, 0);
+		std::string::size_type pos = str.find_first_of(delimiters, lastPos);
+
+		while (std::string::npos != pos || std::string::npos != lastPos)
+		{
+			tokens.push_back(str.substr(lastPos, pos - lastPos));
+			lastPos = str.find_first_not_of(delimiters, pos);
+			pos = str.find_first_of(delimiters, lastPos);
+		}
+		return tokens;
+	}
+
 	void login()
 	{
 		std::cout << "CLIENT CONNECTS" << std::endl; // IF not exists STACKOVERFLOW
@@ -264,6 +284,15 @@ class Client
 			usleep(1000);
 		}
 		send("NICK " + this->_name); // NICK <nickname>
+		std::string serverresp = reads();
+		int i = 0;
+		while (std::string::npos != split(serverresp, ":")[0].find("433"))
+		{
+			send("NICK " + this->_name + std::to_string(i));
+			usleep(50000);
+			serverresp = reads();
+			i++;
+		}
 		usleep(1000);
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		this->_connected = true;
@@ -272,12 +301,20 @@ class Client
 	}
 	void requestingLoop()
 	{
+
+
 		std::string line;
+
+		std::thread t1([&]() {
+			while(1)
+				std::cout << reads();
+		});
+		t1.detach();
 		for (line = ""; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
-			pingpong(reads());
+			std::cout << reads();
 		}
 	}
 };

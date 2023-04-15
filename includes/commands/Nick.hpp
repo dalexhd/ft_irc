@@ -42,7 +42,15 @@ class Nick : public Command
 				return (false);
 			}
 		}
-		if (std::count_if(name.begin(), name.end(), ::isalnum) != static_cast<long>(name.length()))
+		/*		A name can only contain the following characters:
+
+		        A through to Z. (Lowercase and uppercase.)
+		        0 through to 9.
+		        `|^_-{}[] and \
+
+		        And a name cannot start with a number or hyphen.
+		*/
+		if (std::count_if(name.begin(), name.end(), ::isalnum) != static_cast<long>(name.length())) // MAAAAL
 		{
 			_sender->message(ERR_ERRONEUSNICKNAME(_sender->_servername, name));
 			return (false);
@@ -63,6 +71,10 @@ class Nick : public Command
 			                                        _sender->_servername + " NICK :" + name + "\n")
 			                                .c_str());
 		}
+		_sender->message(std::string(":" + _sender->_nick + "!" +
+			                        _sender->_username + "@" +
+			                        _sender->_servername + " NICK :" + name + "\n")
+									.c_str());
 		_sender->setNick(name);
 	}
 };

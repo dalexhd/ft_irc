@@ -28,12 +28,12 @@ class List : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel)
+				if (channel && (std::string::npos == channel->getStringModes().find('s')))
 				{
 					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
 					                          channel->getName(),
 					                          itoa(channel->getClients().size()),
-					                          channel->getTopic())); // RPL_LIST (322)
+					                          "[" + channel->getStringModes() + "]" + channel->getTopic())); // RPL_LIST (322)
 				}
 			}
 		}
@@ -42,10 +42,14 @@ class List : public Command
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-				_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
+				if(std::string::npos == channels[i]->getStringModes().find('s'))
+				{
+
+					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
 				                          channels[i]->getName(),
 				                          itoa(channels[i]->getClients().size()),
-				                          channels[i]->getTopic())); // RPL_LIST (322)
+				                          "[" + channels[i]->getStringModes() + "]" +channels[i]->getTopic())); // RPL_LIST (322)
+				}
 			}
 		}
 		_sender->message(RPL_LISTEND(_sender->_servername, _sender->_nick)); // RPL_LISTEND (323)

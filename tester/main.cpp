@@ -45,15 +45,20 @@ static void *clientConversation(void *client)
 				return 0;
 			c->login();
 		}
-		usleep(it2->second._ms * 10);
+		usleep(it2->second._ms + 700);
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		/*std::ofstream myfile;
-		myfile.open("tests/res" + c->_filename.substr(12, 99),
-		std::ios_base::app); myfile << c->reads(); myfile.close(); usleep(700);
-		// std::cout << c->reads() << std::endl;*/
-		std::cout << c->reads() << std::endl;
+
+		std::string tmpread(c->reads());
+		//WRITE TO A FILE
+		std::ofstream myfile;
+		/*myfile.open("tests/res" + c->_filename.substr(12, 99),
+		std::ios_base::app);
+		myfile << tmpread;
+		myfile.close();*/
+		usleep(700);
+		std::cout << tmpread << std::endl;
 	}
 
 	usleep(700);
@@ -86,20 +91,26 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 2
 int main(void)
 {
-	if (MENU == 1 || MENU == 2)
-	{
-		std::cout << "Single Client\n";
-		std::string server;
-		if (MENU == 1)
-			server = "irc.irc-hispano.org";
-		else
-			server = "127.0.0.1";
+	int option = 3;
+	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
+	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
+	std::cout << "1. Connect to Local Server" << std::endl;
+	std::cout << "2. Connect to Chat Hispano Server" << std::endl;
+	std::cout << "3. Automated Test" << std::endl << std::endl << ">> ";
 
-		Client *client = new Client("Testbot3", "Testbot3", "Testbot3", server);
-		client->irc_connect();
+	//std::cin >> option; // comment for coverage
+	if (option == 1 || option == 2)
+	{
+
+		std::string server = "127.0.0.1";
+		if (option == 2)
+			server = "irc.irc-hispano.org";
+		std::cout << "Single Client to " + server + "\n";
+		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
+		if(client->irc_connect())
+			return 1;
 		usleep(500);
 		client->login();
 		usleep(500);
