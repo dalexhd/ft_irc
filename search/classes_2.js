@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invite_355',['Invite',['../classInvite.html',1,'']]]
+  ['help_376',['Help',['../classHelp.html',1,'']]]
 ];

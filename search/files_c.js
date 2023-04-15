@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['server_2ecpp_400',['server.cpp',['../server_8cpp.html',1,'']]],
-  ['server_2ehpp_401',['Server.hpp',['../Server_8hpp.html',1,'']]]
+  ['quit_2ehpp_434',['Quit.hpp',['../Quit_8hpp.html',1,'']]]
 ];

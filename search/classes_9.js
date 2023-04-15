@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit_368',['Quit',['../classQuit.html',1,'']]]
+  ['operator_389',['Operator',['../classOperator.html',1,'']]]
 ];

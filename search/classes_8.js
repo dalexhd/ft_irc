@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['part_364',['Part',['../classPart.html',1,'']]],
-  ['pass_365',['Pass',['../classPass.html',1,'']]],
-  ['ping_366',['Ping',['../classPing.html',1,'']]],
-  ['privmsg_367',['PrivMsg',['../classPrivMsg.html',1,'']]]
+  ['names_386',['Names',['../classNames.html',1,'']]],
+  ['nick_387',['Nick',['../classNick.html',1,'']]],
+  ['notice_388',['Notice',['../classNotice.html',1,'']]]
 ];

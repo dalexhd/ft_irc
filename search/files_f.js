@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['validation_2ecpp_404',['validation.cpp',['../validation_8cpp.html',1,'']]]
+  ['topic_2ehpp_440',['Topic.hpp',['../Topic_8hpp.html',1,'']]],
+  ['topicsettablebychanneloperatoronly_2ehpp_441',['TopicSettableByChannelOperatorOnly.hpp',['../TopicSettableByChannelOperatorOnly_8hpp.html',1,'']]]
 ];

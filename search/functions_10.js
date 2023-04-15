@@ -1,21 +1,9 @@
 var searchData=
 [
-  ['send_5fchannel_490',['send_channel',['../classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c',1,'Names']]],
-  ['sendmodemessage_491',['sendModeMessage',['../classChannelModeType.html#a132cb26f0acaec638e0ad072c66b9997',1,'ChannelModeType']]],
-  ['server_492',['Server',['../classServer.html#adc13d87fce5c9a474b818750f289132b',1,'Server']]],
-  ['setchannel_493',['setChannel',['../classChannelModeType.html#a9ad87bc2dd837b3b81a290ab95384878',1,'ChannelModeType']]],
-  ['setcreator_494',['setCreator',['../classChannel.html#a1cc547a4312634c68769f1c62d2b4df9',1,'Channel']]],
-  ['setmessage_495',['setMessage',['../classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21',1,'Command']]],
-  ['setmode_496',['setMode',['../classChannelModeType.html#aa5071e1243a4a43ebf8dc5540174ec6f',1,'ChannelModeType']]],
-  ['setnick_497',['setNick',['../classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39',1,'Client']]],
-  ['setparams_498',['setParams',['../classChannelModeType.html#ab9dbb93493bc1ffb75a23e65cee5d394',1,'ChannelModeType']]],
-  ['setpassword_499',['setPassword',['../classChannel.html#a8f052c6d974566a8d4b13bfe58d4f96e',1,'Channel']]],
-  ['setrealname_500',['setRealName',['../classClient.html#aa24e0f0bf8c07f5a62d7147a21d1285d',1,'Client']]],
-  ['setsender_501',['setSender',['../classCommand.html#a76b0405daabf409f562a7e75acf12adb',1,'Command::setSender()'],['../classChannelModeType.html#a2549867fb668de9d6273cac2235b4435',1,'ChannelModeType::setSender()']]],
-  ['setserver_502',['setServer',['../classCommand.html#a9c147b76d590d0a2130c92c9ac9f6133',1,'Command::setServer()'],['../classChannelModeType.html#ad699830227fd46cc721996d47e18b69c',1,'ChannelModeType::setServer()']]],
-  ['setsign_503',['setSign',['../classChannelModeType.html#a8cf8f269fe4c6a8f405d15ea6bc2f916',1,'ChannelModeType']]],
-  ['settopic_504',['setTopic',['../classChannel.html#ac95eb79f7df633dfbfb130d0a68e1963',1,'Channel']]],
-  ['setuserlimit_505',['setUserLimit',['../classChannel.html#a769357d38bd8c54a74f7cc51d3144b7c',1,'Channel']]],
-  ['setusername_506',['setUsername',['../classClient.html#a0ef8642315aae92725caeca341acf2b6',1,'Client']]],
-  ['split_507',['split',['../functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp'],['../functions_8cpp.html#a9f2ce856ffec652145a26842617b63e1',1,'split(const std::string &amp;str, const std::string &amp;delimiters):&#160;functions.cpp']]]
+  ['read_531',['read',['../classClient.html#a2422c8199094e6cb2ea1f1740584c325',1,'Client']]],
+  ['remove_532',['remove',['../classChannelModeType.html#a30cc9cd96b4dd402ef66e12645355d2c',1,'ChannelModeType::remove()'],['../classBanMask.html#a9b3b44145b09eff0b7a44fea75455947',1,'BanMask::remove()'],['../classCantSentMessagesOutside.html#ad375c33ef8d91a917abcbc8969130387',1,'CantSentMessagesOutside::remove()'],['../classInviteOnly.html#a49d5b0f63d08b117830376e44810e146',1,'InviteOnly::remove()'],['../classKey.html#a1a56adfdc9db83ccebc7af1600bc9acd',1,'Key::remove()'],['../classModerated.html#a00ccddd9877137dcdbbeb95bb4bd05f8',1,'Moderated::remove()'],['../classOperator.html#a2feb80429fb50f498946ca97c1d4d150',1,'Operator::remove()'],['../classPrivate.html#a4d729f4b4600607647f5ee71fc85d1d3',1,'Private::remove()'],['../classSecret.html#afedfa86113811e6a91fd63c7232ae104',1,'Secret::remove()'],['../classTopicSettableByChannelOperatorOnly.html#aa4369283f9c400513757fb91ff1f0a38',1,'TopicSettableByChannelOperatorOnly::remove()'],['../classUserLimit.html#aa09b9d837002c7a8fba718673a31d1af',1,'UserLimit::remove()']]],
+  ['removeclientfromchannel_533',['removeClientFromChannel',['../classChannel.html#a249c77224152ae0da4635fd0edcd1a5f',1,'Channel']]],
+  ['removemode_534',['removeMode',['../classChannel.html#af72ea58ed6a994380416c80ff2b4dcea',1,'Channel']]],
+  ['removeope_535',['removeOpe',['../classChannel.html#a41c0b20a3ecefdf804be58df7a22999b',1,'Channel']]],
+  ['run_536',['run',['../classServer.html#abb27d30b40a94326e3fd629d3b30b7d5',1,'Server']]]
 ];

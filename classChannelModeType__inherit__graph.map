@@ -1,0 +1,13 @@
+<map id="ChannelModeType" name="ChannelModeType">
+<area shape="rect" id="node1" title=" " alt="" coords="5,233,147,260"/>
+<area shape="rect" id="node2" href="$classBanMask.html" title=" " alt="" coords="287,5,369,32"/>
+<area shape="rect" id="node3" href="$classCantSentMessagesOutside.html" title=" " alt="" coords="230,56,426,83"/>
+<area shape="rect" id="node4" href="$classInviteOnly.html" title=" " alt="" coords="283,107,373,133"/>
+<area shape="rect" id="node5" href="$classKey.html" title=" " alt="" coords="305,157,351,184"/>
+<area shape="rect" id="node6" href="$classModerated.html" title=" " alt="" coords="282,208,374,235"/>
+<area shape="rect" id="node7" href="$classOperator.html" title=" " alt="" coords="289,259,367,285"/>
+<area shape="rect" id="node8" href="$classPrivate.html" title=" " alt="" coords="294,309,362,336"/>
+<area shape="rect" id="node9" href="$classSecret.html" title=" " alt="" coords="297,360,359,387"/>
+<area shape="rect" id="node10" href="$classTopicSettableByChannelOperatorOnly.html" title=" " alt="" coords="195,411,461,437"/>
+<area shape="rect" id="node11" href="$classUserLimit.html" title=" " alt="" coords="285,461,371,488"/>
+</map>

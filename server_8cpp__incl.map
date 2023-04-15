@@ -37,14 +37,14 @@
 <area shape="rect" id="node47" href="$User_8hpp.html" title=" " alt="" coords="2132,155,2295,181"/>
 <area shape="rect" id="node48" href="$Whois_8hpp.html" title=" " alt="" coords="2320,155,2494,181"/>
 <area shape="rect" id="node22" href="$Command_8hpp.html" title=" " alt="" coords="1473,237,1602,263"/>
-<area shape="rect" id="node28" title=" " alt="" coords="3788,237,3946,263"/>
-<area shape="rect" id="node29" title=" " alt="" coords="3970,237,4244,263"/>
-<area shape="rect" id="node30" title=" " alt="" coords="2308,237,2472,263"/>
-<area shape="rect" id="node31" title=" " alt="" coords="2496,237,2617,263"/>
-<area shape="rect" id="node32" title=" " alt="" coords="2641,237,2810,263"/>
-<area shape="rect" id="node33" title=" " alt="" coords="2835,237,2990,263"/>
-<area shape="rect" id="node34" title=" " alt="" coords="3014,237,3160,263"/>
-<area shape="rect" id="node35" title=" " alt="" coords="3184,237,3324,263"/>
-<area shape="rect" id="node36" title=" " alt="" coords="3348,229,3576,271"/>
-<area shape="rect" id="node37" title=" " alt="" coords="3600,237,3763,263"/>
+<area shape="rect" id="node28" href="$BanMask_8hpp.html" title=" " alt="" coords="3788,237,3946,263"/>
+<area shape="rect" id="node29" href="$CantSentMessagesOutside_8hpp.html" title=" " alt="" coords="3970,237,4244,263"/>
+<area shape="rect" id="node30" href="$InviteOnly_8hpp.html" title=" " alt="" coords="2308,237,2472,263"/>
+<area shape="rect" id="node31" href="$Key_8hpp.html" title=" " alt="" coords="2496,237,2617,263"/>
+<area shape="rect" id="node32" href="$Moderated_8hpp.html" title=" " alt="" coords="2641,237,2810,263"/>
+<area shape="rect" id="node33" href="$Operator_8hpp.html" title=" " alt="" coords="2835,237,2990,263"/>
+<area shape="rect" id="node34" href="$Private_8hpp.html" title=" " alt="" coords="3014,237,3160,263"/>
+<area shape="rect" id="node35" href="$Secret_8hpp.html" title=" " alt="" coords="3184,237,3324,263"/>
+<area shape="rect" id="node36" href="$TopicSettableByChannelOperatorOnly_8hpp.html" title=" " alt="" coords="3348,229,3576,271"/>
+<area shape="rect" id="node37" href="$UserLimit_8hpp.html" title=" " alt="" coords="3600,237,3763,263"/>
 </map>

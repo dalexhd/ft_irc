@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['whois_372',['Whois',['../classWhois.html',1,'']]]
+  ['topic_398',['Topic',['../classTopic.html',1,'']]],
+  ['topicsettablebychanneloperatoronly_399',['TopicSettableByChannelOperatorOnly',['../classTopicSettableByChannelOperatorOnly.html',1,'']]]
 ];

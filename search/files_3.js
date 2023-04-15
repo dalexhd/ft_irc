@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invite_2ehpp_383',['Invite.hpp',['../Invite_8hpp.html',1,'']]]
+  ['help_2ehpp_414',['Help.hpp',['../Help_8hpp.html',1,'']]]
 ];

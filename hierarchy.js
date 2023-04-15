@@ -1,7 +1,18 @@
 var hierarchy =
 [
     [ "Channel", "classChannel.html", null ],
-    [ "ChannelModeType", "classChannelModeType.html", null ],
+    [ "ChannelModeType", "classChannelModeType.html", [
+      [ "BanMask", "classBanMask.html", null ],
+      [ "CantSentMessagesOutside", "classCantSentMessagesOutside.html", null ],
+      [ "InviteOnly", "classInviteOnly.html", null ],
+      [ "Key", "classKey.html", null ],
+      [ "Moderated", "classModerated.html", null ],
+      [ "Operator", "classOperator.html", null ],
+      [ "Private", "classPrivate.html", null ],
+      [ "Secret", "classSecret.html", null ],
+      [ "TopicSettableByChannelOperatorOnly", "classTopicSettableByChannelOperatorOnly.html", null ],
+      [ "UserLimit", "classUserLimit.html", null ]
+    ] ],
     [ "Client", "classClient.html", null ],
     [ "Command", "classCommand.html", [
       [ "Help", "classHelp.html", null ],

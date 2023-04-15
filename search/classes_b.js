@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['topic_370',['Topic',['../classTopic.html',1,'']]]
+  ['quit_395',['Quit',['../classQuit.html',1,'']]]
 ];
