@@ -1,13 +1,5 @@
 #include "includes/Colors.hpp"
 #include "includes/File.hpp"
-#include <iostream>
-#include <string>
-#include <thread>
-#include <chrono>
-#include <mutex>
-#include <condition_variable>
-
-
 
 void list_files(const std::string &path, std::vector<std::string> &files)
 {
@@ -53,19 +45,20 @@ static void *clientConversation(void *client)
 				return 0;
 			c->login();
 		}
-		usleep(it2->second._ms * 10);
+		usleep(it2->second._ms + 700);
 		c->send(it2->second.getCommand());
 		std::cout << VERDE_T << c->_name << " - " << it2->first << " ms "
 		          << it2->second.getCommand() << RESET << std::endl;
-		std::ofstream myfile;
-		myfile.open("tests/res" + c->_filename.substr(12, 99),
-		std::ios_base::app);
+
 		std::string tmpread(c->reads());
+		//WRITE TO A FILE
+		std::ofstream myfile;
+		/*myfile.open("tests/res" + c->_filename.substr(12, 99),
+		std::ios_base::app);
 		myfile << tmpread;
-		myfile.close();
+		myfile.close();*/
 		usleep(700);
 		std::cout << tmpread << std::endl;
-		//std::cout << c->reads() << std::endl;
 	}
 
 	usleep(700);
@@ -98,6 +91,7 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
+#define MENU 6
 int main(void)
 {
 	int option = 3;
