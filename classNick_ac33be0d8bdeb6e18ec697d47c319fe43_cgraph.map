@@ -1,7 +1,8 @@
 <map id="Nick::execute" name="Nick::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,116,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,116,108"/>
 <area shape="rect" id="node2" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="179,5,337,32"/>
 <area shape="rect" id="node3" href="$classServer.html#a0539ae23411198c85d50f1338711717c" title=" " alt="" coords="164,56,352,83"/>
-<area shape="rect" id="node5" href="$classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39" title=" " alt="" coords="199,107,317,133"/>
+<area shape="rect" id="node5" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="195,107,321,133"/>
+<area shape="rect" id="node6" href="$classClient.html#a42dd7341ae13b3bfd14e7f17ce70eb39" title=" " alt="" coords="199,157,317,184"/>
 <area shape="rect" id="node4" href="$classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2" title=" " alt="" coords="400,56,553,83"/>
 </map>
