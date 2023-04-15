@@ -26,7 +26,8 @@ var searchData=
   ['getrelatedclients_151',['getRelatedClients',['../classServer.html#a0539ae23411198c85d50f1338711717c',1,'Server']]],
   ['getsender_152',['getSender',['../classCommand.html#a99274a8775f437acb302eefdb13057e5',1,'Command']]],
   ['getservername_153',['getServerName',['../classServer.html#afe70c9e58827e88e9b53e4985d159092',1,'Server']]],
-  ['gettopic_154',['getTopic',['../classChannel.html#a18cec88efaa45792771b34c293195842',1,'Channel']]],
-  ['getusage_155',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]],
-  ['getusername_156',['getUsername',['../classClient.html#a35495564b0256a7f7902dea08d79fb75',1,'Client']]]
+  ['getstringmodes_154',['getStringModes',['../classChannel.html#a44d31711a527a9f8e1d30437bf69d57e',1,'Channel']]],
+  ['gettopic_155',['getTopic',['../classChannel.html#a18cec88efaa45792771b34c293195842',1,'Channel']]],
+  ['getusage_156',['getUsage',['../classCommand.html#aa1b9f6d2a378ac1762f7a5906ff2afaa',1,'Command']]],
+  ['getusername_157',['getUsername',['../classClient.html#a35495564b0256a7f7902dea08d79fb75',1,'Client']]]
 ];

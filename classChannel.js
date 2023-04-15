@@ -12,6 +12,7 @@ var classChannel =
     [ "getModeString", "classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d", null ],
     [ "getName", "classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c", null ],
     [ "getPassword", "classChannel.html#a5220250205f35b248205e2a4ba41519d", null ],
+    [ "getStringModes", "classChannel.html#a44d31711a527a9f8e1d30437bf69d57e", null ],
     [ "getTopic", "classChannel.html#a18cec88efaa45792771b34c293195842", null ],
     [ "hasKey", "classChannel.html#ac3a4dc01e8d2e500944715bd1c592656", null ],
     [ "isModerated", "classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1", null ],
