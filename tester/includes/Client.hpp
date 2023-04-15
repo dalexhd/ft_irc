@@ -287,7 +287,6 @@ class Client
 			send("NICK " + this->_name + std::to_string(i));
 			usleep(50000);
 			serverresp = reads();
-			std::cout << ("NICK " + this->_name + std::to_string(i)) << "serverresp "<< serverresp << " -> " << split(serverresp, ":")[0] << "\n";
 			i++;
 		}
 		usleep(1000);
