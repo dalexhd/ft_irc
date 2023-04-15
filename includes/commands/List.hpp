@@ -28,7 +28,9 @@ class List : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel)
+				/*bool has_private_mode = std::find(channel->getModes().begin(), channel->getModes().end(), CHANNEL_MODE_PRIVATE) != channel->getModes().end();*/
+				//std::cout << "Has private mode " << has_private_mode << "\n";
+				if (channel && !(std::find(channel->getModes().begin(), channel->getModes().end(), CHANNEL_MODE_PRIVATE) != channel->getModes().end()))
 				{
 					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
 					                          channel->getName(),
@@ -42,10 +44,14 @@ class List : public Command
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-				_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
+				bool has_private_mode = std::find(channels[i]->getModes().begin(), channels[i]->getModes().end(), CHANNEL_MODE_PRIVATE) != channels[i]->getModes().end();
+				if(!has_private_mode)
+				{
+					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
 				                          channels[i]->getName(),
 				                          itoa(channels[i]->getClients().size()),
 				                          channels[i]->getTopic())); // RPL_LIST (322)
+				}
 			}
 		}
 		_sender->message(RPL_LISTEND(_sender->_servername, _sender->_nick)); // RPL_LISTEND (323)

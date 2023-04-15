@@ -91,10 +91,10 @@ void executeFileClients(File *file)
     Añadir test de todos los comando principales
 */
 
-#define MENU 6
+#define MENU 3
 int main(void)
 {
-	int option = 3;
+	int option = 1;
 	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
 	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
 	std::cout << "1. Connect to Local Server" << std::endl;

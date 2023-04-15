@@ -86,6 +86,11 @@ class Channel
 	{
 		return (_mode);
 	}
+
+	std::vector<ChannelMode> getModes(void)
+	{
+		return (_modes);
+	}
 	size_t getMaxClients(void)
 	{
 		return (_max_clients);
