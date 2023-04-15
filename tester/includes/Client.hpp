@@ -266,7 +266,7 @@ class Client
 		send("NICK " + this->_name); // NICK <nickname>
 		usleep(1000);
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
-		// this->_connected = true;
+		this->_connected = true;
 		pingpong(reads());
 		usleep(1000);
 	}
