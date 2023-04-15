@@ -68,8 +68,14 @@ class Topic : public Command
 		else
 		{
 			channel->setTopic(p[1]);
-			_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick,
-			                           channel->getName(), channel->getTopic()));
+
+			std::vector<Client *> related_channels_clients = channel->getClients();
+			for (size_t j = 0; j < related_channels_clients.size(); j++)
+			{
+				related_channels_clients[j]->message(
+				    RPL_TOPIC(_sender->_servername, related_channels_clients[j]->_nick,
+				              "#" + channel->getName(), channel->getTopic()));
+			}
 		}
 	}
 };

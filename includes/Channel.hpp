@@ -17,6 +17,13 @@ enum ChannelMode
 	CHANNEL_MODE_OPERATOR = 9,
 };
 
+enum ClientMode
+{
+	CLIENT_MODE_VOICE = 0,
+	CLIENT_MODE_OPERATOR = 1,
+	CLEINT_MODE_INVISIBLE = 2,
+};
+
 class Channel
 {
   private:
@@ -25,20 +32,21 @@ class Channel
 	Client *               _creator;
 	time_t                 _created_at;
 	std::vector<Message *> _messages;
-	long long int          _max_clients;
+	long long int          _user_limit;
 	std::string            _topic;
 	ChannelMode            _mode;
 	// New mode implementation...
 	std::vector<ChannelMode> _modes;
 
   public:
-	std::vector<Client *> _normal_clients;
-	std::vector<Client *> _voice_clients;
-	std::vector<Client *> _ope_clients;
+	std::vector<Client *>                         _normal_clients;
+	std::vector<Client *>                         _voice_clients;
+	std::vector<Client *>                         _ope_clients;
+	std::vector<std::pair<Client *, ClientMode> > _clients;
 
   public:
 	Channel(std::string &name, std::string &password)
-	    : _name(name), _password(password), _creator(NULL), _max_clients(MAX_CLIENTS_PER_CHANNEL)
+	    : _name(name), _password(password), _creator(NULL), _user_limit(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
 	};
@@ -54,6 +62,11 @@ class Channel
 	void setTopic(std::string &topic)
 	{
 		_topic = topic;
+	};
+
+	void setPassword(std::string passwd)
+	{
+		_password = passwd;
 	};
 
 	// Getter
@@ -86,11 +99,14 @@ class Channel
 	{
 		return (_mode);
 	}
-	size_t getMaxClients(void)
+	size_t getUserLimit(void)
 	{
-		return (_max_clients);
+		return (_user_limit);
 	}
-
+	void setUserLimit(size_t limit)
+	{
+		_user_limit = limit;
+	}
 	std::vector<Client *> getClients(void) const
 	{
 		std::vector<Client *> clients;
@@ -130,6 +146,42 @@ class Channel
 	{
 		return (std::find(_voice_clients.begin(), _voice_clients.end(), client) !=
 		        _voice_clients.end());
+	}
+
+	void addOpe(Client *client)
+	{
+		std::vector<Client *>::iterator it =
+		    std::find(_normal_clients.begin(), _normal_clients.end(), client);
+		if (it != _normal_clients.end())
+			_normal_clients.erase(it);
+		if (std::find(_ope_clients.begin(), _ope_clients.end(), client) ==
+		    _ope_clients.end())
+			_ope_clients.push_back(client);
+	}
+
+	void removeOpe(Client *client)
+	{
+		std::vector<Client *>::iterator it =
+		    std::find(_ope_clients.begin(), _ope_clients.end(), client);
+		if (it != _ope_clients.end())
+			_ope_clients.erase(it);
+		if (std::find(_normal_clients.begin(), _normal_clients.end(), client) ==
+		    _normal_clients.end())
+			_normal_clients.push_back(client);
+	}
+
+	void kick(Client *client)
+	{
+		std::vector<Client *>::iterator it =
+		    std::find(_normal_clients.begin(), _normal_clients.end(), client);
+		if (it != _normal_clients.end())
+			_normal_clients.erase(it);
+		it = std::find(_ope_clients.begin(), _ope_clients.end(), client);
+		if (it != _ope_clients.end())
+			_ope_clients.erase(it);
+		it = std::find(_voice_clients.begin(), _voice_clients.end(), client);
+		if (it != _voice_clients.end())
+			_voice_clients.erase(it);
 	}
 
 	// --------------
@@ -198,8 +250,10 @@ class Channel
 					_ope_clients.erase(
 					    std::find(_ope_clients.begin(), _ope_clients.end(), client));
 				else
+				{
 					_normal_clients.erase(
 					    std::find(_normal_clients.begin(), _normal_clients.end(), client));
+				}
 			}
 		}
 	}

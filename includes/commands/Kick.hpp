@@ -16,7 +16,6 @@ class Kick : public Command
 		_example[1] = "kick #hola user1";
 		_example[2] = "kick #hola user1,user2";
 		_example[3] = "kick #hola user1,user2 :coment";
-		_is_ope = true;
 
 		/*
 		REPLIES
@@ -33,8 +32,6 @@ class Kick : public Command
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		bool                          getUserChannel;
-		bool                          isSenderOnChannel;
 
 		if (p.size() > 3 || p.size() < 2)
 		{
@@ -48,44 +45,40 @@ class Kick : public Command
 
 			if (p[0][0] != '#')
 			{
-				_sender->message("Wrong command format. Ex: list "
-				                 "#canal1 "
-				                 "user\n");
+				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
 				return (false);
 			}
 
 			Channel *channel = _server->getChannel(p[0]);
 			if (channel)
 			{
+				if (!channel->joined(_sender))
+				{
+					_sender->message(ERR_NOTONCHANNEL(_sender->_servername,
+					                                  _sender->_nick,
+					                                  p[0])); // ERR_NOTONCHANNEL (442)
+					return (false);
+				}
+				if (!channel->isOpe(_sender))
+				{
+					_sender->message(ERR_CHANOPRIVSNEEDED(_sender->_servername,
+					                                      _sender->_nick,
+					                                      p[0])); // ERR_CHANOPRIVSNEEDED (482)
+					return (false);
+				}
 				for (size_t i = 0; i < _user_params.size(); i++)
 				{
-					getUserChannel = false;
-					isSenderOnChannel = false;
-					for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-					{
-						if (channel->_normal_clients[j]->_nick == _user_params[i])
-							getUserChannel = true;
-						if (channel->_normal_clients[j]->_nick == _sender->_nick)
-							isSenderOnChannel = true;
-					}
-					for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-					{
-						if (channel->_ope_clients[j]->_nick == _user_params[i])
-							getUserChannel = true;
-						if (channel->_ope_clients[j]->_nick == _sender->_nick)
-							isSenderOnChannel = true;
-					}
-
-					if (getUserChannel == false)
+					Client *user = _server->getClient(_user_params[i]);
+					if (!user)
 					{
 						_sender->message(
-						    ERR_USERNOTINCHANNEL(_sender->_servername, _sender->_nick, p[0]));
+						    ERR_NOSUCHNICK(_sender->_servername, _sender->_nick));
 						return (false);
 					}
-					if (isSenderOnChannel == false)
+					if (!channel->joined(user))
 					{
-						_sender->message(
-						    ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[0]));
+						_sender->message(ERR_USERNOTINCHANNEL(
+						    _sender->_servername, _sender->_nick, "#" + channel->getName())); // ERR_USERNOTINCHANNEL (441)
 						return (false);
 					}
 				}
@@ -105,25 +98,18 @@ class Kick : public Command
 		std::vector<std::string>      _user_params = split(p[1], ",");
 
 		Channel *channel = _server->getChannel(p[0]);
-		if (channel)
+		for (size_t i = 0; i < _user_params.size(); i++)
 		{
-			for (size_t i = 0; i < _user_params.size(); i++)
+			Client *              user = _server->getClient(_user_params[i]);
+			std::vector<Client *> related_channels_clients = channel->getClients();
+			for (size_t j = 0; j < related_channels_clients.size(); j++)
 			{
-				for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-				{
-					if (channel->_normal_clients[j]->_nick == _user_params[i])
-					{
-						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
-						// channel->_normal_clients[j]->message(std::string(_sender->_name + " kicked you from  " + channel->getName() + "\n").c_str());
-					}
-				}
-				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-				{
-					if (channel->_ope_clients[j]->_nick == _user_params[i])
-						channel->_ope_clients.erase(channel->_ope_clients.begin() + j);
-				}
+				related_channels_clients[j]->message(
+				    ":" + _sender->_nick + "!" + _sender->_username + "@" +
+				    _sender->_host + " KICK #" + channel->getName() + " " + user->_nick + " :" + p[2] + "\n");
 			}
+			channel->kick(user);
 		}
-	}
+	};
 };
 #endif

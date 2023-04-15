@@ -70,6 +70,28 @@ class Join : public Command
 						    _sender->_servername, _sender->_nick, _sender->_username, _ch_params[i])); // ERR_USERONCHANNEL 443
 						return (false);
 					}
+					else if ((channel->_normal_clients.size() +
+					          channel->_ope_clients.size()) > channel->getUserLimit())
+					{
+						_sender->message(
+						    ERR_CHANNELISFULL(_sender->_servername, _sender->_nick, _ch_params[i])); // ERR_CHANNELISFULL 471
+						return (false);
+					}
+					else if (channel->getPassword() != "" && _pw_params.size() > 0)
+					{
+						if (channel->getPassword() != _pw_params[i])
+						{
+							_sender->message(
+							    ERR_BADCHANNELKEY(_sender->_servername, _sender->_nick, _ch_params[i])); // ERR_BADCHANNELKEY 475
+							return (false);
+						}
+					}
+					else if (channel->getPassword() != "" && _pw_params.size() == 0)
+					{
+						_sender->message(
+						    ERR_BADCHANNELKEY(_sender->_servername, _sender->_nick, _ch_params[i])); // ERR_BADCHANNELKEY 475
+						return (false);
+					}
 				}
 			}
 		}
@@ -89,74 +111,43 @@ class Join : public Command
 
 			if (channel)
 			{
-				if ((channel->_normal_clients.size() + channel->_ope_clients.size()) >
-				    channel->getMaxClients())
-					_sender->message(
-					    ERR_CHANNELISFULL(_sender->_servername, _sender->_nick, _ch_params[i]));
-				else if (_pw_params.size() > 0)
+				channel->_normal_clients.push_back(_sender);
+
+				std::vector<Client *> clients = channel->getClients();
+
+				for (size_t i = 0; i < clients.size(); i++)
 				{
-					if (channel->getPassword() == _pw_params[i])
-					{
-						channel->_normal_clients.push_back(_sender);
-						_sender->message(std::string("Client " + _sender->_nick + " joined channel " + _ch_params[i] + "\n")
-						                     .c_str());
-					}
-					else
-						_sender->message(ERR_BADCHANNELKEY(
-						    _sender->_servername, _sender->_nick, channel->getName())); // ERR_BADCHANNELKEY (475)
+					Client *client = clients[i];
+					client->message(
+					    std::string(":" + _sender->_nick + "!" + _sender->_username + "@" +
+					                _sender->_servername + " JOIN :#" + channel->getName() + "\n")
+					        .c_str());
+				}
+
+				if (channel->getTopic().size() > 0)
+				{
+					_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick, "#" + _ch_params[i],
+					                           channel->getTopic())); // RPL_TOPIC 332
 				}
 				else
 				{
-					if (channel->getPassword() != "")
-						_sender->message(ERR_BADCHANNELKEY(
-						    _sender->_servername, _sender->_nick, channel->getName())); // ERR_BADCHANNELKEY (475)
-					else
-					{
-						channel->_normal_clients.push_back(_sender);
-						std::vector<Client *> clients = channel->getClients();
-
-						for (size_t i = 0; i < clients.size(); i++)
-						{
-							Client *client = clients[i];
-							client->message(std::string(":" + _sender->_nick + "!" +
-							                            _sender->_username + "@" +
-							                            _sender->_servername + " JOIN :#" +
-							                            channel->getName() + "\n")
-							                    .c_str());
-						}
-						Command *   cmd = _server->_commands["names"];
-						std::string names = "names #" + _ch_params[i];
-						Message *   message = new Message(names);
-						cmd->setSender(_sender);
-						cmd->setServer(_server);
-						cmd->setMessage(message);
-						cmd->execute();
-						delete message;
-					}
+					_sender->message(RPL_TOPIC(_sender->_servername, _sender->_nick, "#" + _ch_params[i],
+					                           "No topic is set")); // RPL_TOPIC 332
 				}
+
+				Command *   cmd = _server->_commands["names"];
+				std::string names = "names #" + _ch_params[i];
+				Message *   message = new Message(names);
+				cmd->setSender(_sender);
+				cmd->setServer(_server);
+				cmd->setMessage(message);
+				cmd->execute();
+				delete message;
 			}
 			else
 			{
 				Channel *channel;
-				/*std::vector<Channel *> channels = _server->getChannels();
-				int j = 0;
 
-				if(channels.size() > 1) // err: why channels size is 1
-				{
-				    std::cout << "sender channels" << itoa(channels.size() - 1) << std::endl;
-				    for (size_t i = 0; i < channels.size() - 1; i++)
-				    {
-				        //std::cout << channels[i]->getName() << std::endl;
-				        if(channels[i]->joined(_sender))
-				            j++;
-				    }
-				}
-				if(j > _sender->_maxChannels)
-				{
-				        _sender->message(_sender->_nick + " " + _ch_params[i] + " :You have joined too many channels\n"); //ERR_TOOMANYCHANNELS (405)
-				        return;
-				}
-				else */
 				if (_pw_params.size() > 0)
 				{
 					channel = _server->createChannel(_ch_params[i], _pw_params[i]);

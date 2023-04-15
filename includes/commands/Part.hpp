@@ -14,16 +14,12 @@ class Part : public Command
 		_usage = "part";
 		_example[0] = "part <canal>{,<canal>}";
 		_example[1] = "part :#uruguay";
-
-		// ERR_NEEDMOREPARAMS (461) k
-		// ERR_NOSUCHCHANNEL (403) k
-		// ERR_NOTONCHANNEL (442) k
 	}
 
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		if (p.size() < 1 || p.size() > 1)
+		if (p.size() < 1)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
 			                                    _message->getCmd()));
@@ -37,7 +33,8 @@ class Part : public Command
 			{
 				if (_ch_params[i][0] != '#')
 				{
-					_sender->message(ERR_BADCHANMASK(_sender->_servername,_sender->_nick)); // ERR_BADCHANMASK (476)
+					_sender->message(
+					    ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
 					return (false);
 				}
 			}
@@ -48,13 +45,15 @@ class Part : public Command
 				{
 					if (!channel->joined(_sender))
 					{
-						_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
+						_sender->message(
+						    ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
 						return (false);
 					}
 				}
 				else
 				{
-					_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
+					_sender->message(
+					    ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, _ch_params[i]));
 					return (false);
 				}
 			}
@@ -64,8 +63,6 @@ class Part : public Command
 
 	void execute()
 	{
-		if (!validate())
-			return;
 		std::map<size_t, std::string> p = _message->getParams();
 
 		std::vector<std::string> _ch_params = split(p[0], ",");
@@ -73,22 +70,15 @@ class Part : public Command
 		for (size_t i = 0; i < _ch_params.size(); i++)
 		{
 			Channel *channel = _server->getChannel(_ch_params[i]);
-			if (channel)
-			{
-				for (size_t j = 0; j < channel->_normal_clients.size(); j++)
-				{
-					if (channel->_normal_clients[j]->_nick == _sender->_nick)
-						channel->_normal_clients.erase(channel->_normal_clients.begin() + j);
 
-				}
-				for (size_t j = 0; j < channel->_ope_clients.size(); j++)
-				{
-					if (channel->_ope_clients[j]->_nick == _sender->_nick)
-						channel->_ope_clients.erase(channel->_ope_clients.begin() + j);
-				}
-				_sender->message(std::string("Client " + _sender->_nick + " parted channel " + _ch_params[i] + "\n")
-				                     .c_str());
+			std::vector<Client *> related_channels_clients = channel->getClients();
+			for (size_t j = 0; j < related_channels_clients.size(); j++)
+			{
+				related_channels_clients[j]->message(
+				    ":" + _sender->_nick + "!" + _sender->_username + "@" +
+				    _sender->_host + " PART #" + channel->getName() + " :" + p[1] + "\n");
 			}
+			channel->removeClientFromChannel(_sender);
 		}
 	}
 };

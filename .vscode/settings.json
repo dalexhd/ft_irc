@@ -114,7 +114,8 @@
 		"socket.h": "c",
 		"inet.h": "c",
 		"thread": "cpp",
-		"codecvt": "cpp"
+		"codecvt": "cpp",
+		"condition_variable": "cpp"
 	},
 	"files.autoSave": "off"
 }
