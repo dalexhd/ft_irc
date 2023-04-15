@@ -130,20 +130,20 @@
 #define ERR_YOUREBANNEDCREEP(servername, nick) \
 	":" + servername + " 465 " + nick + " :You are banned from this server\n"
 #define ERR_KEYSET(servername, nick, channel) \
-	":" + servername + " 467 " + nick + " " + channel + " :Channel key already set\n"
+	":" + servername + " 467 " + nick + " #" + channel + " :Channel key already set\n"
 #define ERR_CHANNELISFULL(servername, nick, channel) \
-	":" + servername + " 471 " + nick + " " + channel + " :Cannot join channel , channel is full(+l)\n"
+	":" + servername + " 471 " + nick + " #" + channel + " :Cannot join channel , channel is full(+l)\n"
 #define ERR_UNKNOWNMODE(servername, nick, mode) \
 	":" + servername + " 472 " + nick + " " + mode + " :is unknown mode char to me for that channel\n"
 #define ERR_INVITEONLYCHAN 473
 #define ERR_BANNEDFROMCHAN 474
 #define ERR_BADCHANNELKEY(servername, nick, channel) \
-	":" + servername + " 475 " + nick + " " + channel + " :Bad channel key\n"
+	":" + servername + " 475 " + nick + " #" + channel + " :Bad channel key\n"
 #define ERR_BADCHANMASK(servername, nick) \
 	":" + servername + " 476 * " + nick + " :Bad Channel Mask\n"
 #define ERR_NOPRIVILEGES 481
 #define ERR_CHANOPRIVSNEEDED(servername, nick, channel) \
-	":" + servername + " 482 " + nick + " " + channel + " :You're not channel operator\n"
+	":" + servername + " 482 " + nick + " #" + channel + " :You're not channel operator\n"
 #define ERR_CANTKILLSERVER 483
 #define ERR_NOOPERHOST 491
 #define ERR_UMODEUNKNOWNFLAG 501

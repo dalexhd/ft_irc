@@ -158,6 +158,7 @@ void Server::setupCommands(void)
 	_commands["ping"] = new Ping();
 	_commands["help"] = new Help();
 	_commands["quit"] = new Quit();
+	_commands["kick"] = new Kick();
 	_commands["privmsg"] = new PrivMsg();
 	_commands["join"] = new Join();
 	_commands["part"] = new Part();
