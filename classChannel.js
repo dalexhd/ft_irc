@@ -8,6 +8,7 @@ var classChannel =
     [ "getCreator", "classChannel.html#a987451c61fb03a0bbbc78871368a7351", null ],
     [ "getMaxClients", "classChannel.html#a89403c6ce1c78271ef2571845b3a52cc", null ],
     [ "getMode", "classChannel.html#a337b2d012bf753ceae9dad1001c454bb", null ],
+    [ "getModes", "classChannel.html#aa090647a810d891124cd9ec01ef88d63", null ],
     [ "getModeString", "classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d", null ],
     [ "getName", "classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c", null ],
     [ "getPassword", "classChannel.html#a5220250205f35b248205e2a4ba41519d", null ],

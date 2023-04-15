@@ -1,12 +1,13 @@
 <map id="List::execute" name="List::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,208,109,235"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,233,109,260"/>
 <area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="163,5,309,32"/>
 <area shape="rect" id="node3" href="$classServer.html#aa2cfc9cb9ab81f42d6fd6e7f9e5185c2" title=" " alt="" coords="159,56,313,83"/>
 <area shape="rect" id="node4" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="161,107,311,133"/>
-<area shape="rect" id="node5" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="165,157,307,184"/>
-<area shape="rect" id="node6" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="157,208,315,235"/>
-<area shape="rect" id="node7" href="$classChannel.html#a18cec88efaa45792771b34c293195842" title=" " alt="" coords="167,259,305,285"/>
-<area shape="rect" id="node8" href="$functions_8hpp.html#af23b697e36f9f4a3445f9279a1b823c8" title=" " alt="" coords="213,309,259,336"/>
-<area shape="rect" id="node9" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="173,360,299,387"/>
-<area shape="rect" id="node10" href="$functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1" title=" " alt="" coords="211,411,261,437"/>
+<area shape="rect" id="node5" href="$classChannel.html#aa090647a810d891124cd9ec01ef88d63" title=" " alt="" coords="163,157,309,184"/>
+<area shape="rect" id="node6" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="165,208,307,235"/>
+<area shape="rect" id="node7" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="157,259,315,285"/>
+<area shape="rect" id="node8" href="$classChannel.html#a18cec88efaa45792771b34c293195842" title=" " alt="" coords="167,309,305,336"/>
+<area shape="rect" id="node9" href="$functions_8hpp.html#af23b697e36f9f4a3445f9279a1b823c8" title=" " alt="" coords="213,360,259,387"/>
+<area shape="rect" id="node10" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="173,411,299,437"/>
+<area shape="rect" id="node11" href="$functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1" title=" " alt="" coords="211,461,261,488"/>
 </map>
