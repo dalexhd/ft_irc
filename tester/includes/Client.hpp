@@ -13,9 +13,8 @@
 #include <unistd.h>
 #include <vector>
 
-#include <thread>
 #include <chrono>
-
+#include <thread>
 
 class Command
 {
@@ -285,7 +284,7 @@ class Client
 		}
 		send("NICK " + this->_name); // NICK <nickname>
 		std::string serverresp = reads();
-		int i = 0;
+		int         i = 0;
 		while (std::string::npos != split(serverresp, ":")[0].find("433"))
 		{
 			send("NICK " + this->_name + std::to_string(i));
@@ -301,12 +300,10 @@ class Client
 	}
 	void requestingLoop()
 	{
-
-
 		std::string line;
 
 		std::thread t1([&]() {
-			while(1)
+			while (1)
 				std::cout << reads();
 		});
 		t1.detach();

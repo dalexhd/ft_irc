@@ -51,7 +51,7 @@ static void *clientConversation(void *client)
 		          << it2->second.getCommand() << RESET << std::endl;
 
 		std::string tmpread(c->reads());
-		//WRITE TO A FILE
+		// WRITE TO A FILE
 		std::ofstream myfile;
 		/*myfile.open("tests/res" + c->_filename.substr(12, 99),
 		std::ios_base::app);
@@ -93,23 +93,23 @@ void executeFileClients(File *file)
 
 int main(void)
 {
-	int option = 3;
-	std::cout << "        " << ROJO_F << "Tester Options" << RESET<< std::endl;
+	std::string option(getenv("TYPE"));
+
+	std::cout << "        " << ROJO_F << "Tester Options" << RESET << std::endl;
 	std::cout << VERDE_T << "- - - - - - - - - - - - - - - - -" << RESET << std::endl;
 	std::cout << "1. Connect to Local Server" << std::endl;
 	std::cout << "2. Connect to Chat Hispano Server" << std::endl;
 	std::cout << "3. Automated Test" << std::endl << std::endl << ">> ";
 
-	//std::cin >> option; // comment for coverage
-	if (option == 1 || option == 2)
+	// std::cin >> option; // comment for coverage
+	if (option == "1" || option == "2")
 	{
-
 		std::string server = "127.0.0.1";
-		if (option == 2)
+		if (option == "2")
 			server = "irc.irc-hispano.org";
 		std::cout << "Single Client to " + server + "\n";
 		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
-		if(client->irc_connect())
+		if (client->irc_connect())
 			return 1;
 		usleep(500);
 		client->login();

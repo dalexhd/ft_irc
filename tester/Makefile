@@ -79,7 +79,7 @@ TAB					=	$(shell printf "\t")
 all:	$(OUTPUT)
 
 run:
-	@./ircserv_tester
+	@ TYPE=3 ./ircserv_tester
 
 # Objects directory
 $(OBJ_DIR):
