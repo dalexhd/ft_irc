@@ -39,6 +39,7 @@ class PrivMsg : public Command
 					    ERR_CANNOTSENDTOCHAN(_sender->_servername, _sender->_nick, _ch_params[i]));
 					return (false);
 				}
+				std::cout << "IS moderated " << channel->isModerated() << " ope client " << channel->isOpe(_sender) << "\n";
 				if (channel->isModerated() && channel->isOpe(_sender) == false)
 				{
 					_sender->message(

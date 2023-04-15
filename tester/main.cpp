@@ -109,7 +109,8 @@ int main(void)
 			server = "irc.irc-hispano.org";
 		std::cout << "Single Client to " + server + "\n";
 		Client *client = new Client("Testbot", "Testbot", "Testbot", server);
-		client->irc_connect();
+		if(client->irc_connect())
+			return 1;
 		usleep(500);
 		client->login();
 		usleep(500);

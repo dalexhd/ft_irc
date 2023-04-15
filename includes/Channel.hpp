@@ -8,7 +8,7 @@ enum ChannelMode
 	CHANNEL_MODE_PRIVATE = 0, //+p OK
 	CHANNEL_MODE_SECRET = 1, //+s OK
 	CHANNEL_MODE_INVITE_ONLY = 2, //+i
-	CHANNEL_MODE_MODERATED = 3, //+m
+	CHANNEL_MODE_MODERATED = 3, //+m OK
 	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4, //+t
 	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5, //+n
 	CHANNEL_MODE_BAN_MASK = 6, //+b
@@ -41,6 +41,7 @@ class Channel
 	    : _name(name), _password(password), _creator(NULL), _max_clients(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
+		_modes.push_back(CHANNEL_MODE_MODERATED);
 	};
 
 	// Setters
@@ -100,35 +101,33 @@ class Channel
 			switch (*it) {
 				case CHANNEL_MODE_PRIVATE:
 					stringModes += "p";
-					// Handle private mode
 					break;
 				case CHANNEL_MODE_SECRET:
 					stringModes += "s";
-					// Handle secret mode
 					break;
 				case CHANNEL_MODE_INVITE_ONLY:
-					// Handle invite-only mode
+					stringModes += "i";
 					break;
 				case CHANNEL_MODE_MODERATED:
-					// Handle moderated mode
+					stringModes += "m";
 					break;
 				case CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY:
-					// Handle topic settable by channel operator only mode
+					stringModes += "t";
 					break;
 				case CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE:
-					// Handle can't send messages outside mode
+					stringModes += "n";
 					break;
 				case CHANNEL_MODE_BAN_MASK:
-					// Handle ban mask mode
+					stringModes += "b";
 					break;
 				case CHANNEL_MODE_KEY:
-					// Handle key mode
+					stringModes += "k";
 					break;
 				case CHANNEL_MODE_USER_LIMIT:
-					// Handle user limit mode
+					stringModes += "l";
 					break;
 				case CHANNEL_MODE_OPERATOR:
-					// Handle operator mode
+					stringModes += "o";
 					break;
 				default:
 					// Handle unknown mode

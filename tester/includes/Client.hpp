@@ -13,6 +13,10 @@
 #include <unistd.h>
 #include <vector>
 
+#include <thread>
+#include <chrono>
+
+
 class Command
 {
   public:
@@ -297,12 +301,20 @@ class Client
 	}
 	void requestingLoop()
 	{
+
+
 		std::string line;
+
+		std::thread t1([&]() {
+			while(1)
+				std::cout << reads();
+		});
+		t1.detach();
 		for (line = ""; line != "quit" && std::getline(std::cin, line);)
 		{
 			send(line);
 			usleep(1000);
-			pingpong(reads());
+			std::cout << reads();
 		}
 	}
 };
