@@ -270,8 +270,8 @@ class Mode : public Command
 
 		if (type == CHANNEL_MODE)
 		{
-			std::vector<ChannelModeType *>         modes = parseChannelMode();
-			std::vector<ChannelModeType>::iterator it;
+			std::vector<ChannelModeType *>           modes = parseChannelMode();
+			std::vector<ChannelModeType *>::iterator it;
 
 			for (size_t i = 0; i < modes.size(); i++)
 			{
