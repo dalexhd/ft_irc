@@ -1,7 +1,7 @@
 OUTPUT				=	ircserv_tester
 
 ifeq ($(shell whoami), runner)
-	CC				=	@g++ -std=c++98 -fprofile-arcs -ftest-coverage -O0 -fPIC
+	CC				=	@g++ -std=c++11 -fprofile-arcs -ftest-coverage -O0 -fPIC
 else
 	CC				=	@clang++ -std=c++11
 endif
@@ -79,7 +79,7 @@ TAB					=	$(shell printf "\t")
 all:	$(OUTPUT)
 
 run:
-	@./ircserv_tester
+	@ TYPE=3 ./ircserv_tester
 
 # Objects directory
 $(OBJ_DIR):
