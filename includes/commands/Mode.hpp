@@ -24,70 +24,26 @@ class ChannelModeType
   public:
 	ChannelModeType(){};
 
-	void sendModeMessage()
-	{
-		std::vector<Client *> related_channels_clients = _channel->getClients();
-		for (size_t j = 0; j < related_channels_clients.size(); j++)
-		{
-			related_channels_clients[j]->message(":" + _sender->_servername + " MODE #" +
-			                                     _channel->getName() + " " + (_sign == PLUS ? "+" : "-") + getIdentifier() + " " + _params[2] + "\n");
-		}
-	}
-
 	void execute()
 	{
 		if (_sign == PLUS)
 		{
 			add();
+			_channel->addMode(_mode);
 		}
 		else
 		{
 			remove();
+			_channel->removeMode(_mode);
 		}
-		sendModeMessage();
+		_channel->broadcastMessage(
+		    RPL_CUSTOM_MODE(_sender->getUserId(), _channel->getName(),
+		                    (_sign == PLUS ? "+" : "-") + _channel->getIdentifier(_mode) + " " + _params[2]));
 	}
 
 	void setMode(ChannelMode mode)
 	{
 		_mode = mode;
-	}
-
-	char getIdentifier()
-	{
-		switch (_mode)
-		{
-		case CHANNEL_MODE_BAN_MASK:
-			_identifier = 'b';
-			break;
-		case CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE:
-			_identifier = 'n';
-			break;
-		case CHANNEL_MODE_INVITE_ONLY:
-			_identifier = 'i';
-			break;
-		case CHANNEL_MODE_KEY:
-			_identifier = 'k';
-			break;
-		case CHANNEL_MODE_MODERATED:
-			_identifier = 'm';
-			break;
-		case CHANNEL_MODE_OPERATOR:
-			_identifier = 'o';
-			break;
-		case CHANNEL_MODE_PRIVATE:
-			_identifier = 'p';
-			break;
-		case CHANNEL_MODE_SECRET:
-			_identifier = 's';
-			break;
-		case CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY:
-			_identifier = 't';
-			break;
-		case CHANNEL_MODE_USER_LIMIT:
-			_identifier = 'l';
-			break;
-		}
-		return (_identifier);
 	}
 
 	void setSign(ModeSign sign)
@@ -124,10 +80,6 @@ class ChannelModeType
 
 	~ChannelModeType()
 	{
-		if (_sign == PLUS)
-			_channel->addMode(_mode);
-		else
-			_channel->removeMode(_mode);
 	}
 };
 
@@ -235,19 +187,19 @@ class Mode : public Command
 	bool validate()
 	{
 		std::map<size_t, std::string> params = _message->getParams();
-		Channel *                     _channel = _server->getChannel(params[0]);
 
-		if (params.size() < 2)
+		if (params.size() < 1)
 		{
 			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick, _name));
 			return (false);
 		}
+		Channel *_channel = _server->getChannel(params[0]);
 		if (_channel == NULL)
 		{
 			_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, params[0]));
 			return (false);
 		}
-		else if (_channel->isOpe(_sender) == false)
+		else if (params.size() > 2 && _channel->isOpe(_sender) == false)
 		{
 			_sender->message(ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick,
 			                                      _channel->getName()));
@@ -266,20 +218,31 @@ class Mode : public Command
 
 	void execute()
 	{
-		Type type = getModelType();
+		std::map<size_t, std::string> params = _message->getParams();
 
-		if (type == CHANNEL_MODE)
+		if (params.size() == 1)
 		{
-			std::vector<ChannelModeType *>           modes = parseChannelMode();
-			std::vector<ChannelModeType *>::iterator it;
-
-			for (size_t i = 0; i < modes.size(); i++)
-			{
-				modes[i]->execute();
-			}
+			Channel *channel = _server->getChannel(params[0]);
+			_sender->message(RPL_CHANNELMODEIS(_sender->_servername, _sender->_nick,
+			                                   channel->getName(), channel->getStringModes()));
+			return;
 		}
-		else if (type == USER_MODE)
+		else
 		{
+			Type type = getModelType();
+			if (type == CHANNEL_MODE)
+			{
+				std::vector<ChannelModeType *> modes = parseChannelMode();
+				std::vector<ChannelModeType *>::iterator it;
+
+				for (size_t i = 0; i < modes.size(); i++)
+				{
+					modes[i]->execute();
+				}
+			}
+			else if (type == USER_MODE)
+			{
+			}
 		}
 	}
 };

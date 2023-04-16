@@ -20,12 +20,14 @@ class Names : public Command
 	void send_channel(std::string &name)
 	{
 		Channel *channel = _server->getChannel(name);
-		if (channel == NULL)
+		if (channel == NULL || (channel->isSecret() && !channel->joined(_sender)))
 			return;
 		std::vector<Client *> clients = channel->getClients();
 		std::string           users_str = "";
 		for (size_t i = 0; i < clients.size(); i++)
 		{
+			if (!channel->joined(_sender) && clients[i]->isInvisible())
+				continue;
 			users_str += channel->getClientRoleString(clients[i]);
 			if (i == clients.size() - 1)
 				users_str += clients[i]->getNick();
@@ -33,7 +35,7 @@ class Names : public Command
 				users_str += clients[i]->getNick() + " ";
 		}
 		_sender->message(
-		    RPL_NAMREPLY(_sender->_servername, _sender->_nick, channel->getModeString(), name, users_str));
+		    RPL_NAMREPLY(_sender->_servername, _sender->getNick(), channel->getModeString(), name, users_str));
 	}
 
 	void execute()
@@ -45,7 +47,7 @@ class Names : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				send_channel(_ch_params[i]);
-				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick, "#" + _ch_params[i]));
+				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->getNick(), _ch_params[i]));
 			}
 		}
 		else
@@ -54,8 +56,7 @@ class Names : public Command
 			for (; it != _server->_channels.end(); it++)
 			{
 				send_channel(it->second->getName());
-				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->_nick,
-				                                "#" + it->first)); // TODO: Is this end of channels well implemented?
+				_sender->message(RPL_ENDOFNAMES(_sender->_servername, _sender->getNick(), it->first));
 			}
 		}
 	}

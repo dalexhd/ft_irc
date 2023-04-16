@@ -74,7 +74,7 @@ class Topic : public Command
 			{
 				related_channels_clients[j]->message(
 				    RPL_TOPIC(_sender->_servername, related_channels_clients[j]->_nick,
-				              "#" + channel->getName(), channel->getTopic()));
+				              channel->getName(), channel->getTopic()));
 			}
 		}
 	}

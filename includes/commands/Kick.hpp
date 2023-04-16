@@ -16,17 +16,6 @@ class Kick : public Command
 		_example[1] = "kick #hola user1";
 		_example[2] = "kick #hola user1,user2";
 		_example[3] = "kick #hola user1,user2 :coment";
-
-		/*
-		REPLIES
-		ERR_NEEDMOREPARAMS (461) k
-		ERR_NOSUCHCHANNEL (403)
-		ERR_CHANOPRIVSNEEDED (482)
-		ERR_USERNOTINCHANNEL (441) k
-		ERR_NOTONCHANNEL (442) k
-		ERR_BADCHANMASK (476) k
-
-		*/
 	}
 
 	bool validate(void)
@@ -35,7 +24,7 @@ class Kick : public Command
 
 		if (p.size() > 3 || p.size() < 2)
 		{
-			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
+			_sender->message(ERR_NEEDMOREPARAMS(_sender->_servername, _sender->getNick(),
 			                                    _message->getCmd())); // ERR_NEEDMOREPARAMS (461)
 			return (false);
 		}
@@ -45,7 +34,7 @@ class Kick : public Command
 
 			if (p[0][0] != '#')
 			{
-				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->_nick)); // ERR_BADCHANMASK (476)
+				_sender->message(ERR_BADCHANMASK(_sender->_servername, _sender->getNick())); // ERR_BADCHANMASK (476)
 				return (false);
 			}
 
@@ -54,16 +43,14 @@ class Kick : public Command
 			{
 				if (!channel->joined(_sender))
 				{
-					_sender->message(ERR_NOTONCHANNEL(_sender->_servername,
-					                                  _sender->_nick,
-					                                  p[0])); // ERR_NOTONCHANNEL (442)
+					_sender->message(
+					    ERR_NOTONCHANNEL(_sender->_servername, _sender->getNick(), p[0]));
 					return (false);
 				}
 				if (!channel->isOpe(_sender))
 				{
-					_sender->message(ERR_CHANOPRIVSNEEDED(_sender->_servername,
-					                                      _sender->_nick,
-					                                      p[0])); // ERR_CHANOPRIVSNEEDED (482)
+					_sender->message(
+					    ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->getNick(), p[0]));
 					return (false);
 				}
 				for (size_t i = 0; i < _user_params.size(); i++)
@@ -72,20 +59,20 @@ class Kick : public Command
 					if (!user)
 					{
 						_sender->message(
-						    ERR_NOSUCHNICK(_sender->_servername, _sender->_nick));
+						    ERR_NOSUCHNICK(_sender->_servername, _sender->getNick()));
 						return (false);
 					}
 					if (!channel->joined(user))
 					{
 						_sender->message(ERR_USERNOTINCHANNEL(
-						    _sender->_servername, _sender->_nick, "#" + channel->getName())); // ERR_USERNOTINCHANNEL (441)
+						    _sender->_servername, _sender->getNick(), channel->getName())); // ERR_USERNOTINCHANNEL (441)
 						return (false);
 					}
 				}
 			}
 			else
 			{
-				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->_nick, p[0]));
+				_sender->message(ERR_NOSUCHCHANNEL(_sender->_servername, _sender->getNick(), p[0]));
 				return (false);
 			}
 		}
@@ -100,14 +87,9 @@ class Kick : public Command
 		Channel *channel = _server->getChannel(p[0]);
 		for (size_t i = 0; i < _user_params.size(); i++)
 		{
-			Client *              user = _server->getClient(_user_params[i]);
-			std::vector<Client *> related_channels_clients = channel->getClients();
-			for (size_t j = 0; j < related_channels_clients.size(); j++)
-			{
-				related_channels_clients[j]->message(
-				    ":" + _sender->_nick + "!" + _sender->_username + "@" +
-				    _sender->_host + " KICK #" + channel->getName() + " " + user->_nick + " :" + p[2] + "\n");
-			}
+			Client *user = _server->getClient(_user_params[i]);
+			channel->broadcastMessage(
+			    RPL_CUSTOM_KICK(_sender->getUserId(), channel->getName(), user->getNick(), p[2]));
 			channel->kick(user);
 		}
 	};
