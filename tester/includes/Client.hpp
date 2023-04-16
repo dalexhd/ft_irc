@@ -101,7 +101,7 @@ class Client
 		this->_name = name;
 		this->_host = host;
 		this->_port = "6667";
-		this->_pass = "";
+		this->_pass = "test";
 		this->_username = username;
 		this->_realname = realname;
 		this->_connected = false;
@@ -284,7 +284,7 @@ class Client
 			usleep(1000);
 		}
 		send("NICK " + this->_name); // NICK <nickname>
-		std::string serverresp = reads();
+		/*std::string serverresp = reads();
 		int i = 0;
 		while (std::string::npos != split(serverresp, ":")[0].find("433"))
 		{
@@ -292,7 +292,7 @@ class Client
 			usleep(50000);
 			serverresp = reads();
 			i++;
-		}
+		}*/
 		usleep(1000);
 		send("USER " + this->_username + " 0 * : " + this->_name + " " + this->_realname); // USER TestBot 0 * : msantos- surname
 		this->_connected = true;

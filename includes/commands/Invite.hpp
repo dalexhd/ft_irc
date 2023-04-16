@@ -56,7 +56,15 @@ class Invite : public Command
 
 	void execute()
 	{
-		_sender->message("invite response\n");
+
+		//:Testbot!Testbot@localhost INVITE Testbot1 #hola
+		std::map<size_t, std::string> p = _message->getParams();
+		std::string                   channel = std::string(p[1]).c_str();
+		Client *client = _server->getClient(p[0]);
+		client->message(
+			std::string(":" + _sender->_nick + " INVITE " + client->getNick() + " " + channel + "\n")
+				.c_str());
+
 	}
 };
 #endif
