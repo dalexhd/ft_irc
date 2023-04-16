@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['topic_398',['Topic',['../classTopic.html',1,'']]],
-  ['topicsettablebychanneloperatoronly_399',['TopicSettableByChannelOperatorOnly',['../classTopicSettableByChannelOperatorOnly.html',1,'']]]
+  ['topic_418',['Topic',['../classTopic.html',1,'']]],
+  ['topicsettablebychanneloperatoronly_419',['TopicSettableByChannelOperatorOnly',['../classTopicSettableByChannelOperatorOnly.html',1,'']]]
 ];

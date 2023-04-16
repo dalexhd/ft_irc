@@ -2,9 +2,7 @@ var dir_09e761304027c904456130627fd4dcf5 =
 [
     [ "commands", "dir_5e90428ea02abe37c2ad725f205d5900.html", "dir_5e90428ea02abe37c2ad725f205d5900" ],
     [ "Channel.hpp", "Channel_8hpp.html", "Channel_8hpp" ],
-    [ "Client.hpp", "Client_8hpp.html", [
-      [ "Client", "classClient.html", "classClient" ]
-    ] ],
+    [ "Client.hpp", "Client_8hpp.html", "Client_8hpp" ],
     [ "Color.hpp", "Color_8hpp.html", "Color_8hpp" ],
     [ "Command.hpp", "Command_8hpp.html", [
       [ "Command", "classCommand.html", "classCommand" ]

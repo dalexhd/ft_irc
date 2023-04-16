@@ -11,6 +11,7 @@ var classCommand =
     [ "hasOpe", "classCommand.html#a69cc2e41b23641a2ff17d17343d3aeff", null ],
     [ "missingOpe", "classCommand.html#abd59bde053da57d6b7aaa1ba647ae179", null ],
     [ "needsAuth", "classCommand.html#aa66a81d12ca8f9c457d976eaabcf7f88", null ],
+    [ "parser", "classCommand.html#ad264a7f7df089661f4a907d7f301c906", null ],
     [ "setMessage", "classCommand.html#a4daf518189a44b09a45f80d6d5ec4b21", null ],
     [ "setSender", "classCommand.html#a76b0405daabf409f562a7e75acf12adb", null ],
     [ "setServer", "classCommand.html#a9c147b76d590d0a2130c92c9ac9f6133", null ],

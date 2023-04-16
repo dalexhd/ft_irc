@@ -1,9 +1,12 @@
 <map id="ChannelModeType::execute" name="ChannelModeType::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,205,83"/>
-<area shape="rect" id="node2" href="$classChannelModeType.html#a94e40f7cea12a35bccb0a971c73ecc38" title=" " alt="" coords="275,5,448,32"/>
-<area shape="rect" id="node3" href="$classChannelModeType.html#a30cc9cd96b4dd402ef66e12645355d2c" title=" " alt="" coords="262,56,461,83"/>
-<area shape="rect" id="node4" href="$classChannelModeType.html#a132cb26f0acaec638e0ad072c66b9997" title=" " alt="" coords="253,107,469,149"/>
-<area shape="rect" id="node5" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="557,64,706,91"/>
-<area shape="rect" id="node6" href="$classChannelModeType.html#ad7799edf2ec884befe3d1d10d8357752" title=" " alt="" coords="517,115,745,141"/>
-<area shape="rect" id="node7" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="560,165,703,192"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,205,209"/>
+<area shape="rect" id="node2" href="$classChannelModeType.html#a94e40f7cea12a35bccb0a971c73ecc38" title=" " alt="" coords="269,5,443,32"/>
+<area shape="rect" id="node3" href="$classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8" title=" " alt="" coords="285,56,427,83"/>
+<area shape="rect" id="node4" href="$classChannel.html#a41144b44016f30ce825a8d3ae611c1f0" title=" " alt="" coords="253,107,459,133"/>
+<area shape="rect" id="node6" href="$classChannel.html#ac73b7b4f8daf97b7c57a9457ad5d0aa5" title=" " alt="" coords="275,157,437,184"/>
+<area shape="rect" id="node7" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="285,208,427,235"/>
+<area shape="rect" id="node8" href="$classClient.html#a0dbf904846ae9504d30cfcc268fcf751" title=" " alt="" coords="291,259,421,285"/>
+<area shape="rect" id="node9" href="$classChannelModeType.html#a30cc9cd96b4dd402ef66e12645355d2c" title=" " alt="" coords="257,309,455,336"/>
+<area shape="rect" id="node10" href="$classChannel.html#af72ea58ed6a994380416c80ff2b4dcea" title=" " alt="" coords="271,360,441,387"/>
+<area shape="rect" id="node5" href="$classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="507,107,656,133"/>
 </map>

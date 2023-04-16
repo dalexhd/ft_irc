@@ -118,6 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a337b2d012bf753ceae9dad1001c454bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa090647a810d891124cd9ec01ef88d63"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#aa090647a810d891124cd9ec01ef88d63">getModes</a> (void)</td></tr>
 <tr class="separator:aa090647a810d891124cd9ec01ef88d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73b7b4f8daf97b7c57a9457ad5d0aa5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#ac73b7b4f8daf97b7c57a9457ad5d0aa5">getIdentifier</a> (<a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> _mode)</td></tr>
+<tr class="separator:ac73b7b4f8daf97b7c57a9457ad5d0aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44d31711a527a9f8e1d30437bf69d57e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a44d31711a527a9f8e1d30437bf69d57e">getStringModes</a> (void)</td></tr>
 <tr class="separator:a44d31711a527a9f8e1d30437bf69d57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6986d65fae013a19e9e06dbbbaaf9d21"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a6986d65fae013a19e9e06dbbbaaf9d21">getUserLimit</a> (void)</td></tr>
@@ -136,6 +138,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6682ab5cbaf8dee41a622561de1eaf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4875ddd83ae031442d7c58a710b8000"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#ab4875ddd83ae031442d7c58a710b8000">isVoice</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
 <tr class="separator:ab4875ddd83ae031442d7c58a710b8000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8ca1c85c41568812c2c3d368d08fdd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a6e8ca1c85c41568812c2c3d368d08fdd">isBanned</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
+<tr class="separator:a6e8ca1c85c41568812c2c3d368d08fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd2df79e9d01bd98961385f432e18ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a7fd2df79e9d01bd98961385f432e18ac">isInvited</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
+<tr class="separator:a7fd2df79e9d01bd98961385f432e18ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf08485748762a5e4a3ff983f8c4f1fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#acf08485748762a5e4a3ff983f8c4f1fe">isInviteOnly</a> (void)</td></tr>
+<tr class="separator:acf08485748762a5e4a3ff983f8c4f1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2758f0cdadfaf2669deff0295e55c401"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a2758f0cdadfaf2669deff0295e55c401">isSecret</a> (void)</td></tr>
+<tr class="separator:a2758f0cdadfaf2669deff0295e55c401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b886adf1d8e90a0c8c26f17b5ef38e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a4b886adf1d8e90a0c8c26f17b5ef38e8">addOpe</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
 <tr class="separator:a4b886adf1d8e90a0c8c26f17b5ef38e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41c0b20a3ecefdf804be58df7a22999b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a41c0b20a3ecefdf804be58df7a22999b">removeOpe</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
@@ -152,6 +162,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8696ebad4f27227b4077f8a74339fbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249c77224152ae0da4635fd0edcd1a5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">removeClientFromChannel</a> (<a class="el" href="classClient.html">Client</a> *client)</td></tr>
 <tr class="separator:a249c77224152ae0da4635fd0edcd1a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41144b44016f30ce825a8d3ae611c1f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">broadcastMessage</a> (std::string message)</td></tr>
+<tr class="separator:a41144b44016f30ce825a8d3ae611c1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26fc58b2679d5e7e194834a34b5e95d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">isModerated</a> (void)</td></tr>
 <tr class="separator:a26fc58b2679d5e7e194834a34b5e95d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3a4dc01e8d2e500944715bd1c592656"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">hasKey</a> (void)</td></tr>
@@ -202,6 +214,15 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a26f5d4a249bab4b1bbc1863c943115fb_cgraph.png" border="0" usemap="#classChannel_a26f5d4a249bab4b1bbc1863c943115fb_cgraph" alt=""/></div>
+<map name="classChannel_a26f5d4a249bab4b1bbc1863c943115fb_cgraph" id="classChannel_a26f5d4a249bab4b1bbc1863c943115fb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8" title=" " alt="" coords="189,5,332,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -234,8 +255,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph.png" border="0" usemap="#classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph" alt=""/></div>
 <map name="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph" id="classChannel_acd9b98a4c5ae2f155f5d655083fe02b8_icgraph">
-<area shape="rect" title=" " alt="" coords="267,13,409,39"/>
-<area shape="rect" href="classChannelModeType.html#ab2412a2503492ff71b97cc857f692152" title=" " alt="" coords="5,5,219,47"/>
+<area shape="rect" title=" " alt="" coords="253,31,396,57"/>
+<area shape="rect" href="classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb" title=" " alt="" coords="37,5,173,32"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,56,205,83"/>
 </map>
 </div>
 
@@ -271,6 +293,52 @@ Here is the caller graph for this function:</div>
 <map name="classChannel_a4b886adf1d8e90a0c8c26f17b5ef38e8_icgraph" id="classChannel_a4b886adf1d8e90a0c8c26f17b5ef38e8_icgraph">
 <area shape="rect" title=" " alt="" coords="164,5,297,32"/>
 <area shape="rect" href="classOperator.html#a3d0fdd2d14ff76e101fa89a15943c139" title=" " alt="" coords="5,5,116,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41144b44016f30ce825a8d3ae611c1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41144b44016f30ce825a8d3ae611c1f0">&#9670;&nbsp;</a></span>broadcastMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Channel::broadcastMessage </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a41144b44016f30ce825a8d3ae611c1f0_cgraph.png" border="0" usemap="#classChannel_a41144b44016f30ce825a8d3ae611c1f0_cgraph" alt=""/></div>
+<map name="classChannel_a41144b44016f30ce825a8d3ae611c1f0_cgraph" id="classChannel_a41144b44016f30ce825a8d3ae611c1f0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,211,32"/>
+<area shape="rect" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325" title=" " alt="" coords="259,5,408,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a41144b44016f30ce825a8d3ae611c1f0_icgraph.png" border="0" usemap="#classChannel_a41144b44016f30ce825a8d3ae611c1f0_icgraph" alt=""/></div>
+<map name="classChannel_a41144b44016f30ce825a8d3ae611c1f0_icgraph" id="classChannel_a41144b44016f30ce825a8d3ae611c1f0_icgraph">
+<area shape="rect" title=" " alt="" coords="253,56,459,83"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" href="classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="51,56,160,83"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="53,107,158,133"/>
 </map>
 </div>
 
@@ -314,9 +382,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a8696ebad4f27227b4077f8a74339fbea_icgraph.png" border="0" usemap="#classChannel_a8696ebad4f27227b4077f8a74339fbea_icgraph" alt=""/></div>
 <map name="classChannel_a8696ebad4f27227b4077f8a74339fbea_icgraph" id="classChannel_a8696ebad4f27227b4077f8a74339fbea_icgraph">
-<area shape="rect" title=" " alt="" coords="393,5,603,32"/>
-<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" title=" " alt="" coords="393,31,603,57"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="210,5,315,32"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,56,345,83"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,56,132,83"/>
 </map>
 </div>
 
@@ -350,27 +419,27 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a16b4d2426593572de43f690e4d0f7325_icgraph.png" border="0" usemap="#classChannel_a16b4d2426593572de43f690e4d0f7325_icgraph" alt=""/></div>
 <map name="classChannel_a16b4d2426593572de43f690e4d0f7325_icgraph" id="classChannel_a16b4d2426593572de43f690e4d0f7325_icgraph">
-<area shape="rect" title=" " alt="" coords="517,259,667,285"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="309,5,413,32"/>
-<area shape="rect" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="304,56,419,83"/>
-<area shape="rect" href="classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="300,107,423,133"/>
-<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="52,165,159,192"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="295,208,428,235"/>
-<area shape="rect" href="classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="307,259,416,285"/>
-<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="309,309,414,336"/>
-<area shape="rect" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8" title=" " alt="" coords="300,427,423,453"/>
-<area shape="rect" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="259,361,463,402"/>
-<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="279,500,444,527"/>
-<area shape="rect" href="classChannelModeType.html#a132cb26f0acaec638e0ad072c66b9997" title=" " alt="" coords="253,598,469,639"/>
-<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="51,224,159,251"/>
-<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="47,275,163,301"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="38,325,173,352"/>
-<area shape="rect" href="classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="45,376,165,403"/>
-<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="43,427,168,453"/>
-<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="50,477,161,504"/>
-<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="52,528,159,555"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="42,579,169,605"/>
-<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,629,205,656"/>
+<area shape="rect" title=" " alt="" coords="681,284,831,311"/>
+<area shape="rect" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0" title=" " alt="" coords="428,56,633,83"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="227,107,333,133"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="479,157,583,184"/>
+<area shape="rect" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="473,208,588,235"/>
+<area shape="rect" href="classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="469,259,592,285"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="227,343,333,369"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="464,360,597,387"/>
+<area shape="rect" href="classChannel.html#acc7d04f494e076b78a8affae33d3bcf8" title=" " alt="" coords="469,579,592,605"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="197,427,363,453"/>
+<area shape="rect" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="429,411,633,453"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="180,5,380,32"/>
+<area shape="rect" href="classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="225,56,335,83"/>
+<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="226,477,334,504"/>
+<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="222,528,338,555"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="225,579,335,605"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="213,629,347,656"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="227,680,333,707"/>
+<area shape="rect" href="classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="220,731,340,757"/>
+<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="217,781,343,808"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,427,132,453"/>
 </map>
 </div>
 
@@ -425,6 +494,43 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac73b7b4f8daf97b7c57a9457ad5d0aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73b7b4f8daf97b7c57a9457ad5d0aa5">&#9670;&nbsp;</a></span>getIdentifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Channel::getIdentifier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a>&#160;</td>
+          <td class="paramname"><em>_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_ac73b7b4f8daf97b7c57a9457ad5d0aa5_icgraph.png" border="0" usemap="#classChannel_ac73b7b4f8daf97b7c57a9457ad5d0aa5_icgraph" alt=""/></div>
+<map name="classChannel_ac73b7b4f8daf97b7c57a9457ad5d0aa5_icgraph" id="classChannel_ac73b7b4f8daf97b7c57a9457ad5d0aa5_icgraph">
+<area shape="rect" title=" " alt="" coords="419,31,581,57"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="171,5,371,32"/>
+<area shape="rect" href="classChannel.html#a44d31711a527a9f8e1d30437bf69d57e" title=" " alt="" coords="178,56,363,83"/>
+<area shape="rect" href="classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="5,56,123,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -508,9 +614,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a140faa6fa19c82e6ac76f2e202a29e3d_icgraph.png" border="0" usemap="#classChannel_a140faa6fa19c82e6ac76f2e202a29e3d_icgraph" alt=""/></div>
 <map name="classChannel_a140faa6fa19c82e6ac76f2e202a29e3d_icgraph" id="classChannel_a140faa6fa19c82e6ac76f2e202a29e3d_icgraph">
-<area shape="rect" title=" " alt="" coords="393,5,572,32"/>
-<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" title=" " alt="" coords="393,31,572,57"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="210,5,315,32"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,56,345,83"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,56,132,83"/>
 </map>
 </div>
 
@@ -544,18 +651,20 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph.png" border="0" usemap="#classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph" alt=""/></div>
 <map name="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph" id="classChannel_a082fd9c1f37bbbb26bdb28b285659b2c_icgraph">
-<area shape="rect" title=" " alt="" coords="517,233,660,260"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="309,5,413,32"/>
-<area shape="rect" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="304,56,419,83"/>
-<area shape="rect" href="classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="300,107,423,133"/>
-<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="308,157,415,184"/>
-<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="295,208,428,235"/>
-<area shape="rect" href="classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="307,259,416,285"/>
-<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="309,309,414,336"/>
-<area shape="rect" href="classChannelModeType.html#a132cb26f0acaec638e0ad072c66b9997" title=" " alt="" coords="253,361,469,402"/>
-<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="306,427,417,453"/>
-<area shape="rect" href="classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="302,477,421,504"/>
-<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,368,205,395"/>
+<area shape="rect" title=" " alt="" coords="253,309,396,336"/>
+<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="53,5,157,32"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,56,205,83"/>
+<area shape="rect" href="classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="48,107,163,133"/>
+<area shape="rect" href="classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="44,157,167,184"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="52,208,159,235"/>
+<area shape="rect" href="classKick.html#a577d039743069a81c0f6e8ef9a2b87ed" title=" " alt="" coords="51,259,160,285"/>
+<area shape="rect" href="classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="39,309,172,336"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="53,360,158,387"/>
+<area shape="rect" href="classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="47,411,164,437"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="38,461,173,488"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="50,512,161,539"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="52,563,159,589"/>
+<area shape="rect" href="classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="46,613,165,640"/>
 </map>
 </div>
 
@@ -620,12 +729,21 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a44d31711a527a9f8e1d30437bf69d57e_cgraph.png" border="0" usemap="#classChannel_a44d31711a527a9f8e1d30437bf69d57e_cgraph" alt=""/></div>
+<map name="classChannel_a44d31711a527a9f8e1d30437bf69d57e_cgraph" id="classChannel_a44d31711a527a9f8e1d30437bf69d57e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,191,32"/>
+<area shape="rect" href="classChannel.html#ac73b7b4f8daf97b7c57a9457ad5d0aa5" title=" " alt="" coords="239,5,401,32"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a44d31711a527a9f8e1d30437bf69d57e_icgraph.png" border="0" usemap="#classChannel_a44d31711a527a9f8e1d30437bf69d57e_icgraph" alt=""/></div>
 <map name="classChannel_a44d31711a527a9f8e1d30437bf69d57e_icgraph" id="classChannel_a44d31711a527a9f8e1d30437bf69d57e_icgraph">
-<area shape="rect" title=" " alt="" coords="157,5,343,32"/>
-<area shape="rect" href="classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="5,5,109,32"/>
+<area shape="rect" title=" " alt="" coords="171,5,356,32"/>
+<area shape="rect" href="classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="5,5,123,32"/>
 </map>
 </div>
 
@@ -729,6 +847,111 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a6e8ca1c85c41568812c2c3d368d08fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8ca1c85c41568812c2c3d368d08fdd">&#9670;&nbsp;</a></span>isBanned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Channel::isBanned </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classClient.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>client</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a6e8ca1c85c41568812c2c3d368d08fdd_icgraph.png" border="0" usemap="#classChannel_a6e8ca1c85c41568812c2c3d368d08fdd_icgraph" alt=""/></div>
+<map name="classChannel_a6e8ca1c85c41568812c2c3d368d08fdd_icgraph" id="classChannel_a6e8ca1c85c41568812c2c3d368d08fdd_icgraph">
+<area shape="rect" title=" " alt="" coords="160,5,303,32"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="5,5,112,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7fd2df79e9d01bd98961385f432e18ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fd2df79e9d01bd98961385f432e18ac">&#9670;&nbsp;</a></span>isInvited()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Channel::isInvited </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classClient.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>client</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a7fd2df79e9d01bd98961385f432e18ac_icgraph.png" border="0" usemap="#classChannel_a7fd2df79e9d01bd98961385f432e18ac_icgraph" alt=""/></div>
+<map name="classChannel_a7fd2df79e9d01bd98961385f432e18ac_icgraph" id="classChannel_a7fd2df79e9d01bd98961385f432e18ac_icgraph">
+<area shape="rect" title=" " alt="" coords="160,5,299,32"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="5,5,112,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf08485748762a5e4a3ff983f8c4f1fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf08485748762a5e4a3ff983f8c4f1fe">&#9670;&nbsp;</a></span>isInviteOnly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Channel::isInviteOnly </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_acf08485748762a5e4a3ff983f8c4f1fe_icgraph.png" border="0" usemap="#classChannel_acf08485748762a5e4a3ff983f8c4f1fe_icgraph" alt=""/></div>
+<map name="classChannel_acf08485748762a5e4a3ff983f8c4f1fe_icgraph" id="classChannel_acf08485748762a5e4a3ff983f8c4f1fe_icgraph">
+<area shape="rect" title=" " alt="" coords="160,5,321,32"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="5,5,112,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a26fc58b2679d5e7e194834a34b5e95d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26fc58b2679d5e7e194834a34b5e95d1">&#9670;&nbsp;</a></span>isModerated()</h2>
 
@@ -819,17 +1042,18 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_a8a63301a0d0241baef295f55daf7bf5c_icgraph.png" border="0" usemap="#classChannel_a8a63301a0d0241baef295f55daf7bf5c_icgraph" alt=""/></div>
 <map name="classChannel_a8a63301a0d0241baef295f55daf7bf5c_icgraph" id="classChannel_a8a63301a0d0241baef295f55daf7bf5c_icgraph">
-<area shape="rect" title=" " alt="" coords="651,173,771,200"/>
-<area shape="rect" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,5,603,32"/>
-<area shape="rect" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="396,57,600,98"/>
-<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="440,123,556,149"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="431,173,565,200"/>
-<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="435,224,561,251"/>
-<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="443,275,553,301"/>
-<area shape="rect" href="classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="439,325,557,352"/>
-<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
-<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="209,64,316,91"/>
+<area shape="rect" title=" " alt="" coords="651,220,771,247"/>
+<area shape="rect" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,52,603,79"/>
+<area shape="rect" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f" title=" " alt="" coords="396,103,600,145"/>
+<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="440,169,556,196"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="443,220,553,247"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="431,271,565,297"/>
+<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="435,321,561,348"/>
+<area shape="rect" href="classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="439,372,557,399"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="210,5,315,32"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,56,345,83"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,56,132,83"/>
+<area shape="rect" href="classPart.html#adeead3919bc7d32392f14eafc3b7800e" title=" " alt="" coords="209,111,316,137"/>
 </map>
 </div>
 
@@ -861,6 +1085,42 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a2758f0cdadfaf2669deff0295e55c401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2758f0cdadfaf2669deff0295e55c401">&#9670;&nbsp;</a></span>isSecret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Channel::isSecret </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChannel_a2758f0cdadfaf2669deff0295e55c401_icgraph.png" border="0" usemap="#classChannel_a2758f0cdadfaf2669deff0295e55c401_icgraph" alt=""/></div>
+<map name="classChannel_a2758f0cdadfaf2669deff0295e55c401_icgraph" id="classChannel_a2758f0cdadfaf2669deff0295e55c401_icgraph">
+<area shape="rect" title=" " alt="" coords="393,5,528,32"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab4875ddd83ae031442d7c58a710b8000"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4875ddd83ae031442d7c58a710b8000">&#9670;&nbsp;</a></span>isVoice()</h2>
 
@@ -889,10 +1149,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_ab4875ddd83ae031442d7c58a710b8000_icgraph.png" border="0" usemap="#classChannel_ab4875ddd83ae031442d7c58a710b8000_icgraph" alt=""/></div>
 <map name="classChannel_ab4875ddd83ae031442d7c58a710b8000_icgraph" id="classChannel_ab4875ddd83ae031442d7c58a710b8000_icgraph">
-<area shape="rect" title=" " alt="" coords="651,5,780,32"/>
-<area shape="rect" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,5,603,32"/>
-<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
-<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" title=" " alt="" coords="651,31,780,57"/>
+<area shape="rect" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea" title=" " alt="" coords="393,31,603,57"/>
+<area shape="rect" href="classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="210,5,315,32"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,56,345,83"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,56,132,83"/>
 </map>
 </div>
 
@@ -935,14 +1196,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph.png" border="0" usemap="#classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph" alt=""/></div>
 <map name="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph" id="classChannel_acc7d04f494e076b78a8affae33d3bcf8_icgraph">
-<area shape="rect" title=" " alt="" coords="188,157,311,184"/>
-<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="19,5,127,32"/>
-<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="15,56,131,83"/>
-<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="5,107,140,133"/>
-<area shape="rect" href="classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="13,157,133,184"/>
-<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="10,208,135,235"/>
-<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="17,259,128,285"/>
-<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="19,309,126,336"/>
+<area shape="rect" title=" " alt="" coords="393,183,516,209"/>
+<area shape="rect" href="classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="180,5,345,32"/>
+<area shape="rect" href="classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="209,56,317,83"/>
+<area shape="rect" href="classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="205,107,321,133"/>
+<area shape="rect" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="207,157,318,184"/>
+<area shape="rect" href="classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="195,208,330,235"/>
+<area shape="rect" href="classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="209,259,316,285"/>
+<area shape="rect" href="classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="203,309,323,336"/>
+<area shape="rect" href="classNotice.html#a10b00bbff7bc6355ca605a1b326772d5" title=" " alt="" coords="200,360,325,387"/>
+<area shape="rect" href="classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,5,132,32"/>
 </map>
 </div>
 
@@ -1056,8 +1319,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph.png" border="0" usemap="#classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph" alt=""/></div>
 <map name="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph" id="classChannel_af72ea58ed6a994380416c80ff2b4dcea_icgraph">
-<area shape="rect" title=" " alt="" coords="267,13,436,39"/>
-<area shape="rect" href="classChannelModeType.html#ab2412a2503492ff71b97cc857f692152" title=" " alt="" coords="5,5,219,47"/>
+<area shape="rect" title=" " alt="" coords="253,5,423,32"/>
+<area shape="rect" href="classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,5,205,32"/>
 </map>
 </div>
 
@@ -1306,7 +1569,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classChannel.html">Channel</a></li>
-    <li class="footer">Generated on Sat Apr 15 2023 19:48:02 for IRC SERVER by
+    <li class="footer">Generated on Sun Apr 16 2023 18:36:14 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

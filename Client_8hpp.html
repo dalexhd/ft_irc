@@ -84,12 +84,14 @@ $(document).ready(function(){initNavTree('Client_8hpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Client.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;netdb.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="Message_8hpp_source.html">./Message.hpp</a>&quot;</code><br />
@@ -100,20 +102,21 @@ Include dependency graph for Client.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Client_8hpp__incl.png" border="0" usemap="#includes_2Client_8hpp" alt=""/></div>
 <map name="includes_2Client_8hpp" id="includes_2Client_8hpp">
-<area shape="rect" title=" " alt="" coords="235,5,381,32"/>
+<area shape="rect" title=" " alt="" coords="272,5,419,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,91,107"/>
-<area shape="rect" title=" " alt="" coords="115,80,186,107"/>
-<area shape="rect" title=" " alt="" coords="211,80,285,107"/>
-<area shape="rect" href="Message_8hpp.html" title=" " alt="" coords="310,80,426,107"/>
-<area shape="rect" href="Replies_8hpp.html" title=" " alt="" coords="451,80,557,107"/>
-<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="582,80,679,107"/>
-<area shape="rect" href="Color_8hpp.html" title=" " alt="" coords="76,155,167,181"/>
-<area shape="rect" href="functions_8hpp.html" title=" " alt="" coords="191,155,310,181"/>
-<area shape="rect" title=" " alt="" coords="335,155,401,181"/>
-<area shape="rect" title=" " alt="" coords="425,155,505,181"/>
-<area shape="rect" title=" " alt="" coords="529,155,580,181"/>
-<area shape="rect" title=" " alt="" coords="179,229,237,256"/>
-<area shape="rect" title=" " alt="" coords="262,229,325,256"/>
+<area shape="rect" title=" " alt="" coords="115,80,189,107"/>
+<area shape="rect" title=" " alt="" coords="213,80,283,107"/>
+<area shape="rect" title=" " alt="" coords="308,80,383,107"/>
+<area shape="rect" href="Message_8hpp.html" title=" " alt="" coords="407,80,523,107"/>
+<area shape="rect" href="Replies_8hpp.html" title=" " alt="" coords="548,80,655,107"/>
+<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="679,80,777,107"/>
+<area shape="rect" href="Color_8hpp.html" title=" " alt="" coords="173,155,264,181"/>
+<area shape="rect" href="functions_8hpp.html" title=" " alt="" coords="289,155,407,181"/>
+<area shape="rect" title=" " alt="" coords="432,155,499,181"/>
+<area shape="rect" title=" " alt="" coords="523,155,603,181"/>
+<area shape="rect" title=" " alt="" coords="627,155,677,181"/>
+<area shape="rect" title=" " alt="" coords="276,229,335,256"/>
+<area shape="rect" title=" " alt="" coords="359,229,422,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -165,14 +168,42 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html">Client</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a94ef00744306a5c39c4082819f14e14a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Client_8hpp.html#a94ef00744306a5c39c4082819f14e14a">UserMode</a> { <a class="el" href="Client_8hpp.html#a94ef00744306a5c39c4082819f14e14aabed3abd2a7ebc0d5d9d35de7fe808d6d">USER_MODE_INVISIBLE</a> = 0, 
+<a class="el" href="Client_8hpp.html#a94ef00744306a5c39c4082819f14e14aaa91f61f86ad75e9843964fe42ff46138">USER_MODE_OPERATOR</a> = 1, 
+<a class="el" href="Client_8hpp.html#a94ef00744306a5c39c4082819f14e14aa9665b0f6e3a048f380ba82d31cf4502e">USER_MODE_REGISTERED</a> = 2
+ }</td></tr>
+<tr class="separator:a94ef00744306a5c39c4082819f14e14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a94ef00744306a5c39c4082819f14e14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ef00744306a5c39c4082819f14e14a">&#9670;&nbsp;</a></span>UserMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Client_8hpp.html#a94ef00744306a5c39c4082819f14e14a">UserMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a94ef00744306a5c39c4082819f14e14aabed3abd2a7ebc0d5d9d35de7fe808d6d"></a>USER_MODE_INVISIBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a94ef00744306a5c39c4082819f14e14aaa91f61f86ad75e9843964fe42ff46138"></a>USER_MODE_OPERATOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a94ef00744306a5c39c4082819f14e14aa9665b0f6e3a048f380ba82d31cf4502e"></a>USER_MODE_REGISTERED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Client_8hpp.html">Client.hpp</a></li>
-    <li class="footer">Generated on Sat Apr 15 2023 19:48:02 for IRC SERVER by
+    <li class="footer">Generated on Sun Apr 16 2023 18:36:14 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

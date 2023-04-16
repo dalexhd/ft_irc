@@ -1,5 +1,6 @@
 <map id="Server::getRelatedChannels" name="Server::getRelatedChannels">
-<area shape="rect" id="node1" title=" " alt="" coords="175,31,377,57"/>
+<area shape="rect" id="node1" title=" " alt="" coords="175,56,377,83"/>
 <area shape="rect" id="node2" href="$classQuit.html#aa3b4fd77948fc713caf209d64adcd7b3" title=" " alt="" coords="12,5,120,32"/>
 <area shape="rect" id="node3" href="$classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="5,56,127,83"/>
+<area shape="rect" id="node4" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="13,107,119,133"/>
 </map>

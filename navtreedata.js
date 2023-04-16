@@ -67,8 +67,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "BanMask_8hpp.html",
-"classChannel.html#a4b886adf1d8e90a0c8c26f17b5ef38e8",
-"dir_3db1f9e6e5ff0139626abdd6590dfaba.html"
+"classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb",
+"classUserLimit.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

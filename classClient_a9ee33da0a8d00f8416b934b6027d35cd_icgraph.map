@@ -1,11 +1,11 @@
 <map id="Client::message" name="Client::message">
-<area shape="rect" id="node1" title=" " alt="" coords="403,791,529,817"/>
+<area shape="rect" id="node1" title=" " alt="" coords="403,816,529,843"/>
 <area shape="rect" id="node2" href="$classClient.html#a7cb99af0b1a9e254e7574eba0fa9a5c4" title=" " alt="" coords="192,56,343,83"/>
 <area shape="rect" id="node5" href="$classClient.html#ac4b956d055baf39c6668a5519ba12157" title=" " alt="" coords="221,107,313,133"/>
 <area shape="rect" id="node7" href="$classPing.html#a2d0a96efcb954426b31d5a6a3f792ec8" title=" " alt="" coords="213,157,322,184"/>
 <area shape="rect" id="node8" href="$classHelp.html#ac8da533c9e52b7c4b6db6bb204ac1ea2" title=" " alt="" coords="212,208,323,235"/>
 <area shape="rect" id="node9" href="$classList.html#aff51763e0db147807a8ba7d3f15e1559" title=" " alt="" coords="215,259,319,285"/>
-<area shape="rect" id="node10" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,563,132,589"/>
+<area shape="rect" id="node10" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="5,588,132,615"/>
 <area shape="rect" id="node11" href="$classTopic.html#aa892a61c82db5a6e237825a684c4e1bc" title=" " alt="" coords="210,360,325,387"/>
 <area shape="rect" id="node12" href="$classInvite.html#a17511ed16dd5b06174df476e023aaaa7" title=" " alt="" coords="208,411,327,437"/>
 <area shape="rect" id="node13" href="$classWhois.html#a2bdd4b2620f2105cc38d465facd51e88" title=" " alt="" coords="207,461,328,488"/>
@@ -13,23 +13,24 @@
 <area shape="rect" id="node15" href="$classNotice.html#a25c73e1779b69e9e3ccc8dc5e49292b4" title=" " alt="" coords="206,563,329,589"/>
 <area shape="rect" id="node16" href="$classPrivMsg.html#adce8dbb65a1d11bc5b46e2ad77333404" title=" " alt="" coords="201,613,334,640"/>
 <area shape="rect" id="node17" href="$classJoin.html#a77631ed35ab8829cd152d82db3b51578" title=" " alt="" coords="215,664,320,691"/>
-<area shape="rect" id="node18" href="$classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="204,715,331,741"/>
-<area shape="rect" id="node19" href="$classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="180,765,355,792"/>
-<area shape="rect" id="node20" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="185,816,350,843"/>
-<area shape="rect" id="node21" href="$classOperator.html#acc0d9a8cf5bccb1ed49dbaf20e98fffe" title=" " alt="" coords="197,867,337,893"/>
-<area shape="rect" id="node22" href="$classUserLimit.html#aa42a26669523112708f186775d48820d" title=" " alt="" coords="194,917,341,944"/>
-<area shape="rect" id="node23" href="$classKey.html#a03643a365b182d49fae5937f90cb681f" title=" " alt="" coords="214,968,321,995"/>
-<area shape="rect" id="node24" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="213,1019,321,1045"/>
-<area shape="rect" id="node25" href="$classNick.html#a93005d1299cbb80f9f8ad534294fa879" title=" " alt="" coords="211,1069,323,1096"/>
-<area shape="rect" id="node26" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="209,1120,325,1147"/>
-<area shape="rect" id="node27" href="$classUser.html#a7d7f584c27af249f1033708cccb82e92" title=" " alt="" coords="211,1171,324,1197"/>
+<area shape="rect" id="node18" href="$classMode.html#aa9210bb7d0a98f8eb55f868723b6bec3" title=" " alt="" coords="209,715,326,741"/>
+<area shape="rect" id="node19" href="$classClient.html#aa8b80aa00cdf8d687138511725c33a91" title=" " alt="" coords="204,765,331,792"/>
+<area shape="rect" id="node20" href="$classCommand.html#abd59bde053da57d6b7aaa1ba647ae179" title=" " alt="" coords="180,816,355,843"/>
+<area shape="rect" id="node21" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="185,867,350,893"/>
+<area shape="rect" id="node22" href="$classKey.html#a03643a365b182d49fae5937f90cb681f" title=" " alt="" coords="214,917,321,944"/>
+<area shape="rect" id="node23" href="$classUserLimit.html#aa42a26669523112708f186775d48820d" title=" " alt="" coords="194,968,341,995"/>
+<area shape="rect" id="node24" href="$classOperator.html#acc0d9a8cf5bccb1ed49dbaf20e98fffe" title=" " alt="" coords="197,1019,337,1045"/>
+<area shape="rect" id="node25" href="$classPart.html#a01fb8c2665dc938b13ced55dbc938dc4" title=" " alt="" coords="213,1069,321,1096"/>
+<area shape="rect" id="node26" href="$classNick.html#a93005d1299cbb80f9f8ad534294fa879" title=" " alt="" coords="211,1120,323,1147"/>
+<area shape="rect" id="node27" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="209,1171,325,1197"/>
 <area shape="rect" id="node28" href="$classPass.html#a4b3bbba67fcd5ec93de27d3b0ad6289e" title=" " alt="" coords="211,1221,323,1248"/>
-<area shape="rect" id="node29" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="200,1272,335,1299"/>
-<area shape="rect" id="node30" href="$classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="207,1323,327,1349"/>
-<area shape="rect" id="node31" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="214,1373,321,1400"/>
-<area shape="rect" id="node32" href="$classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="212,1424,323,1451"/>
-<area shape="rect" id="node33" href="$classWhois.html#a0ec1c1e57590276c15198231f36269c4" title=" " alt="" coords="206,1475,329,1501"/>
-<area shape="rect" id="node34" href="$classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="208,1525,327,1552"/>
+<area shape="rect" id="node29" href="$classUser.html#a7d7f584c27af249f1033708cccb82e92" title=" " alt="" coords="211,1272,324,1299"/>
+<area shape="rect" id="node30" href="$classKick.html#adc1f9aff2ca78f45b4521d364218cbf6" title=" " alt="" coords="212,1323,323,1349"/>
+<area shape="rect" id="node31" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="200,1373,335,1400"/>
+<area shape="rect" id="node32" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="214,1424,321,1451"/>
+<area shape="rect" id="node33" href="$classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="207,1475,327,1501"/>
+<area shape="rect" id="node34" href="$classWhois.html#a0ec1c1e57590276c15198231f36269c4" title=" " alt="" coords="206,1525,329,1552"/>
+<area shape="rect" id="node35" href="$classMode.html#ac6c27d358f9c6c375578f6637b884e89" title=" " alt="" coords="208,1576,327,1603"/>
 <area shape="rect" id="node3" href="$classUser.html#a057292d49dc002123ef4054b26131896" title=" " alt="" coords="13,5,124,32"/>
 <area shape="rect" id="node4" href="$classPass.html#a2fa5568da262d5bf787c3445cb875230" title=" " alt="" coords="13,56,124,83"/>
 <area shape="rect" id="node6" href="$classClient.html#ae11f29fd80429643e4879d32ec295f53" title=" " alt="" coords="7,107,130,133"/>
