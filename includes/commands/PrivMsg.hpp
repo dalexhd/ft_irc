@@ -29,12 +29,19 @@ class PrivMsg : public Command
 		}
 		else if (p[0].at(0) == '#')
 		{
+			std::cout << "p[0]" << p[0] << std::endl;
 			std::vector<std::string> _ch_params = split(p[0], ",");
-			for (size_t i = 1; i < _ch_params.size(); i++)
+			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if ((channel == NULL || channel->joined(_sender) == false) ||
-				    (channel->isModerated() && channel->isOpe(_sender) == false))
+				if (channel == NULL)
+				{
+					_sender->message(
+					    ERR_NOSUCHCHANNEL(_sender->_servername, _sender->getNick(), _ch_params[i]));
+					return (false);
+				}
+				else if ((channel == NULL || channel->joined(_sender) == false) ||
+				         (channel->isModerated() && channel->isOpe(_sender) == false))
 				{
 					_sender->message(ERR_CANNOTSENDTOCHAN(
 					    _sender->_servername, _sender->_nick, channel->getName()));
@@ -69,8 +76,8 @@ class PrivMsg : public Command
 		std::map<size_t, std::string> p = message->getParams();
 		if (p.size() < 2)
 		{
-			throw ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
-			                         message->getCmd());
+			throw std::runtime_error(
+			    ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick, message->getCmd()));
 		}
 
 		std::string              msg = std::string(p[1] + "\n").c_str();
