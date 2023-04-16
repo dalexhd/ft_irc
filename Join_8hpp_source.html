@@ -174,10 +174,10 @@ $(document).ready(function(){initNavTree('Join_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classJoin.html#a384a4e6329f9ea2eeab717d0557cfcd4">   85</a></span>&#160;    std::vector&lt;Message&gt; <a class="code" href="classJoin.html#a384a4e6329f9ea2eeab717d0557cfcd4">parser</a>(<a class="code" href="classMessage.html">Message</a> *message)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::map&lt;size_t, std::string&gt; p = message-&gt;<a class="code" href="classMessage.html#ae175384074674e34978f40261238d701">getParams</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (p.size() &lt; 1 || p.size() &gt; 2)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (p.size() &lt; 1)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(<a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a8fe7fa561e8e852aca92036f92b92405">getNick</a>(),</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                     message-&gt;<a class="code" href="classMessage.html#ad89a43eb39898c822b754288fef467b8">getCmd</a>());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<a class="code" href="Replies_8hpp.html#a956f2621e462cf802fc73955a4b3b2a4">ERR_NEEDMOREPARAMS</a>(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a4c542a9070d73b6613e2f43ebf07d1bf">_servername</a>, <a class="code" href="classCommand.html#ac490ca794e6536066afbdda39f3fed56">_sender</a>-&gt;<a class="code" href="classClient.html#a8fe7fa561e8e852aca92036f92b92405">getNick</a>(), message-&gt;<a class="code" href="classMessage.html#ad89a43eb39898c822b754288fef467b8">getCmd</a>()));</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::vector&lt;std::string&gt; _ch_params = <a class="code" href="functions_8hpp.html#a9f2ce856ffec652145a26842617b63e1">split</a>(p[0], <span class="stringliteral">&quot;,&quot;</span>);</div>
@@ -307,7 +307,7 @@ $(document).ready(function(){initNavTree('Join_8hpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_5e90428ea02abe37c2ad725f205d5900.html">commands</a></li><li class="navelem"><a class="el" href="Join_8hpp.html">Join.hpp</a></li>
-    <li class="footer">Generated on Sun Apr 16 2023 18:36:14 for IRC SERVER by
+    <li class="footer">Generated on Sun Apr 16 2023 19:59:02 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

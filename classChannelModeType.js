@@ -1,7 +1,7 @@
 var classChannelModeType =
 [
     [ "ChannelModeType", "classChannelModeType.html#af4eda8496bfc1f987e7454213f631276", null ],
-    [ "~ChannelModeType", "classChannelModeType.html#ab2412a2503492ff71b97cc857f692152", null ],
+    [ "~ChannelModeType", "classChannelModeType.html#a9542abf6e91067db1cfe086712d4c730", null ],
     [ "add", "classChannelModeType.html#a94e40f7cea12a35bccb0a971c73ecc38", null ],
     [ "execute", "classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e", null ],
     [ "remove", "classChannelModeType.html#a30cc9cd96b4dd402ef66e12645355d2c", null ],
