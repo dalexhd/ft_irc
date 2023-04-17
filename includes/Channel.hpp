@@ -12,9 +12,9 @@ enum ChannelMode
 	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4, //+t
 	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5,              //+n
 	CHANNEL_MODE_BAN_MASK = 6,                                //+b
-	CHANNEL_MODE_KEY = 7,                                     //+k
-	CHANNEL_MODE_USER_LIMIT = 8,                              //+l OK
-	CHANNEL_MODE_OPERATOR = 9,                                //+o
+	CHANNEL_MODE_KEY = 7,                                     //+k OK
+	CHANNEL_MODE_USER_LIMIT = 8,                              //+l
+	CHANNEL_MODE_OPERATOR = 9,                                //+o OK
 };
 
 enum ClientMode

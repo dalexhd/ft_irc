@@ -100,7 +100,7 @@ class Client
 		this->_name = name;
 		this->_host = host;
 		this->_port = "6667";
-		this->_pass = "test";
+		this->_pass = "";
 		this->_username = username;
 		this->_realname = realname;
 		this->_connected = false;
