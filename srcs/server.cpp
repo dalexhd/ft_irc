@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/14 15:25:23 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:27:12 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void Server::createServerPoll(void)
 			if ((new_fd = accept(_fd, NULL, NULL)) == -1)
 				throw std::runtime_error("error: accept");
 			_clients[new_fd] = new Client(new_fd, this->host, this->servername, this->version);
-			if(!hasPassword())
+			if (!hasPassword())
 				_clients[new_fd]->_is_passLogged = true;
 			pollfd pfd = {.fd = new_fd, .events = POLLIN, .revents = 0};
 			_pfds.push_back(pfd);
@@ -109,18 +109,33 @@ void Server::createServerPoll(void)
 						    _commands.end())
 						{
 							Command *cmd = it->second;
-							cmd->setSender(client);
-							cmd->setServer(this);
-							cmd->setMessage(message);
-							if (client->isAuthenticated() && cmd->needsAuth() && cmd->validate())
+
+							try
 							{
-								if (cmd->hasOpe() && !client->_is_ope)
-									cmd->missingOpe();
-								else
-									cmd->execute();
+								std::vector<Message> messages = cmd->parser(message);
+								std::vector<Message>::iterator it = messages.begin();
+								while (it != messages.end())
+								{
+									cmd->setSender(client);
+									cmd->setServer(this);
+									cmd->setMessage(&(*it));
+									if (client->isAuthenticated() && cmd->needsAuth() && cmd->validate())
+									{
+										if (cmd->hasOpe() && !client->_is_ope)
+											cmd->missingOpe();
+										else
+											cmd->execute();
+									}
+									else if (!cmd->needsAuth() && cmd->validate())
+										cmd->execute();
+									it++;
+								}
 							}
-							else if (!cmd->needsAuth() && cmd->validate())
-								cmd->execute();
+							catch (const std::exception &e)
+							{
+								client->message(e.what());
+								break;
+							}
 							break;
 						}
 						else if (message->getCmd() == "close")
@@ -164,7 +179,6 @@ void Server::setupCommands(void)
 	_commands["part"] = new Part();
 	_commands["list"] = new List();
 	_commands["names"] = new Names();
-	_commands["kick"] = new Kick();
 	_commands["notice"] = new Notice();
 	_commands["nick"] = new Nick();
 	_commands["user"] = new User();

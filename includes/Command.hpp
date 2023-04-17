@@ -65,9 +65,17 @@ class Command
 
   public:
 	virtual void execute() = 0;
+
 	virtual bool validate(void)
 	{
 		return (true);
+	}
+
+	virtual std::vector<Message> parser(Message *message)
+	{
+		std::vector<Message> messages;
+		messages.push_back(Message(message->_buffer));
+		return (messages);
 	}
 	Command()
 	    : _is_ope(false), _needs_auth(true), _sender(NULL), _server(NULL), _message(NULL){};

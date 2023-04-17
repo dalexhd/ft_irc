@@ -33,17 +33,11 @@ class PrivMsg : public Command
 			for (size_t i = 1; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel == NULL || channel->joined(_sender) == false)
+				if ((channel == NULL || channel->joined(_sender) == false) ||
+				    (channel->isModerated() && channel->isOpe(_sender) == false))
 				{
-					_sender->message(
-					    ERR_CANNOTSENDTOCHAN(_sender->_servername, _sender->_nick, _ch_params[i]));
-					return (false);
-				}
-				std::cout << "IS moderated " << channel->isModerated() << " ope client " << channel->isOpe(_sender) << "\n";
-				if (channel->isModerated() && channel->isOpe(_sender) == false)
-				{
-					_sender->message(
-					    ERR_CANNOTSENDTOCHAN(_sender->_servername, _sender->_nick, _ch_params[i]));
+					_sender->message(ERR_CANNOTSENDTOCHAN(
+					    _sender->_servername, _sender->_nick, channel->getName()));
 					return (false);
 				}
 			}
@@ -68,6 +62,28 @@ class PrivMsg : public Command
 			}
 		}
 		return (true);
+	}
+
+	std::vector<Message> parser(Message *message)
+	{
+		std::map<size_t, std::string> p = message->getParams();
+		if (p.size() < 2)
+		{
+			throw ERR_NEEDMOREPARAMS(_sender->_servername, _sender->_nick,
+			                         message->getCmd());
+		}
+
+		std::string              msg = std::string(p[1] + "\n").c_str();
+		std::vector<std::string> _ch_params = split(p[0], ",");
+
+		std::vector<Message> messages;
+		for (size_t i = 0; i < _ch_params.size(); i++)
+		{
+			std::string tmp(this->getName() + " " + _ch_params[i] + " :" + msg);
+			std::cout << tmp << std::endl;
+			messages.push_back(Message(tmp));
+		}
+		return (messages);
 	}
 
 	void execute()

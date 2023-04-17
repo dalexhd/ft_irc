@@ -5,23 +5,22 @@
 
 enum ChannelMode
 {
-	CHANNEL_MODE_PRIVATE = 0, //+p OK
-	CHANNEL_MODE_SECRET = 1, //+s OK
-	CHANNEL_MODE_INVITE_ONLY = 2, //+i
-	CHANNEL_MODE_MODERATED = 3, //+m OK
+	CHANNEL_MODE_PRIVATE = 0,                                 //+p OK
+	CHANNEL_MODE_SECRET = 1,                                  //+s OK
+	CHANNEL_MODE_INVITE_ONLY = 2,                             //+i
+	CHANNEL_MODE_MODERATED = 3,                               //+m OK
 	CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY = 4, //+t
-	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5, //+n
-	CHANNEL_MODE_BAN_MASK = 6, //+b
-	CHANNEL_MODE_KEY = 7, //+k
-	CHANNEL_MODE_USER_LIMIT = 8, //+l OK
-	CHANNEL_MODE_OPERATOR = 9, //+o
+	CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE = 5,              //+n
+	CHANNEL_MODE_BAN_MASK = 6,                                //+b
+	CHANNEL_MODE_KEY = 7,                                     //+k
+	CHANNEL_MODE_USER_LIMIT = 8,                              //+l OK
+	CHANNEL_MODE_OPERATOR = 9,                                //+o
 };
 
 enum ClientMode
 {
 	CLIENT_MODE_VOICE = 0,
-	CLIENT_MODE_OPERATOR = 1,
-	CLEINT_MODE_INVISIBLE = 2,
+	CLIENT_MODE_OPERATOR = 1
 };
 
 class Channel
@@ -49,7 +48,9 @@ class Channel
 	    : _name(name), _password(password), _creator(NULL), _user_limit(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
-		_modes.push_back(CHANNEL_MODE_MODERATED);
+		addMode(CHANNEL_MODE_MODERATED);
+		if (password.size() > 0)
+			addMode(CHANNEL_MODE_KEY);
 	};
 
 	// Setters
@@ -58,6 +59,8 @@ class Channel
 		if (_creator)
 			throw std::runtime_error("Creator is already assigned");
 		_creator = creator;
+		_ope_clients.push_back(creator);
+
 	};
 
 	void setTopic(std::string &topic)
@@ -106,46 +109,54 @@ class Channel
 		return (_modes);
 	}
 
+	char getIdentifier(ChannelMode _mode)
+	{
+		char identifier = 0;
+		switch (_mode)
+		{
+		case CHANNEL_MODE_BAN_MASK:
+			identifier = 'b';
+			break;
+		case CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE:
+			identifier = 'n';
+			break;
+		case CHANNEL_MODE_INVITE_ONLY:
+			identifier = 'i';
+			break;
+		case CHANNEL_MODE_KEY:
+			identifier = 'k';
+			break;
+		case CHANNEL_MODE_MODERATED:
+			identifier = 'm';
+			break;
+		case CHANNEL_MODE_OPERATOR:
+			identifier = 'o';
+			break;
+		case CHANNEL_MODE_PRIVATE:
+			identifier = 'p';
+			break;
+		case CHANNEL_MODE_SECRET:
+			identifier = 's';
+			break;
+		case CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY:
+			identifier = 't';
+			break;
+		case CHANNEL_MODE_USER_LIMIT:
+			identifier = 'l';
+			break;
+		}
+		return (identifier);
+	}
+
 	std::string getStringModes(void)
 	{
 		std::string stringModes = "";
-		for (std::vector<ChannelMode>::const_iterator it = _modes.begin(); it != _modes.end(); ++it) {
-    		// Do something with each mode value
-			switch (*it) {
-				case CHANNEL_MODE_PRIVATE:
-					stringModes += "p";
-					break;
-				case CHANNEL_MODE_SECRET:
-					stringModes += "s";
-					break;
-				case CHANNEL_MODE_INVITE_ONLY:
-					stringModes += "i";
-					break;
-				case CHANNEL_MODE_MODERATED:
-					stringModes += "m";
-					break;
-				case CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY:
-					stringModes += "t";
-					break;
-				case CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE:
-					stringModes += "n";
-					break;
-				case CHANNEL_MODE_BAN_MASK:
-					stringModes += "b";
-					break;
-				case CHANNEL_MODE_KEY:
-					stringModes += "k";
-					break;
-				case CHANNEL_MODE_USER_LIMIT:
-					stringModes += "l";
-					break;
-				case CHANNEL_MODE_OPERATOR:
-					stringModes += "o";
-					break;
-				default:
-					// Handle unknown mode
-					break;
-			}
+		for (std::vector<ChannelMode>::const_iterator it = _modes.begin();
+		     it != _modes.end(); ++it)
+		{
+			char identifier = getIdentifier(*it);
+			if (identifier)
+				stringModes += getIdentifier(*it);
 		}
 		return (stringModes);
 	}
@@ -197,6 +208,30 @@ class Channel
 	{
 		return (std::find(_voice_clients.begin(), _voice_clients.end(), client) !=
 		        _voice_clients.end());
+	}
+
+	bool isBanned(Client *client)
+	{
+		(void) client;
+		return (false);
+	}
+
+	bool isInvited(Client *client)
+	{
+		(void) client;
+		return (true);
+	}
+
+	bool isInviteOnly(void)
+	{
+		return (std::find(_modes.begin(), _modes.end(), CHANNEL_MODE_INVITE_ONLY) !=
+		        _modes.end());
+	}
+
+	bool isSecret(void)
+	{
+		return (std::find(_modes.begin(), _modes.end(), CHANNEL_MODE_SECRET) !=
+		        _modes.end());
 	}
 
 	void addOpe(Client *client)
@@ -306,6 +341,15 @@ class Channel
 					    std::find(_normal_clients.begin(), _normal_clients.end(), client));
 				}
 			}
+		}
+	}
+
+	void broadcastMessage(std::string message)
+	{
+		std::vector<Client *> clients = this->getClients();
+		for (size_t i = 0; i < clients.size(); i++)
+		{
+			clients[i]->message(message);
 		}
 	}
 

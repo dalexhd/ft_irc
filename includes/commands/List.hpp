@@ -20,7 +20,7 @@ class List : public Command
 	void execute()
 	{
 		std::map<size_t, std::string> p = _message->getParams();
-		_sender->message(RPL_LISTSTART(_sender->_servername, _sender->_nick)); // RPL_LISTSTART (321)
+		_sender->message(RPL_LISTSTART(_sender->_servername, _sender->getNick()));
 		if (p.size() == 1)
 		{
 			std::vector<std::string> _ch_params = split(p[0], ",");
@@ -28,12 +28,11 @@ class List : public Command
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
 				Channel *channel = _server->getChannel(_ch_params[i]);
-				if (channel && (std::string::npos == channel->getStringModes().find('s')))
+				if (channel)
 				{
-					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
-					                          channel->getName(),
-					                          itoa(channel->getClients().size()),
-					                          "[" + channel->getStringModes() + "]" + channel->getTopic())); // RPL_LIST (322)
+					_sender->message(RPL_LIST(
+					    _sender->_servername, _sender->getNick(), channel->getName(),
+					    itoa(channel->getClients().size()), channel->getTopic()));
 				}
 			}
 		}
@@ -42,17 +41,15 @@ class List : public Command
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-				if(std::string::npos == channels[i]->getStringModes().find('s'))
+				if (!channels[i]->isSecret())
 				{
-
-					_sender->message(RPL_LIST(_sender->_servername, _sender->_nick,
-				                          channels[i]->getName(),
-				                          itoa(channels[i]->getClients().size()),
-				                          "[" + channels[i]->getStringModes() + "]" +channels[i]->getTopic())); // RPL_LIST (322)
+					_sender->message(RPL_LIST(
+					    _sender->_servername, _sender->getNick(), channels[i]->getName(),
+					    itoa(channels[i]->getClients().size()), channels[i]->getTopic()));
 				}
 			}
 		}
-		_sender->message(RPL_LISTEND(_sender->_servername, _sender->_nick)); // RPL_LISTEND (323)
+		_sender->message(RPL_LISTEND(_sender->_servername, _sender->getNick()));
 	}
 };
 #endif
