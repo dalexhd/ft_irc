@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/16 17:50:34 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:27:46 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@
 	":" + servername + " 401 " + nick + " :No such nick/channel\n"
 #define ERR_NOSUCHSERVER 402
 #define ERR_NOSUCHCHANNEL(servername, nick, channel) \
-	":" + servername + " 403 " + nick + " " + channel + " :No such channel\n"
+	":" + servername + " 403 " + nick + " #" + channel + " :No such channel\n"
 #define ERR_CANNOTSENDTOCHAN(servername, nick, channel) \
 	":" + servername + " 404 " + nick + " #" + channel + " :Cannot send to channel\n"
 #define ERR_TOOMANYCHANNELS(servername, nick, channel) \

@@ -78,7 +78,7 @@ class ChannelModeType
 	virtual void add() = 0;
 	virtual void remove() = 0;
 
-	~ChannelModeType()
+	virtual ~ChannelModeType()
 	{
 	}
 };
@@ -161,9 +161,9 @@ class Mode : public Command
 			{
 				mode->setSign(sign);
 				mode->setParams(params);
-				mode->setChannel(channel);
-				mode->setSender(_sender);
-				mode->setServer(_server);
+				mode->setChannel(&(*channel));
+				mode->setSender(&(*_sender));
+				mode->setServer(&(*_server));
 				modes.push_back(mode);
 			}
 		}
@@ -210,9 +210,13 @@ class Mode : public Command
 		for (size_t i = 0; i < modes.size(); i++)
 		{
 			if (modes[i]->validate() == false)
+			{
+				delete modes[i];
 				return (false);
+			}
+			delete modes[i];
 		}
-
+		modes.clear();
 		return (true);
 	}
 
@@ -238,7 +242,10 @@ class Mode : public Command
 				for (size_t i = 0; i < modes.size(); i++)
 				{
 					modes[i]->execute();
+					delete modes[i];
 				}
+
+				modes.clear();
 			}
 			else if (type == USER_MODE)
 			{

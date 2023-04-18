@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:25:49 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/16 18:27:12 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:57:14 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,14 @@ void Server::createServerPoll(void)
 						{
 							Command *cmd = it->second;
 
+							cmd->setSender(client);
+							cmd->setServer(this);
 							try
 							{
 								std::vector<Message> messages = cmd->parser(message);
 								std::vector<Message>::iterator it = messages.begin();
 								while (it != messages.end())
 								{
-									cmd->setSender(client);
-									cmd->setServer(this);
 									cmd->setMessage(&(*it));
 									if (client->isAuthenticated() && cmd->needsAuth() && cmd->validate())
 									{
@@ -134,7 +134,6 @@ void Server::createServerPoll(void)
 							catch (const std::exception &e)
 							{
 								client->message(e.what());
-								break;
 							}
 							break;
 						}
@@ -206,5 +205,6 @@ Server::~Server(void)
 	for (; it_ch != _channels.end(); it_ch++)
 		delete (it_ch->second);
 	_channels.clear();
+
 	std::cout << "Server closed!" << std::endl;
 }

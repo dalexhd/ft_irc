@@ -85,10 +85,10 @@ class Join : public Command
 	std::vector<Message> parser(Message *message)
 	{
 		std::map<size_t, std::string> p = message->getParams();
-		if (p.size() < 1 || p.size() > 2)
+		if (p.size() < 1)
 		{
-			throw ERR_NEEDMOREPARAMS(_sender->_servername, _sender->getNick(),
-			                         message->getCmd());
+			throw std::runtime_error(ERR_NEEDMOREPARAMS(
+			    _sender->_servername, _sender->getNick(), message->getCmd()));
 		}
 
 		std::vector<std::string> _ch_params = split(p[0], ",");
