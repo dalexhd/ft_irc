@@ -311,7 +311,7 @@ class Client
 		{
 			send(line);
 			usleep(1000);
-			std::cout << reads();
+			pingpong(reads());
 		}
 	}
 };

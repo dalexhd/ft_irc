@@ -112,12 +112,12 @@ weechat:
 		docker rmi jkaberg/weechat ; \
 	fi
 	docker pull jkaberg/weechat
-	docker run -it --network=host --name weechat -e UID=1000 -e GID=1000 -v ~/.weechat/config:/weechat  jkaberg/weechat
+	docker run -it --network host --name weechat -e UID=1000 -e GID=1000 -v ~/.weechat/config:/weechat  jkaberg/weechat
 
 #-e MYIP=$$(ifconfig en0 | grep 'inet ' | awk '{print $2}')
 
-#/server add ft_irc 10.11.11.1/6667
-#/set irc.server.libera.nicks "mynick,mynick2,mynick3,mynick4,mynick5"
+#/server add ft_irc 10.11.7.5/6667
+#/set irc.server.ft_irc.nicks "quines,mynick2,mynick3,mynick4,mynick5"
 #/set irc.server.ft_irc.username "Quines"
 #/set irc.server.ft_irc.realname "Marcos"
 #/connect ft_irc
