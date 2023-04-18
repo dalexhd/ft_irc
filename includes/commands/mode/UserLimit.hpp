@@ -25,11 +25,13 @@ class UserLimit : public ChannelModeType
 	void add()
 	{
 		_channel->setUserLimit(atoll(_params[2].c_str()));
+		_channel->addMode(_mode);
 	}
 
 	void remove()
 	{
 		_channel->setUserLimit(MAX_CLIENTS_PER_CHANNEL);
+		_channel->removeMode(_mode);
 	}
 };
 #endif

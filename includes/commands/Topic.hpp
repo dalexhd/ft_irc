@@ -35,7 +35,7 @@ class Topic : public Command
 				_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[0]));
 				return (false);
 			}
-			else if (!channel->isOpe(_sender) && p.size() > 1)
+			else if (!channel->isOpe(_sender) && channel->hasMode(CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY) && p.size() > 1)
 			{
 				_sender->message(
 				    ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick, p[0]));

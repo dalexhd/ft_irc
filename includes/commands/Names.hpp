@@ -20,7 +20,8 @@ class Names : public Command
 	void send_channel(std::string &name)
 	{
 		Channel *channel = _server->getChannel(name);
-		if (channel == NULL || (channel->isSecret() && !channel->joined(_sender)))
+		if (channel == NULL ||
+		    (channel->hasMode(CHANNEL_MODE_SECRET) && !channel->joined(_sender)))
 			return;
 		std::vector<Client *> clients = channel->getClients();
 		std::string           users_str = "";

@@ -15,14 +15,7 @@ class Invite : public Command
 		_example[0] = "invite <nick> <canal>";
 		//		_is_opec = true;
 	}
-	/* ERR_CHANOPRIVSNEEDED
-	                    "<channel> :You're not channel operator"
 
-	            - Any command requiring 'chanop' privileges (such as
-	              MODE messages) must return this error if the client
-	              making the attempt is not a chanop on the specified
-	              channel.
-	*/
 	bool validate(void)
 	{
 		std::map<size_t, std::string> p = _message->getParams();
@@ -45,10 +38,15 @@ class Invite : public Command
 			_sender->message(ERR_NOTONCHANNEL(_sender->_servername, _sender->_nick, p[1]));
 			return (false);
 		}
-		if (channel->joined(client))
+		else if (channel->joined(client))
 		{
 			_sender->message(
 			    ERR_USERONCHANNEL(_sender->_servername, _sender->_nick, _sender->_username, p[1]));
+			return (false);
+		}
+		else if (!channel->isOpe(_sender) && !channel->hasMode(CHANNEL_MODE_INVITE_ONLY))
+		{
+			_sender->message(ERR_CHANOPRIVSNEEDED(_sender->_servername, _sender->_nick, p[1]));
 			return (false);
 		}
 		return (true);
@@ -56,7 +54,16 @@ class Invite : public Command
 
 	void execute()
 	{
-		_sender->message("invite response\n");
+		std::map<size_t, std::string> p = _message->getParams();
+
+		Channel *channel = _server->getChannel(p[1]);
+		Client * client = _server->getClient(p[0]);
+
+		client->message(RPL_INVITING(_sender->_servername, _sender->getNick(),
+		                             channel->getName(), client->getUsername()));
+		client->message(
+		    RPL_CUSTOM_INVITE(_sender->getUserId(), channel->getName(), client->getUsername()));
+		channel->invite(client);
 	}
 };
 #endif

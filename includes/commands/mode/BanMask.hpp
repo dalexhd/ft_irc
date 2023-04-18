@@ -14,10 +14,12 @@ class BanMask : public ChannelModeType
 
 	void add()
 	{
+		_channel->addBanMask(_params[2]);
 	}
 
 	void remove()
 	{
+		_channel->removeBanMask(_params[2]);
 	}
 };
 #endif

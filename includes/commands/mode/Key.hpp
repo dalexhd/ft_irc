@@ -25,11 +25,13 @@ class Key : public ChannelModeType
 	void add()
 	{
 		_channel->setPassword(_params[2]);
+		_channel->addMode(_mode);
 	}
 
 	void remove()
 	{
 		_channel->setPassword("");
+		_channel->removeMode(_mode);
 	}
 };
 #endif

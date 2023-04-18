@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:22:18 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/16 19:27:46 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:12:15 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@
 #define RPL_TOPICWHOTIME(servername, nick, channel, user, time) \
 	":" + servername + " 333 " + nick + " #" + channel + " " + user + " " + time + "\n"
 #define RPL_WHOISACTUALLY 338
-#define RPL_INVITING 341
+#define RPL_INVITING(servername, nick, channel, user) \
+	":" + servername + " 341 " + nick + " #" + channel + " " + user + "\n"
 #define RPL_INVITELIST 346
 #define RPL_ENDOFINVITELIST 347
 #define RPL_EXCEPTLIST 348
@@ -188,4 +189,6 @@
 	":" + user + " KICK #" + channel + " " + nick + " :" + reason + "\n"
 #define RPL_CUSTOM_MODE(user, channel, mode) \
 	":" + user + " MODE #" + channel + " " + mode + "\n"
+#define RPL_CUSTOM_INVITE(user, channel, nick) \
+	":" + user + " INVITE " + nick + " #" + channel + "\n"
 #endif

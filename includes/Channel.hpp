@@ -36,6 +36,8 @@ class Channel
 	ChannelMode            _mode;
 	// New mode implementation...
 	std::vector<ChannelMode> _modes;
+	std::vector<std::string> _ban_masks;
+	std::vector<Client *>    _invite_list;
 
   public:
 	std::vector<Client *>                         _normal_clients;
@@ -48,7 +50,6 @@ class Channel
 	    : _name(name), _password(password), _creator(NULL), _user_limit(MAX_CLIENTS_PER_CHANNEL)
 	{
 		_created_at = time(0);
-		addMode(CHANNEL_MODE_MODERATED);
 		if (password.size() > 0)
 			addMode(CHANNEL_MODE_KEY);
 	};
@@ -60,7 +61,6 @@ class Channel
 			throw std::runtime_error("Creator is already assigned");
 		_creator = creator;
 		_ope_clients.push_back(creator);
-
 	};
 
 	void setTopic(std::string &topic)
@@ -212,14 +212,20 @@ class Channel
 
 	bool isBanned(Client *client)
 	{
-		(void) client;
+		for (std::vector<std::string>::iterator it = _ban_masks.begin();
+		     it != _ban_masks.end(); ++it)
+		{
+			if (*it == client->getNick() || *it == client->getUsername() ||
+			    *it == client->getHost())
+				return (true);
+		}
 		return (false);
 	}
 
 	bool isInvited(Client *client)
 	{
-		(void) client;
-		return (true);
+		return (std::find(_invite_list.begin(), _invite_list.end(), client) !=
+		        _invite_list.end());
 	}
 
 	bool isInviteOnly(void)
@@ -270,6 +276,35 @@ class Channel
 			_voice_clients.erase(it);
 	}
 
+	void invite(Client *client)
+	{
+		if (std::find(_invite_list.begin(), _invite_list.end(), client) ==
+		    _invite_list.end())
+			this->_invite_list.push_back(client);
+	}
+
+	void removeInvite(Client *client)
+	{
+		std::vector<Client *>::iterator it =
+		    std::find(_invite_list.begin(), _invite_list.end(), client);
+		if (it != _invite_list.end())
+			_invite_list.erase(it);
+	}
+
+	void addBanMask(std::string mask)
+	{
+		if (std::find(_ban_masks.begin(), _ban_masks.end(), mask) == _ban_masks.end())
+			this->_ban_masks.push_back(mask);
+	}
+
+	void removeBanMask(std::string mask)
+	{
+		std::vector<std::string>::iterator it =
+		    std::find(_ban_masks.begin(), _ban_masks.end(), mask);
+		if (it != _ban_masks.end())
+			_ban_masks.erase(it);
+	}
+
 	// --------------
 	// Utils
 	// --------------
@@ -298,22 +333,23 @@ class Channel
 		return (mode);
 	}
 
+	bool hasMode(ChannelMode mode)
+	{
+		return std::find(this->_modes.begin(), this->_modes.end(), mode) !=
+		       this->_modes.end();
+	}
+
 	void addMode(ChannelMode mode)
 	{
-		this->_modes.push_back(mode);
-		std::cout << "Added mode" << mode << std::endl;
+		if (!this->hasMode(mode))
+			this->_modes.push_back(mode);
 	}
 
 	void removeMode(ChannelMode mode)
 	{
 		std::vector<ChannelMode>::iterator it = std::find(_modes.begin(), _modes.end(), mode);
 		if (it != _modes.end())
-		{
 			_modes.erase(it);
-			std::cout << "Removed mode" << mode << std::endl;
-		}
-		else
-			std::cout << "Could not Remove mode" << mode << std::endl;
 	}
 
 	std::string getClientRoleString(Client *client) // TODO: Can a user have multiple roles?

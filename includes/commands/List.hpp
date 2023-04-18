@@ -41,7 +41,7 @@ class List : public Command
 			std::vector<Channel *> channels = _server->getChannels();
 			for (size_t i = 0; i < channels.size(); i++)
 			{
-				if (!channels[i]->isSecret())
+				if (!channels[i]->hasMode(CHANNEL_MODE_SECRET) || channels[i]->joined(_sender))
 				{
 					_sender->message(RPL_LIST(
 					    _sender->_servername, _sender->getNick(), channels[i]->getName(),

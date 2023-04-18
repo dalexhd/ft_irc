@@ -26,19 +26,15 @@ class ChannelModeType
 
 	void execute()
 	{
+		bool prevCheck = _channel->hasMode(_mode);
 		if (_sign == PLUS)
-		{
 			add();
-			_channel->addMode(_mode);
-		}
 		else
-		{
 			remove();
-			_channel->removeMode(_mode);
-		}
-		_channel->broadcastMessage(
-		    RPL_CUSTOM_MODE(_sender->getUserId(), _channel->getName(),
-		                    (_sign == PLUS ? "+" : "-") + _channel->getIdentifier(_mode) + " " + _params[2]));
+		if (prevCheck != _channel->hasMode(_mode)) // If the mode has changed
+			_channel->broadcastMessage(
+			    RPL_CUSTOM_MODE(_sender->getUserId(), _channel->getName(),
+			                    (_sign == PLUS ? "+" : "-") + _channel->getIdentifier(_mode) + " " + _params[2]));
 	}
 
 	void setMode(ChannelMode mode)
@@ -89,7 +85,6 @@ class ChannelModeType
 #include "./mode/Key.hpp"
 #include "./mode/Moderated.hpp"
 #include "./mode/Operator.hpp"
-#include "./mode/Private.hpp"
 #include "./mode/Secret.hpp"
 #include "./mode/TopicSettableByChannelOperatorOnly.hpp"
 #include "./mode/UserLimit.hpp"

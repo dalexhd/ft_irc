@@ -29,7 +29,6 @@ class PrivMsg : public Command
 		}
 		else if (p[0].at(0) == '#')
 		{
-			std::cout << "p[0]" << p[0] << std::endl;
 			std::vector<std::string> _ch_params = split(p[0], ",");
 			for (size_t i = 0; i < _ch_params.size(); i++)
 			{
@@ -40,8 +39,10 @@ class PrivMsg : public Command
 					    ERR_NOSUCHCHANNEL(_sender->_servername, _sender->getNick(), _ch_params[i]));
 					return (false);
 				}
-				else if ((channel == NULL || channel->joined(_sender) == false) ||
-				         (channel->isModerated() && channel->isOpe(_sender) == false))
+				else if ((channel == NULL ||
+				          (channel->joined(_sender) == false && !channel->hasMode(CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE)) ||
+				          (channel->isModerated() && channel->isOpe(_sender) == false)))
+
 				{
 					_sender->message(ERR_CANNOTSENDTOCHAN(
 					    _sender->_servername, _sender->_nick, channel->getName()));

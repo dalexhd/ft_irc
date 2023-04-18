@@ -14,10 +14,12 @@ class CantSentMessagesOutside : public ChannelModeType
 
 	void add()
 	{
+		_channel->addMode(_mode);
 	}
 
 	void remove()
 	{
+		_channel->removeMode(_mode);
 	}
 };
 #endif

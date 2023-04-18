@@ -34,12 +34,14 @@ class Operator : public ChannelModeType
 	{
 		Client *client = _server->getClient(_params[2]);
 		_channel->addOpe(client);
+		_channel->addMode(_mode);
 	}
 
 	void remove()
 	{
 		Client *client = _server->getClient(_params[2]);
 		_channel->removeOpe(client);
+		_channel->removeMode(_mode);
 	}
 };
 #endif

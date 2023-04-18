@@ -208,10 +208,7 @@ class Client
 	void addMode(UserMode mode)
 	{
 		if (!this->hasMode(mode))
-		{
 			this->_modes.push_back(mode);
-			std::cout << "Added mode" << mode << std::endl;
-		}
 	}
 };
 
