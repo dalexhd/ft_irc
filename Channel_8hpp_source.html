@@ -404,94 +404,95 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        {</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a8fbfec84a7f002aa25bd0840ce567c23">CHANNEL_MODE_PRIVATE</a>)</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                mode += <span class="stringliteral">&quot;*&quot;</span>;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599aabaa1cdd89b7d8ea66f69b4310a7b634">CHANNEL_MODE_SECRET</a>)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599aabaa1cdd89b7d8ea66f69b4310a7b634">CHANNEL_MODE_SECRET</a>)</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                mode += <span class="stringliteral">&quot;@&quot;</span>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a">CHANNEL_MODE_INVITE_ONLY</a>)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a">CHANNEL_MODE_INVITE_ONLY</a>)</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                mode += <span class="stringliteral">&quot;!&quot;</span>;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599afc49decc72a1bfd359d939127c13af71">CHANNEL_MODE_MODERATED</a>)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599afc49decc72a1bfd359d939127c13af71">CHANNEL_MODE_MODERATED</a>)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                mode += <span class="stringliteral">&quot;%&quot;</span>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a3c65b958731331fdd584fc1925c89adf">CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY</a>)</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a3c65b958731331fdd584fc1925c89adf">CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY</a>)</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                mode += <span class="stringliteral">&quot;+&quot;</span>;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599acfe184076ea944e56b2873af3bb8ebbb">CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE</a>)</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599acfe184076ea944e56b2873af3bb8ebbb">CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE</a>)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                mode += <span class="stringliteral">&quot;~&quot;</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118">CHANNEL_MODE_BAN_MASK</a>)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118">CHANNEL_MODE_BAN_MASK</a>)</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                mode += <span class="stringliteral">&quot;&amp;&quot;</span>;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361">CHANNEL_MODE_KEY</a>)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_modes[i] == <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361">CHANNEL_MODE_KEY</a>)</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                mode += <span class="stringliteral">&quot;!&quot;</span>;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">return</span> (mode);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">  336</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">hasMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> std::find(this-&gt;_modes.begin(), this-&gt;_modes.end(), mode) !=</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;               this-&gt;_modes.end();</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">  342</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">addMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">hasMode</a>(mode))</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            this-&gt;_modes.push_back(mode);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno"><a class="line" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">  348</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">removeMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        std::vector&lt;ChannelMode&gt;::iterator it = std::find(_modes.begin(), _modes.end(), mode);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> (it != _modes.end())</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            _modes.erase(it);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">  355</a></span>&#160;    std::string <a class="code" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">getClientRoleString</a>(<a class="code" href="classClient.html">Client</a> *client) <span class="comment">// TODO: Can a user have multiple roles?</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    {</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classChannel.html#a8a63301a0d0241baef295f55daf7bf5c">isOpe</a>(client))</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">return</span> (<span class="stringliteral">&quot;@&quot;</span>);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classChannel.html#ab4875ddd83ae031442d7c58a710b8000">isVoice</a>(client))</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">return</span> (<span class="stringliteral">&quot;+&quot;</span>);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">  364</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">removeClientFromChannel</a>(<a class="code" href="classClient.html">Client</a> *client)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        std::vector&lt;Client *&gt; related_channels_clients = <a class="code" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">getClients</a>();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; related_channels_clients.size(); j++)</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">if</span> (related_channels_clients[j] == client)</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classChannel.html#a8a63301a0d0241baef295f55daf7bf5c">isOpe</a>(related_channels_clients[j]))</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.erase(</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                        std::find(<a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.begin(), <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.end(), client));</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                    <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.erase(</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                        std::find(<a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.begin(), <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.end(), client));</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">  383</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">broadcastMessage</a>(std::string message)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        std::vector&lt;Client *&gt; clients = this-&gt;<a class="code" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">getClients</a>();</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; clients.size(); i++)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            clients[i]-&gt;message(message);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">  392</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">isModerated</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    {</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">return</span> (std::find(_modes.begin(), _modes.end(), <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599afc49decc72a1bfd359d939127c13af71">CHANNEL_MODE_MODERATED</a>) !=</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                _modes.end());</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">  398</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">hasKey</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    {</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">return</span> (std::find(_modes.begin(), _modes.end(), <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361">CHANNEL_MODE_KEY</a>) !=</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                _modes.end());</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;};</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;MODE: &quot;</span> &lt;&lt; mode &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">return</span> (mode);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">  337</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">hasMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">return</span> std::find(this-&gt;_modes.begin(), this-&gt;_modes.end(), mode) !=</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;               this-&gt;_modes.end();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">  343</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">addMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">hasMode</a>(mode))</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            this-&gt;_modes.push_back(mode);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">  349</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">removeMode</a>(<a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599">ChannelMode</a> mode)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        std::vector&lt;ChannelMode&gt;::iterator it = std::find(_modes.begin(), _modes.end(), mode);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> (it != _modes.end())</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            _modes.erase(it);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">  356</a></span>&#160;    std::string <a class="code" href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">getClientRoleString</a>(<a class="code" href="classClient.html">Client</a> *client) <span class="comment">// TODO: Can a user have multiple roles?</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classChannel.html#a8a63301a0d0241baef295f55daf7bf5c">isOpe</a>(client))</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">return</span> (<span class="stringliteral">&quot;@&quot;</span>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classChannel.html#ab4875ddd83ae031442d7c58a710b8000">isVoice</a>(client))</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordflow">return</span> (<span class="stringliteral">&quot;+&quot;</span>);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">  365</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">removeClientFromChannel</a>(<a class="code" href="classClient.html">Client</a> *client)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        std::vector&lt;Client *&gt; related_channels_clients = <a class="code" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">getClients</a>();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; related_channels_clients.size(); j++)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">if</span> (related_channels_clients[j] == client)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classChannel.html#a8a63301a0d0241baef295f55daf7bf5c">isOpe</a>(related_channels_clients[j]))</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                    <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.erase(</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                        std::find(<a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.begin(), <a class="code" href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">_ope_clients</a>.end(), client));</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                    <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.erase(</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                        std::find(<a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.begin(), <a class="code" href="classChannel.html#a2af7dc5770799fdea6f624c040bbd8c8">_normal_clients</a>.end(), client));</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">  384</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">broadcastMessage</a>(std::string message)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        std::vector&lt;Client *&gt; clients = this-&gt;<a class="code" href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">getClients</a>();</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; clients.size(); i++)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            clients[i]-&gt;message(message);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">  393</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">isModerated</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">return</span> (std::find(_modes.begin(), _modes.end(), <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599afc49decc72a1bfd359d939127c13af71">CHANNEL_MODE_MODERATED</a>) !=</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                _modes.end());</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno"><a class="line" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">  399</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">hasKey</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> (std::find(_modes.begin(), _modes.end(), <a class="code" href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361">CHANNEL_MODE_KEY</a>) !=</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                _modes.end());</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;};</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassChannel_html_a6debbf03ba231cc87a37919b65c70707"><div class="ttname"><a href="classChannel.html#a6debbf03ba231cc87a37919b65c70707">Channel::removeInvite</a></div><div class="ttdeci">void removeInvite(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:286</div></div>
@@ -511,14 +512,14 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_a18cec88efaa45792771b34c293195842"><div class="ttname"><a href="classChannel.html#a18cec88efaa45792771b34c293195842">Channel::getTopic</a></div><div class="ttdeci">std::string &amp; getTopic(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:87</div></div>
 <div class="ttc" id="aclassClient_html_a8fe7fa561e8e852aca92036f92b92405"><div class="ttname"><a href="classClient.html#a8fe7fa561e8e852aca92036f92b92405">Client::getNick</a></div><div class="ttdeci">const std::string getNick(void) const</div><div class="ttdef"><b>Definition:</b> Client.hpp:142</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599a3c65b958731331fdd584fc1925c89adf"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a3c65b958731331fdd584fc1925c89adf">CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY</a></div><div class="ttdeci">@ CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY</div><div class="ttdef"><b>Definition:</b> Channel.hpp:12</div></div>
-<div class="ttc" id="aclassChannel_html_a8696ebad4f27227b4077f8a74339fbea"><div class="ttname"><a href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">Channel::getClientRoleString</a></div><div class="ttdeci">std::string getClientRoleString(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:355</div></div>
+<div class="ttc" id="aclassChannel_html_a8696ebad4f27227b4077f8a74339fbea"><div class="ttname"><a href="classChannel.html#a8696ebad4f27227b4077f8a74339fbea">Channel::getClientRoleString</a></div><div class="ttdeci">std::string getClientRoleString(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:356</div></div>
 <div class="ttc" id="aclassClient_html_a0089e716c45e26e0f525e47961684dd8"><div class="ttname"><a href="classClient.html#a0089e716c45e26e0f525e47961684dd8">Client::getHost</a></div><div class="ttdeci">const std::string getHost(void) const</div><div class="ttdef"><b>Definition:</b> Client.hpp:157</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599aabaa1cdd89b7d8ea66f69b4310a7b634"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599aabaa1cdd89b7d8ea66f69b4310a7b634">CHANNEL_MODE_SECRET</a></div><div class="ttdeci">@ CHANNEL_MODE_SECRET</div><div class="ttdef"><b>Definition:</b> Channel.hpp:9</div></div>
 <div class="ttc" id="aclassChannel_html_ab4875ddd83ae031442d7c58a710b8000"><div class="ttname"><a href="classChannel.html#ab4875ddd83ae031442d7c58a710b8000">Channel::isVoice</a></div><div class="ttdeci">bool isVoice(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:207</div></div>
 <div class="ttc" id="aclassChannel_html_a23ea1fe4e9d76d9e3f3fccdcb9308970"><div class="ttname"><a href="classChannel.html#a23ea1fe4e9d76d9e3f3fccdcb9308970">Channel::getCreatedAt</a></div><div class="ttdeci">time_t getCreatedAt(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:97</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab16b8484120ce9c99a4baa8b8b71a361">CHANNEL_MODE_KEY</a></div><div class="ttdeci">@ CHANNEL_MODE_KEY</div><div class="ttdef"><b>Definition:</b> Channel.hpp:15</div></div>
 <div class="ttc" id="aclassChannel_html_a44d31711a527a9f8e1d30437bf69d57e"><div class="ttname"><a href="classChannel.html#a44d31711a527a9f8e1d30437bf69d57e">Channel::getStringModes</a></div><div class="ttdeci">std::string getStringModes(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:151</div></div>
-<div class="ttc" id="aclassChannel_html_af72ea58ed6a994380416c80ff2b4dcea"><div class="ttname"><a href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">Channel::removeMode</a></div><div class="ttdeci">void removeMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:348</div></div>
+<div class="ttc" id="aclassChannel_html_af72ea58ed6a994380416c80ff2b4dcea"><div class="ttname"><a href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">Channel::removeMode</a></div><div class="ttdeci">void removeMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:349</div></div>
 <div class="ttc" id="aclassChannel_html_a508f012b77c24f221249eea335221560"><div class="ttname"><a href="classChannel.html#a508f012b77c24f221249eea335221560">Channel::invite</a></div><div class="ttdeci">void invite(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:279</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a8f5e4eb36ccab24faf886a87736953d0a56ff80372c663e4ad1b779f2f486acf6"><div class="ttname"><a href="Channel_8hpp.html#a8f5e4eb36ccab24faf886a87736953d0a56ff80372c663e4ad1b779f2f486acf6">CLIENT_MODE_OPERATOR</a></div><div class="ttdeci">@ CLIENT_MODE_OPERATOR</div><div class="ttdef"><b>Definition:</b> Channel.hpp:23</div></div>
 <div class="ttc" id="aclassChannel_html_a09b74571a93d13e6e3f4422fd4e31f42"><div class="ttname"><a href="classChannel.html#a09b74571a93d13e6e3f4422fd4e31f42">Channel::addBanMask</a></div><div class="ttdeci">void addBanMask(std::string mask)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:294</div></div>
@@ -537,13 +538,13 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_a113a05869c11dec225484bf6124b8120"><div class="ttname"><a href="classChannel.html#a113a05869c11dec225484bf6124b8120">Channel::isOwner</a></div><div class="ttdeci">bool isOwner(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:190</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599ab6803b6ae98d62ccfded81f4bec3b118">CHANNEL_MODE_BAN_MASK</a></div><div class="ttdeci">@ CHANNEL_MODE_BAN_MASK</div><div class="ttdef"><b>Definition:</b> Channel.hpp:14</div></div>
 <div class="ttc" id="aconfig_8hpp_html_aacff24dd06cab1fe73f036f0671cf60f"><div class="ttname"><a href="config_8hpp.html#aacff24dd06cab1fe73f036f0671cf60f">MAX_CLIENTS_PER_CHANNEL</a></div><div class="ttdeci">#define MAX_CLIENTS_PER_CHANNEL</div><div class="ttdef"><b>Definition:</b> config.hpp:10</div></div>
-<div class="ttc" id="aclassChannel_html_a249c77224152ae0da4635fd0edcd1a5f"><div class="ttname"><a href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">Channel::removeClientFromChannel</a></div><div class="ttdeci">void removeClientFromChannel(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:364</div></div>
-<div class="ttc" id="aclassChannel_html_ac3a4dc01e8d2e500944715bd1c592656"><div class="ttname"><a href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">Channel::hasKey</a></div><div class="ttdeci">bool hasKey(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:398</div></div>
+<div class="ttc" id="aclassChannel_html_a249c77224152ae0da4635fd0edcd1a5f"><div class="ttname"><a href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">Channel::removeClientFromChannel</a></div><div class="ttdeci">void removeClientFromChannel(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:365</div></div>
+<div class="ttc" id="aclassChannel_html_ac3a4dc01e8d2e500944715bd1c592656"><div class="ttname"><a href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">Channel::hasKey</a></div><div class="ttdeci">bool hasKey(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:399</div></div>
 <div class="ttc" id="aclassChannel_html_af11d9ef023782e40d619da5834b2728c"><div class="ttname"><a href="classChannel.html#af11d9ef023782e40d619da5834b2728c">Channel::removeBanMask</a></div><div class="ttdeci">void removeBanMask(std::string mask)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:300</div></div>
 <div class="ttc" id="aclassChannel_html_a41c0b20a3ecefdf804be58df7a22999b"><div class="ttname"><a href="classChannel.html#a41c0b20a3ecefdf804be58df7a22999b">Channel::removeOpe</a></div><div class="ttdeci">void removeOpe(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:254</div></div>
 <div class="ttc" id="aclassChannel_html_a769357d38bd8c54a74f7cc51d3144b7c"><div class="ttname"><a href="classChannel.html#a769357d38bd8c54a74f7cc51d3144b7c">Channel::setUserLimit</a></div><div class="ttdeci">void setUserLimit(size_t limit)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:168</div></div>
 <div class="ttc" id="aclassChannel_html_a140faa6fa19c82e6ac76f2e202a29e3d"><div class="ttname"><a href="classChannel.html#a140faa6fa19c82e6ac76f2e202a29e3d">Channel::getModeString</a></div><div class="ttdeci">std::string getModeString(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:311</div></div>
-<div class="ttc" id="aclassChannel_html_a41144b44016f30ce825a8d3ae611c1f0"><div class="ttname"><a href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">Channel::broadcastMessage</a></div><div class="ttdeci">void broadcastMessage(std::string message)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:383</div></div>
+<div class="ttc" id="aclassChannel_html_a41144b44016f30ce825a8d3ae611c1f0"><div class="ttname"><a href="classChannel.html#a41144b44016f30ce825a8d3ae611c1f0">Channel::broadcastMessage</a></div><div class="ttdeci">void broadcastMessage(std::string message)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:384</div></div>
 <div class="ttc" id="aclassChannel_html_a337b2d012bf753ceae9dad1001c454bb"><div class="ttname"><a href="classChannel.html#a337b2d012bf753ceae9dad1001c454bb">Channel::getMode</a></div><div class="ttdeci">ChannelMode getMode(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:102</div></div>
 <div class="ttc" id="aclassChannel_html_a16b4d2426593572de43f690e4d0f7325"><div class="ttname"><a href="classChannel.html#a16b4d2426593572de43f690e4d0f7325">Channel::getClients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; getClients(void) const</div><div class="ttdef"><b>Definition:</b> Channel.hpp:172</div></div>
 <div class="ttc" id="aclassChannel_html_a6daf61a24bc288f5612698070c6d87d9"><div class="ttname"><a href="classChannel.html#a6daf61a24bc288f5612698070c6d87d9">Channel::_ope_clients</a></div><div class="ttdeci">std::vector&lt; Client * &gt; _ope_clients</div><div class="ttdef"><b>Definition:</b> Channel.hpp:45</div></div>
@@ -554,17 +555,17 @@ $(document).ready(function(){initNavTree('Channel_8hpp_source.html',''); initRes
 <div class="ttc" id="aclassChannel_html_a6682ab5cbaf8dee41a622561de1eaf32"><div class="ttname"><a href="classChannel.html#a6682ab5cbaf8dee41a622561de1eaf32">Channel::isNormal</a></div><div class="ttdeci">bool isNormal(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:201</div></div>
 <div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.hpp:22</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a8f5e4eb36ccab24faf886a87736953d0a16f6dbfce9bf3ec08106d37f736e87b3"><div class="ttname"><a href="Channel_8hpp.html#a8f5e4eb36ccab24faf886a87736953d0a16f6dbfce9bf3ec08106d37f736e87b3">CLIENT_MODE_VOICE</a></div><div class="ttdeci">@ CLIENT_MODE_VOICE</div><div class="ttdef"><b>Definition:</b> Channel.hpp:22</div></div>
-<div class="ttc" id="aclassChannel_html_ab26649aacd6fa5f206a37314c957f774"><div class="ttname"><a href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">Channel::hasMode</a></div><div class="ttdeci">bool hasMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:336</div></div>
-<div class="ttc" id="aclassChannel_html_a26fc58b2679d5e7e194834a34b5e95d1"><div class="ttname"><a href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">Channel::isModerated</a></div><div class="ttdeci">bool isModerated(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:392</div></div>
+<div class="ttc" id="aclassChannel_html_ab26649aacd6fa5f206a37314c957f774"><div class="ttname"><a href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">Channel::hasMode</a></div><div class="ttdeci">bool hasMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:337</div></div>
+<div class="ttc" id="aclassChannel_html_a26fc58b2679d5e7e194834a34b5e95d1"><div class="ttname"><a href="classChannel.html#a26fc58b2679d5e7e194834a34b5e95d1">Channel::isModerated</a></div><div class="ttdeci">bool isModerated(void)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:393</div></div>
 <div class="ttc" id="aChannel_8hpp_html_a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a"><div class="ttname"><a href="Channel_8hpp.html#a1896d4a571c398f57955773fce8af599a4777b61062b5d874b17aa3bfc8ad964a">CHANNEL_MODE_INVITE_ONLY</a></div><div class="ttdeci">@ CHANNEL_MODE_INVITE_ONLY</div><div class="ttdef"><b>Definition:</b> Channel.hpp:10</div></div>
 <div class="ttc" id="aClient_8hpp_html"><div class="ttname"><a href="Client_8hpp.html">Client.hpp</a></div></div>
 <div class="ttc" id="aclassChannel_html_a4b886adf1d8e90a0c8c26f17b5ef38e8"><div class="ttname"><a href="classChannel.html#a4b886adf1d8e90a0c8c26f17b5ef38e8">Channel::addOpe</a></div><div class="ttdeci">void addOpe(Client *client)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:243</div></div>
-<div class="ttc" id="aclassChannel_html_acd9b98a4c5ae2f155f5d655083fe02b8"><div class="ttname"><a href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">Channel::addMode</a></div><div class="ttdeci">void addMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:342</div></div>
+<div class="ttc" id="aclassChannel_html_acd9b98a4c5ae2f155f5d655083fe02b8"><div class="ttname"><a href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">Channel::addMode</a></div><div class="ttdeci">void addMode(ChannelMode mode)</div><div class="ttdef"><b>Definition:</b> Channel.hpp:343</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="Channel_8hpp.html">Channel.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 18 2023 17:01:53 for IRC SERVER by
+    <li class="footer">Generated on Tue Apr 18 2023 17:29:38 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
