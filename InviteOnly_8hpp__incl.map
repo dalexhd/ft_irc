@@ -1,16 +1,15 @@
 <map id="includes/commands/mode/InviteOnly.hpp" name="includes/commands/mode/InviteOnly.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1467,5,1660,47"/>
-<area shape="rect" id="node2" href="$Mode_8hpp.html" title=" " alt="" coords="1514,95,1613,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1280,5,1473,47"/>
+<area shape="rect" id="node2" href="$Mode_8hpp.html" title=" " alt="" coords="1327,95,1426,121"/>
 <area shape="rect" id="node3" href="$Command_8hpp.html" title=" " alt="" coords="513,177,643,203"/>
 <area shape="rect" id="node23" href="$BanMask_8hpp.html" title=" " alt="" coords="667,177,825,203"/>
 <area shape="rect" id="node24" href="$CantSentMessagesOutside_8hpp.html" title=" " alt="" coords="849,177,1123,203"/>
 <area shape="rect" id="node25" href="$Key_8hpp.html" title=" " alt="" coords="1147,177,1268,203"/>
 <area shape="rect" id="node26" href="$Moderated_8hpp.html" title=" " alt="" coords="1292,177,1461,203"/>
 <area shape="rect" id="node27" href="$Operator_8hpp.html" title=" " alt="" coords="1486,177,1641,203"/>
-<area shape="rect" id="node28" href="$Private_8hpp.html" title=" " alt="" coords="1665,177,1811,203"/>
-<area shape="rect" id="node29" href="$Secret_8hpp.html" title=" " alt="" coords="1835,177,1975,203"/>
-<area shape="rect" id="node30" href="$TopicSettableByChannelOperatorOnly_8hpp.html" title=" " alt="" coords="1999,169,2227,211"/>
-<area shape="rect" id="node31" href="$UserLimit_8hpp.html" title=" " alt="" coords="2251,177,2414,203"/>
+<area shape="rect" id="node28" href="$Secret_8hpp.html" title=" " alt="" coords="1665,177,1805,203"/>
+<area shape="rect" id="node29" href="$TopicSettableByChannelOperatorOnly_8hpp.html" title=" " alt="" coords="1829,169,2057,211"/>
+<area shape="rect" id="node30" href="$UserLimit_8hpp.html" title=" " alt="" coords="2082,177,2245,203"/>
 <area shape="rect" id="node4" href="$Server_8hpp.html" title=" " alt="" coords="529,259,627,285"/>
 <area shape="rect" id="node5" title=" " alt="" coords="305,333,368,360"/>
 <area shape="rect" id="node6" title=" " alt="" coords="393,333,451,360"/>

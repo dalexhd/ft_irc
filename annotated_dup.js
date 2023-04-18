@@ -23,7 +23,6 @@ var annotated_dup =
     [ "Part", "classPart.html", "classPart" ],
     [ "Pass", "classPass.html", "classPass" ],
     [ "Ping", "classPing.html", "classPing" ],
-    [ "Private", "classPrivate.html", "classPrivate" ],
     [ "PrivMsg", "classPrivMsg.html", "classPrivMsg" ],
     [ "Quit", "classQuit.html", "classQuit" ],
     [ "Secret", "classSecret.html", "classSecret" ],

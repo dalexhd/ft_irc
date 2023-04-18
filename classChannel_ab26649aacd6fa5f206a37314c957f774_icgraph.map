@@ -1,0 +1,19 @@
+<map id="Channel::hasMode" name="Channel::hasMode">
+<area shape="rect" id="node1" title=" " alt="" coords="537,452,680,479"/>
+<area shape="rect" id="node2" href="$classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8" title=" " alt="" coords="318,249,461,276"/>
+<area shape="rect" id="node12" href="$classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="289,376,489,403"/>
+<area shape="rect" id="node13" href="$classNames.html#a6c051ade4b9c78a0c397a804e47a8a5c" title=" " alt="" coords="307,427,472,453"/>
+<area shape="rect" id="node15" href="$classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5" title=" " alt="" coords="329,477,449,504"/>
+<area shape="rect" id="node16" href="$classTopic.html#ab43751165871b9bab3e2fadec832cf75" title=" " alt="" coords="331,528,447,555"/>
+<area shape="rect" id="node17" href="$classPrivMsg.html#a5c569ecdef5c59b9aee0e6ee1156ffd5" title=" " alt="" coords="322,579,457,605"/>
+<area shape="rect" id="node3" href="$classCantSentMessagesOutside.html#a542c9dd04bb443a365ca1c8be61d6092" title=" " alt="" coords="9,5,237,32"/>
+<area shape="rect" id="node4" href="$classModerated.html#aac2883a695935a37e515fa3ab6cac0f5" title=" " alt="" coords="61,56,185,83"/>
+<area shape="rect" id="node5" href="$classSecret.html#aa68cf136d1be88a5a58ee1978b16e09a" title=" " alt="" coords="76,107,171,133"/>
+<area shape="rect" id="node6" href="$classTopicSettableByChannelOperatorOnly.html#a9912e965b983f5e6b67c27fee45dba48" title=" " alt="" coords="5,158,241,199"/>
+<area shape="rect" id="node7" href="$classKey.html#a6d44c7e6c8683a7eccf003c044284fd7" title=" " alt="" coords="85,224,162,251"/>
+<area shape="rect" id="node8" href="$classUserLimit.html#a47a09bdec5657c07e3549536057898bd" title=" " alt="" coords="65,275,182,301"/>
+<area shape="rect" id="node9" href="$classInviteOnly.html#a44374d0b1cc403d7b7661f74982f64d3" title=" " alt="" coords="63,325,183,352"/>
+<area shape="rect" id="node10" href="$classOperator.html#a3d0fdd2d14ff76e101fa89a15943c139" title=" " alt="" coords="68,376,179,403"/>
+<area shape="rect" id="node11" href="$classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb" title=" " alt="" coords="55,427,191,453"/>
+<area shape="rect" id="node14" href="$classNames.html#af68edfb3ef51b551f308c44cfa949389" title=" " alt="" coords="60,477,187,504"/>
+</map>

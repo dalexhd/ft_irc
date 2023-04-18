@@ -18,9 +18,6 @@ var dir_3db1f9e6e5ff0139626abdd6590dfaba =
     [ "Operator.hpp", "Operator_8hpp.html", [
       [ "Operator", "classOperator.html", "classOperator" ]
     ] ],
-    [ "Private.hpp", "Private_8hpp.html", [
-      [ "Private", "classPrivate.html", "classPrivate" ]
-    ] ],
     [ "Secret.hpp", "Secret_8hpp.html", [
       [ "Secret", "classSecret.html", "classSecret" ]
     ] ],

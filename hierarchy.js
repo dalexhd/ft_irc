@@ -8,7 +8,6 @@ var hierarchy =
       [ "Key", "classKey.html", null ],
       [ "Moderated", "classModerated.html", null ],
       [ "Operator", "classOperator.html", null ],
-      [ "Private", "classPrivate.html", null ],
       [ "Secret", "classSecret.html", null ],
       [ "TopicSettableByChannelOperatorOnly", "classTopicSettableByChannelOperatorOnly.html", null ],
       [ "UserLimit", "classUserLimit.html", null ]

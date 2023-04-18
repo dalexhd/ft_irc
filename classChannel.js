@@ -1,6 +1,7 @@
 var classChannel =
 [
     [ "Channel", "classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb", null ],
+    [ "addBanMask", "classChannel.html#a09b74571a93d13e6e3f4422fd4e31f42", null ],
     [ "addMode", "classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8", null ],
     [ "addOpe", "classChannel.html#a4b886adf1d8e90a0c8c26f17b5ef38e8", null ],
     [ "broadcastMessage", "classChannel.html#a41144b44016f30ce825a8d3ae611c1f0", null ],
@@ -18,6 +19,8 @@ var classChannel =
     [ "getTopic", "classChannel.html#a18cec88efaa45792771b34c293195842", null ],
     [ "getUserLimit", "classChannel.html#a6986d65fae013a19e9e06dbbbaaf9d21", null ],
     [ "hasKey", "classChannel.html#ac3a4dc01e8d2e500944715bd1c592656", null ],
+    [ "hasMode", "classChannel.html#ab26649aacd6fa5f206a37314c957f774", null ],
+    [ "invite", "classChannel.html#a508f012b77c24f221249eea335221560", null ],
     [ "isBanned", "classChannel.html#a6e8ca1c85c41568812c2c3d368d08fdd", null ],
     [ "isInvited", "classChannel.html#a7fd2df79e9d01bd98961385f432e18ac", null ],
     [ "isInviteOnly", "classChannel.html#acf08485748762a5e4a3ff983f8c4f1fe", null ],
@@ -29,7 +32,9 @@ var classChannel =
     [ "isVoice", "classChannel.html#ab4875ddd83ae031442d7c58a710b8000", null ],
     [ "joined", "classChannel.html#acc7d04f494e076b78a8affae33d3bcf8", null ],
     [ "kick", "classChannel.html#ab181dc0c27818edb8335e8b53eec34c9", null ],
+    [ "removeBanMask", "classChannel.html#af11d9ef023782e40d619da5834b2728c", null ],
     [ "removeClientFromChannel", "classChannel.html#a249c77224152ae0da4635fd0edcd1a5f", null ],
+    [ "removeInvite", "classChannel.html#a6debbf03ba231cc87a37919b65c70707", null ],
     [ "removeMode", "classChannel.html#af72ea58ed6a994380416c80ff2b4dcea", null ],
     [ "removeOpe", "classChannel.html#a41c0b20a3ecefdf804be58df7a22999b", null ],
     [ "setCreator", "classChannel.html#a1cc547a4312634c68769f1c62d2b4df9", null ],

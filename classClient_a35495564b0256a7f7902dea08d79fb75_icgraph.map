@@ -1,5 +1,7 @@
 <map id="Client::getUsername" name="Client::getUsername">
-<area shape="rect" id="node1" title=" " alt="" coords="164,31,320,57"/>
-<area shape="rect" id="node2" href="$classPass.html#a2fa5568da262d5bf787c3445cb875230" title=" " alt="" coords="5,5,116,32"/>
-<area shape="rect" id="node3" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="7,56,114,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="351,81,507,108"/>
+<area shape="rect" id="node2" href="$classPass.html#a2fa5568da262d5bf787c3445cb875230" title=" " alt="" coords="176,5,287,32"/>
+<area shape="rect" id="node3" href="$classInvite.html#a17511ed16dd5b06174df476e023aaaa7" title=" " alt="" coords="172,56,291,83"/>
+<area shape="rect" id="node4" href="$classChannel.html#a6e8ca1c85c41568812c2c3d368d08fdd" title=" " alt="" coords="160,107,303,133"/>
+<area shape="rect" id="node5" href="$classJoin.html#a207289889718fa33c1a6892241aa60d4" title=" " alt="" coords="5,132,112,159"/>
 </map>

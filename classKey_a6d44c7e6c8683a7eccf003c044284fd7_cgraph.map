@@ -1,4 +1,6 @@
 <map id="Key::add" name="Key::add">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,83,32"/>
-<area shape="rect" id="node2" href="$classChannel.html#a8f052c6d974566a8d4b13bfe58d4f96e" title=" " alt="" coords="131,5,295,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,83,57"/>
+<area shape="rect" id="node2" href="$classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8" title=" " alt="" coords="141,5,284,32"/>
+<area shape="rect" id="node4" href="$classChannel.html#a8f052c6d974566a8d4b13bfe58d4f96e" title=" " alt="" coords="131,56,295,83"/>
+<area shape="rect" id="node3" href="$classChannel.html#ab26649aacd6fa5f206a37314c957f774" title=" " alt="" coords="343,5,485,32"/>
 </map>

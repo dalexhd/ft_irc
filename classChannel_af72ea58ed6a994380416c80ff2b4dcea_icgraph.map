@@ -1,4 +1,11 @@
 <map id="Channel::removeMode" name="Channel::removeMode">
-<area shape="rect" id="node1" title=" " alt="" coords="253,5,423,32"/>
-<area shape="rect" id="node2" href="$classChannelModeType.html#ad5360d32633cb115def32f95ae70a74e" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="289,214,459,241"/>
+<area shape="rect" id="node2" href="$classCantSentMessagesOutside.html#ad375c33ef8d91a917abcbc8969130387" title=" " alt="" coords="25,5,221,47"/>
+<area shape="rect" id="node3" href="$classModerated.html#a00ccddd9877137dcdbbeb95bb4bd05f8" title=" " alt="" coords="48,71,199,98"/>
+<area shape="rect" id="node4" href="$classTopicSettableByChannelOperatorOnly.html#aa4369283f9c400513757fb91ff1f0a38" title=" " alt="" coords="5,123,241,164"/>
+<area shape="rect" id="node5" href="$classSecret.html#afedfa86113811e6a91fd63c7232ae104" title=" " alt="" coords="63,189,184,215"/>
+<area shape="rect" id="node6" href="$classInviteOnly.html#a49d5b0f63d08b117830376e44810e146" title=" " alt="" coords="50,239,197,266"/>
+<area shape="rect" id="node7" href="$classUserLimit.html#aa09b9d837002c7a8fba718673a31d1af" title=" " alt="" coords="52,290,195,317"/>
+<area shape="rect" id="node8" href="$classKey.html#a1a56adfdc9db83ccebc7af1600bc9acd" title=" " alt="" coords="72,341,175,367"/>
+<area shape="rect" id="node9" href="$classOperator.html#a2feb80429fb50f498946ca97c1d4d150" title=" " alt="" coords="55,391,192,418"/>
 </map>

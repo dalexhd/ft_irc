@@ -1,4 +1,12 @@
 <map id="Invite::execute" name="Invite::execute">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node2" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="172,5,299,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,208,124,235"/>
+<area shape="rect" id="node2" href="$classServer.html#a4fa910b5f5d034edcd67145c1df2d2cc" title=" " alt="" coords="177,5,324,32"/>
+<area shape="rect" id="node3" href="$classServer.html#a76b581021e9609b15f37bb2bea8e40e8" title=" " alt="" coords="185,56,316,83"/>
+<area shape="rect" id="node4" href="$classChannel.html#a082fd9c1f37bbbb26bdb28b285659b2c" title=" " alt="" coords="179,107,322,133"/>
+<area shape="rect" id="node5" href="$classClient.html#a8fe7fa561e8e852aca92036f92b92405" title=" " alt="" coords="191,157,310,184"/>
+<area shape="rect" id="node6" href="$classMessage.html#ae175384074674e34978f40261238d701" title=" " alt="" coords="172,208,329,235"/>
+<area shape="rect" id="node7" href="$classClient.html#a0dbf904846ae9504d30cfcc268fcf751" title=" " alt="" coords="185,259,316,285"/>
+<area shape="rect" id="node8" href="$classClient.html#a35495564b0256a7f7902dea08d79fb75" title=" " alt="" coords="173,309,329,336"/>
+<area shape="rect" id="node9" href="$classChannel.html#a508f012b77c24f221249eea335221560" title=" " alt="" coords="191,360,311,387"/>
+<area shape="rect" id="node10" href="$classClient.html#a9ee33da0a8d00f8416b934b6027d35cd" title=" " alt="" coords="187,411,314,437"/>
 </map>

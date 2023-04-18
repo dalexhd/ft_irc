@@ -94,10 +94,12 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="classKey.html#a6d44c7e6c8683a7eccf003c044284fd7">Key</a>
 , <a class="el" href="classModerated.html#aac2883a695935a37e515fa3ab6cac0f5">Moderated</a>
 , <a class="el" href="classOperator.html#a3d0fdd2d14ff76e101fa89a15943c139">Operator</a>
-, <a class="el" href="classPrivate.html#a3775deaa5f8165b2aafa057007beee6d">Private</a>
 , <a class="el" href="classSecret.html#aa68cf136d1be88a5a58ee1978b16e09a">Secret</a>
 , <a class="el" href="classTopicSettableByChannelOperatorOnly.html#a9912e965b983f5e6b67c27fee45dba48">TopicSettableByChannelOperatorOnly</a>
 , <a class="el" href="classUserLimit.html#a47a09bdec5657c07e3549536057898bd">UserLimit</a>
+</li>
+<li>addBanMask()
+: <a class="el" href="classChannel.html#a09b74571a93d13e6e3f4422fd4e31f42">Channel</a>
 </li>
 <li>addMode()
 : <a class="el" href="classChannel.html#acd9b98a4c5ae2f155f5d655083fe02b8">Channel</a>
@@ -301,7 +303,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classChannel.html#ac3a4dc01e8d2e500944715bd1c592656">Channel</a>
 </li>
 <li>hasMode()
-: <a class="el" href="classClient.html#a9b2e79f1edf240cc85bebacdfa93cf43">Client</a>
+: <a class="el" href="classChannel.html#ab26649aacd6fa5f206a37314c957f774">Channel</a>
+, <a class="el" href="classClient.html#a9b2e79f1edf240cc85bebacdfa93cf43">Client</a>
 </li>
 <li>hasOpe()
 : <a class="el" href="classCommand.html#a69cc2e41b23641a2ff17d17343d3aeff">Command</a>
@@ -316,6 +319,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>invite()
+: <a class="el" href="classChannel.html#a508f012b77c24f221249eea335221560">Channel</a>
+</li>
 <li>Invite()
 : <a class="el" href="classInvite.html#abc7ac035e70bcfe6c6b40ffe85f8378a">Invite</a>
 </li>
@@ -463,9 +469,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>Ping()
 : <a class="el" href="classPing.html#af5927f79e7c2503e999e7a5b936ebc0e">Ping</a>
 </li>
-<li>Private()
-: <a class="el" href="classPrivate.html#a4b327f744f2e18c7c68f412fb0a25016">Private</a>
-</li>
 <li>PrivMsg()
 : <a class="el" href="classPrivMsg.html#a5d155b15f3a67e53ee9ffcd806f094d1">PrivMsg</a>
 </li>
@@ -494,13 +497,18 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="classKey.html#a1a56adfdc9db83ccebc7af1600bc9acd">Key</a>
 , <a class="el" href="classModerated.html#a00ccddd9877137dcdbbeb95bb4bd05f8">Moderated</a>
 , <a class="el" href="classOperator.html#a2feb80429fb50f498946ca97c1d4d150">Operator</a>
-, <a class="el" href="classPrivate.html#a4d729f4b4600607647f5ee71fc85d1d3">Private</a>
 , <a class="el" href="classSecret.html#afedfa86113811e6a91fd63c7232ae104">Secret</a>
 , <a class="el" href="classTopicSettableByChannelOperatorOnly.html#aa4369283f9c400513757fb91ff1f0a38">TopicSettableByChannelOperatorOnly</a>
 , <a class="el" href="classUserLimit.html#aa09b9d837002c7a8fba718673a31d1af">UserLimit</a>
 </li>
+<li>removeBanMask()
+: <a class="el" href="classChannel.html#af11d9ef023782e40d619da5834b2728c">Channel</a>
+</li>
 <li>removeClientFromChannel()
 : <a class="el" href="classChannel.html#a249c77224152ae0da4635fd0edcd1a5f">Channel</a>
+</li>
+<li>removeInvite()
+: <a class="el" href="classChannel.html#a6debbf03ba231cc87a37919b65c70707">Channel</a>
 </li>
 <li>removeMode()
 : <a class="el" href="classChannel.html#af72ea58ed6a994380416c80ff2b4dcea">Channel</a>
@@ -596,6 +604,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classChannelModeType.html#a42e59de57c077c6104d6a9b7daa51cbf">ChannelModeType</a>
 , <a class="el" href="classCommand.html#af178815ffd43a64b0bdf2e9f64e5dbb5">Command</a>
 , <a class="el" href="classInvite.html#ae274c87d4ddf6c3fee9d16dbcfc2caf5">Invite</a>
+, <a class="el" href="classInviteOnly.html#aafc13ef84e421125d2e62a95d1d1e7d8">InviteOnly</a>
 , <a class="el" href="classJoin.html#a207289889718fa33c1a6892241aa60d4">Join</a>
 , <a class="el" href="classKey.html#a03643a365b182d49fae5937f90cb681f">Key</a>
 , <a class="el" href="classKick.html#adc1f9aff2ca78f45b4521d364218cbf6">Kick</a>
@@ -640,7 +649,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Apr 16 2023 19:59:02 for IRC SERVER by
+    <li class="footer">Generated on Tue Apr 18 2023 17:01:53 for IRC SERVER by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

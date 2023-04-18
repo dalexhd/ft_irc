@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['canperformpasscommand_473',['canPerformPassCommand',['../classClient.html#a978440cdf3fa686b2b06eef6a09413b9',1,'Client']]],
-  ['cantsentmessagesoutside_474',['CantSentMessagesOutside',['../classCantSentMessagesOutside.html#a739e5a83d6f073fdb9013d7be2c09b0d',1,'CantSentMessagesOutside']]],
-  ['channel_475',['Channel',['../classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb',1,'Channel']]],
-  ['channelmodetype_476',['ChannelModeType',['../classChannelModeType.html#af4eda8496bfc1f987e7454213f631276',1,'ChannelModeType']]],
-  ['client_477',['Client',['../classClient.html#a888ae2160552500e7f0685204ed06bb2',1,'Client']]],
-  ['close_5fserver_478',['close_server',['../classServer.html#ac96eaa52d546b17ad1ff9308e99ce620',1,'Server']]],
-  ['command_479',['Command',['../classCommand.html#a18df2d81039392daeb0b78c346a70537',1,'Command']]],
-  ['createchannel_480',['createChannel',['../classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed',1,'Server']]]
+  ['canperformpasscommand_474',['canPerformPassCommand',['../classClient.html#a978440cdf3fa686b2b06eef6a09413b9',1,'Client']]],
+  ['cantsentmessagesoutside_475',['CantSentMessagesOutside',['../classCantSentMessagesOutside.html#a739e5a83d6f073fdb9013d7be2c09b0d',1,'CantSentMessagesOutside']]],
+  ['channel_476',['Channel',['../classChannel.html#a26f5d4a249bab4b1bbc1863c943115fb',1,'Channel']]],
+  ['channelmodetype_477',['ChannelModeType',['../classChannelModeType.html#af4eda8496bfc1f987e7454213f631276',1,'ChannelModeType']]],
+  ['client_478',['Client',['../classClient.html#a888ae2160552500e7f0685204ed06bb2',1,'Client']]],
+  ['close_5fserver_479',['close_server',['../classServer.html#ac96eaa52d546b17ad1ff9308e99ce620',1,'Server']]],
+  ['command_480',['Command',['../classCommand.html#a18df2d81039392daeb0b78c346a70537',1,'Command']]],
+  ['createchannel_481',['createChannel',['../classServer.html#aa6b758514ffdc34ac3c5a1bcf245a3ed',1,'Server']]]
 ];
