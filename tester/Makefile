@@ -122,7 +122,6 @@ weechat:
 #/set irc.server.ft_irc.realname "Marcos"
 #/connect ft_irc
 
-
 ##@ Cleaning
 clean:		## Clean all objects.
 			$(RM) $(OBJ_DIR)
