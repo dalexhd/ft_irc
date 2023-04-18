@@ -315,21 +315,22 @@ class Channel
 		{
 			if (_modes[i] == CHANNEL_MODE_PRIVATE)
 				mode += "*";
-			if (_modes[i] == CHANNEL_MODE_SECRET)
+			else if (_modes[i] == CHANNEL_MODE_SECRET)
 				mode += "@";
-			if (_modes[i] == CHANNEL_MODE_INVITE_ONLY)
+			else if (_modes[i] == CHANNEL_MODE_INVITE_ONLY)
 				mode += "!";
-			if (_modes[i] == CHANNEL_MODE_MODERATED)
+			else if (_modes[i] == CHANNEL_MODE_MODERATED)
 				mode += "%";
-			if (_modes[i] == CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY)
+			else if (_modes[i] == CHANNEL_MODE_TOPIC_SETTABLE_BY_CHANNEL_OPERATOR_ONLY)
 				mode += "+";
-			if (_modes[i] == CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE)
+			else if (_modes[i] == CHANNEL_MODE_CANT_SENT_MESSAGES_OUTSIDE)
 				mode += "~";
-			if (_modes[i] == CHANNEL_MODE_BAN_MASK)
+			else if (_modes[i] == CHANNEL_MODE_BAN_MASK)
 				mode += "&";
-			if (_modes[i] == CHANNEL_MODE_KEY)
+			else if (_modes[i] == CHANNEL_MODE_KEY)
 				mode += "!";
 		}
+		std::cout << "MODE: " << mode << std::endl;
 		return (mode);
 	}
 

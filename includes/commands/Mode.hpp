@@ -26,15 +26,14 @@ class ChannelModeType
 
 	void execute()
 	{
-		bool prevCheck = _channel->hasMode(_mode);
 		if (_sign == PLUS)
 			add();
 		else
 			remove();
-		if (prevCheck != _channel->hasMode(_mode)) // If the mode has changed
-			_channel->broadcastMessage(
-			    RPL_CUSTOM_MODE(_sender->getUserId(), _channel->getName(),
-			                    (_sign == PLUS ? "+" : "-") + _channel->getIdentifier(_mode) + " " + _params[2]));
+
+		_channel->broadcastMessage(
+		    RPL_CUSTOM_MODE(_sender->getUserId(), _channel->getName(),
+		                    (_sign == PLUS ? "+" : "-") + _channel->getIdentifier(_mode) + " " + _params[2]));
 	}
 
 	void setMode(ChannelMode mode)

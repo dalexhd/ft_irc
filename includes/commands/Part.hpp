@@ -79,6 +79,10 @@ class Part : public Command
 				    _sender->_host + " PART #" + channel->getName() + " :" + p[1] + "\n");
 			}
 			channel->removeClientFromChannel(_sender);
+			if (channel->getClients().size() == 0)
+			{
+				_server->removeChannel(channel);
+			}
 		}
 	}
 };
