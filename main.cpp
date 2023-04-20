@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 12:36:41 by aborboll          #+#    #+#             */
-/*   Updated: 2023/04/14 14:52:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:36:32 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ int main(int argc, char **argv)
 		return (1);
 	try
 	{
-		if(args[2] == "")
-			std::cout << "emppty:" << args[2] << "-\n";
-		else
-			std::cout << "notemppty:" << args[2] << "-\n";
-
 		server = new Server("0.0.0.0", args[1], args[2]);
 		delete server;
 	}
